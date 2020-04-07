@@ -193,7 +193,7 @@ public class ApplicationLoader extends Application {
         super();
     }
 
-    public static Nitrite databaseMain;
+    public static Nitrite databaseMain = NitritesKt.mkDatabase("shared_preferences");
 
     public static SharedPreferences metadata;
     public static boolean allowMigrate;
@@ -263,8 +263,6 @@ public class ApplicationLoader extends Application {
         if (applicationContext == null) {
             applicationContext = (ApplicationLoader) getApplicationContext();
         }
-
-        databaseMain = NitritesKt.mkDatabase("shared_preferences");
 
         NativeLoader.initNativeLibs(ApplicationLoader.applicationContext);
         ConnectionsManager.native_setJava(false);
