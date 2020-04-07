@@ -127,7 +127,7 @@ object PrivacyUtil {
 
                     response.rules.forEach {
 
-                        if (it !is TLRPC.TL_privacyValueDisallowAll) {
+                        if (it is TLRPC.TL_privacyValueAllowAll) {
 
                             showPrivacyAlert(ctx, account, 2)
 
