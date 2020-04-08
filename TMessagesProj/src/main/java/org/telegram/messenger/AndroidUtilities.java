@@ -1291,7 +1291,7 @@ public class AndroidUtilities {
         String state = null;
         try {
             state = Environment.getExternalStorageState();
-        } catch (Exception e) {
+        } catch (Throwable e) {
             FileLog.e(e);
         }
         if (NekoConfig.saveCacheToSdcard && (state == null || state.startsWith(Environment.MEDIA_MOUNTED))) {
