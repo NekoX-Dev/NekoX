@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="UseOfficalId">پنهان شده به عنوان برنامه رسمی</string>
+    <string name="UseOfficalIdNotice">با استفاده از شناسه رسمی برنامه وارد شوید ، اگر قادر به ثبت نام یا ورود به سیستم نیستید ، این ممکن است کمک کند. \ n \ n توجه: اگر از آخرین نسخه استفاده می کنید ، fcm کار نخواهد کرد.</string>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
     <string name="PrivacyNotice">هشدار حریم خصوصی</string>
     <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
