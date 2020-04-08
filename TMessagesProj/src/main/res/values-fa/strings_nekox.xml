@@ -6,7 +6,7 @@
     <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
     <string name="ApplySuggestion">قبول،اعمال کن</string>
     <string name="DoNotRemindAgain">دیگر یادآوری نشود</string>
-    <string name="RemoveTitleEmoji">حذف ایموجی در عنوان</string>
+    <string name="RemoveTitleEmoji">حذف ایموجی کنار اسم Nekogram x</string>
     <string name="NekoXProxy">پروکسی عمومی NekoX</string>
     <string name="PublicPrefix">[عمومی]</string>
     <string name="NekoXProxyInfo">ممکن است چند ثانیه برای بارگیری پروکسی داخلی NekoX طول بکشد :)</string>
@@ -24,7 +24,7 @@
     <string name="FilterNameChannelsDescription">فقط پیام های کانال ها</string>
     <string name="FilterNameBots">ربات ها</string>
     <string name="FilterNameBotsDescription">فقط پیام های ربات ها</string>
-    <string name="FilterNameUnmuted">بی صدا</string>
+    <string name="FilterNameUnmuted">صدا دار</string>
     <string name="FilterNameUnmutedDescription">فقط پیام های گفتگو های صدا دار</string>
     <string name="FilterNameUnread2">خوانده نشده</string>
     <string name="FilterNameUnreadDescription">فقط پیام های خوانده نشده</string>
@@ -39,6 +39,9 @@
     <string name="MIUIPermissionNote">برای کاربران MIUI،لطفا دسترسی شروع خودکار را برای دریافت اعلانات NekoX فعال کنید.</string>
     <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
     <string name="DisableProxyWhenVpnEnabled">غیرفعال کردن پروکسی هنگام فعال کردن VPN</string>
+    <string name="SkipOpenLinkConfirm">غیرفعال کردن کادر تایید باز شدن لینک</string>
+    <string name="DeleteAllInChat">حذف همه در این گفتگو</string>
+    <string name="DeleteAllInChatAlert">هشدار! با این کار ، **تمام پیام ها** در این گفتگو برای همه شرکت کنندگان حذف می شود.</string>
     <string name="UnblockAll">رفع انسداد همه</string>
     <string name="UnblockAllWarn">آیا شما از رفع انسداد**همه ی کاربران و ربات ها**اطمینان دارید؟</string>
     <string name="BlockedListEmpty">شما هیچ فردی را مسدود نکرده اید :)</string>
@@ -61,6 +64,11 @@
     <string name="VmessTls">Use TLS</string>
     <string name="ProxyInfoSS">تنظیمات شادوساکس SS</string>
     <string name="SSPassword">گذرواژه</string>
+    <string name="SSMethod">Encrypt Method</string>
+    <string name="SSRProtocol">Protocol</string>
+    <string name="SSRProtocolParams">Protocol Params</string>
+    <string name="SSRObfs">Obfs</string>
+    <string name="SSRObfsParam">Obfs Param</string>
     <string name="RetestPing">تست مجدد پینگ تمامی سرورها</string>
     <string name="ReorderByPing">مرتب سازی پروکسی ها براساس پینگ</string>
     <string name="ExportProxies">اکسپورت سرورها بصورت فایل</string>
