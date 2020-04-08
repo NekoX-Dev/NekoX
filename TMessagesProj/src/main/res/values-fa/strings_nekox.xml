@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
+    <string name="PrivacyNotice">هشدار حریم خصوصی</string>
     <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
     <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
     <string name="ApplySuggestion">قبول،اعمال کن</string>
@@ -30,6 +31,7 @@
     <string name="FilterNameUnmutedAndUnreadDescription">فقط پیام های خوانده نشده از گفتگو های صدادار</string>
     <string name="IgnoreMutedCount">نمایش ندادن شمارشگر چت های خوانده نشده در پوشه ی تب ها</string>
     <string name="DialogsSettings">تنظیمات گفتگو</string>
+    <string name="SortMenu">تنظیمات مرتب سازی گفتگو</string>
     <string name="SortByUnread">ترتیب بر اساس خوانده نشده</string>
     <string name="SortByUnmuted">ترتیب بر اساس صدادار</string>
     <string name="SortByUser">ترتیب بر اساس کاربر</string>
@@ -43,6 +45,7 @@
     <string name="ProxyTypeVmess">پروکسی Vmess</string>
     <string name="AddProxySocks5">افزودن پروکسی Socks5</string>
     <string name="AddProxyTelegram">افزودن پروکسی MTproto</string>
+    <string name="AddProxyVmess">افزودن پروکسی Vmess</string>
     <string name="AddProxySS">افزودن پروکسی شادوساکس ss</string>
     <string name="AddProxySSR">افزودن شادوساکس SSR</string>
     <string name="EditProxy">ویرایش پروکسی</string>
@@ -57,6 +60,9 @@
     <string name="VmessPath">Path / QUIC Key</string>
     <string name="VmessTls">Use TLS</string>
     <string name="ProxyInfoSS">تنظیمات شادوساکس SS</string>
+    <string name="ExportProxies">اکسپورت سرورها بصورت فایل</string>
+    <string name="ImportProxies">ایمپورت فایل سرورها</string>
+    <string name="ImportProxyList">ایمپورت سرورهای پروکسی</string>
     <string name="DeleteUnavailableServer">حذف سرور های غیرقابل دسترس</string>
     <string name="DeleteAllServerConfirm">آیا شما از**حذف تمامی سرور ها**اطمینان دارید؟</string>
     <string name="DeleteUnavailableServerConfirm">آیا شما از**حذف تمامی سرور های غیرقابل دسترس**اطمینان دارید؟</string>
@@ -65,11 +71,11 @@
     <string name="ShareQRCode">کد QR</string>
     <string name="ScanQRCode">اسکن کد QR</string>
     <string name="NoQrFound">هیچ کد QR یافت نشد</string>
-    <string name="EnableDeveloperMode">فعالسازی توسعه دهنده</string>
-    <string name="DisableDeveloperMode">غیرفعال‌سازی مد توسعه دهنده</string>
+    <string name="EnableDeveloperMode">فعالسازی حالت توسعه دهنده</string>
+    <string name="DisableDeveloperMode">غیرفعال‌سازی حالت توسعه دهنده</string>
     <string name="DeveloperSettings">تنظیمات توسعه دهنده</string>
     <string name="DisableFlagSecure">غیرفعال‌سازی پرچم امنیتی</string>
-    <string name="DisableScreenshotDetection">عدم شناسایی اسکرین‌شات</string>
+    <string name="DisableScreenshotDetection">غیر فعال کردن شناسایی اسکرین‌شات</string>
     <string name="LoginSettings">تنظیمات ورود به سیستم</string>
     <string name="NekoXFaq">پرسش های متداول NekoX</string>
 </resources>
