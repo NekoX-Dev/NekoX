@@ -60,11 +60,13 @@
     <string name="VmessPath">Path / QUIC Key</string>
     <string name="VmessTls">Use TLS</string>
     <string name="ProxyInfoSS">تنظیمات شادوساکس SS</string>
+    <string name="SSPassword">گذرواژه</string>
     <string name="RetestPing">تست مجدد پینگ تمامی سرورها</string>
     <string name="ReorderByPing">مرتب سازی پروکسی ها براساس پینگ</string>
     <string name="ExportProxies">اکسپورت سرورها بصورت فایل</string>
     <string name="ImportProxies">ایمپورت فایل سرورها</string>
     <string name="ImportProxyList">ایمپورت سرورهای پروکسی</string>
+    <string name="InvalidProxyFile">لیست پروکسی نامعتبر: </string>
     <string name="ImportedProxies">سرور های پروکسی واردشده: </string>
     <string name="ErrorsInImport">مشکل در وارد کردن فایل: </string>
     <string name="NoProxy">شما هیچ سرور پروکسی اضافه نکرده اید.</string>
@@ -84,5 +86,6 @@
     <string name="DisableFlagSecure">غیرفعال‌سازی پرچم امنیتی</string>
     <string name="DisableScreenshotDetection">غیر فعال کردن شناسایی اسکرین‌شات</string>
     <string name="LoginSettings">تنظیمات ورود به سیستم</string>
+    <string name="ShowBotLogin">دیدن ربات وارد شده</string>
     <string name="NekoXFaq">پرسش های متداول NekoX</string>
 </resources>
