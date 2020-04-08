@@ -1,7 +1,10 @@
 package tw.nekomimi.nekogram;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
@@ -13,9 +16,7 @@ import tw.nekomimi.nekogram.database.NitritesKt;
 
 public class NekoXConfig {
 
-    public static String FAQ_URL = "https://telegra.ph/NekoX-%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C-03-31";
-
-    protected static SharedPreferences preferences = NitritesKt.openMainSharedPreference("nekox_config");
+    public static String FAQ_URL = "https://telegra.ph/NekoX-FAQ-03-31";
 
     public static boolean disableChatAction;
 
@@ -54,42 +55,53 @@ public class NekoXConfig {
     public static boolean removeTitleEmoji;
     public static boolean hidePublicProxy;
 
+    private static SharedPreferences preferences;
+
     static {
 
-        disableChatAction = preferences.getBoolean("disable_chat_action", false);
+        try {
 
-        developerMode = preferences.getBoolean("developer_mode", false);
+            preferences = NitritesKt.openMainSharedPreference("nekox_config");
 
-        disableFlagSecure = preferences.getBoolean("disable_flag_secure", false);
-        disableScreenshotDetection = preferences.getBoolean("disable_screenshot_detection", false);
+            disableChatAction = preferences.getBoolean("disable_chat_action", false);
 
-        showTestBackend = preferences.getBoolean("show_test_backend", false);
-        showBotLogin = preferences.getBoolean("show_bot_login", false);
+            developerMode = preferences.getBoolean("developer_mode", false);
 
-        sortByUnread = preferences.getBoolean("sort_by_unread", false);
-        sortByUnmuted = preferences.getBoolean("sort_by_unmuted", true);
-        sortByUser = preferences.getBoolean("sort_by_user", true);
-        sortByContacts = preferences.getBoolean("sort_by_contacts", true);
+            disableFlagSecure = preferences.getBoolean("disable_flag_secure", false);
+            disableScreenshotDetection = preferences.getBoolean("disable_screenshot_detection", false);
 
-        disableUndo = preferences.getBoolean("disable_undo", true);
+            showTestBackend = preferences.getBoolean("show_test_backend", false);
+            showBotLogin = preferences.getBoolean("show_bot_login", false);
 
-        filterUsers = preferences.getBoolean("filter_users", true);
-        filterContacts = preferences.getBoolean("filter_contacts", true);
-        filterGroups = preferences.getBoolean("filter_groups", true);
-        filterChannels = preferences.getBoolean("filter_channels", true);
-        filterBots = preferences.getBoolean("filter_bots", true);
-        filterAdmins = preferences.getBoolean("filter_admins", true);
-        filterUnmuted = preferences.getBoolean("filter_unmuted", true);
-        filterUnread = preferences.getBoolean("filter_unread", true);
-        filterUnmutedAndUnread = preferences.getBoolean("filter_unmuted_and_unread", true);
+            sortByUnread = preferences.getBoolean("sort_by_unread", false);
+            sortByUnmuted = preferences.getBoolean("sort_by_unmuted", true);
+            sortByUser = preferences.getBoolean("sort_by_user", true);
+            sortByContacts = preferences.getBoolean("sort_by_contacts", true);
 
-        disableSystemAccount = preferences.getBoolean("disable_system_account", false);
-        disableProxyWhenVpnEnabled = preferences.getBoolean("disable_proxy_when_vpn_enabled", false);
-        skipOpenLinkConfirm = preferences.getBoolean("skip_open_link_confirm", false);
+            disableUndo = preferences.getBoolean("disable_undo", true);
 
-        removeTitleEmoji = preferences.getBoolean("remove_title_emoji", false);
-        ignoreMutedCount = preferences.getBoolean("ignore_muted_count", true);
-        hidePublicProxy = preferences.getBoolean("hide_public_proxy",false);
+            filterUsers = preferences.getBoolean("filter_users", true);
+            filterContacts = preferences.getBoolean("filter_contacts", true);
+            filterGroups = preferences.getBoolean("filter_groups", true);
+            filterChannels = preferences.getBoolean("filter_channels", true);
+            filterBots = preferences.getBoolean("filter_bots", true);
+            filterAdmins = preferences.getBoolean("filter_admins", true);
+            filterUnmuted = preferences.getBoolean("filter_unmuted", true);
+            filterUnread = preferences.getBoolean("filter_unread", true);
+            filterUnmutedAndUnread = preferences.getBoolean("filter_unmuted_and_unread", true);
+
+            disableSystemAccount = preferences.getBoolean("disable_system_account", false);
+            disableProxyWhenVpnEnabled = preferences.getBoolean("disable_proxy_when_vpn_enabled", false);
+            skipOpenLinkConfirm = preferences.getBoolean("skip_open_link_confirm", false);
+
+            removeTitleEmoji = preferences.getBoolean("remove_title_emoji", false);
+            ignoreMutedCount = preferences.getBoolean("ignore_muted_count", true);
+            hidePublicProxy = preferences.getBoolean("hide_public_proxy", false);
+
+        } catch (Throwable e) {
+            FileLog.e(e);
+
+        }
 
     }
 
