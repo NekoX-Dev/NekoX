@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="ChangeTranslateProvider">تغییر ارائه دهنده</string>
+    <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
     <string name="RemoveTitleEmoji">حذف ایموجی در عنوان</string>
     <string name="NekoXProxy">پروکسی عمومی نکوX</string>
     <string name="PublicPrefix">(عمومی)</string>
@@ -22,6 +24,16 @@
     <string name="FilterNameUnmutedDescription">فقط پیام های گفتگو های صدا دار</string>
     <string name="FilterNameUnread2">خوانده نشده</string>
     <string name="FilterNameUnreadDescription">فقط پیام های خوانده نشده</string>
+    <string name="FilterNameUnmutedAndUnreadDescription">فقط پیام های خوانده نشده از گفتگو های صدادار</string>
+    <string name="IgnoreMutedCount">نمایش ندادن شمارشگر چت های خوانده نشده در فولدر تب ها</string>
+    <string name="DialogsSettings">تنظیمات گفتگو</string>
+    <string name="SortByUnread">ترتیب بر اساس خوانده نشده</string>
+    <string name="SortByUnmuted">ترتیب بر اساس صدادار</string>
+    <string name="SortByUser">ترتیب بر اساس کاربر</string>
+    <string name="SortByContacts">ترتیب بر اساس مخاطبین</string>
+    <string name="MIUIPermissionNote">برای کاربران MIUI،لطفا دسترسی شروع خودکار را برای دریافت اعلانات NekoX فعال کنید.</string>
+    <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
+    <string name="DisableProxyWhenVpnEnabled">غیرفعال شدن پروکسی هنگام فعال بودن VPN</string>
     <string name="EnableDeveloperMode">فعالسازی توسعه دهنده</string>
     <string name="DisableDeveloperMode">غیرفعال‌سازی مد توسعه دهنده</string>
     <string name="DeveloperSettings">تنظیمات توسعه دهنده</string>
