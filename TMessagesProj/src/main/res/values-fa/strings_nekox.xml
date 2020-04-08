@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="RemoveTitleEmoji">حذف ایموجی در عنوان</string>
     <string name="NekoXProxy">پروکسی عمومی نکوX</string>
     <string name="PublicPrefix">(عمومی)</string>
     <string name="NekoXProxyInfo">ممکن است ده ها ثانیه برای بارگیری پروکسی داخلی نکوX طول بکشد</string>
+    <string name="HidePublicProxyList">مخفی کردن لیست پروکسی عمومی</string>
     <string name="DisableChatAction">وضعیت مرا ارسال نکن</string>
     <string name="FakeScreenshot">تصویر قبل</string>
+    <string name="SaveCacheToSdcard">ذخیره کش در حافظه sd card</string>
+    <string name="FilterNameUsers">کاربران</string>
+    <string name="FilterNameUsersDescription">فقط پیام های چت های خصوصی</string>
+    <string name="FilterNameContacts">مخاطبین</string>
+    <string name="FilterNameContactsDescription">فقط پیام های کاربران ذخیره شده</string>
+    <string name="FilterNameGroups">گروه ها</string>
+    <string name="FilterNameGroupsDescription">فقط پیامهای گپ گروهی</string>
+    <string name="FilterNameChannels">کانال ها</string>
+    <string name="FilterNameChannelsDescription">فقط پیام های کانال ها</string>
+    <string name="FilterNameBots">بات ها</string>
+    <string name="FilterNameBotsDescription">فقط پیام های ربات ها</string>
+    <string name="FilterNameUnmuted">بی صدا</string>
+    <string name="FilterNameUnmutedDescription">فقط پیام های گفتگو های صدا دار</string>
+    <string name="FilterNameUnread2">خوانده نشده</string>
+    <string name="FilterNameUnreadDescription">فقط پیام های خوانده نشده</string>
     <string name="EnableDeveloperMode">فعالسازی توسعه دهنده</string>
     <string name="DisableDeveloperMode">غیرفعال‌سازی مد توسعه دهنده</string>
     <string name="DeveloperSettings">تنظیمات توسعه دهنده</string>
