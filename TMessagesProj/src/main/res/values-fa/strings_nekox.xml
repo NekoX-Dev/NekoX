@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="UseOfficalId">پنهان شده به عنوان برنامه رسمی</string>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
     <string name="PrivacyNotice">هشدار حریم خصوصی</string>
     <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
+    <string name="PrivacyNoticeAddByPhone">تشخیص داده شده است که تنظیمات \" یافتن من از طریق شماره تلفن\" شما خاموش نیست، که ممکن است باعث شود یک هکر تحت کنترل دولت بتواند هویت واقعی شما را پیدا کند ، لطفاً آن را خاموش کنید!</string>
     <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
     <string name="ApplySuggestion">قبول،اعمال کن</string>
     <string name="DoNotRemindAgain">دیگر یادآوری نشود</string>
@@ -28,6 +30,7 @@
     <string name="FilterNameUnmutedDescription">فقط پیام های گفتگو های صدا دار</string>
     <string name="FilterNameUnread2">خوانده نشده</string>
     <string name="FilterNameUnreadDescription">فقط پیام های خوانده نشده</string>
+    <string name="FilterNameUnmutedAndUnread">صدا دار&AMP; خوانده نشده</string>
     <string name="FilterNameUnmutedAndUnreadDescription">فقط پیام های خوانده نشده از گفتگو های صدادار</string>
     <string name="IgnoreMutedCount">نمایش ندادن شمارشگر چت های خوانده نشده در پوشه ی تب ها</string>
     <string name="DialogsSettings">تنظیمات گفتگو</string>
@@ -36,6 +39,9 @@
     <string name="SortByUnmuted">ترتیب بر اساس صدادار</string>
     <string name="SortByUser">ترتیب بر اساس کاربر</string>
     <string name="SortByContacts">ترتیب بر اساس مخاطبین</string>
+    <string name="NekoXPushService">خدمات NekoX</string>
+    <string name="EnablePushAlert">لطفا خدمات NekoX را فعال کنید</string>
+    <string name="DisablePushAlert">لطفا خدمات NekoX رو غیرفعل کنید</string>
     <string name="MIUIPermissionNote">برای کاربران MIUI،لطفا دسترسی شروع خودکار را برای دریافت اعلانات NekoX فعال کنید.</string>
     <string name="DisableUndo">غیرفعال کردن واگرد</string>
     <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
@@ -44,8 +50,8 @@
     <string name="SkipOpenLinkConfirm">غیرفعال کردن کادر تایید باز شدن لینک</string>
     <string name="DeleteAllInChat">حذف همه در این گفتگو</string>
     <string name="DeleteAllInChatAlert">هشدار! با این کار ، **تمام پیام ها** در این گفتگو برای همه شرکت کنندگان حذف می شود.</string>
-    <string name="UnblockAll">رفع انسداد همه</string>
-    <string name="UnblockAllWarn">آیا شما از رفع انسداد**همه ی کاربران و ربات ها**اطمینان دارید؟</string>
+    <string name="UnblockAll">رفع مسدودی همه</string>
+    <string name="UnblockAllWarn">آیا شما از رفع مسدود**همه ی کاربران و ربات ها**اطمینان دارید؟</string>
     <string name="BlockedListEmpty">شما هیچ فردی را مسدود نکرده اید :)</string>
     <string name="ProxyTypeVmess">پروکسی Vmess</string>
     <string name="AddProxySocks5">افزودن پروکسی Socks5</string>
@@ -58,6 +64,7 @@
     <string name="ProxyDelete">حذف پروکسی</string>
     <string name="ProxyInfoVmess">تنظیمات پروکسی Vmess</string>
     <string name="VmessUserId">آیدی کاربر</string>
+    <string name="VmessAlterId">آیدی عددی</string>
     <string name="VmessSecurity">Security</string>
     <string name="VmessNetwork">Network</string>
     <string name="VmessHeadType">Head Type</string>
@@ -67,10 +74,12 @@
     <string name="ProxyInfoSS">تنظیمات شادوساکس SS</string>
     <string name="SSPassword">گذرواژه</string>
     <string name="SSMethod">Encrypt Method</string>
+    <string name="ProxyInfoSSR">تنظیمات پروکسی شادوساکس SSR</string>
     <string name="SSRProtocol">Protocol</string>
     <string name="SSRProtocolParams">Protocol Params</string>
     <string name="SSRObfs">Obfs</string>
     <string name="SSRObfsParam">Obfs Param</string>
+    <string name="ProxyRemarks">ملاحظات</string>
     <string name="RetestPing">تست مجدد پینگ تمامی سرورها</string>
     <string name="ReorderByPing">مرتب سازی پروکسی ها براساس پینگ</string>
     <string name="ExportProxies">اکسپورت سرورها بصورت فایل</string>
@@ -97,6 +106,7 @@
     <string name="DisableFlagSecure">غیرفعال‌سازی پرچم امنیتی</string>
     <string name="DisableScreenshotDetection">غیر فعال کردن شناسایی اسکرین‌شات</string>
     <string name="LoginSettings">تنظیمات ورود به سیستم</string>
+    <string name="ShowTestBackend">نمایش آزمایشی پس زمینه</string>
     <string name="ShowBotLogin">دیدن ربات وارد شده</string>
     <string name="NekoXFaq">پرسش های متداول NekoX</string>
 </resources>
