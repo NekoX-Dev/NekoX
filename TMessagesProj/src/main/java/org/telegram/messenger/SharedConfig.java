@@ -1424,15 +1424,19 @@ public class SharedConfig {
 
         int current = MessagesController.getGlobalMainSettings().getInt("current_proxy", 0);
 
-        VmessProxy publicProxy = new VmessProxy(VmessLoader.getPublic());
-        publicProxy.isPublic = true;
-        proxyList.add(publicProxy);
+        if (!NekoXConfig.hidePublicProxy) {
 
-        if (publicProxy.hashCode() == current) {
+            VmessProxy publicProxy = new VmessProxy(VmessLoader.getPublic());
+            publicProxy.isPublic = true;
+            proxyList.add(publicProxy);
 
-            currentProxy = publicProxy;
+            if (publicProxy.hashCode() == current) {
 
-            publicProxy.start();
+                currentProxy = publicProxy;
+
+                publicProxy.start();
+
+            }
 
         }
 
