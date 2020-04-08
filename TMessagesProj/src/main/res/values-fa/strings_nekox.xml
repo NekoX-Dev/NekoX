@@ -2,6 +2,9 @@
 <resources>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده</string>
     <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
+    <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
+    <string name="ApplySuggestion">اوکی ،اعمال کن</string>
+    <string name="DoNotRemindAgain">دیگر یادآوری نشود</string>
     <string name="RemoveTitleEmoji">حذف ایموجی در عنوان</string>
     <string name="NekoXProxy">پروکسی عمومی نکوX</string>
     <string name="PublicPrefix">(عمومی)</string>
@@ -33,7 +36,22 @@
     <string name="SortByContacts">ترتیب بر اساس مخاطبین</string>
     <string name="MIUIPermissionNote">برای کاربران MIUI،لطفا دسترسی شروع خودکار را برای دریافت اعلانات NekoX فعال کنید.</string>
     <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
-    <string name="DisableProxyWhenVpnEnabled">غیرفعال شدن پروکسی هنگام فعال بودن VPN</string>
+    <string name="DisableProxyWhenVpnEnabled">غیرفعال کردن پروکسی هنگام فعال کردن VPN</string>
+    <string name="UnblockAll">رفع انسداد همه</string>
+    <string name="UnblockAllWarn">آیا شما از رفع انسداد**همه ی کاربران و ربات ها**اطمینان دارید؟</string>
+    <string name="BlockedListEmpty">شما هیچ فردی را مسدود نکرده اید :)</string>
+    <string name="ProxyTypeVmess">پروکسی Vmess</string>
+    <string name="AddProxySocks5">افزودن پروکسی Socks5</string>
+    <string name="AddProxyTelegram">افزودن پروکسی MTproto</string>
+    <string name="AddProxySS">افزودن پروکسی شادوساکس ss</string>
+    <string name="DeleteUnavailableServer">حذف سرور های غیرقابل دسترس</string>
+    <string name="DeleteAllServerConfirm">آیا شما از**حذف تمامی سرور ها**اطمینان دارید؟</string>
+    <string name="DeleteUnavailableServerConfirm">آیا شما از**حذف تمامی سرور های غیرقابل دسترس**اطمینان دارید؟</string>
+    <string name="ImportProxyFromClipboard">وارد کردن از کلیپ بورد</string>
+    <string name="BrokenLink">لینک خراب/ناشناس</string>
+    <string name="ShareQRCode">کد QR</string>
+    <string name="ScanQRCode">اسکن کد QR</string>
+    <string name="NoQrFound">هیچ کد QR یافت نشد</string>
     <string name="EnableDeveloperMode">فعالسازی توسعه دهنده</string>
     <string name="DisableDeveloperMode">غیرفعال‌سازی مد توسعه دهنده</string>
     <string name="DeveloperSettings">تنظیمات توسعه دهنده</string>
