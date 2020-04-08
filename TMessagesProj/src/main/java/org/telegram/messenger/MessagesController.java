@@ -4304,14 +4304,14 @@ public class MessagesController extends BaseController implements NotificationCe
             AndroidUtilities.runOnUIThread(passwordCheckRunnable);
             lastPasswordCheckTime = currentTime;
         }
-        getLocationController().update();
-        checkProxyInfoInternal(false);
-        checkTosUpdate();
         if (lastPushRegisterSendTime != 0 && Math.abs(SystemClock.elapsedRealtime() - lastPushRegisterSendTime) >= 3 * 60 * 60 * 1000) {
             if (ExternalGcm.INSTANCE != null) {
                 ExternalGcm.INSTANCE.sendRegistrationToServer();
             }
         }
+        getLocationController().update();
+        checkProxyInfoInternal(false);
+        checkTosUpdate();
     }
 
     private void checkTosUpdate() {
@@ -9047,6 +9047,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     newTaskId = taskId;
                 }
 
+                if (!NekoConfig.unlimitedPinnedDialogs) {
                     getConnectionsManager().sendRequest(req, (response, error) -> {
                         if (newTaskId != 0) {
                             getMessagesStorage().removePendingTask(newTaskId);
@@ -9054,11 +9055,15 @@ public class MessagesController extends BaseController implements NotificationCe
                     });
                 }
             }
+        }
         getMessagesStorage().setDialogPinned(did, dialog.pinnedNum);
         return true;
     }
 
     public void loadPinnedDialogs(final int folderId, final long newDialogId, final ArrayList<Long> order) {
+        if (NekoConfig.unlimitedPinnedDialogs) {
+            return;
+        }
         if (loadingPinnedDialogs.indexOfKey(folderId) >= 0 || getUserConfig().isPinnedDialogsLoaded(folderId)) {
             return;
         }

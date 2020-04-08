@@ -3779,7 +3779,7 @@ public class Theme {
         themeInfo.previewOutColor = 0xffd0e6ff;
         themeInfo.firstAccentIsDefault = true;
         themeInfo.currentAccentId = 99;
-        themeInfo.sortIndex = 1;
+        themeInfo.sortIndex = 6;
         themeInfo.setAccentColorOptions(
                 new int[]    { 0xFF5890C5,                     0xFF239853,                    0xFFCE5E82,                    0xFF7F63C3,                    0xFF2491AD,                    0xFF299C2F,                    0xFF8854B4, 0xFF328ACF, 0xFF43ACC7, 0xFF52AC44, 0xFFCD5F93, 0xFFD28036, 0xFF8366CC, 0xFFCE4E57, 0xFFD3AE40, 0xFF7B88AB },
                 new int[]    { 0xFFB8E18D,                     0xFFFAFBCC,                    0xFFFFF9DC,                    0xFFC14F6E,                    0xFFD1BD1B,                    0xFFFFFAC9,                    0xFFFCF6D8, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000 },
