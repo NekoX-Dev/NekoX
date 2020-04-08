@@ -37,7 +37,9 @@
     <string name="SortByUser">ترتیب بر اساس کاربر</string>
     <string name="SortByContacts">ترتیب بر اساس مخاطبین</string>
     <string name="MIUIPermissionNote">برای کاربران MIUI،لطفا دسترسی شروع خودکار را برای دریافت اعلانات NekoX فعال کنید.</string>
+    <string name="DisableUndo">غیرفعال کردن واگرد</string>
     <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
+    <string name="FilterMenu">منوی فیلتر گفتگو ها</string>
     <string name="DisableProxyWhenVpnEnabled">غیرفعال کردن پروکسی هنگام فعال کردن VPN</string>
     <string name="SkipOpenLinkConfirm">غیرفعال کردن کادر تایید باز شدن لینک</string>
     <string name="DeleteAllInChat">حذف همه در این گفتگو</string>
@@ -74,6 +76,7 @@
     <string name="ExportProxies">اکسپورت سرورها بصورت فایل</string>
     <string name="ImportProxies">ایمپورت فایل سرورها</string>
     <string name="ImportProxyList">ایمپورت سرورهای پروکسی</string>
+    <string name="ImportProxyListConfirm">آیا شما از**حذف تمامی سرور ها**اطمینان دارید؟</string>
     <string name="InvalidProxyFile">لیست پروکسی نامعتبر: </string>
     <string name="ImportedProxies">سرور های پروکسی واردشده: </string>
     <string name="ErrorsInImport">مشکل در وارد کردن فایل: </string>
