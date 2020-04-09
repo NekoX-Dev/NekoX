@@ -31,7 +31,7 @@
     <string name="FilterNameUnmutedDescription">فقط پیام های گفتگو های صدا دار</string>
     <string name="FilterNameUnread2">خوانده نشده</string>
     <string name="FilterNameUnreadDescription">فقط پیام های خوانده نشده</string>
-    <string name="FilterNameUnmutedAndUnread">صدا دار&AMP; خوانده نشده</string>
+    <string name="FilterNameUnmutedAndUnread">صدا دار&amp; خوانده نشده</string>
     <string name="FilterNameUnmutedAndUnreadDescription">فقط پیام های خوانده نشده از گفتگو های صدادار</string>
     <string name="IgnoreMutedCount">نمایش ندادن شمارشگر چت های خوانده نشده در پوشه ی تب ها</string>
     <string name="DialogsSettings">تنظیمات گفتگو</string>
