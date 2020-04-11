@@ -13,4 +13,26 @@
     <string name="PrivacyNoticeP2p">تم اكتشاف أنك لم تقم بإيقاف تشغيل إعدادات \"المكالمات من نظير لنظيرp2p\"، قد يتسبب في العثور على هويتك الحقيقية للقرصنة التي تسيطر عليها الحكومة، يرجى إيقافها!</string>
     <string name="ApplySuggestion">حسنًا، قم بتطبيقه</string>
     <string name="DoNotRemindAgain">لا تذكرني مرة أخرى</string>
+    <string name="RemoveTitleEmoji">إزالة الإيموجي من العناوين</string>
+    <string name="NekoXProxy">خادم NekoX العام</string>
+    <string name="PublicPrefix">[عام]</string>
+    <string name="NekoXProxyInfo">قد يستغرق الأمر عشر ثوان لتحميل وكيل NekoX العام المدمج :)</string>
+    <string name="HidePublicProxyList">إخفاء قائمة البروكسي العامة</string>
+    <string name="DisableChatAction">لا تقم بإرسال حالة الإدخال</string>
+    <string name="FakeScreenshot">لقطة شاشة مخرجة</string>
+    <string name="SaveCacheToSdcard">حفظ التخزين المؤقت على sdcard*</string>
+    <string name="FilterNameUsers">المستخدمون</string>
+    <string name="FilterNameUsersDescription">فقط الرسائل من المحادثات الخاصة</string>
+    <string name="FilterNameContacts">جهات الاتصال</string>
+    <string name="FilterNameContactsDescription">فقط الرسائل من المستخدمين المحفوظين</string>
+    <string name="FilterNameGroups">المجموعات</string>
+    <string name="FilterNameGroupsDescription">فقط الرسائل من مجموعة المحادثات</string>
+    <string name="FilterNameChannels">القنوات</string>
+    <string name="FilterNameChannelsDescription">الرسائل من القنوات فقط</string>
+    <string name="FilterNameBots">البوتات</string>
+    <string name="FilterNameBotsDescription">فقط الرسائل من البوتات</string>
+    <string name="FilterNameUnmuted">غير مكتومة</string>
+    <string name="FilterNameUnmutedDescription">فقط الرسائل من المحادثة الغير مكتومه</string>
+    <string name="FilterNameUnread2">غير مقروءة</string>
+    <string name="FilterNameUnreadDescription">فقط الرسائل غير المقروءة</string>
 </resources>
