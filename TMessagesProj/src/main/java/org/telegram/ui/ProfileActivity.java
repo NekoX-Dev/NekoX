@@ -2028,12 +2028,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         idTextView.setGravity(Gravity.LEFT);
         idTextView.setAlpha(1.0f);
 
-        if (!NekoXConfig.showIdAndDc) {
-
-            idTextView.setVisibility(View.GONE);
-
-        }
-
         frameLayout.addView(idTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP, 118, 0, 48, 0));
 
         updateProfileData();
@@ -4136,8 +4130,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
 
             if (user.photo != null && user.photo.dc_id != 0) {
                 idTextView.setText("ID: " + user_id + ", DC: " + user.photo.dc_id);
-            } else if (user.id == getUserConfig().clientUserId) {
-                idTextView.setText("ID: " + user_id + ", DC: " + getMessagesController().thisDc);
             } else {
                 idTextView.setText("ID: " + user_id);
             }
