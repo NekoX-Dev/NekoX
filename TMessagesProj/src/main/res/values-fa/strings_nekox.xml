@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="UseOfficalId">پنهان شده به عنوان برنامه رسمی</string>
+    <string name="UseOfficalId">ورود به عنوان تلگرام رسمی</string>
     <string name="UseOfficalIdNotice">با استفاده از شناسه رسمی برنامه وارد شوید ، اگر قادر به ثبت نام یا ورود به سیستم نیستید ، این ممکن است کمک کند. \ n \ n توجه: اگر از آخرین نسخه استفاده می کنید ، fcm کار نخواهد کرد.</string>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
+    <string name="NekoXUpdatesChannel">کانال بروزرسانی NekoX</string>
+    <string name="ShowIdAndDc">نمایش آیدی کاربر در پروفایل</string>
+    <string name="UseDefaultTheme">استفاده تم پیشفرض</string>
+    <string name="NightMode">حالت شب</string>
     <string name="PrivacyNotice">هشدار حریم خصوصی</string>
     <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
-    <string name="PrivacyNoticeAddByPhone">تشخیص داده شده است که تنظیمات \" یافتن من از طریق شماره تلفن\" شما خاموش نیست، که ممکن است باعث شود یک هکر تحت کنترل دولت بتواند هویت واقعی شما را پیدا کند ، لطفاً آن را خاموش کنید!</string>
-    <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
+    <string name="PrivacyNoticeAddByPhone">تشخیص داده شده است که تنظیمات \"یافتن من از طریق شماره تلفن\" شما خاموش نیست، که ممکن است باعث شود یک هکر تحت کنترل دولت بتواند هویت واقعی شما را پیدا کند ، لطفاً آن را خاموش کنید!</string>
+    <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز بودن تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
     <string name="ApplySuggestion">قبول،اعمال کن</string>
     <string name="DoNotRemindAgain">دیگر یادآوری نشود</string>
     <string name="RemoveTitleEmoji">حذف ایموجی کنار اسم Nekogram x</string>
