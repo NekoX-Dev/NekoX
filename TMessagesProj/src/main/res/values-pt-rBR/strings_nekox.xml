@@ -3,6 +3,8 @@
     <string name="UseOfficalId">Disfarçado como aplicativo oficial</string>
     <string name="UseOfficalIdNotice">Faça login usando o ID do aplicativo oficial. Se não conseguir se registrar ou fazer login, isso pode ajudar. \n\nNota: o fcm não funcionará se você estiver usando a versão de lançamento.</string>
     <string name="ChangeTranslateProvider">Alterar Provedor</string>
+    <string name="NekoXUpdatesChannel">Canal de atualizações do NekoX</string>
+    <string name="ShowIdAndDc">Mostrar ID/DC no perfil</string>
     <string name="UseDefaultTheme">Usar o tema padrão *</string>
     <string name="NightMode">Modo Noturno</string>
     <string name="PrivacyNotice">Aviso de privacidade</string>
@@ -37,7 +39,7 @@
     <string name="FilterNameUnmutedAndUnreadDescription">Apenas mensagens não lidas de bate-papos não-silenciados</string>
     <string name="IgnoreMutedCount">Ignorar não lidos e silenciados na contagem da guia da pasta</string>
     <string name="DialogsSettings">Configurações de Conversas</string>
-    <string name="SortMenu">Configurações de Organização das Conversas</string>
+    <string name="SortMenu">Organização das Conversas</string>
     <string name="SortByUnread">Ordenar por Não lidas</string>
     <string name="SortByUnmuted">Ordenar por Não-silenciadas</string>
     <string name="SortByUser">Ordenar por Usuário</string>
@@ -111,5 +113,5 @@
     <string name="LoginSettings">Configurações de login</string>
     <string name="ShowTestBackend">Mostrar back-end de teste</string>
     <string name="ShowBotLogin">Mostrar Login do Bot</string>
-    <string name="NekoXFaq">NekoX FAQ</string>
+    <string name="NekoXFaq">FAQ do NekoX</string>
 </resources>
