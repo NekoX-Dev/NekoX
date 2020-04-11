@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="UseOfficalId">متنكر كتطبيق رسمي</string>
+    <string name="UseOfficalIdNotice">تسجيل الدخول باستخدام معرف التطبيق الرسمي، إذا كنت غير قادر على التسجيل أو تسجيل الدخول، قد يساعد ذلك.\n\nملاحظة: لن يعمل fcm إذا كنت تستخدم إصدار الإصدار.</string>
+    <string name="ChangeTranslateProvider">تغيير المزود</string>
+    <string name="NekoXUpdatesChannel">قناة تحديثات Nekox</string>
+    <string name="ShowIdAndDc">إظهار المعرف / dc في الملف الشخصي</string>
+    <string name="UseDefaultTheme">استخدام السمة الافتراضية *</string>
+    <string name="NightMode">الوضع الليلي</string>
+    <string name="PrivacyNotice">تحذير الخصوصية</string>
+    <string name="PrivacyNoticePhoneVisible">تم اكتشاف أن رقم هاتفك المحمول مرئي لأي شخص، قد يتسبب في العثور على هويتك الحقيقية للقرصنة الذين تسيطر عليهم الحكومة، يرجى إيقافها!</string>
+    <string name="PrivacyNoticeAddByPhone">تم اكتشاف أنك لم تقم بإيقاف تشغيل إعدادات \"السماح بالعثور علي من خلال رقم الهاتف\"، قد يتسبب في العثور على هويتك الحقيقية للقرصنة التي تسيطر عليها الحكومة، يرجى إيقافها!</string>
+    <string name="PrivacyNoticeP2p">تم اكتشاف أنك لم تقم بإيقاف تشغيل إعدادات \"المكالمات من نظير لنظيرp2p\"، قد يتسبب في العثور على هويتك الحقيقية للقرصنة التي تسيطر عليها الحكومة، يرجى إيقافها!</string>
+    <string name="ApplySuggestion">حسنًا، قم بتطبيقه</string>
+    <string name="DoNotRemindAgain">لا تذكرني مرة أخرى</string>
+</resources>
