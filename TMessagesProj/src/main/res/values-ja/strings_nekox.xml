@@ -29,4 +29,21 @@
     <string name="FilterNameChannelsDescription">チャンネルからのメッセージのみ</string>
     <string name="FilterNameBots">ボット</string>
     <string name="FilterNameBotsDescription">ボットからのメッセージのみ</string>
+    <string name="FilterNameUnmuted">ミュートなし</string>
+    <string name="FilterNameUnmutedDescription">ミュートされていないチャットからのメッセージのみ</string>
+    <string name="FilterNameUnread2">未読</string>
+    <string name="FilterNameUnreadDescription">未読メッセージのみ</string>
+    <string name="FilterNameUnmutedAndUnread">ミュートなし &amp; 未読</string>
+    <string name="FilterNameUnmutedAndUnreadDescription">ミュートされていないチャットからの未読メッセージのみ</string>
+    <string name="IgnoreMutedCount">フォルダータブでミュートされた未読数を無視する</string>
+    <string name="DialogsSettings">ダイアログ設定</string>
+    <string name="SortMenu">ダイアログソート設定</string>
+    <string name="SortByUnread">未読で並べ替え</string>
+    <string name="SortByUnmuted">ミュートなしで並べ替え</string>
+    <string name="SortByUser">ユーザーで並べ替え</string>
+    <string name="SortByContacts">連絡先で並べ替え</string>
+    <string name="NekoXPushService">NekoX プッシュサービス</string>
+    <string name="EnablePushAlert">\"NekoX プッシュサービス\"を有効にしてください</string>
+    <string name="DisablePushAlert">\"NekoX プッシュサービス\"を無効にしてください</string>
+    <string name="MIUIPermissionNote">MIUIユーザーは、NekoXが通知を正常に受信できるように、自動起動権限を有効にしてください。</string>
 </resources>
