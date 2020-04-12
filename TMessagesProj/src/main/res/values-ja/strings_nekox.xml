@@ -12,4 +12,21 @@
     <string name="PrivacyNoticeP2p">「P2Pコールを許可」設定がオフになっていないことが検出されました。これにより、政府の管理下にあるハッカーがあなたの本当の身元を見つける可能性があります。オフにしてください。</string>
     <string name="ApplySuggestion">わかりました。 適用します</string>
     <string name="DoNotRemindAgain">今後表示しない</string>
+    <string name="RemoveTitleEmoji">タイトルの絵文字を削除</string>
+    <string name="NekoXProxy">NekoXパブリックプロキシ</string>
+    <string name="PublicPrefix">[ パブリック ]</string>
+    <string name="NekoXProxyInfo">NekoX パブリックビルトインプロキシの読み込みには数十秒かかる場合があります :)</string>
+    <string name="HidePublicProxyList">パブリックプロキシリストを非表示</string>
+    <string name="DisableChatAction">入力ステータスを送信しない</string>
+    <string name="SaveCacheToSdcard">キャッシュをSDカードに保存</string>
+    <string name="FilterNameUsers">ユーザー</string>
+    <string name="FilterNameUsersDescription">プライベートチャットからのメッセージのみ</string>
+    <string name="FilterNameContacts">連絡先</string>
+    <string name="FilterNameContactsDescription">保存したユーザーからのメッセージのみ</string>
+    <string name="FilterNameGroups">グループ</string>
+    <string name="FilterNameGroupsDescription">グループチャットからのメッセージのみ</string>
+    <string name="FilterNameChannels">チャンネル</string>
+    <string name="FilterNameChannelsDescription">チャンネルからのメッセージのみ</string>
+    <string name="FilterNameBots">ボット</string>
+    <string name="FilterNameBotsDescription">ボットからのメッセージのみ</string>
 </resources>
