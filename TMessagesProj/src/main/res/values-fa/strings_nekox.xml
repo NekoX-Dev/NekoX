@@ -70,8 +70,8 @@
     <string name="ProxyInfoVmess">تنظیمات پروکسی Vmess</string>
     <string name="VmessUserId">آیدی کاربر</string>
     <string name="VmessAlterId">آیدی عددی</string>
-    <string name="VmessSecurity">Security</string>
-    <string name="VmessNetwork">Network</string>
+    <string name="VmessSecurity">امنیت</string>
+    <string name="VmessNetwork">شبکه</string>
     <string name="VmessHeadType">Head Type</string>
     <string name="VmessRequestHost">Request Host / QUIC Security</string>
     <string name="VmessPath">Path / QUIC Key</string>
