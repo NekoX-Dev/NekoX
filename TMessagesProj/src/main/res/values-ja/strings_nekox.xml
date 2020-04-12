@@ -46,4 +46,21 @@
     <string name="EnablePushAlert">\"NekoX プッシュサービス\"を有効にしてください</string>
     <string name="DisablePushAlert">\"NekoX プッシュサービス\"を無効にしてください</string>
     <string name="MIUIPermissionNote">MIUIユーザーは、NekoXが通知を正常に受信できるように、自動起動権限を有効にしてください。</string>
+    <string name="DisableUndo">取り消しを無効にする</string>
+    <string name="DisableSystemAccount">システムアカウントを無効にする</string>
+    <string name="DeleteUnavailableServerConfirm">**使用できないサーバーを削除**してよろしいですか？</string>
+    <string name="MinApi21Required">申し訳ありませんが、Android 5 (API21)以上が必要です</string>
+    <string name="ImportProxyFromClipboard">クリップボードからインポート</string>
+    <string name="BrokenLink">不明/壊れたリンク</string>
+    <string name="ShareQRCode">QRコード</string>
+    <string name="ScanQRCode">QRコードをスキャン</string>
+    <string name="NoQrFound">QRコードが見つかりません</string>
+    <string name="EnableDeveloperMode">開発者モードを有効にする</string>
+    <string name="DisableDeveloperMode">開発者モードを無効にする</string>
+    <string name="DeveloperSettings">開発者設定</string>
+    <string name="DisableScreenshotDetection">スクリーンショットの検出を無効にする</string>
+    <string name="LoginSettings">ログイン設定</string>
+    <string name="ShowTestBackend">テストバックエンドを表示</string>
+    <string name="ShowBotLogin">ボットログインを表示</string>
+    <string name="NekoXFaq">NekoX FAQ</string>
 </resources>
