@@ -88,6 +88,10 @@
     <string name="InvalidProxyFile">無効なプロキシリストファイル: </string>
     <string name="ImportedProxies">インポートされたプロキシサーバー: </string>
     <string name="ErrorsInImport">インポートエラー: </string>
+    <string name="NoProxy">あなたはプロキシサーバーを追加していません。</string>
+    <string name="DeleteAllServer">すべてのサーバーを削除</string>
+    <string name="DeleteUnavailableServer">使用できないサーバーを削除する</string>
+    <string name="DeleteAllServerConfirm">**すべてのサーバーを削除**してもよろしいですか？</string>
     <string name="DeleteUnavailableServerConfirm">**使用できないサーバーを削除**してよろしいですか？</string>
     <string name="MinApi21Required">申し訳ありませんが、Android 5 (API21)以上が必要です</string>
     <string name="ImportProxyFromClipboard">クリップボードからインポート</string>
