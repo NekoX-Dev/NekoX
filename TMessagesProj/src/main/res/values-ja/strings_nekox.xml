@@ -48,6 +48,10 @@
     <string name="MIUIPermissionNote">MIUIユーザーは、NekoXが通知を正常に受信できるように、自動起動権限を有効にしてください。</string>
     <string name="DisableUndo">取り消しを無効にする</string>
     <string name="DisableSystemAccount">システムアカウントを無効にする</string>
+    <string name="FilterMenu">ダイアログフィルターメニュー</string>
+    <string name="DisableProxyWhenVpnEnabled">VPNが有効なときにプロキシを無効化する</string>
+    <string name="UnblockAll">すべてのブロックを解除</string>
+    <string name="UnblockAllWarn">**すべてのユーザーとボット**のブロックを解除してもよろしいですか？</string>
     <string name="DeleteUnavailableServerConfirm">**使用できないサーバーを削除**してよろしいですか？</string>
     <string name="MinApi21Required">申し訳ありませんが、Android 5 (API21)以上が必要です</string>
     <string name="ImportProxyFromClipboard">クリップボードからインポート</string>
