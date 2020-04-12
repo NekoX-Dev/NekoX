@@ -7,4 +7,9 @@
     <string name="UseDefaultTheme">デフォルトテーマを使用 *</string>
     <string name="NightMode">夜間モード</string>
     <string name="PrivacyNotice">プライバシー警告</string>
+    <string name="PrivacyNoticePhoneVisible">あなたの携帯電話番号が誰にでも見えることが検出されました。これにより、政府の管理下にあるハッカーがあなたの本当の身元を突き止める可能性があります。オフにしてください。</string>
+    <string name="PrivacyNoticeAddByPhone">「電話番号で私を探すことを許可する」設定がオフになっていないことが検出されました。これにより、政府の管理下にあるハッカーがあなたの本当の身元を見つける可能性があります。オフにしてください。</string>
+    <string name="PrivacyNoticeP2p">「P2Pコールを許可」設定がオフになっていないことが検出されました。これにより、政府の管理下にあるハッカーがあなたの本当の身元を見つける可能性があります。オフにしてください。</string>
+    <string name="ApplySuggestion">わかりました。 適用します</string>
+    <string name="DoNotRemindAgain">今後表示しない</string>
 </resources>
