@@ -3,7 +3,6 @@
     <string name="UseOfficalId">متنكر كتطبيق رسمي</string>
     <string name="UseOfficalIdNotice">تسجيل الدخول باستخدام معرف التطبيق الرسمي، إذا كنت غير قادر على التسجيل أو تسجيل الدخول، قد يساعد ذلك.\n\nملاحظة: لن يعمل fcm إذا كنت تستخدم إصدار الإصدار.</string>
     <string name="ChangeTranslateProvider">تغيير المزود</string>
-    <string name="NekoXUpdatesChannel">قناة تحديثات Nekox</string>
     <string name="ShowIdAndDc">إظهار المعرف / dc في الملف الشخصي</string>
     <string name="UseDefaultTheme">استخدام السمة الافتراضية *</string>
     <string name="NightMode">الوضع الليلي</string>
