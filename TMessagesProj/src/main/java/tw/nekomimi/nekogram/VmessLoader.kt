@@ -386,7 +386,7 @@ class VmessLoader {
 
         runCatching {
 
-            point.runLoop(true)
+                point.runLoop(true)
 
         }.onFailure {
 
