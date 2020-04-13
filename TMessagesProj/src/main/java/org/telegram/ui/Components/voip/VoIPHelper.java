@@ -480,9 +480,9 @@ public class VoIPHelper {
 			connectionServiceCell.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					boolean force = preferences.getBoolean("dbg_force_connection_service", false);
-					SharedPreferences.Editor editor = preferences.edit();
-					editor.putBoolean("dbg_force_connection_service", !force);
+                    boolean force = preferences.getBoolean("dbg_force_connection_service", false);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("dbg_force_connection_service", !force);
 					editor.apply();
 					connectionServiceCell.setChecked(!force);
 				}
