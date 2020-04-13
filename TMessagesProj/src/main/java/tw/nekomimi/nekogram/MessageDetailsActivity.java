@@ -172,7 +172,7 @@ public class MessageDetailsActivity extends BaseFragment {
             if (position == exportRow) {
                 Gson gson = new Gson();
                 try {
-                    AndroidUtilities.addToClipboard(gson.toJson(messageObject));
+                    AndroidUtilities.addToClipboard(gson.toJson(messageObject.messageOwner));
                     Toast.makeText(getParentActivity(), LocaleController.getString("TextCopied", R.string.TextCopied), Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     FileLog.e(e);

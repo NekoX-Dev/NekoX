@@ -2100,12 +2100,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 }
                 toSave.add(o.toString());
             }
-            MessagesController.getGlobalMainSettings().edit().putStringSet("settingsSearchRecent2", toSave).apply();
+            MessagesController.getGlobalMainSettings().edit().putStringSet("settingsSearchRecent2", toSave).commit();
         }
 
         public void clearRecent() {
             recentSearches.clear();
-            MessagesController.getGlobalMainSettings().edit().remove("settingsSearchRecent2").apply();
+            MessagesController.getGlobalMainSettings().edit().remove("settingsSearchRecent2").commit();
             notifyDataSetChanged();
         }
 
