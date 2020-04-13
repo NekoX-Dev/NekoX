@@ -43,7 +43,7 @@
     <string name="SortByUnread">未讀優先排序</string>
     <string name="SortByUnmuted">可通知優先排序</string>
     <string name="SortByUser">用戶優先排序</string>
-    <string name="SortByContacts">聯繫人優先排序</string>
+    <string name="SortByContacts">聯絡人優先排序</string>
     <string name="NekoXPushService">NekoX 通知服務</string>
     <string name="EnablePushAlert">請啓用 \"NekoX 通知服務\"</string>
     <string name="DisablePushAlert">請禁用 \"NekoX 通知服務\"</string>
