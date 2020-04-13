@@ -3,7 +3,6 @@
     <string name="UseOfficalId">偽裝成官方客戶端</string>
     <string name="UseOfficalIdNotice">登錄時將自己標識為官方客戶端，如果您無法註冊或登錄，這可能會有幫助。 \n\n注意：如果您正在使用 release 版本，谷歌雲推送將無法工作。</string>
     <string name="ChangeTranslateProvider">修改翻譯源</string>
-    <string name="NekoXUpdatesChannel">NekoX 更新頻道</string>
     <string name="ShowIdAndDc">在個人資料中顯示 id / dc</string>
     <string name="UseDefaultTheme">使用默認主題 *</string>
     <string name="NightMode">夜間模式</string>
