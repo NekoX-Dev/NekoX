@@ -1753,7 +1753,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             editor.putInt("notify2_" + did, 0);
                         }
                         MessagesStorage.getInstance(currentAccount).setDialogFlags(did, 0);
-                        editor.apply();
+                        editor.commit();
                         TLRPC.Dialog dialog = MessagesController.getInstance(currentAccount).dialogs_dict.get(did);
                         if (dialog != null) {
                             dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
@@ -1773,7 +1773,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         }
                         NotificationsController.getInstance(currentAccount).removeNotificationsForDialog(did);
                         MessagesStorage.getInstance(currentAccount).setDialogFlags(did, flags);
-                        editor.apply();
+                        editor.commit();
                         TLRPC.Dialog dialog = MessagesController.getInstance(currentAccount).dialogs_dict.get(did);
                         if (dialog != null) {
                             dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
@@ -3062,7 +3062,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     nameTextView[a].setScaleY(nameScale);
                 }
 
-                if (diff > 0.85 && NekoXConfig.showIdAndDc) {
+                if (diff > 0.85 && NekoConfig.showIdAndDc) {
                     idTextView.setVisibility(View.VISIBLE);
                 } else {
                     idTextView.setVisibility(View.GONE);
@@ -3264,7 +3264,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) args[0];
                     Bundle args2 = new Bundle();
                     args2.putInt("enc_id", encryptedChat.id);
-                    presentFragment(new ChatActivity(args2), true);
+                    if (MessagesController.getInstance(currentAccount).checkCanOpenChat(args2, ProfileActivity.this)) {
+                        presentFragment(new ChatActivity(args2), true);
+                    }
                 });
             }
         } else if (id == NotificationCenter.encryptedChatUpdated) {

@@ -1429,7 +1429,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 nameTextView.setScaleY(scale);
                 idTextView.setTranslationX(-21 * AndroidUtilities.density * diff);
                 idTextView.setTranslationY((float) Math.floor(avatarY) + AndroidUtilities.dp(32) + (float) Math.floor(22 * AndroidUtilities.density) * diff);
-                if (diff > 0.85 && !searchMode && NekoXConfig.showIdAndDc) {
+                if (diff > 0.85 && !searchMode && NekoConfig.showIdAndDc) {
                     idTextView.setVisibility(View.VISIBLE);
                 } else {
                     idTextView.setVisibility(View.GONE);
@@ -1517,7 +1517,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
             avatarImage.getImageReceiver().setVisible(!PhotoViewer.isShowingImage(photoBig), false);
         }
-        idTextView.setText("ID: " + user.id + ", DC: " + getMessagesController().thisDc);
+        if (user.photo != null && user.photo.dc_id != 0) {
+            idTextView.setText("ID: " + user.id + ", DC: " + user.photo.dc_id);
+        } else {
+            idTextView.setText("ID: " + user.id + ", DC: " + getMessagesController().thisDc);
+        }
         int finalId = user.id;
         idTextView.setOnLongClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
