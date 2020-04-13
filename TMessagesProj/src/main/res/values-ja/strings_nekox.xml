@@ -50,6 +50,7 @@
     <string name="DisableSystemAccount">システムアカウントを無効にする</string>
     <string name="FilterMenu">ダイアログフィルターメニュー</string>
     <string name="DisableProxyWhenVpnEnabled">VPNが有効なときにプロキシを無効化する</string>
+    <string name="SkipOpenLinkConfirm">リンクを開くときの確認をスキップする</string>
     <string name="UnblockAll">すべてのブロックを解除</string>
     <string name="UnblockAllWarn">**すべてのユーザーとボット**のブロックを解除してもよろしいですか？</string>
     <string name="BlockedListEmpty">あなたは誰もブロックしていません :)</string>
