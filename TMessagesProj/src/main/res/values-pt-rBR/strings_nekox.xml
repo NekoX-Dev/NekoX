@@ -3,7 +3,6 @@
     <string name="UseOfficalId">Disfarça como aplicativo oficial</string>
     <string name="UseOfficalIdNotice">Faça login usando o ID do aplicativo oficial. Se não conseguir se registrar ou fazer login, isso pode ajudar. \n\nNota: o fcm não funcionará se você estiver usando a versão de lançamento.</string>
     <string name="ChangeTranslateProvider">Alterar Provedor</string>
-    <string name="NekoXUpdatesChannel">Canal de atualizações do NekoX</string>
     <string name="ShowIdAndDc">Mostrar ID/DC no perfil</string>
     <string name="UseDefaultTheme">Usar o tema padrão *</string>
     <string name="NightMode">Modo Noturno</string>
