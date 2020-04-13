@@ -3,7 +3,6 @@
     <string name="UseOfficalId">ورود به عنوان تلگرام رسمی</string>
     <string name="UseOfficalIdNotice">با استفاده از شناسه رسمی برنامه وارد شوید ، اگر قادر به ثبت نام یا ورود به سیستم نیستید ، این ممکن است کمک کند. توجه: اگر از آخرین نسخه استفاده می کنید ، fcm کار نخواهد کرد.</string>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
-    <string name="NekoXUpdatesChannel">کانال بروزرسانی NekoX</string>
     <string name="ShowIdAndDc">نمایش آیدی کاربر در پروفایل</string>
     <string name="UseDefaultTheme">استفاده تم پیشفرض</string>
     <string name="NightMode">حالت شب</string>
