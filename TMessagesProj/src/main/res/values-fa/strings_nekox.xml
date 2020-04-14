@@ -84,7 +84,7 @@
     <string name="SSRProtocolParams">پارامترهای پروتکل</string>
     <string name="SSRObfs">Obfs</string>
     <string name="SSRObfsParam">Obfs Param</string>
-    <string name="ProxyRemarks">Remarks</string>
+    <string name="ProxyRemarks">ملاحضات</string>
     <string name="RetestPing">تست مجدد پینگ سرورها</string>
     <string name="ReorderByPing">مرتب سازی براساس پینگ</string>
     <string name="ExportProxies">استخراج فایل سرورها</string>
