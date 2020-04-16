@@ -103,9 +103,6 @@
     <string name="EnableDeveloperMode">開発者モードを有効にする</string>
     <string name="DisableDeveloperMode">開発者モードを無効にする</string>
     <string name="DeveloperSettings">開発者設定</string>
-    <string name="DisableScreenshotDetection">スクリーンショットの検出を無効にする</string>
     <string name="LoginSettings">ログイン設定</string>
-    <string name="ShowTestBackend">テストバックエンドを表示</string>
-    <string name="ShowBotLogin">ボットログインを表示</string>
     <string name="NekoXFaq">NekoX FAQ</string>
 </resources>
