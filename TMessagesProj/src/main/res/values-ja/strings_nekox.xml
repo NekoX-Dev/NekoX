@@ -86,6 +86,7 @@
     <string name="ImportProxies">サーバをファイルからインポート</string>
     <string name="ImportProxyList">プロキシサーバをインポート</string>
     <string name="ImportProxyListConfirm">**プロキシサーバーをインポート**しますか？</string>
+    <string name="ImportStickers">サーバをファイルからインポート</string>
     <string name="InvalidProxyFile">無効なプロキシリストファイル: </string>
     <string name="ImportedProxies">インポートされたプロキシサーバー: </string>
     <string name="ErrorsInImport">インポートエラー: </string>
