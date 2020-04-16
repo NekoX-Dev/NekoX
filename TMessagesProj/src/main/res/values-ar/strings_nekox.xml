@@ -108,10 +108,6 @@
     <string name="EnableDeveloperMode">تفعيل وضع المطور</string>
     <string name="DisableDeveloperMode">تعطيل وضع المطور</string>
     <string name="DeveloperSettings">إعدادات المطور</string>
-    <string name="DisableFlagSecure">تعطيل العلامة الآمنة</string>
-    <string name="DisableScreenshotDetection">تعطيل الكشف عن لقطة الشاشة</string>
     <string name="LoginSettings">إعدادات الدخول</string>
-    <string name="ShowTestBackend">إظهار خلفية الاختبار</string>
-    <string name="ShowBotLogin">إظهار تسجيل الدخول للبوت</string>
     <string name="NekoXFaq">أسئلة NekoX الشائعة</string>
 </resources>
