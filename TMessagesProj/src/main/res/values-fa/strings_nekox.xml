@@ -108,10 +108,6 @@
     <string name="EnableDeveloperMode">فعالسازی حالت توسعه دهنده</string>
     <string name="DisableDeveloperMode">غیرفعال‌سازی حالت توسعه دهنده</string>
     <string name="DeveloperSettings">تنظیمات توسعه دهنده</string>
-    <string name="DisableFlagSecure">غیرفعال‌سازی پرچم امنیتی</string>
-    <string name="DisableScreenshotDetection">غیر فعال کردن شناسایی اسکرین‌شات</string>
     <string name="LoginSettings">تنظیمات ورود به سیستم</string>
-    <string name="ShowTestBackend">نمایش آزمایشی پس زمینه</string>
-    <string name="ShowBotLogin">دیدن ربات وارد شده</string>
     <string name="NekoXFaq">پرسش های متداول NekoX</string>
 </resources>
