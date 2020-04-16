@@ -108,10 +108,6 @@
     <string name="EnableDeveloperMode">Ativar modo de desenvolvedor</string>
     <string name="DisableDeveloperMode">Desativar modo desenvolvedor</string>
     <string name="DeveloperSettings">Configurações de desenvolvedor</string>
-    <string name="DisableFlagSecure">Desativar sinalização segura</string>
-    <string name="DisableScreenshotDetection">Desativar detecção de captura de tela</string>
     <string name="LoginSettings">Configurações de login</string>
-    <string name="ShowTestBackend">Mostrar back-end de teste</string>
-    <string name="ShowBotLogin">Mostrar Login do Bot</string>
     <string name="NekoXFaq">FAQ do NekoX</string>
 </resources>
