@@ -91,6 +91,7 @@
     <string name="ImportProxies">استيراد خوادم من الملف</string>
     <string name="ImportProxyList">استيراد خوادم البروكسي</string>
     <string name="ImportProxyListConfirm">هل أنت متأكد من أنك تريد **استيراد خوادم البروكسي**؟</string>
+    <string name="ImportStickers">استيراد خوادم من الملف</string>
     <string name="InvalidProxyFile">ملف قائمة البروكسي غير صالح: </string>
     <string name="ImportedProxies">خوادم الوكيل المستوردة: </string>
     <string name="ErrorsInImport">أخطاء الاستيراد: </string>
