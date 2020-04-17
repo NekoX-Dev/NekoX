@@ -91,7 +91,6 @@
     <string name="ImportProxies">从文件导入服务器列表</string>
     <string name="ImportProxyList">导入代理服务器列表</string>
     <string name="ImportProxyListConfirm">您确定要**导入代理服务器列表**吗？</string>
-    <string name="ImportStickers">从文件导入服务器列表</string>
     <string name="InvalidProxyFile">无效的代理列表文件： </string>
     <string name="ImportedProxies">已导入的代理服务器： </string>
     <string name="ErrorsInImport">导入错误： </string>
