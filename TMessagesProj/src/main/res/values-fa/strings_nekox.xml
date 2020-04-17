@@ -91,7 +91,6 @@
     <string name="ImportProxies">واردکردن فایل سرورها</string>
     <string name="ImportProxyList">ایمپورت سرورهای پروکسی</string>
     <string name="ImportProxyListConfirm">آیا شما از**وارد کردن تمامی سرور ها**اطمینان دارید?</string>
-    <string name="ImportStickers">واردکردن فایل سرورها</string>
     <string name="InvalidProxyFile">لیست پروکسی نامعتبر: </string>
     <string name="ImportedProxies">سرور های پروکسی واردشده: </string>
     <string name="ErrorsInImport">مشکل در وارد کردن فایل: </string>
