@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="UseOfficalId">公式アプリに偽装する</string>
-    <string name="UseOfficalIdNotice">公式アプリのIDを使用してログインします。登録やログインができない時には役に立つかもしれません。\n\n注意:リリースバージョンを使用しているとFCMは動作しません。</string>
     <string name="ChangeTranslateProvider">プロバイダを変更</string>
     <string name="NekoXUpdatesChannel">NekoX アップデートチャンネル</string>
     <string name="UseDefaultTheme">デフォルトテーマを使用 *</string>
