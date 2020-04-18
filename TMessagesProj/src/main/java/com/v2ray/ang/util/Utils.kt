@@ -8,7 +8,9 @@ import android.text.TextUtils
 import android.util.Base64
 import android.util.Patterns
 import android.webkit.URLUtil
+import com.fasterxml.jackson.databind.ser.Serializers
 import com.google.zxing.WriterException
+import org.json.JSONObject
 import org.telegram.messenger.ApplicationLoader
 import java.io.IOException
 import java.net.Socket
@@ -38,14 +40,19 @@ object Utils {
      * base64 decode
      */
     fun decode(text: String): String {
-        runCatching {
-            return Base64.decode(text, Base64.NO_PADDING or Base64.URL_SAFE or Base64.NO_WRAP).toString(charset("UTF-8"))
+        return runCatching {
+            Base64.decode(text, Base64.NO_WRAP).toString(charset("UTF-8")).also {
+                JSONObject(it)
+            }
         }.recoverCatching {
-            return Base64.decode(text, Base64.NO_PADDING).toString(charset("UTF-8"))
+            Base64.decode(text, Base64.URL_SAFE).toString(charset("UTF-8")).also {
+                JSONObject(it)
+            }
         }.recoverCatching {
-            return Base64.decode(text, Base64.NO_WRAP).toString(charset("UTF-8"))
-        }
-        return ""
+            Base64.decode(text, Base64.DEFAULT).toString(charset("UTF-8")).also {
+                JSONObject(it)
+            }
+        }.getOrThrow()
     }
 
     /**

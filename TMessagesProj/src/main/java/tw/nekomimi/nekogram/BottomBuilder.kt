@@ -5,10 +5,7 @@ import android.text.TextUtils
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.ScrollView
-import android.widget.TextView
+import android.widget.*
 import org.telegram.messenger.AndroidUtilities
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
@@ -27,6 +24,12 @@ class BottomBuilder(val ctx: Context) {
 
     val builder = BottomSheet.Builder(ctx, true)
 
+    private val rootView = LinearLayout(ctx).apply {
+
+        orientation = LinearLayout.VERTICAL
+
+    }
+
     private val _root = LinearLayout(ctx).apply {
 
         addView(ScrollView(ctx).apply {
@@ -41,11 +44,6 @@ class BottomBuilder(val ctx: Context) {
 
     }
 
-    private val rootView = LinearLayout(ctx).apply {
-
-        orientation = LinearLayout.VERTICAL
-
-    }
 
     private val buttonsView by lazy {
 
@@ -277,18 +275,18 @@ class BottomBuilder(val ctx: Context) {
 
     }
 
-    fun addEditText(hintText: String): HintEditText {
+    fun addEditText(hintText: String): EditText {
 
-        return HintEditText(ctx).apply {
+        return EditText(ctx).apply {
 
-            setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18f)
+            setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14f)
             setTextColor(Theme.getColor(Theme.key_dialogTextBlack))
-            setHintText(hintText)
+            hint = hintText
             isSingleLine = true
             isFocusable = true
             setBackgroundDrawable(null)
 
-            this@BottomBuilder.rootView.addView(this, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, -2, if (LocaleController.isRTL) Gravity.RIGHT else Gravity.LEFT, AndroidUtilities.dp(14F), AndroidUtilities.dp(4F), 0, AndroidUtilities.dp(4F)))
+            this@BottomBuilder.rootView.addView(this, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, -2, if (LocaleController.isRTL) Gravity.RIGHT else Gravity.LEFT, AndroidUtilities.dp(8F), 0, 0, 0))
 
         }
 
