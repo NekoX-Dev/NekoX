@@ -56,6 +56,7 @@ public class LocaleController {
     static final int QUANTITY_MANY = 0x0010;
 
     public static boolean isRTL = false;
+
     public static int nameDisplayOrder = 1;
     public static boolean is24HourFormat = false;
     public FastDateFormat formatterDay;
@@ -161,10 +162,8 @@ public class LocaleController {
 
             FileUtil.initDir(baseDir);
 
-            if (isRemote()) {
-                return new File(baseDir, "remote_" + shortName + ".xml");
-            } else if (isUnofficial()) {
-                return new File(baseDir, "unofficial_" + shortName + ".xml");
+            if (isRemote() || isUnofficial()) {
+                return new File(baseDir, shortName + ".xml");
             }
             return !TextUtils.isEmpty(pathToFile) ? new File(pathToFile) : null;
         }
@@ -174,7 +173,7 @@ public class LocaleController {
                 File baseDir = new File(ApplicationLoader.getDataDirFixed(), "languages");
 
                 FileUtil.initDir(baseDir);
-                return new File(baseDir, "unofficial_base_" + shortName + ".xml");
+                return new File(baseDir, "base_" + baseLangCode + ".xml");
             }
             return null;
         }
@@ -354,18 +353,6 @@ public class LocaleController {
         languagesDict.put(localeInfo.getKey(), localeInfo);
         languagesDict.put("zh_cn", localeInfo);
         languagesDict.put("zh_sg", localeInfo);
-
-        localeInfo = new LocaleInfo();
-        localeInfo.name = "祈翠";
-        localeInfo.nameEnglish = "Cuified Chinese (zh-zhao)";
-        localeInfo.shortName = "qicui";
-        localeInfo.baseLangCode = "zh_hans";
-        localeInfo.isRtl = false;
-        localeInfo.pathToFile = "unofficial";
-        localeInfo.pluralLangCode = "zh_cn";
-        localeInfo.builtIn = true;
-        languages.add(localeInfo);
-        languagesDict.put(localeInfo.getKey(), localeInfo);
 
         localeInfo = new LocaleInfo();
         localeInfo.name = "瓜体中文 \uD83D\uDE36";
