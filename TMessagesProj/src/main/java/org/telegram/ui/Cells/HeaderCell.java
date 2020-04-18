@@ -45,7 +45,6 @@ public class HeaderCell extends LinearLayout {
         super(context);
 
         setOrientation(LinearLayout.VERTICAL);
-
         setPadding(AndroidUtilities.dp(padding), AndroidUtilities.dp(topMargin), AndroidUtilities.dp(padding), 0);
 
         textView = new TextView(getContext());
