@@ -103,7 +103,7 @@ class VmessLoader {
                     } else {
 
                         var result = server.replace(VMESS_PROTOCOL, "")
-                        result = Utils.decode(result)
+                        result = Utils.decodeJson(result)
                         if (result.isBlank()) {
                             error("invalid url format")
                         }
