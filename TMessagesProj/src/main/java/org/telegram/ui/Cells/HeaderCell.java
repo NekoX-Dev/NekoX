@@ -61,7 +61,6 @@ public class HeaderCell extends LinearLayout {
         textView2 = new TextView(getContext());
         textView2.setTextSize(13);
         textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-        textView2.setGravity((LocaleController.isRTL ? Gravity.LEFT : Gravity.RIGHT) | Gravity.TOP);
         addView(textView2, LayoutHelper.createLinear(-2, -2, 0, 10, 0, 0));
 
         if (!text2) textView2.setVisibility(View.GONE);

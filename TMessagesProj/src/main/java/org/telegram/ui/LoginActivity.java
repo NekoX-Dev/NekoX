@@ -382,7 +382,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                     BottomBuilder builder = new BottomBuilder(getParentActivity());
 
-                    EditTextBoldCursor[] inputs = new EditTextBoldCursor[2];
+                    HintEditText[] inputs = new HintEditText[2];
 
                     builder.addTitle(LocaleController.getString("CustomApi", R.string.CustomApi),
                             true,
@@ -458,7 +458,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     });
 
                     inputs[1] = builder.addEditText("App Hash");
-                    inputs[1].setInputType(InputType.TYPE_CLASS_TEXT);
                     if (StrUtil.isNotBlank(NekoXConfig.customAppHash)) {
                         inputs[1].setText(NekoXConfig.customAppHash);
                     }
