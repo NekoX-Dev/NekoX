@@ -1447,29 +1447,6 @@ public class SharedConfig {
 
         synchronized (sync) {
 
-            try {
-
-                if (!hidePublicProxy) {
-
-                    VmessProxy publicProxy = new VmessProxy(VmessLoader.getPublic());
-                    publicProxy.isPublic = true;
-                    proxyList.add(publicProxy);
-
-                    if (publicProxy.hashCode() == current) {
-
-                        currentProxy = publicProxy;
-
-                        publicProxy.start();
-
-                    }
-
-                }
-
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-
-
             File remoteProxyListFile = ProxyUtil.cacheFile;
 
             if (remoteProxyListFile.isFile() && !hidePublicProxy) {
