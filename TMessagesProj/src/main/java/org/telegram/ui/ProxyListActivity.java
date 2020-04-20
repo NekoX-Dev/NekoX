@@ -279,6 +279,8 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
         this.alert = alert;
     }
 
+    private LinkedList<SharedConfig.ProxyInfo> proxyList = SharedConfig.getProxyList();
+
     @Override
     public boolean onFragmentCreate() {
         super.onFragmentCreate();
@@ -294,28 +296,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
         useProxyForCalls = preferences.getBoolean("proxy_enabled_calls", false);
 
         updateRows(true);
-
-        UIUtil.runOnIoDispatcher(() -> {
-
-            int times = 0;
-
-            while (!ProxyUtil.reloadProxyList()) {
-
-                if (times > 5) return;
-
-                times++;
-
-                try {
-                    Thread.sleep(10 * 1000L);
-                } catch (InterruptedException e) {
-                }
-
-            }
-
-            SharedConfig.reloadProxyList();
-            updateRows(true);
-
-        });
 
         return true;
     }
@@ -1103,7 +1083,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                     proxyInfo.ping = 0;
 
                     if (callback != null) {
-                        UIUtil.runOnUIThread(callback::run);
+                        UIUtil.runOnUIThread(callback);
                     }
                 }
             } else {

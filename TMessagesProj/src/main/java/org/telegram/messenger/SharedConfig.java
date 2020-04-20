@@ -43,7 +43,6 @@ import tw.nekomimi.nekogram.ShadowsocksLoader;
 import tw.nekomimi.nekogram.ShadowsocksRLoader;
 import tw.nekomimi.nekogram.VmessLoader;
 import tw.nekomimi.nekogram.utils.FileUtil;
-import tw.nekomimi.nekogram.utils.ProxyUtil;
 import tw.nekomimi.nekogram.utils.UIUtil;
 
 import static com.v2ray.ang.V2RayConfig.SSR_PROTOCOL;
@@ -758,11 +757,7 @@ public class SharedConfig {
 
     public static LinkedList<ProxyInfo> getProxyList() {
 
-        synchronized (sync) {
-
             return new LinkedList<>(proxyList);
-
-        }
 
     }
 
@@ -1440,156 +1435,58 @@ public class SharedConfig {
         currentProxy = null;
 
         int current = MessagesController.getGlobalMainSettings().getInt("current_proxy", 0);
-
-        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
-
-        boolean hidePublicProxy = preferences.getBoolean("hide_public_proxy", true);
-
-        synchronized (sync) {
-
-            try {
-
-                if (!hidePublicProxy) {
-
-                    VmessProxy publicProxy = new VmessProxy(VmessLoader.getPublic());
-                    publicProxy.isPublic = true;
-                    proxyList.add(publicProxy);
-
-                    if (publicProxy.hashCode() == current) {
-
-                        currentProxy = publicProxy;
-
-                        publicProxy.start();
-
-                    }
-
-                }
-
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-
-
-            File remoteProxyListFile = ProxyUtil.cacheFile;
-
-            if (remoteProxyListFile.isFile() && !hidePublicProxy) {
-
-                try {
-
-                    JSONArray proxyArray = new JSONArray(FileUtil.readUtf8String(remoteProxyListFile));
-
-                    for (int a = 0; a < proxyArray.length(); a++) {
-
-                        JSONObject proxyObj = proxyArray.getJSONObject(a);
-
-                        ProxyInfo info;
-
-                        try {
-
-                            if (!proxyObj.isNull("proxy")) {
-
-                                // old remote protocol
-
-                                info = parseProxyInfo(proxyObj.getString("proxy"));
-
-                            } else {
-
-                                info = ProxyInfo.fromJson(proxyObj);
-
-                            }
-
-                        } catch (Exception ex) {
-
-                            FileLog.e("load proxy failed", ex);
-
-                            continue;
-
-                        }
-
-                        info.isPublic = true;
-
-                        proxyList.add(info);
-
-                        if (info.hashCode() == current) {
-
-                            currentProxy = info;
-
-                            if (info instanceof ExternalSocks5Proxy) {
-
-                                ((ExternalSocks5Proxy) info).start();
-
-                            }
-
-                        }
-
-                    }
-
-                } catch (Exception ex) {
-
-                    FileLog.e("invalid proxy list json format", ex);
-
-                }
-
-            }
-
-        }
-
         File proxyListFile = new File(ApplicationLoader.applicationContext.getFilesDir().getParentFile(), "nekox/proxy_list.json");
 
         boolean error = false;
 
-        synchronized (sync) {
+        if (proxyListFile.isFile()) {
 
-            if (proxyListFile.isFile()) {
+            try {
 
-                try {
+                JSONArray proxyArray = new JSONArray(FileUtil.readUtf8String(proxyListFile));
 
-                    JSONArray proxyArray = new JSONArray(FileUtil.readUtf8String(proxyListFile));
+                for (int a = 0; a < proxyArray.length(); a++) {
 
-                    for (int a = 0; a < proxyArray.length(); a++) {
+                    JSONObject proxyObj = proxyArray.getJSONObject(a);
 
-                        JSONObject proxyObj = proxyArray.getJSONObject(a);
+                    ProxyInfo info;
 
-                        ProxyInfo info;
+                    try {
 
-                        try {
+                        info = ProxyInfo.fromJson(proxyObj);
 
-                            info = ProxyInfo.fromJson(proxyObj);
+                    } catch (Exception ex) {
 
-                        } catch (Exception ex) {
+                        FileLog.d("load proxy failed: " + ex);
 
-                            FileLog.d("load proxy failed: " + ex);
+                        error = true;
 
-                            error = true;
+                        continue;
 
-                            continue;
+                    }
 
-                        }
+                    if (!proxyObj.isNull("internal")) continue;
+                    if (info.getTitle().toLowerCase().contains("nekox.me")) continue;
 
-                        if (!proxyObj.isNull("internal")) continue;
-                        if (info.getTitle().toLowerCase().contains("nekox.me")) continue;
+                    proxyList.add(info);
 
-                        proxyList.add(info);
+                    if (info.hashCode() == current) {
 
-                        if (info.hashCode() == current) {
+                        currentProxy = info;
 
-                            currentProxy = info;
+                        if (info instanceof ExternalSocks5Proxy) {
 
-                            if (info instanceof ExternalSocks5Proxy) {
-
-                                ((ExternalSocks5Proxy) info).start();
-
-                            }
+                            ((ExternalSocks5Proxy) info).start();
 
                         }
 
                     }
 
-                } catch (Exception ex) {
-
-                    FileLog.d("invalid proxy list json format" + ex);
-
                 }
+
+            } catch (Exception ex) {
+
+                FileLog.d("invalid proxy list json format" + ex);
 
             }
 
@@ -1696,17 +1593,15 @@ public class SharedConfig {
 
             JSONArray proxyArray = new JSONArray();
 
-            synchronized (sync) {
-                for (ProxyInfo info : new LinkedList<>(proxyList)) {
-                    try {
-                        JSONObject obj = info.toJson();
-                        if (info.isPublic) {
-                            continue;
-                        }
-                        proxyArray.put(obj);
-                    } catch (JSONException e) {
-                        FileLog.e(e);
+            for (ProxyInfo info : getProxyList()) {
+                try {
+                    JSONObject obj = info.toJson();
+                    if (info.isPublic) {
+                        continue;
                     }
+                    proxyArray.put(obj);
+                } catch (JSONException e) {
+                    FileLog.e(e);
                 }
             }
 
@@ -1730,8 +1625,8 @@ public class SharedConfig {
                     return info;
                 }
             }
+            proxyList.add(proxyInfo);
         }
-        proxyList.add(proxyInfo);
         saveProxyList();
         return proxyInfo;
     }
@@ -1750,7 +1645,7 @@ public class SharedConfig {
 
     public static void deleteAllProxy() {
 
-        setProxyEnable(false);
+        setCurrentProxy(null);
 
         proxyListLoaded = false;
 
@@ -1764,7 +1659,7 @@ public class SharedConfig {
 
     public static void checkSaveToGalleryFiles() {
         try {
-            File telegramPath = ApplicationLoader.applicationContext.getExternalFilesDir("Telegram").getParentFile();
+            File telegramPath = ApplicationLoader.applicationContext.getExternalFilesDir(null);
             File imagePath = new File(telegramPath, "images");
             imagePath.mkdirs();
             File videoPath = new File(telegramPath, "videos");
