@@ -11,6 +11,7 @@ import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.AlertDialog
 import org.telegram.ui.ActionBar.Theme
+import org.telegram.ui.Components.EditTextBoldCursor
 import org.telegram.ui.Components.NumberPicker
 import tw.nekomimi.nekogram.NekoConfig
 import java.util.concurrent.atomic.AtomicReference
@@ -36,7 +37,7 @@ object AlertUtil {
         builder.setTitle(LocaleController.getString("NekoX", R.string.NekoX))
         builder.setMessage(text)
 
-        builder.setPositiveButton(LocaleController.getString("OK", R.string.OK)) { _,_ ->
+        builder.setPositiveButton(LocaleController.getString("OK", R.string.OK)) { _, _ ->
 
             listener?.invoke(builder)
 
@@ -45,6 +46,20 @@ object AlertUtil {
         }
 
         builder.show()
+
+    })
+
+    fun showInput(ctx: Context, title: String, hint: String, onInput: (AlertDialog.Builder, String) -> String) = UIUtil.runOnUIThread( Runnable {
+
+        val builder = AlertDialog.Builder(ctx)
+
+        builder.setTitle(title)
+
+        builder.setView(EditTextBoldCursor(ctx).apply {
+
+            setHintText(hint)
+
+        })
 
     })
 

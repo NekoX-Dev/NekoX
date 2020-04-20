@@ -12,10 +12,7 @@ import org.telegram.messenger.R
 import org.telegram.ui.ActionBar.BottomSheet
 import org.telegram.ui.ActionBar.BottomSheet.BottomSheetCell
 import org.telegram.ui.ActionBar.Theme
-import org.telegram.ui.Cells.HeaderCell
-import org.telegram.ui.Cells.RadioButtonCell
-import org.telegram.ui.Cells.ShadowSectionCell
-import org.telegram.ui.Cells.TextCheckCell
+import org.telegram.ui.Cells.*
 import org.telegram.ui.Components.HintEditText
 import org.telegram.ui.Components.LayoutHelper
 import java.util.*
@@ -238,12 +235,21 @@ class BottomBuilder(val ctx: Context) {
 
     }
 
-    @JvmOverloads
-    fun addItem(text: String, icon: Int = 0, listener: (cell: BottomSheetCell) -> Unit): BottomSheetCell {
+    fun addItem(): TextCell {
 
-        return BottomSheetCell(ctx, 0).apply {
+        return TextCell(ctx).apply {
 
-            setTextAndIcon(text, icon)
+            this@BottomBuilder.rootView.addView(this, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, Gravity.LEFT or Gravity.TOP))
+
+        }
+
+    }
+
+    fun addItem(text: String, icon: Int = 0, listener: (cell: TextCell) -> Unit): TextCell {
+
+        return TextCell(ctx).apply {
+
+            setTextAndIcon(text, icon,true)
 
             setOnClickListener {
 
@@ -251,15 +257,15 @@ class BottomBuilder(val ctx: Context) {
 
             }
 
-            this@BottomBuilder.rootView.addView(this, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 50, Gravity.LEFT or Gravity.TOP))
+            this@BottomBuilder.rootView.addView(this, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, Gravity.LEFT or Gravity.TOP))
 
         }
 
     }
 
-    fun addItems(text: Array<String>, icon: (Int) -> Int, listener: (index: Int, text: String, cell: BottomSheetCell) -> Unit): List<BottomSheetCell> {
+    fun addItems(text: Array<String>, icon: (Int) -> Int, listener: (index: Int, text: String, cell: TextCell) -> Unit): List<TextCell> {
 
-        val list = mutableListOf<BottomSheetCell>()
+        val list = mutableListOf<TextCell>()
 
         text.forEachIndexed { index, textI ->
 

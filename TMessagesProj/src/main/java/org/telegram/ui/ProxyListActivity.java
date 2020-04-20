@@ -26,6 +26,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -61,6 +62,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
+import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Cells.TextSettingsCell;
@@ -79,12 +81,16 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import kotlin.Unit;
 import okhttp3.HttpUrl;
+import tw.nekomimi.nekogram.BottomBuilder;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.ShadowsocksRSettingsActivity;
 import tw.nekomimi.nekogram.ShadowsocksSettingsActivity;
 import tw.nekomimi.nekogram.VmessSettingsActivity;
+import tw.nekomimi.nekogram.sub.SubInfo;
+import tw.nekomimi.nekogram.sub.SubManager;
 import tw.nekomimi.nekogram.utils.AlertUtil;
 import tw.nekomimi.nekogram.utils.FileUtil;
 import tw.nekomimi.nekogram.utils.ProxyUtil;
@@ -104,7 +110,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
     private int rowCount;
     private int useProxyRow;
-    private int hidePublicRow;
     private int useProxyDetailRow;
     private int connectionsHeaderRow;
     private int proxyStartRow;
@@ -323,7 +328,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
     private int menu_import_json = 13;
     private int menu_delete_all = 14;
     private int menu_delete_unavailable = 15;
-
+    private int menu_sub = 16;
     private int menu_dev_export_public = 30;
 
     public void processProxyList(ArrayList<String> files) {
@@ -562,6 +567,8 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                             true, (d, v) -> {
                                 deleteUnavailableProxy();
                             });
+                } else if (id == menu_sub) {
+                    showSubDialog();
                 }
             }
         });
@@ -653,6 +660,8 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         }
 
+        menu.addItem(menu_sub,R.drawable.msg_list);
+
         otherItem = menu.addItem(menu_other, R.drawable.ic_ab_other);
         otherItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", R.string.AccDescrMoreOptions));
         otherItem.addSubItem(menu_retest_ping, LocaleController.getString("RetestPing", R.string.RetestPing));
@@ -699,25 +708,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 NotificationCenter.getGlobalInstance().removeObserver(ProxyListActivity.this, NotificationCenter.proxySettingsChanged);
                 SharedConfig.setProxyEnable(useProxySettings);
                 NotificationCenter.getGlobalInstance().addObserver(ProxyListActivity.this, NotificationCenter.proxySettingsChanged);
-
-                updateRows(true);
-
-            } else if (position == hidePublicRow) {
-
-                if (NekoConfig.hidePublicProxy && SharedConfig.proxyEnabled && SharedConfig.currentProxy != null && SharedConfig.currentProxy.isPublic) {
-                    NotificationCenter.getGlobalInstance().removeObserver(ProxyListActivity.this, NotificationCenter.proxySettingsChanged);
-                    SharedConfig.setCurrentProxy(null);
-                    NotificationCenter.getGlobalInstance().addObserver(ProxyListActivity.this, NotificationCenter.proxySettingsChanged);
-                }
-
-                NekoConfig.toggleHidePublicProxy();
-
-                TextCheckCell textCheckCell = (TextCheckCell) view;
-                textCheckCell.setChecked(NekoConfig.hidePublicProxy);
-
-                SharedConfig.reloadProxyList();
-
-                listView.getRecycledViewPool().clear();
 
                 updateRows(true);
 
@@ -967,7 +957,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
     private void updateRows(boolean notify) {
         rowCount = 0;
         useProxyRow = rowCount++;
-        hidePublicRow = rowCount++;
         useProxyDetailRow = rowCount++;
         connectionsHeaderRow = rowCount++;
         if (!SharedConfig.proxyList.isEmpty()) {
@@ -1101,6 +1090,42 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
     }
 
+    private void showSubDialog() {
+
+        BottomBuilder builder = new BottomBuilder(getParentActivity());
+
+        builder.addTitle("TestTitle");
+
+        for (SubInfo sub : SubManager.subs) {
+
+            TextCell subItem = builder.addItem();
+
+            subItem.setTextAndValue(sub.name,sub.mirrors.get(0).url,true);
+
+            subItem.setOnLongClickListener((it) -> {
+
+                AlertUtil.showToast("nya !");
+
+                return true;
+
+            });
+
+        }
+
+        builder.addCancelButton();
+
+        builder.addButton(LocaleController.getString("Add",R.string.Add),(it) -> {
+
+           // AlertUtil.showConfirm()
+
+            return Unit.INSTANCE;
+
+        });
+
+        builder.show();
+
+    }
+
     @Override
     protected void onDialogDismiss(Dialog dialog) {
         DownloadController.getInstance(currentAccount).checkAutodownloadSettings();
@@ -1187,8 +1212,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                     TextCheckCell checkCell = (TextCheckCell) holder.itemView;
                     if (position == useProxyRow) {
                         checkCell.setTextAndCheck(LocaleController.getString("UseProxySettings", R.string.UseProxySettings), useProxySettings, true);
-                    } else if (position == hidePublicRow) {
-                        checkCell.setTextAndCheck(LocaleController.getString("HidePublicProxyList", R.string.HidePublicProxyList), NekoConfig.hidePublicProxy, true);
                     } else if (position == callsRow) {
                         checkCell.setTextAndCheck(LocaleController.getString("UseProxyForCalls", R.string.UseProxyForCalls), useProxyForCalls, false);
                     }
@@ -1218,8 +1241,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 TextCheckCell checkCell = (TextCheckCell) holder.itemView;
                 if (position == useProxyRow) {
                     checkCell.setChecked(useProxySettings);
-                } else if (position == hidePublicRow) {
-                    checkCell.setChecked(NekoConfig.hidePublicProxy);
                 } else if (position == callsRow) {
                     checkCell.setChecked(useProxyForCalls);
                 }
@@ -1236,8 +1257,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 int position = holder.getAdapterPosition();
                 if (position == useProxyRow) {
                     checkCell.setChecked(useProxySettings);
-                } else if (position == hidePublicRow) {
-                    checkCell.setChecked(NekoConfig.hidePublicProxy);
                 } else if (position == callsRow) {
                     checkCell.setChecked(useProxyForCalls);
                 }
@@ -1247,7 +1266,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
         @Override
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             int position = holder.getAdapterPosition();
-            return position == useProxyRow || position == hidePublicRow || position == callsRow || position >= proxyStartRow && position < proxyEndRow;
+            return position == useProxyRow || position == callsRow || position >= proxyStartRow && position < proxyEndRow;
         }
 
         @Override
@@ -1286,7 +1305,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
         public int getItemViewType(int position) {
             if (position == useProxyDetailRow || position == proxyDetailRow) {
                 return 0;
-            } else if (position == useProxyRow || position == hidePublicRow || position == callsRow) {
+            } else if (position == useProxyRow || position == callsRow) {
                 return 3;
             } else if (position == connectionsHeaderRow) {
                 return 2;

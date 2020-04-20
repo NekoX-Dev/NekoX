@@ -127,6 +127,36 @@ object ProxyUtil {
     }
 
     @JvmStatic
+    fun parseProxies(text: String): MutableList<SharedConfig.ProxyInfo> {
+
+        val proxies = mutableListOf<SharedConfig.ProxyInfo>()
+
+        text.split('\n').map { it.split(" ") }.forEach {
+
+            it.forEach { line ->
+
+                if (line.startsWith("tg://proxy") ||
+                        line.startsWith("tg://socks") ||
+                        line.startsWith("https://t.me/proxy") ||
+                        line.startsWith("https://t.me/socks") ||
+                        line.startsWith(VMESS_PROTOCOL) ||
+                        line.startsWith(VMESS1_PROTOCOL) ||
+                        line.startsWith(SS_PROTOCOL) ||
+                        line.startsWith(SSR_PROTOCOL)) {
+
+                    runCatching { proxies.add(SharedConfig.parseProxyInfo(line)) }
+
+                }
+
+            }
+
+        }
+
+        return proxies
+
+    }
+
+    @JvmStatic
     fun importFromClipboard(ctx: Context) {
 
         val clip = ctx.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
