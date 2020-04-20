@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/cache@v1
         with:
-          path: ~/.gradle
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties') }}
+          path: /root/.gradle
+          key: ${{ runner.os }}-gradle-cache-${{ hashFiles('**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
       - uses: actions/setup-java@v1

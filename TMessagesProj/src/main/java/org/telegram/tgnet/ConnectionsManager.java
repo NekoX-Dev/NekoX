@@ -49,7 +49,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.utils.DnsFactory;
-import tw.nekomimi.nekogram.utils.IoUtil;
 import tw.nekomimi.nekogram.utils.UIUtil;
 
 //import org.telegram.messenger.BuildConfig;
