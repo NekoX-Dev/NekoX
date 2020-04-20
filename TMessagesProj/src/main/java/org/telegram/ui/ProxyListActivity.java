@@ -1103,7 +1103,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                     proxyInfo.ping = 0;
 
                     if (callback != null) {
-                        UIUtil.runOnUIThread(callback::run);
+                        UIUtil.runOnUIThread(callback);
                     }
                 }
             } else {
