@@ -1673,17 +1673,15 @@ public class SharedConfig {
 
             JSONArray proxyArray = new JSONArray();
 
-            synchronized (sync) {
-                for (ProxyInfo info : new LinkedList<>(proxyList)) {
-                    try {
-                        JSONObject obj = info.toJson();
-                        if (info.isPublic) {
-                            continue;
-                        }
-                        proxyArray.put(obj);
-                    } catch (JSONException e) {
-                        FileLog.e(e);
+            for (ProxyInfo info : getProxyList()) {
+                try {
+                    JSONObject obj = info.toJson();
+                    if (info.isPublic) {
+                        continue;
                     }
+                    proxyArray.put(obj);
+                } catch (JSONException e) {
+                    FileLog.e(e);
                 }
             }
 
@@ -1707,8 +1705,8 @@ public class SharedConfig {
                     return info;
                 }
             }
+            proxyList.add(proxyInfo);
         }
-        proxyList.add(proxyInfo);
         saveProxyList();
         return proxyInfo;
     }
