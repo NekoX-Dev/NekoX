@@ -14,7 +14,6 @@
     <string name="RemoveTitleEmoji">Remover emoji no título</string>
     <string name="NekoXProxy">Proxy Público do NekoX</string>
     <string name="PublicPrefix">Público</string>
-    <string name="HidePublicProxyList">Ocultar lista de proxy público</string>
     <string name="DisableChatAction">Não enviar meu status de entrada</string>
     <string name="FakeScreenshot">Simular captura de tela</string>
     <string name="SaveCacheToSdcard">Salvar cache no cartão SD*</string>
