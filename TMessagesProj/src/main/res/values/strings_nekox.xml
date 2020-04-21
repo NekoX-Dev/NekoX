@@ -31,8 +31,7 @@
     <string name="RemoveTitleEmoji">Remove emoji in title</string>
 
     <string name="NekoXProxy">NekoX Public Proxy</string>
-    <string name="PublicPrefix">[ Public ]</string>
-    <string name="NekoXProxyInfo">It may take tens of seconds to load the NekoX Public built-in proxy :)</string>
+    <string name="PublicPrefix">Public</string>
 
     <string name="HidePublicProxyList">Hide public proxy list</string>
 
@@ -131,6 +130,10 @@
     <string name="ImportProxies">Import servers from file</string>
     <string name="ImportProxyList">Import proxy servers</string>
     <string name="ImportProxyListConfirm">Are you sure you want to **import proxy servers**?</string>
+
+    <string name="ProxySubDetails">Subscription Details</string>
+    <string name="SubscriptionUrls">Urls</string>
+    <string name="SubscriptionUpdating">Subscription Updating</string>
 
     <string name="ExportStickers">Export Stickers</string>
     <string name="ImportStickers">Import stickers from file</string>

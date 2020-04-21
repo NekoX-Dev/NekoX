@@ -219,6 +219,8 @@ public class SharedConfig {
 
         }
 
+        private String remarks;
+
         public String getRemarks() {
             return remarks;
         }
@@ -229,8 +231,6 @@ public class SharedConfig {
                 remarks = null;
             }
         }
-
-        private String remarks;
 
         public String toUrl() {
 
@@ -273,6 +273,15 @@ public class SharedConfig {
         }
 
         public JSONObject toJson() throws JSONException {
+
+            JSONObject object = toJsonInternal();
+
+
+            return object;
+
+        }
+
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
 
@@ -426,7 +435,7 @@ public class SharedConfig {
         public abstract void setRemarks(String remarks);
 
         @Override
-        public abstract JSONObject toJson() throws JSONException;
+        public abstract JSONObject toJsonInternal() throws JSONException;
 
     }
 
@@ -515,7 +524,7 @@ public class SharedConfig {
         }
 
         @Override
-        public JSONObject toJson() throws JSONException {
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
             obj.put("type", "vmess");
@@ -622,7 +631,7 @@ public class SharedConfig {
         }
 
         @Override
-        public JSONObject toJson() throws JSONException {
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
             obj.put("type", "shadowsocks");
@@ -730,7 +739,7 @@ public class SharedConfig {
         }
 
         @Override
-        public JSONObject toJson() throws JSONException {
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
             obj.put("type", "shadowsocksr");
@@ -757,7 +766,7 @@ public class SharedConfig {
 
     public static LinkedList<ProxyInfo> getProxyList() {
 
-            return new LinkedList<>(proxyList);
+        return new LinkedList<>(proxyList);
 
     }
 
@@ -1595,7 +1604,7 @@ public class SharedConfig {
 
             for (ProxyInfo info : getProxyList()) {
                 try {
-                    JSONObject obj = info.toJson();
+                    JSONObject obj = info.toJsonInternal();
                     if (info.isPublic) {
                         continue;
                     }

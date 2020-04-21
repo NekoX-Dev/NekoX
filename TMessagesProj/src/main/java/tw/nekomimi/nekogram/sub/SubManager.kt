@@ -1,118 +1,46 @@
 package tw.nekomimi.nekogram.sub
 
-import org.json.JSONObject
-import org.telegram.messenger.ApplicationLoader
-import tw.nekomimi.nekogram.utils.getValue
-import tw.nekomimi.nekogram.utils.setValue
-import java.io.File
+import org.telegram.messenger.LocaleController
+import org.telegram.messenger.R
+import org.telegram.messenger.SharedConfig
+import tw.nekomimi.nekogram.database.mkDatabase
+import tw.nekomimi.nekogram.utils.ProxyUtil
 import java.util.*
-import java.util.concurrent.atomic.AtomicBoolean
 
 object SubManager {
 
-    @JvmField
-    val subs = LinkedList<SubInfo>()
-    init {
+    val database by lazy { mkDatabase("proxy_sub") }
 
+    @JvmStatic
+    val subList by lazy { database.getRepository("proxy_sub", SubInfo::class.java).apply {
 
-        subs.add(SubInfo().apply {
+        find().toList().forEach {
 
-            name = "test"
-
-            mirrors = LinkedList<SubInfo.Mirror>()
-
-            mirrors.add(SubInfo.Mirror().apply {
-
-                url = "https://test.address"
-
-            })
-
-        })
-    }
-
-    var loaded by AtomicBoolean()
-
-    fun loadSubList() {
-
-        if (loaded) return
-
-        subs.clear()
-
-        File(ApplicationLoader.getFilesDirFixed(), "nekox").listFiles()?.forEach {
-
-            subs.add(readInfo(JSONObject(it.readText())))
+            if (it.internal) remove(it)
 
         }
 
-    }
+        update(object : SubInfo() {
 
+            init {
 
-    fun saveSubList() {
+                name = LocaleController.getString("NekoXProxy", R.string.NekoXProxy)
 
-        subs.forEach {
-
-
-        }
-
-    }
-
-    private fun writeInfo(document: JSONObject, info: SubInfo) {
-
-        document.put("name", info.name)
-
-    }
-
-    private fun readInfo(document: JSONObject): SubInfo {
-
-        val info = SubInfo()
-
-        info.name = document.getString("name")
-        info.mirrors = LinkedList()
-
-        val mirrorsArray = document.getJSONArray("mirrors")
-
-        for (index in 0 until mirrorsArray.length()) {
-
-            val mirror = SubInfo.Mirror()
-
-            mirrorsArray.get(index).also {
-
-                if (it is String) {
-
-                    mirror.url = it
-
-                } else if (it is JSONObject) {
-
-                    mirror.url = it.getString("url")
-                    mirror.method = it.optString("method")
-                    mirror.headers = hashMapOf()
-
-                    val headersObj = it.optJSONObject("headers")
-
-                    headersObj?.keys()?.forEach { key ->
-
-                        mirror.headers[key] = headersObj.getString(key)
-
-                    }
-
-                }
+                _id = 1L
+                internal = true
 
             }
 
-            info.mirrors.add(mirror)
+            override fun displayName() = LocaleController.getString("PublicPrefix",R.string.PublicPrefix)
 
-        }
+            override fun reloadProxies(): List<SharedConfig.ProxyInfo>? {
 
-        info.proxies = LinkedList()
+                return ProxyUtil.reloadProxyList()
 
-        document.getJSONArray("proxies").also {
+            }
 
-            for (index in 0 until it.length()) info.proxies.add(it.getString(index))
+        },true)
 
-        }
-
-        return info
-
-    }
+    } }
 
 }

@@ -88,6 +88,7 @@ import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.ShadowsocksRSettingsActivity;
 import tw.nekomimi.nekogram.ShadowsocksSettingsActivity;
+import tw.nekomimi.nekogram.SubSettingsActivity;
 import tw.nekomimi.nekogram.VmessSettingsActivity;
 import tw.nekomimi.nekogram.sub.SubInfo;
 import tw.nekomimi.nekogram.sub.SubManager;
@@ -1096,15 +1097,27 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         builder.addTitle("TestTitle");
 
-        for (SubInfo sub : SubManager.subs) {
+        for (SubInfo sub : SubManager.getSubList().find()) {
 
-            TextCell subItem = builder.addItem();
+            TextCheckCell subItem = builder.addCheckItem(sub.name,sub.enable,true,(it) -> {
 
-            subItem.setTextAndValue(sub.name,sub.mirrors.get(0).url,true);
+                sub.enable = !sub.enable;
+
+                SubManager.getSubList().update(sub,true);
+
+                it.setChecked(sub.enable);
+
+                return Unit.INSTANCE;
+
+            });
 
             subItem.setOnLongClickListener((it) -> {
 
-                AlertUtil.showToast("nya !");
+                if (sub.internal) return false;
+
+                builder.dismiss();
+
+                presentFragment(new SubSettingsActivity(sub));
 
                 return true;
 
@@ -1112,11 +1125,27 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         }
 
-        builder.addCancelButton();
+        builder.addButton(LocaleController.getString("Add",R.string.Add),false,true,(it) -> {
 
-        builder.addButton(LocaleController.getString("Add",R.string.Add),(it) -> {
+            builder.dismiss();
 
-           // AlertUtil.showConfirm()
+            presentFragment(new SubSettingsActivity());
+
+            return Unit.INSTANCE;
+
+        });
+
+        builder.addButton(LocaleController.getString("Update",R.string.Update),(it) -> {
+
+            AlertUtil.showToast("TODO");
+
+            return Unit.INSTANCE;
+
+        });
+
+        builder.addButton(LocaleController.getString("Ok",R.string.OK),(it) -> {
+
+            builder.dismiss();
 
             return Unit.INSTANCE;
 
