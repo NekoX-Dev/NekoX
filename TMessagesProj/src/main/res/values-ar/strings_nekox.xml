@@ -13,7 +13,6 @@
     <string name="DoNotRemindAgain">لا تذكرني مرة أخرى</string>
     <string name="RemoveTitleEmoji">إزالة الإيموجي من العناوين</string>
     <string name="NekoXProxy">خادم NekoX العام</string>
-    <string name="HidePublicProxyList">إخفاء قائمة البروكسي العامة</string>
     <string name="DisableChatAction">لا تقم بإرسال حالة الإدخال</string>
     <string name="FakeScreenshot">لقطة شاشة مخرجة</string>
     <string name="SaveCacheToSdcard">حفظ التخزين المؤقت على sdcard*</string>
