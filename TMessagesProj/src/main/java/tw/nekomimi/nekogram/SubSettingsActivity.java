@@ -9,35 +9,28 @@
 package tw.nekomimi.nekogram;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.os.Build;
 import android.text.InputType;
-import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
+import org.dizitart.no2.NitriteId;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.LayoutHelper;
 
@@ -47,84 +40,30 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import cn.hutool.core.util.StrUtil;
-import kotlin.Unit;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import tw.nekomimi.nekogram.sub.SubInfo;
 import tw.nekomimi.nekogram.sub.SubManager;
 import tw.nekomimi.nekogram.utils.AlertUtil;
-import tw.nekomimi.nekogram.utils.PopupBuilder;
 import tw.nekomimi.nekogram.utils.UIUtil;
 
 public class SubSettingsActivity extends BaseFragment {
 
-    private EditTextBoldCursor[] inputFields;
+    private EditText[] inputFields;
 
-    private EditTextBoldCursor urlsField;
+    private EditText urlsField;
     private EditTextBoldCursor remarksField;
 
     private ScrollView scrollView;
     private LinearLayout linearLayout2;
     private LinearLayout inputFieldsContainer;
 
-    private TextInfoPrivacyCell bottomCell;
-
     private SubInfo subInfo;
 
     private boolean ignoreOnTextChange;
 
-    private static final int done_button = 1;
-
-    public class TypeCell extends FrameLayout {
-
-        private TextView textView;
-        private ImageView checkImage;
-        private boolean needDivider;
-
-        public TypeCell(Context context) {
-            super(context);
-
-            setWillNotDraw(false);
-
-            textView = new TextView(context);
-            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
-            textView.setLines(1);
-            textView.setMaxLines(1);
-            textView.setSingleLine(true);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.CENTER_VERTICAL);
-            addView(textView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP, LocaleController.isRTL ? 23 + 48 : 21, 0, LocaleController.isRTL ? 21 : 23, 0));
-
-            checkImage = new ImageView(context);
-            checkImage.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addedIcon), PorterDuff.Mode.SRC_IN));
-            checkImage.setImageResource(R.drawable.sticker_added);
-            addView(checkImage, LayoutHelper.createFrame(19, 14, (LocaleController.isRTL ? Gravity.LEFT : Gravity.RIGHT) | Gravity.CENTER_VERTICAL, 21, 0, 21, 0));
-
-        }
-
-        @Override
-        protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            super.onMeasure(MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50) + (needDivider ? 1 : 0), MeasureSpec.EXACTLY));
-        }
-
-        public void setValue(String name, boolean checked, boolean divider) {
-            textView.setText(name);
-            checkImage.setVisibility(checked ? VISIBLE : INVISIBLE);
-            needDivider = divider;
-        }
-
-        public void setTypeChecked(boolean value) {
-            checkImage.setVisibility(value ? VISIBLE : INVISIBLE);
-        }
-
-        @Override
-        protected void onDraw(Canvas canvas) {
-            if (needDivider) {
-                canvas.drawLine(LocaleController.isRTL ? 0 : AndroidUtilities.dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
-            }
-        }
-    }
+    private static int done_button = 1;
+    private static int menu_delete = 2;
 
     public SubSettingsActivity() {
         super();
@@ -139,7 +78,7 @@ public class SubSettingsActivity extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        AndroidUtilities.requestAdjustResize(getParentActivity(), classGuid);
+        // AndroidUtilities.requestAdjustResize(getParentActivity(), classGuid);
     }
 
     @Override
@@ -180,14 +119,54 @@ public class SubSettingsActivity extends BaseFragment {
 
                     }
 
+                    subInfo.urls = ArraysKt.toList(urlsField.getText().toString().split("\n"));
+                    subInfo.name = remarksField.getText().toString();
+
                     doGetProxies();
+
+                } else if (id == menu_delete) {
+
+                    AlertUtil.showConfirm(getParentActivity(),
+                            LocaleController.getString("SubscriptionDelete", R.string.SubscriptionDelete),
+                            LocaleController.getString("SubscriptionDeleteNotice", R.string.SubscriptionDeleteNotice),
+                            LocaleController.getString("Delete", R.string.Delete), true, (d, v) -> {
+
+                                AlertDialog pro = AlertUtil.showProgress(getParentActivity());
+
+                                pro.show();
+
+                                UIUtil.runOnIoDispatcher(() -> {
+
+                                    SubManager.getSubList().remove(subInfo);
+
+                                    SharedConfig.reloadProxyList();
+
+                                    UIUtil.runOnUIThread(() -> {
+
+                                        pro.dismiss();
+
+                                        finishFragment();
+
+                                    });
+
+                                });
+
+                            });
+
 
                 }
             }
         });
 
-        ActionBarMenuItem doneItem = actionBar.createMenu().addItemWithWidth(done_button, R.drawable.ic_done, AndroidUtilities.dp(56));
-        doneItem.setContentDescription(LocaleController.getString("Done", R.string.Done));
+        ActionBarMenu menu = actionBar.createMenu();
+
+        if (subInfo.id != 0) {
+
+            menu.addItem(menu_delete, R.drawable.baseline_delete_24, AndroidUtilities.dp(56)).setContentDescription(LocaleController.getString("Delete", R.string.Delete));
+
+        }
+
+        menu.addItemWithWidth(done_button, R.drawable.ic_done, AndroidUtilities.dp(56)).setContentDescription(LocaleController.getString("Done", R.string.Done));
 
         fragmentView = new FrameLayout(context);
         FrameLayout frameLayout = (FrameLayout) fragmentView;
@@ -212,36 +191,37 @@ public class SubSettingsActivity extends BaseFragment {
         }
         linearLayout2.addView(inputFieldsContainer, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
 
-        inputFields = new EditTextBoldCursor[6];
+        inputFields = new EditText[2];
 
-        for (int a = 0; a < 2; a++) {
-            FrameLayout container = new FrameLayout(context);
-            EditTextBoldCursor cursor = mkCursor();
-            inputFields[a] = cursor;
-            cursor.setImeOptions(EditorInfo.IME_ACTION_NEXT | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
-            switch (a) {
-                case 1:
-                    urlsField = cursor;
-                    cursor.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-                    cursor.setHintText(LocaleController.getString("UseProxyAddress", R.string.UseProxyAddress));
-                    cursor.setText(CollectionsKt.joinToString(subInfo.urls,"\n","","",-1,"",null));
-                    break;
-                case 2:
-                    remarksField = cursor;
-                    cursor.setSingleLine();
-                    cursor.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-                    cursor.setHintText(LocaleController.getString("ProxyRemarks", R.string.ProxyRemarks));
-                    cursor.setText(subInfo.name);
-                    break;
-            }
-            cursor.setSelection(cursor.length());
+        urlsField = mkCursor();
+        inputFields[0] = urlsField;
+        urlsField.setImeOptions(InputType.TYPE_TEXT_FLAG_IME_MULTI_LINE);
+        urlsField.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+        urlsField.setHint(LocaleController.getString("SubscriptionUrls", R.string.SubscriptionUrls));
+        urlsField.setText(CollectionsKt.joinToString(subInfo.urls, "\n", "", "", -1, "", null));
+        urlsField.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+        urlsField.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
+        urlsField.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        urlsField.setBackground(null);
+        urlsField.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP);
+        urlsField.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
+        // urlsField.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteInputField));
+        urlsField.setSingleLine(false);
+        urlsField.setMinLines(6);
 
-            cursor.setPadding(0, 0, 0, 0);
-            container.addView(cursor, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.LEFT | Gravity.TOP, 17, a == 0 ? 12 : 0, 17, 0));
+        inputFieldsContainer.addView(urlsField, LayoutHelper.createLinear(-1, -2, 17, 0, 21, 0));
 
-        }
+        FrameLayout container = new FrameLayout(context);
 
-        inputFieldsContainer.addView((View) urlsField.getParent(), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 64));
+        remarksField = mkCursor();
+        inputFields[1] = remarksField;
+        remarksField.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        remarksField.setHintText(LocaleController.getString("ProxyRemarks", R.string.ProxyRemarks));
+        remarksField.setText(subInfo.name);
+        remarksField.setSelection(remarksField.length());
+
+        container.addView(remarksField, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.LEFT | Gravity.TOP, 17, 0, 17, 0));
+
         inputFieldsContainer.addView((View) remarksField.getParent(), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 64));
 
         return fragmentView;
@@ -251,6 +231,7 @@ public class SubSettingsActivity extends BaseFragment {
     EditTextBoldCursor mkCursor() {
 
         EditTextBoldCursor cursor = new EditTextBoldCursor(getParentActivity());
+        cursor.setSingleLine(true);
         cursor.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
         cursor.setHintColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         cursor.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
@@ -278,37 +259,28 @@ public class SubSettingsActivity extends BaseFragment {
 
         });
 
-        UIUtil.runOnIoDispatcher(() -> {
+        pro.show();
 
-            List<SharedConfig.ProxyInfo> proxies = null;
+        UIUtil.runOnIoDispatcher(() -> {
 
             try {
 
-                proxies = subInfo.reloadProxies();
+                subInfo.proxies = subInfo.reloadProxies();
+                subInfo.lastFetch = System.currentTimeMillis();
 
             } catch (SubInfo.AllTriesFailed allTriesFailed) {
 
                 if (canceled.get()) return;
 
-                pro.dismiss();
+                UIUtil.runOnUIThread(pro::dismiss);
 
-                AlertUtil.showSimpleAlert(getParentActivity(),"All tries failed: " + allTriesFailed.toString().trim());
+                AlertUtil.showSimpleAlert(getParentActivity(), "tries failed: " + allTriesFailed.toString().trim());
 
                 return;
 
             }
 
-            LinkedList<String> urls = new LinkedList<String>();
-
-            for (SharedConfig.ProxyInfo proxy : proxies) {
-
-                urls.add(proxy.toUrl());
-;
-            }
-
-            subInfo.urls = urls;
-
-            SubManager.getSubList().update(subInfo,true);
+            SubManager.getSubList().update(subInfo, true);
 
             UIUtil.runOnUIThread(this::finishFragment);
 
@@ -321,9 +293,7 @@ public class SubSettingsActivity extends BaseFragment {
         final ThemeDescription.ThemeDescriptionDelegate delegate = () -> {
             if (inputFields != null) {
                 for (int i = 0; i < inputFields.length; i++) {
-                    inputFields[i].setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField),
-                            Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated),
-                            Theme.getColor(Theme.key_windowBackgroundWhiteRedText3));
+                    inputFields[i].setText(Theme.getColor(Theme.key_windowBackgroundWhiteInputField));
                 }
             }
         };
@@ -356,10 +326,6 @@ public class SubSettingsActivity extends BaseFragment {
             arrayList.add(new ThemeDescription(null, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlackText));
             arrayList.add(new ThemeDescription(null, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteHintText));
         }
-
-        arrayList.add(new ThemeDescription(bottomCell, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
-        arrayList.add(new ThemeDescription(bottomCell, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, null, null, null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(bottomCell, ThemeDescription.FLAG_LINKCOLOR, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, null, null, null, Theme.key_windowBackgroundWhiteLinkText));
 
         return arrayList.toArray(new ThemeDescription[0]);
     }

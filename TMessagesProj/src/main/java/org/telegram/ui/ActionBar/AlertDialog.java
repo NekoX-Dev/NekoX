@@ -890,17 +890,15 @@ public class AlertDialog extends Dialog implements Drawable.Callback {
 
     @Override
     public void dismiss() {
-        AndroidUtilities.cancelRunOnUIThread(() -> {
-            if (cancelDialog != null) {
-                cancelDialog.dismiss();
-            }
-            try {
-                super.dismiss();
-            } catch (Throwable ignore) {
+        if (cancelDialog != null) {
+            cancelDialog.dismiss();
+        }
+        try {
+            super.dismiss();
+        } catch (Throwable ignore) {
 
-            }
-            showRunnable.run();
-        });
+        }
+        AndroidUtilities.cancelRunOnUIThread(showRunnable);
     }
 
     @Override
