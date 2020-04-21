@@ -33,8 +33,6 @@
     <string name="NekoXProxy">NekoX Public Proxy</string>
     <string name="PublicPrefix">Public</string>
 
-    <string name="HidePublicProxyList">Hide public proxy list</string>
-
     <string name="DisableChatAction">Don\'t send my input status</string>
     <string name="FakeScreenshot">Pretend screenshot</string>
     <string name="SaveCacheToSdcard">Save cache to sdcard*</string>
@@ -133,7 +131,9 @@
 
     <string name="ProxySubDetails">Subscription Details</string>
     <string name="SubscriptionUrls">Urls</string>
-    <string name="SubscriptionUpdating">Subscription Updating</string>
+    <string name="SubscriptionUpdating">Updating Subscription</string>
+    <string name="SubscriptionDelete">Delete Subscription</string>
+    <string name="SubscriptionDeleteNotice">Are you sure you want to **Delete Subscription**?</string>
 
     <string name="ExportStickers">Export Stickers</string>
     <string name="ImportStickers">Import stickers from file</string>

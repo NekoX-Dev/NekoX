@@ -1,46 +1,36 @@
 package tw.nekomimi.nekogram.sub
 
+import org.dizitart.no2.NitriteId
+import org.dizitart.no2.objects.filters.ObjectFilters
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
-import org.telegram.messenger.SharedConfig
 import tw.nekomimi.nekogram.database.mkDatabase
-import tw.nekomimi.nekogram.utils.ProxyUtil
-import java.util.*
 
 object SubManager {
 
     val database by lazy { mkDatabase("proxy_sub") }
 
     @JvmStatic
-    val subList by lazy { database.getRepository("proxy_sub", SubInfo::class.java).apply {
+    val subList by lazy {
 
-        find().toList().forEach {
+        database.getRepository("proxy_sub", SubInfo::class.java).apply {
 
-            if (it.internal) remove(it)
+            val public = find(ObjectFilters.eq("id",1)).firstOrDefault()
+
+            update(SubInfo().apply {
+
+                name = LocaleController.getString("NekoXProxy", R.string.NekoXProxy)
+                enable = public?.enable ?: true
+
+                id = 1L
+                internal = true
+
+                proxies = public?.proxies ?: listOf()
+
+            }, true)
 
         }
 
-        update(object : SubInfo() {
-
-            init {
-
-                name = LocaleController.getString("NekoXProxy", R.string.NekoXProxy)
-
-                _id = 1L
-                internal = true
-
-            }
-
-            override fun displayName() = LocaleController.getString("PublicPrefix",R.string.PublicPrefix)
-
-            override fun reloadProxies(): List<SharedConfig.ProxyInfo>? {
-
-                return ProxyUtil.reloadProxyList()
-
-            }
-
-        },true)
-
-    } }
+    }
 
 }

@@ -60,27 +60,25 @@ object ProxyUtil {
     }
 
     @JvmStatic
-    fun reloadProxyList(): List<SharedConfig.ProxyInfo>? {
-
-        cacheFile.parentFile?.mkdirs()
+    fun downloadLegacyProxyList(): List<String>? {
 
         runCatching {
 
             // 从 GITEE 主站 读取
 
-            JSONArray(HttpUtil.get("https://gitee.com/nekoshizuku/AwesomeRepo/raw/master/proxy_list"))
+            JSONArray(HttpUtil.get("https://gitee.com/nekoshizuku/AwesomeRepo/raw/master/proxy_list.json"))
 
         }.recoverCatching {
 
             // 从 GITLAB 读取
 
-            JSONArray(HttpUtil.get("https://gitlab.com/nekohasekai/nekox-proxy-list/-/raw/master/proxy_list"))
+            JSONArray(HttpUtil.get("https://gitlab.com/nekohasekai/nekox-proxy-list/-/raw/master/proxy_list.json"))
 
         }.recoverCatching {
 
             // 从 GITHUB PAGES 读取
 
-            JSONArray(HttpUtil.get("https://nekox-dev.github.io/ProxyList/proxy_list"))
+            JSONArray(HttpUtil.get("https://nekox-dev.github.io/ProxyList/proxy_list.json"))
 
         }.recoverCatching {
 
@@ -94,7 +92,7 @@ object ProxyUtil {
 
             return (0 until arr.length()).map {
 
-                SharedConfig.ProxyInfo.fromJson(arr.getJSONObject(it))
+                SharedConfig.parseProxyInfo(arr.getJSONObject(it).getString("proxy")).toUrl()
 
             }
 
@@ -105,7 +103,7 @@ object ProxyUtil {
     }
 
     @JvmStatic
-    fun parseProxies(_text: String): MutableList<SharedConfig.ProxyInfo> {
+    fun parseProxies(_text: String): MutableList<String> {
 
         val text = runCatching {
 
@@ -117,7 +115,7 @@ object ProxyUtil {
 
         }.getOrThrow()
 
-        val proxies = mutableListOf<SharedConfig.ProxyInfo>()
+        val proxies = mutableListOf<String>()
 
         text.split('\n').map { it.split(" ") }.forEach {
 
@@ -132,13 +130,15 @@ object ProxyUtil {
                         line.startsWith(SS_PROTOCOL) ||
                         line.startsWith(SSR_PROTOCOL)) {
 
-                    runCatching { proxies.add(SharedConfig.parseProxyInfo(line)) }
+                    runCatching { proxies.add(SharedConfig.parseProxyInfo(line).toUrl()) }
 
                 }
 
             }
 
         }
+
+        if (proxies.isEmpty()) error("no proxy link found")
 
         return proxies
 

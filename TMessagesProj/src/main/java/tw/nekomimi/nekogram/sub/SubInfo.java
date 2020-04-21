@@ -8,6 +8,8 @@ import org.dizitart.no2.mapper.Mappable;
 import org.dizitart.no2.mapper.NitriteMapper;
 import org.dizitart.no2.objects.Id;
 import org.dizitart.no2.objects.Index;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
 import java.io.IOException;
@@ -22,12 +24,12 @@ import cn.hutool.core.util.StrUtil;
 import tw.nekomimi.nekogram.utils.HttpUtil;
 import tw.nekomimi.nekogram.utils.ProxyUtil;
 
-@Index("_id")
+@Index("id")
 @SuppressWarnings("unchecked")
 public class SubInfo implements Mappable {
 
     @Id
-    public long _id = -1;
+    public long id;
     public String name;
     public List<String> urls = new LinkedList<>();
     public List<String> proxies = new LinkedList<>();
@@ -37,15 +39,39 @@ public class SubInfo implements Mappable {
 
     public String displayName() {
 
+        if (id == 1) return LocaleController.getString("PublicPrefix", R.string.PublicPrefix);
+
         if (name.length() < 5) return name;
 
         return name.substring(0,5) + "...";
 
     }
 
-    public List<SharedConfig.ProxyInfo> reloadProxies() throws AllTriesFailed {
+    public List<String> reloadProxies() throws AllTriesFailed {
 
         HashMap<String,Exception> exceptions = new HashMap<>();
+
+        if (id == 1) {
+
+            try {
+
+                List<String> legacyList = ProxyUtil.downloadLegacyProxyList();
+
+                if (legacyList != null) {
+
+                    exceptions.put("<Internal>", new IOException("Update Failed"));
+
+                    return legacyList;
+
+                }
+
+            } catch (Exception e) {
+
+                exceptions.put("<Internal>", e);
+
+            }
+
+        }
 
         for (String url : urls) {
 
@@ -103,15 +129,14 @@ public class SubInfo implements Mappable {
 
     }
 
-
     @Override
     public Document write(NitriteMapper mapper) {
 
-        if (_id == -1L) _id = NitriteId.newId().getIdValue();
-
         Document document = new Document();
 
-        document.put("_id", _id);
+        if (id == 0) id = SubManager.getSubList().find().totalCount() + 10;
+
+        document.put("id", id);
         document.put("name", name);
         document.put("urls", urls);
         document.put("proxies",proxies);
@@ -126,7 +151,7 @@ public class SubInfo implements Mappable {
     @Override
     public void read(NitriteMapper mapper, Document document) {
 
-        _id = document.get("_id", Long.class);
+        id = document.get("id", Long.class);
         name = document.get("name", String.class);
         urls = (List<String>) document.get("urls");
         proxies = (List<String>) document.get("proxies");
