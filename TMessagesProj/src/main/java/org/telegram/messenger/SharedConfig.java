@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Proxy;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
@@ -92,7 +93,7 @@ public class SharedConfig {
     public static int passportConfigHash;
 
     private static boolean configLoaded;
-    public static final Object sync = new Object();
+    private static final Object sync = new Object();
     private static final Object localIdSync = new Object();
 
     public static boolean saveToGallery;
@@ -223,7 +224,7 @@ public class SharedConfig {
 
             if (subId != 0L) {
 
-                builder.append(SubManager.getSubList().find(ObjectFilters.eq("id",subId)).firstOrDefault().displayName());
+                builder.append(SubManager.getSubList().find(ObjectFilters.eq("id", subId)).firstOrDefault().displayName());
 
             } else {
 
@@ -266,7 +267,7 @@ public class SharedConfig {
 
             HttpUrl.Builder builder = HttpUrl.parse(StrUtil.isBlank(secret) ?
                     "https://t.me/socks" : "https://t.me/proxy").newBuilder()
-                    .addQueryParameter("address", address)
+                    .addQueryParameter("server", address)
                     .addQueryParameter("port", port + "");
 
             if (!StrUtil.isBlank(secret)) {
@@ -292,13 +293,15 @@ public class SharedConfig {
 
         public static ProxyInfo fromUrl(String url) {
 
-            HttpUrl lnk = HttpUrl.parse(url);
+            Uri lnk = Uri.parse(url);
 
-            return new ProxyInfo(lnk.queryParameter("address"),
-                    Utilities.parseInt(lnk.queryParameter("port")),
-                    lnk.queryParameter("user"),
-                    lnk.queryParameter("pass"),
-                    lnk.queryParameter("secret"));
+            if (lnk == null) throw new IllegalArgumentException(url);
+
+            return new ProxyInfo(lnk.getQueryParameter("server"),
+                    Utilities.parseInt(lnk.getQueryParameter("port")),
+                    lnk.getQueryParameter("user"),
+                    lnk.getQueryParameter("pass"),
+                    lnk.getQueryParameter("secret"));
 
         }
 
@@ -1473,6 +1476,8 @@ public class SharedConfig {
 
         for (SubInfo subInfo : SubManager.getSubList().find()) {
 
+            if (!subInfo.enable) continue;
+
             for (String proxy : subInfo.proxies) {
 
                 try {
@@ -1621,17 +1626,7 @@ public class SharedConfig {
                 url.startsWith("tg://socks") ||
                 url.startsWith("https://t.me/proxy") ||
                 url.startsWith("https://t.me/socks")) {
-            url = url
-                    .replace("tg:proxy", "tg://telegram.org")
-                    .replace("tg://proxy", "tg://telegram.org")
-                    .replace("tg://socks", "tg://telegram.org")
-                    .replace("tg:socks", "tg://telegram.org");
-            Uri data = Uri.parse(url);
-            return new ProxyInfo(data.getQueryParameter("server"),
-                    Utilities.parseInt(data.getQueryParameter("port")),
-                    data.getQueryParameter("user"),
-                    data.getQueryParameter("pass"),
-                    data.getQueryParameter("secret"));
+            return ProxyInfo.fromUrl(url);
         }
 
         throw new InvalidProxyException();
@@ -1708,7 +1703,7 @@ public class SharedConfig {
         }
         proxyList.remove(proxyInfo);
         if (proxyInfo.subId != 0) {
-            SubInfo sub = SubManager.getSubList().getById(NitriteId.createId(proxyInfo.subId));
+            SubInfo sub = SubManager.getSubList().find(ObjectFilters.eq("id",proxyInfo.subId)).firstOrDefault();
             sub.proxies.remove(proxyInfo.toUrl());
             SubManager.getSubList().update(sub);
         }

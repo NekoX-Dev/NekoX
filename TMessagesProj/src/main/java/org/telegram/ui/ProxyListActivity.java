@@ -72,6 +72,7 @@ import org.telegram.ui.Components.URLSpanNoUnderline;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1114,6 +1115,8 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         builder.addTitle("TestTitle");
 
+        HashMap<SubInfo,Boolean> changed = new HashMap<>();
+
         for (SubInfo sub : SubManager.getSubList().find()) {
 
             TextCheckCell subItem = builder.addCheckItem(sub.name, sub.enable, true, (it) -> {
@@ -1123,6 +1126,14 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 SubManager.getSubList().update(sub, true);
 
                 it.setChecked(sub.enable);
+
+                Boolean oldValue = changed.put(sub, true);
+
+                if (oldValue != null) {
+
+                    changed.remove(sub);
+
+                }
 
                 return Unit.INSTANCE;
 
@@ -1201,6 +1212,20 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
         builder.addButton(LocaleController.getString("Ok", R.string.OK), (it) -> {
 
             builder.dismiss();
+
+            if (!changed.isEmpty()) {
+
+                AlertDialog pro = AlertUtil.showProgress(getParentActivity());
+                pro.setCanCacnel(false);
+                pro.show();
+
+                SharedConfig.reloadProxyList();
+
+                updateRows(true);
+
+                pro.dismiss();
+
+            }
 
             return Unit.INSTANCE;
 

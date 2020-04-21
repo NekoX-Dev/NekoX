@@ -8,6 +8,7 @@ import org.dizitart.no2.mapper.Mappable;
 import org.dizitart.no2.mapper.NitriteMapper;
 import org.dizitart.no2.objects.Id;
 import org.dizitart.no2.objects.Index;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.xml.transform.ErrorListener;
 
@@ -130,6 +132,13 @@ public class SubInfo implements Mappable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SubInfo subInfo = (SubInfo) o;
+        return id == subInfo.id;
+    }
+    @Override
     public Document write(NitriteMapper mapper) {
 
         Document document = new Document();
@@ -161,5 +170,7 @@ public class SubInfo implements Mappable {
         internal = document.get("internal",Boolean.class);
 
     }
+
+
 
 }
