@@ -85,7 +85,6 @@
     <string name="ExportProxies">導出伺服器列表到文件</string>
     <string name="ImportProxies">從文件導入伺服器列表</string>
     <string name="ImportProxyList">導入代理伺服器列表</string>
-    <string name="ImportProxyListConfirm">您確定要**導入代理伺服器列表**嗎？</string>
     <string name="InvalidProxyFile">無效的代理列表文件: </string>
     <string name="ImportedProxies">已導入的代理伺服器列表: </string>
     <string name="ErrorsInImport">導入出錯: </string>
