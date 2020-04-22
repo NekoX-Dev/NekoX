@@ -2,7 +2,6 @@
 <resources>
     <string name="ChangeTranslateProvider">Alterar Provedor</string>
     <string name="NekoXUpdatesChannel">Canal de atualizações do NekoX</string>
-    <string name="ShowIdAndDc">Mostrar ID/DC no perfil</string>
     <string name="UseDefaultTheme">Usar o tema padrão *</string>
     <string name="NightMode">Modo Noturno</string>
     <string name="PrivacyNotice">Aviso de privacidade</string>
