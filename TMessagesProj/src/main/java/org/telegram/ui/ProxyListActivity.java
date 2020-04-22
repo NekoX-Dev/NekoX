@@ -26,7 +26,6 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -56,13 +55,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextCheckCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Cells.TextSettingsCell;
@@ -73,21 +72,22 @@ import org.telegram.ui.Components.URLSpanNoUnderline;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import kotlin.Unit;
 import okhttp3.HttpUrl;
 import tw.nekomimi.nekogram.BottomBuilder;
-import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.ShadowsocksRSettingsActivity;
 import tw.nekomimi.nekogram.ShadowsocksSettingsActivity;
+import tw.nekomimi.nekogram.SubSettingsActivity;
 import tw.nekomimi.nekogram.VmessSettingsActivity;
 import tw.nekomimi.nekogram.sub.SubInfo;
 import tw.nekomimi.nekogram.sub.SubManager;
@@ -329,7 +329,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
     private int menu_delete_all = 14;
     private int menu_delete_unavailable = 15;
     private int menu_sub = 16;
-    private int menu_dev_export_public = 30;
 
     public void processProxyList(ArrayList<String> files) {
 
@@ -470,7 +469,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                     SharedConfig.proxyList = new LinkedList<>(new TreeSet<>(SharedConfig.getProxyList()));
                     SharedConfig.saveProxyList();
                     updateRows(true);
-                } else if (id == menu_export_json || id == menu_dev_export_public) {
+                } else if (id == menu_export_json) {
                     File cacheFile = new File(ApplicationLoader.applicationContext.getExternalCacheDir(), "Proxy-List-" + new Date().toLocaleString() + ".nekox.json");
 
                     try {
@@ -483,11 +482,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
                         for (SharedConfig.ProxyInfo info : SharedConfig.getProxyList()) {
 
-                            if (id == menu_dev_export_public) {
-
-                                if (!info.isPublic) continue;
-
-                            } else if (info.isPublic) {
+                            if (info.subId <= 1) {
 
                                 continue;
 
@@ -660,7 +655,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         }
 
-        menu.addItem(menu_sub,R.drawable.msg_list);
+        menu.addItem(menu_sub, R.drawable.msg_list);
 
         otherItem = menu.addItem(menu_other, R.drawable.ic_ab_other);
         otherItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", R.string.AccDescrMoreOptions));
@@ -670,12 +665,6 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
         otherItem.addSubItem(menu_import_json, LocaleController.getString("ImportProxies", R.string.ImportProxies));
         otherItem.addSubItem(menu_delete_all, LocaleController.getString("DeleteAllServer", R.string.DeleteAllServer));
         otherItem.addSubItem(menu_delete_unavailable, LocaleController.getString("DeleteUnavailableServer", R.string.DeleteUnavailableServer));
-
-        if (NekoXConfig.developerMode) {
-
-            otherItem.addSubItem(menu_dev_export_public, "Export public servers");
-
-        }
 
         listAdapter = new ListAdapter(context);
 
@@ -738,11 +727,11 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
                 builder.setItems(new String[]{
 
-                        info.isPublic ? null : LocaleController.getString("EditProxy", R.string.EditProxy),
-                        info.isPublic ? null : LocaleController.getString("ShareProxy", R.string.ShareProxy),
-                        info.isPublic ? null : LocaleController.getString("ShareQRCode", R.string.ShareQRCode),
-                        info.isPublic ? null : LocaleController.getString("CopyLink", R.string.CopyLink),
-                        info.isPublic ? null : LocaleController.getString("ProxyDelete", R.string.ProxyDelete),
+                        info.subId == 1 ? null : LocaleController.getString("EditProxy", R.string.EditProxy),
+                        info.subId == 1 ? null : LocaleController.getString("ShareProxy", R.string.ShareProxy),
+                        info.subId == 1 ? null : LocaleController.getString("ShareQRCode", R.string.ShareQRCode),
+                        info.subId == 1 ? null : LocaleController.getString("CopyLink", R.string.CopyLink),
+                        LocaleController.getString("ProxyDelete", R.string.ProxyDelete),
                         LocaleController.getString("Cancel", R.string.Cancel)
 
                 }, new int[]{
@@ -835,6 +824,32 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
             AlertUtil.showSimpleAlert(context, alert);
             alert = null;
+
+        } else {
+
+            UIUtil.runOnIoDispatcher(() -> {
+
+                boolean updated = false;
+
+                for (SubInfo subInfo : SubManager.getSubList().find()) {
+
+                    try {
+
+                        subInfo.proxies = subInfo.reloadProxies();
+                        subInfo.lastFetch = System.currentTimeMillis();
+
+                        SubManager.getSubList().update(subInfo, true);
+
+                        updated = subInfo.id == 1;
+
+                    } catch (SubInfo.AllTriesFailed allTriesFailed) {
+                    }
+
+                }
+
+                if (updated) updateRows(true);
+
+            });
 
         }
 
@@ -1017,7 +1032,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         for (SharedConfig.ProxyInfo info : SharedConfig.getProxyList()) {
 
-            if (info.isPublic) continue;
+            if (info.subId != 0) continue;
 
             checkSingleProxy(info, 1, () -> {
 
@@ -1043,7 +1058,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
     private void checkSingleProxy(SharedConfig.ProxyInfo proxyInfo) {
 
-        checkSingleProxy(proxyInfo, proxyInfo instanceof SharedConfig.ExternalSocks5Proxy ? 3 : 0, () -> {
+        checkSingleProxy(proxyInfo, proxyInfo instanceof SharedConfig.ExternalSocks5Proxy ? 1 : 0, () -> {
 
             NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.proxyCheckDone, proxyInfo);
 
@@ -1057,36 +1072,40 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         UIUtil.runOnUIThread(() -> NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.proxyCheckDone, proxyInfo));
 
-        if (proxyInfo instanceof SharedConfig.ExternalSocks5Proxy && !((SharedConfig.ExternalSocks5Proxy) proxyInfo).isStarted()) {
-            ((SharedConfig.ExternalSocks5Proxy) proxyInfo).start();
-        }
+        UIUtil.runOnIoDispatcher(() -> {
 
-        proxyInfo.proxyCheckPingId = ConnectionsManager.getInstance(currentAccount).checkProxy(proxyInfo.address, proxyInfo.port, proxyInfo.username, proxyInfo.password, proxyInfo.secret, time -> AndroidUtilities.runOnUIThread(() -> {
-            proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
-            if (time == -1) {
-                if (repeat > 0) {
-                    checkSingleProxy(proxyInfo, repeat - 1, callback);
+            if (proxyInfo instanceof SharedConfig.ExternalSocks5Proxy && !((SharedConfig.ExternalSocks5Proxy) proxyInfo).isStarted()) {
+                ((SharedConfig.ExternalSocks5Proxy) proxyInfo).start();
+            }
+
+            proxyInfo.proxyCheckPingId = ConnectionsManager.getInstance(currentAccount).checkProxy(proxyInfo.address, proxyInfo.port, proxyInfo.username, proxyInfo.password, proxyInfo.secret, time -> AndroidUtilities.runOnUIThread(() -> {
+                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
+                if (time == -1) {
+                    if (repeat > 0) {
+                        checkSingleProxy(proxyInfo, repeat - 1, callback);
+                    } else {
+                        proxyInfo.checking = false;
+                        proxyInfo.available = false;
+                        proxyInfo.ping = 0;
+
+                        if (callback != null) {
+                            UIUtil.runOnUIThread(callback);
+                        }
+                    }
                 } else {
                     proxyInfo.checking = false;
-                    proxyInfo.available = false;
-                    proxyInfo.ping = 0;
-
+                    proxyInfo.ping = time;
+                    proxyInfo.available = true;
+                    if (proxyInfo instanceof SharedConfig.ExternalSocks5Proxy && proxyInfo != SharedConfig.currentProxy) {
+                        ((SharedConfig.ExternalSocks5Proxy) proxyInfo).stop();
+                    }
                     if (callback != null) {
-                        UIUtil.runOnUIThread(callback);
+                        UIUtil.runOnUIThread(callback::run);
                     }
                 }
-            } else {
-                proxyInfo.checking = false;
-                proxyInfo.ping = time;
-                proxyInfo.available = true;
-                if (proxyInfo instanceof SharedConfig.ExternalSocks5Proxy && proxyInfo != SharedConfig.currentProxy) {
-                    ((SharedConfig.ExternalSocks5Proxy) proxyInfo).stop();
-                }
-                if (callback != null) {
-                    UIUtil.runOnUIThread(callback::run);
-                }
-            }
-        }));
+            }));
+
+        });
 
     }
 
@@ -1096,15 +1115,37 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         builder.addTitle("TestTitle");
 
-        for (SubInfo sub : SubManager.subs) {
+        HashMap<SubInfo,Boolean> changed = new HashMap<>();
 
-            TextCell subItem = builder.addItem();
+        for (SubInfo sub : SubManager.getSubList().find()) {
 
-            subItem.setTextAndValue(sub.name,sub.mirrors.get(0).url,true);
+            TextCheckCell subItem = builder.addCheckItem(sub.name, sub.enable, true, (it) -> {
+
+                sub.enable = !sub.enable;
+
+                SubManager.getSubList().update(sub, true);
+
+                it.setChecked(sub.enable);
+
+                Boolean oldValue = changed.put(sub, true);
+
+                if (oldValue != null) {
+
+                    changed.remove(sub);
+
+                }
+
+                return Unit.INSTANCE;
+
+            });
 
             subItem.setOnLongClickListener((it) -> {
 
-                AlertUtil.showToast("nya !");
+                if (sub.internal) return false;
+
+                builder.dismiss();
+
+                presentFragment(new SubSettingsActivity(sub));
 
                 return true;
 
@@ -1112,11 +1153,79 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         }
 
-        builder.addCancelButton();
+        builder.addButton(LocaleController.getString("Add", R.string.Add), false, true, (it) -> {
 
-        builder.addButton(LocaleController.getString("Add",R.string.Add),(it) -> {
+            builder.dismiss();
 
-           // AlertUtil.showConfirm()
+            presentFragment(new SubSettingsActivity());
+
+            return Unit.INSTANCE;
+
+        });
+
+        builder.addButton(LocaleController.getString("Update", R.string.Update), (it) -> {
+
+            AlertDialog pro = AlertUtil.showProgress(getParentActivity(), LocaleController.getString("SubscriptionUpdating", R.string.SubscriptionUpdating));
+            AtomicBoolean canceled = new AtomicBoolean();
+            pro.setOnCancelListener((__) -> {
+                canceled.set(true);
+            });
+            pro.show();
+
+            UIUtil.runOnIoDispatcher(() -> {
+
+                for (SubInfo subInfo : SubManager.getSubList().find()) {
+
+                    try {
+
+                        subInfo.proxies = subInfo.reloadProxies();
+                        subInfo.lastFetch = System.currentTimeMillis();
+
+                    } catch (SubInfo.AllTriesFailed allTriesFailed) {
+
+                        if (canceled.get()) return;
+
+                        UIUtil.runOnUIThread(pro::dismiss);
+
+                        AlertUtil.showSimpleAlert(getParentActivity(), "tries failed: " + allTriesFailed.toString().trim());
+
+                    }
+
+                    SubManager.getSubList().update(subInfo, true);
+
+                    if (canceled.get()) return;
+
+                }
+
+                SharedConfig.reloadProxyList();
+
+                UIUtil.runOnUIThread(pro::dismiss);
+
+                updateRows(true);
+
+            });
+
+            return Unit.INSTANCE;
+
+        });
+
+        builder.addButton(LocaleController.getString("Ok", R.string.OK), (it) -> {
+
+            builder.dismiss();
+
+            if (!changed.isEmpty()) {
+
+                AlertDialog pro = AlertUtil.showProgress(getParentActivity());
+                pro.setCanCacnel(false);
+                pro.show();
+
+                SharedConfig.reloadProxyList();
+
+                updateRows(true);
+
+                pro.dismiss();
+
+            }
 
             return Unit.INSTANCE;
 

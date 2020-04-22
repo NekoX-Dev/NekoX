@@ -49,6 +49,18 @@ object AlertUtil {
 
     })
 
+    @JvmOverloads
+    @JvmStatic
+    fun showProgress(ctx: Context,text: String = LocaleController.getString("",R.string.Loading)): AlertDialog {
+
+        return AlertDialog.Builder(ctx,1).apply {
+
+            setMessage(text)
+
+        }.create()
+
+    }
+
     fun showInput(ctx: Context, title: String, hint: String, onInput: (AlertDialog.Builder, String) -> String) = UIUtil.runOnUIThread( Runnable {
 
         val builder = AlertDialog.Builder(ctx)

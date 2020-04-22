@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Proxy;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
@@ -25,6 +26,8 @@ import com.v2ray.ang.V2RayConfig;
 import com.v2ray.ang.dto.AngConfig;
 import com.v2ray.ang.util.Utils;
 
+import org.dizitart.no2.NitriteId;
+import org.dizitart.no2.objects.filters.ObjectFilters;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +45,8 @@ import tw.nekomimi.nekogram.ProxyManager;
 import tw.nekomimi.nekogram.ShadowsocksLoader;
 import tw.nekomimi.nekogram.ShadowsocksRLoader;
 import tw.nekomimi.nekogram.VmessLoader;
+import tw.nekomimi.nekogram.sub.SubInfo;
+import tw.nekomimi.nekogram.sub.SubManager;
 import tw.nekomimi.nekogram.utils.FileUtil;
 import tw.nekomimi.nekogram.utils.UIUtil;
 
@@ -88,7 +93,7 @@ public class SharedConfig {
     public static int passportConfigHash;
 
     private static boolean configLoaded;
-    public static final Object sync = new Object();
+    private static final Object sync = new Object();
     private static final Object localIdSync = new Object();
 
     public static boolean saveToGallery;
@@ -162,7 +167,7 @@ public class SharedConfig {
 
         }
 
-        public boolean isPublic;
+        public long subId;
 
         public ProxyInfo() {
             address = "";
@@ -191,7 +196,13 @@ public class SharedConfig {
             }
         }
 
-        private String getType() {
+        public String getAddress() {
+
+            return address + ":" + port;
+
+        }
+
+        public String getType() {
 
             if (!StrUtil.isBlank(secret)) {
 
@@ -207,20 +218,42 @@ public class SharedConfig {
 
         public String getTitle() {
 
-            if (StrUtil.isBlank(remarks)) {
+            StringBuilder builder = new StringBuilder();
 
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[" + getType() + "]") + " " + address + ":" + port;
+            builder.append("[");
+
+            if (subId != 0L) {
+
+                builder.append(SubManager.getSubList().find(ObjectFilters.eq("id", subId)).firstOrDefault().displayName());
 
             } else {
 
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[" + getType() + "]") + " " + remarks;
+                builder.append(getType());
 
             }
 
+            builder.append("] ");
+
+            if (StrUtil.isBlank(getRemarks())) {
+
+                builder.append(getAddress());
+
+            } else {
+
+                builder.append(getRemarks());
+
+            }
+
+            return builder.toString();
+
         }
 
+        private String remarks;
+
         public String getRemarks() {
+
             return remarks;
+
         }
 
         public void setRemarks(String remarks) {
@@ -230,13 +263,11 @@ public class SharedConfig {
             }
         }
 
-        private String remarks;
-
         public String toUrl() {
 
             HttpUrl.Builder builder = HttpUrl.parse(StrUtil.isBlank(secret) ?
                     "https://t.me/socks" : "https://t.me/proxy").newBuilder()
-                    .addQueryParameter("address", address)
+                    .addQueryParameter("server", address)
                     .addQueryParameter("port", port + "");
 
             if (!StrUtil.isBlank(secret)) {
@@ -262,17 +293,27 @@ public class SharedConfig {
 
         public static ProxyInfo fromUrl(String url) {
 
-            HttpUrl lnk = HttpUrl.parse(url);
+            Uri lnk = Uri.parse(url);
 
-            return new ProxyInfo(lnk.queryParameter("address"),
-                    Utilities.parseInt(lnk.queryParameter("port")),
-                    lnk.queryParameter("user"),
-                    lnk.queryParameter("pass"),
-                    lnk.queryParameter("secret"));
+            if (lnk == null) throw new IllegalArgumentException(url);
+
+            return new ProxyInfo(lnk.getQueryParameter("server"),
+                    Utilities.parseInt(lnk.getQueryParameter("port")),
+                    lnk.getQueryParameter("user"),
+                    lnk.getQueryParameter("pass"),
+                    lnk.getQueryParameter("secret"));
 
         }
 
         public JSONObject toJson() throws JSONException {
+
+            JSONObject object = toJsonInternal();
+
+            return object;
+
+        }
+
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
 
@@ -414,7 +455,7 @@ public class SharedConfig {
         public abstract void stop();
 
         @Override
-        public abstract String getTitle();
+        public abstract String getAddress();
 
         @Override
         public abstract String toUrl();
@@ -426,7 +467,10 @@ public class SharedConfig {
         public abstract void setRemarks(String remarks);
 
         @Override
-        public abstract JSONObject toJson() throws JSONException;
+        public abstract String getType();
+
+        @Override
+        public abstract JSONObject toJsonInternal() throws JSONException;
 
     }
 
@@ -448,18 +492,8 @@ public class SharedConfig {
         }
 
         @Override
-        public String getTitle() {
-
-            if (StrUtil.isBlank(getRemarks())) {
-
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[Vmess]") + " " + bean.getAddress() + ":" + bean.getPort();
-
-            } else {
-
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[Vmess]") + " " + getRemarks();
-
-            }
-
+        public String getAddress() {
+            return bean.getAddress() + ":" + bean.getPort();
         }
 
         @Override
@@ -515,7 +549,12 @@ public class SharedConfig {
         }
 
         @Override
-        public JSONObject toJson() throws JSONException {
+        public String getType() {
+            return "Vmess";
+        }
+
+        @Override
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
             obj.put("type", "vmess");
@@ -554,18 +593,8 @@ public class SharedConfig {
         }
 
         @Override
-        public String getTitle() {
-
-            if (StrUtil.isBlank(getRemarks())) {
-
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[SS]") + " " + bean.getHost() + ":" + bean.getRemotePort();
-
-            } else {
-
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[SS]") + " " + getRemarks();
-
-            }
-
+        public String getAddress() {
+            return bean.getHost() + ":" + bean.getRemotePort();
         }
 
         @Override
@@ -622,7 +651,12 @@ public class SharedConfig {
         }
 
         @Override
-        public JSONObject toJson() throws JSONException {
+        public String getType() {
+            return "SS";
+        }
+
+        @Override
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
             obj.put("type", "shadowsocks");
@@ -663,18 +697,8 @@ public class SharedConfig {
         }
 
         @Override
-        public String getTitle() {
-
-            if (StrUtil.isBlank(getRemarks())) {
-
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[SSR]") + " " + bean.getHost() + ":" + bean.getRemotePort();
-
-            } else {
-
-                return (isPublic ? LocaleController.getString("PublicPrefix", R.string.PublicPrefix) : "[SSR]") + " " + getRemarks();
-
-            }
-
+        public String getAddress() {
+            return bean.getHost() + ":" + bean.getRemotePort();
         }
 
         @Override
@@ -730,7 +754,12 @@ public class SharedConfig {
         }
 
         @Override
-        public JSONObject toJson() throws JSONException {
+        public String getType() {
+            return "SSR";
+        }
+
+        @Override
+        public JSONObject toJsonInternal() throws JSONException {
 
             JSONObject obj = new JSONObject();
             obj.put("type", "shadowsocksr");
@@ -757,7 +786,7 @@ public class SharedConfig {
 
     public static LinkedList<ProxyInfo> getProxyList() {
 
-            return new LinkedList<>(proxyList);
+        return new LinkedList<>(proxyList);
 
     }
 
@@ -1374,33 +1403,35 @@ public class SharedConfig {
 
     public static void setProxyEnable(boolean enable) {
 
+        proxyEnabled = enable;
+
+        SharedPreferences preferences = MessagesController.getGlobalMainSettings();
+
+        preferences.edit().putBoolean("proxy_enabled", enable).apply();
+
+        ProxyInfo info = currentProxy;
+
+        if (info == null) {
+
+            info = new ProxyInfo();
+
+        }
+
+        ProxyInfo finalInfo = info;
+
         UIUtil.runOnIoDispatcher(() -> {
 
-            proxyEnabled = enable;
+            if (enable && finalInfo instanceof ExternalSocks5Proxy) {
 
-            SharedPreferences preferences = MessagesController.getGlobalMainSettings();
+                ((ExternalSocks5Proxy) finalInfo).start();
 
-            preferences.edit().putBoolean("proxy_enabled", enable).commit();
+            } else if (!enable && finalInfo instanceof ExternalSocks5Proxy) {
 
-            ProxyInfo info = currentProxy;
-
-            if (info == null) {
-
-                info = new ProxyInfo();
+                ((ExternalSocks5Proxy) finalInfo).stop();
 
             }
 
-            if (enable && info instanceof ExternalSocks5Proxy) {
-
-                ((ExternalSocks5Proxy) info).start();
-
-            } else if (!enable && info instanceof ExternalSocks5Proxy) {
-
-                ((ExternalSocks5Proxy) info).stop();
-
-            }
-
-            ConnectionsManager.setProxySettings(enable, info.address, info.port, info.username, info.password, info.secret);
+            ConnectionsManager.setProxySettings(enable, finalInfo.address, finalInfo.port, finalInfo.username, finalInfo.password, finalInfo.secret);
 
         });
 
@@ -1423,6 +1454,13 @@ public class SharedConfig {
     public static void reloadProxyList() {
         proxyListLoaded = false;
         loadProxyList();
+
+        if (proxyEnabled && currentProxy == null) {
+
+            setProxyEnable(false);
+
+        }
+
     }
 
     public static void loadProxyList() {
@@ -1435,6 +1473,43 @@ public class SharedConfig {
         currentProxy = null;
 
         int current = MessagesController.getGlobalMainSettings().getInt("current_proxy", 0);
+
+        for (SubInfo subInfo : SubManager.getSubList().find()) {
+
+            if (!subInfo.enable) continue;
+
+            for (String proxy : subInfo.proxies) {
+
+                try {
+
+                    ProxyInfo info = parseProxyInfo(proxy);
+
+                    info.subId = subInfo.id;
+
+                    if (info.hashCode() == current) {
+
+                        currentProxy = info;
+
+                        if (info instanceof ExternalSocks5Proxy) {
+
+                            UIUtil.runOnIoDispatcher(((ExternalSocks5Proxy) info)::start);
+
+                        }
+
+                    }
+
+                    proxyList.add(info);
+
+                } catch (Exception e) {
+
+                    FileLog.d("load sub proxy failed: " + e);
+
+                }
+
+            }
+
+        }
+
         File proxyListFile = new File(ApplicationLoader.applicationContext.getFilesDir().getParentFile(), "nekox/proxy_list.json");
 
         boolean error = false;
@@ -1465,9 +1540,6 @@ public class SharedConfig {
 
                     }
 
-                    if (!proxyObj.isNull("internal")) continue;
-                    if (info.getTitle().toLowerCase().contains("nekox.me")) continue;
-
                     proxyList.add(info);
 
                     if (info.hashCode() == current) {
@@ -1476,7 +1548,7 @@ public class SharedConfig {
 
                         if (info instanceof ExternalSocks5Proxy) {
 
-                            ((ExternalSocks5Proxy) info).start();
+                            UIUtil.runOnIoDispatcher(((ExternalSocks5Proxy) info)::start);
 
                         }
 
@@ -1554,17 +1626,7 @@ public class SharedConfig {
                 url.startsWith("tg://socks") ||
                 url.startsWith("https://t.me/proxy") ||
                 url.startsWith("https://t.me/socks")) {
-            url = url
-                    .replace("tg:proxy", "tg://telegram.org")
-                    .replace("tg://proxy", "tg://telegram.org")
-                    .replace("tg://socks", "tg://telegram.org")
-                    .replace("tg:socks", "tg://telegram.org");
-            Uri data = Uri.parse(url);
-            return new ProxyInfo(data.getQueryParameter("server"),
-                    Utilities.parseInt(data.getQueryParameter("port")),
-                    data.getQueryParameter("user"),
-                    data.getQueryParameter("pass"),
-                    data.getQueryParameter("secret"));
+            return ProxyInfo.fromUrl(url);
         }
 
         throw new InvalidProxyException();
@@ -1595,8 +1657,8 @@ public class SharedConfig {
 
             for (ProxyInfo info : getProxyList()) {
                 try {
-                    JSONObject obj = info.toJson();
-                    if (info.isPublic) {
+                    JSONObject obj = info.toJsonInternal();
+                    if (info.subId != 0L) {
                         continue;
                     }
                     proxyArray.put(obj);
@@ -1640,6 +1702,11 @@ public class SharedConfig {
             }
         }
         proxyList.remove(proxyInfo);
+        if (proxyInfo.subId != 0) {
+            SubInfo sub = SubManager.getSubList().find(ObjectFilters.eq("id",proxyInfo.subId)).firstOrDefault();
+            sub.proxies.remove(proxyInfo.toUrl());
+            SubManager.getSubList().update(sub);
+        }
         saveProxyList();
     }
 
