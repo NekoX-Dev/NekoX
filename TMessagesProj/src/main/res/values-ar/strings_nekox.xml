@@ -2,7 +2,6 @@
 <resources>
     <string name="ChangeTranslateProvider">تغيير المزود</string>
     <string name="NekoXUpdatesChannel">قناة تحديثات Nekox</string>
-    <string name="ShowIdAndDc">إظهار المعرف / dc في الملف الشخصي</string>
     <string name="UseDefaultTheme">استخدام السمة الافتراضية *</string>
     <string name="NightMode">الوضع الليلي</string>
     <string name="PrivacyNotice">تحذير الخصوصية</string>
