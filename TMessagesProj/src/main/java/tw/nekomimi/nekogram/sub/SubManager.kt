@@ -1,117 +1,36 @@
 package tw.nekomimi.nekogram.sub
 
-import org.json.JSONObject
-import org.telegram.messenger.ApplicationLoader
-import tw.nekomimi.nekogram.utils.getValue
-import tw.nekomimi.nekogram.utils.setValue
-import java.io.File
-import java.util.*
-import java.util.concurrent.atomic.AtomicBoolean
+import org.dizitart.no2.NitriteId
+import org.dizitart.no2.objects.filters.ObjectFilters
+import org.telegram.messenger.FileLog
+import org.telegram.messenger.LocaleController
+import org.telegram.messenger.R
+import tw.nekomimi.nekogram.database.mkDatabase
 
 object SubManager {
 
-    @JvmField
-    val subs = LinkedList<SubInfo>()
-    init {
+    val database by lazy { mkDatabase("proxy_sub") }
 
+    @JvmStatic
+    val subList by lazy {
 
-        subs.add(SubInfo().apply {
+        database.getRepository("proxy_sub", SubInfo::class.java).apply {
 
-            name = "test"
+            val public = find(ObjectFilters.eq("id",1L)).firstOrDefault()
 
-            mirrors = LinkedList<SubInfo.Mirror>()
+            update(SubInfo().apply {
 
-            mirrors.add(SubInfo.Mirror().apply {
+                name = LocaleController.getString("NekoXProxy", R.string.NekoXProxy)
+                enable = public?.enable ?: true
 
-                url = "https://test.address"
+                id = 1L
+                internal = true
 
-            })
+                proxies = public?.proxies ?: listOf()
 
-        })
-    }
-
-    var loaded by AtomicBoolean()
-
-    fun loadSubList() {
-
-        if (loaded) return
-
-        subs.clear()
-
-        File(ApplicationLoader.getFilesDirFixed(), "nekox").listFiles()?.forEach {
-
-            subs.add(readInfo(JSONObject(it.readText())))
+            }, true)
 
         }
-
-    }
-
-
-    fun saveSubList() {
-
-        subs.forEach {
-
-
-        }
-
-    }
-
-    private fun writeInfo(document: JSONObject, info: SubInfo) {
-
-        document.put("name", info.name)
-
-    }
-
-    private fun readInfo(document: JSONObject): SubInfo {
-
-        val info = SubInfo()
-
-        info.name = document.getString("name")
-        info.mirrors = LinkedList()
-
-        val mirrorsArray = document.getJSONArray("mirrors")
-
-        for (index in 0 until mirrorsArray.length()) {
-
-            val mirror = SubInfo.Mirror()
-
-            mirrorsArray.get(index).also {
-
-                if (it is String) {
-
-                    mirror.url = it
-
-                } else if (it is JSONObject) {
-
-                    mirror.url = it.getString("url")
-                    mirror.method = it.optString("method")
-                    mirror.headers = hashMapOf()
-
-                    val headersObj = it.optJSONObject("headers")
-
-                    headersObj?.keys()?.forEach { key ->
-
-                        mirror.headers[key] = headersObj.getString(key)
-
-                    }
-
-                }
-
-            }
-
-            info.mirrors.add(mirror)
-
-        }
-
-        info.proxies = LinkedList()
-
-        document.getJSONArray("proxies").also {
-
-            for (index in 0 until it.length()) info.proxies.add(it.getString(index))
-
-        }
-
-        return info
 
     }
 
