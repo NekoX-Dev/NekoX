@@ -4,12 +4,16 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Environment;
 
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationsService;
+import org.telegram.messenger.R;
 
+import java.lang.reflect.Method;
+import java.util.Locale;
+
+import cn.hutool.core.util.StrUtil;
 import tw.nekomimi.nekogram.transtale.TranslateDb;
 import tw.nekomimi.nekogram.utils.UIUtil;
 
@@ -93,6 +97,41 @@ public class NekoConfig {
     public static String translateToLang;
     public static String translateInputLang = "en";
 
+    public static String localeToCode(Locale locale) {
+
+        if (StrUtil.isBlank(locale.getCountry())) {
+
+            return locale.getLanguage();
+
+        } else {
+
+            return locale.getLanguage() + "-" + locale.getCountry();
+
+        }
+
+    }
+
+    public static String formatLang(String name) {
+
+        if (name == null) {
+
+            return LocaleController.getString("Default", R.string.Default);
+
+        } else {
+
+            if (name.contains("-")) {
+
+                return new Locale(StrUtil.subBefore(name, "-", false), StrUtil.subAfter(name, "-", false)).getDisplayName(LocaleController.getInstance().currentLocale);
+
+            } else {
+
+                return new Locale(name).getDisplayName(LocaleController.getInstance().currentLocale);
+
+            }
+
+        }
+
+    }
 
     static {
 
@@ -160,8 +199,11 @@ public class NekoConfig {
         useDefaultTheme = preferences.getBoolean("use_default_theme", false);
         showIdAndDc = preferences.getBoolean("show_id_and_dc", false);
 
-        googleCloudTranslateKey = preferences.getString("google_cloud_translate_key",null);
-        cachePath = preferences.getString("cache_path",null);
+        googleCloudTranslateKey = preferences.getString("google_cloud_translate_key", null);
+        cachePath = preferences.getString("cache_path", null);
+
+        translateToLang = preferences.getString("trans_to_lang", null);
+        translateInputLang = preferences.getString("trans_input_to_lang", null);
 
     }
 
@@ -596,5 +638,16 @@ public class NekoConfig {
 
     }
 
+    public static void setTranslateToLang(String toLang) {
+
+        preferences.edit().putString("trans_to_lang", translateToLang = toLang).apply();
+
+    }
+
+    public static void setTranslateInputToLang(String toLang) {
+
+        preferences.edit().putString("trans_input_to_lang", translateInputLang = toLang).apply();
+
+    }
 
 }

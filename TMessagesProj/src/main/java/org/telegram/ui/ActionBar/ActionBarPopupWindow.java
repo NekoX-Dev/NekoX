@@ -403,6 +403,7 @@ public class ActionBarPopupWindow extends PopupWindow {
             int count = content.getItemsCount();
             content.positions.clear();
             int visibleCount = 0;
+            int height = AndroidUtilities.displayMetrics.heightPixels;
             for (int a = 0; a < count; a++) {
                 View child = content.getItemAt(a);
                 child.setAlpha(0.0f);
@@ -412,6 +413,8 @@ public class ActionBarPopupWindow extends PopupWindow {
                 content.positions.put(child, visibleCount);
                 visibleCount++;
             }
+            int maxItems = height / content.getItemAt(0).getMeasuredHeight();
+            if (visibleCount > maxItems) visibleCount = maxItems;
             if (content.showedFromBotton) {
                 content.lastStartedChild = count - 1;
             } else {
