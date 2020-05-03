@@ -1,4 +1,6 @@
 # NekoX
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FNekoX-Dev%2FNekoX.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FNekoX-Dev%2FNekoX?ref=badge_shield)
+
 
 NekoX is an open source third-party Telegram android app.
 
@@ -148,3 +150,5 @@ Join project at https://nekox.crowdin.com/nekox and https://neko.crowdin.com/ .
     <li>shadowsocks-libev: <a href="https://github.com/shadowsocks/shadowsocks-libev/blob/master/LICENSE">GPLv3</a></li>
     <li>shadowsocksRb-android: <a href="https://github.com/shadowsocksRb/shadowsocksRb-android/blob/master/LICENSE">GPLv3</a></li>
 </ul>
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FNekoX-Dev%2FNekoX.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FNekoX-Dev%2FNekoX?ref=badge_large)
