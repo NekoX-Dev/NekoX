@@ -1,0 +1,47 @@
+name: Deploy Test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deplyTest:
+    name: Deploy Test
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[D]')"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.gradle
+          key: gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: assembleRelease
+        run: |
+          export LOCAL_PROPERTIES="${{ secrets.LOCAL_PROPERTIES }}"
+          ./gradlew TMessagesPro:assembleRelease
+      - name: Upload apks
+        run: |
+          sudo apt install -y rename
+          export GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          export GITLAB_TOKEN="${{ secrets.GITLAB_TOKEN }}"
+          export GITEE_TOKEN="${{ secrets.GITEE_TOKEN }}"
+          mkdir apks; find . -name "*.apk" -exec mv {} apks \;
+          rename "s/TMessagesProj/NekoX/" apks/*
+          mv build/update.json apks
+          cd apks
+          xz *.apk
+          git init
+          git remote add github https://$GITHUB_TOKEN@github.com/NekoX-Dev/Resources
+          git remote add gitlab https://$GITLAB_TOKEN@gitlab.com/NekoX/Resources.git
+          git remote add gitee https://$GITEE_TOKEN@gitee.com/nekoshizuku/nekox-resources.git
+          git add . --all
+          git commit -m 喵
+          git push github master -f
+          git push gitlab master -f
+          git push gitee master -f

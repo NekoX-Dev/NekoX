@@ -11,7 +11,7 @@ public class NekoXConfig {
 
     public static String FAQ_URL = "https://telegra.ph/NekoX-FAQ-03-31";
 
-    private static SharedPreferences preferences = NitritesKt.openMainSharedPreference("nekox_config");
+    public static SharedPreferences preferences = NitritesKt.openMainSharedPreference("nekox_config");
 
     public static boolean developerModeEntrance;
     public static boolean developerMode = preferences.getBoolean("developer_mode", false);
