@@ -1,2 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="CustomApi">사용자 정의 API</string>
+    <string name="UseCustomApiNotice">사용자 정의 API를 사용하여 로그인 시, 등록하거나 로그인 할 수 없으면, 이 항목이 도움이 될 수 있습니다.\n\n참고: 정식 버전을 사용하는 경우 fcm이 작동하지 않습니다.</string>
+    <string name="CustomApiNo">사용자 정의 API 사용하지 않기</string>
+    <string name="CustomApiOfficial">텔레그램 안드로이드</string>
+    <string name="CustomApiTGX">텔레그램 안드로이드 X</string>
+    <string name="CustomApiInput">수동 입력</string>
+    <string name="CheckUpdate">업데이트 확인</string>
+    <string name="NoUpdate">업데이트 없음</string>
+    <string name="UpdateAvailable">사용 가능한 업데이트 있음</string>
+    <string name="UpdateUpdate">업데이트</string>
+    <string name="UpdateLater">나중에</string>
+    <string name="DownloadFailed">다운로드 실패</string>
+    <string name="Install">설치</string>
+    <string name="Ignore">무시</string>
+    <string name="UpdateDownloaded">업데이트가 다운로드 되었습니다.</string>
+    <string name="DevModeTitle">**사용자의 텔레그램 계정이 차단되었을 수 있습니다**</string>
+    <string name="DevModeNotice">개발자 기능의 부적절한 사용에 대해 책임을 지지 않습니다.</string>
+    <string name="TapToDisable">비활성화 하려면 누릅니다. 사용자는 이 기능들이 필요하지 않습니다.</string>
+    <string name="PlaceHolder">입력칸 - 비활성화 하십시오</string>
+    <string name="CustomBackend">사용자 정의 백엔드</string>
+    <string name="CustomBackendNotice">이 기능은 전문 사용자 에게만 제공되며, 다음 옵션이 무엇을 뜻하는지 모르면 무시하십시오.</string>
+    <string name="CustomBackendProduction">공식 생산 데이터 센터</string>
+    <string name="CustomBackendTestDC">공식 테스트 데이터 센터</string>
+    <string name="CustomBackendIpv4">IPv4 주소</string>
+    <string name="CustomBackendIpv6">IPv6 주소</string>
+    <string name="CustomBackendLayer">레이어</string>
+    <string name="CustomBackendPublicKey">공개키</string>
+</resources>
