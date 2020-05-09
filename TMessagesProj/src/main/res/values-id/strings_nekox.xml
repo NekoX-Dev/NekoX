@@ -17,8 +17,9 @@
     <string name="DevModeTitle">**Akun telegram Anda mungkin dibanned**</string>
     <string name="DevModeNotice">Kami tidak bertanggung jawab atas penyalahgunaan fitur pengembang.</string>
     <string name="TapToDisable">Sentuh untuk menonaktifkan. Jika anda tidak membutuhkan ini.</string>
+    <string name="PlaceHolder">Placeholder - Harap Nonaktifkan</string>
     <string name="CustomBackend">Kustom Backend</string>
-    <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika Anda tidak tahu apa yang mewakili opsi-opsi berikut, abaikan saja.</string>
+    <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika anda tidak tahu apa yang mewakili opsi-opsi berikut ini, abaikan saja.</string>
     <string name="CustomBackendProduction">Official Production DataCenter</string>
     <string name="CustomBackendTestDC">Official Test DataCenter</string>
     <string name="CustomBackendIpv4">Ipv4 Address</string>
@@ -111,6 +112,8 @@
     <string name="ProxyInfoSS">Pengaturan Shadowsocks Proxy</string>
     <string name="SSPassword">Kata sandi</string>
     <string name="SSMethod">Metode Enkripsi</string>
+    <string name="SSPlugin">Plugin</string>
+    <string name="SSPluginOpts">Konfigurasi Plugin</string>
     <string name="ProxyInfoSSR">Pengaturan ShadowsocksR Proxy</string>
     <string name="SSRProtocol">Protokol</string>
     <string name="SSRProtocolParams">Parameter protokol</string>
