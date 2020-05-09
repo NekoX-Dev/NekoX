@@ -51,7 +51,7 @@
     <string name="RemoveTitleEmoji">Hapus emoji dari judul Nekogram X</string>
     <string name="NekoXProxy">NekoX Publik Proxy</string>
     <string name="PublicPrefix">Publik</string>
-    <string name="DisableChatAction">Jangan kirim status input saya</string>
+    <string name="DisableChatAction">Jangan kirim status masukan saya</string>
     <string name="FakeScreenshot">Simulasikan tangkapan layar</string>
     <string name="Import">Impor</string>
     <string name="FilterNameUsers">Pengguna</string>
@@ -64,8 +64,8 @@
     <string name="FilterNameChannelsDescription">Hanya pesan dari channel</string>
     <string name="FilterNameBots">Bot</string>
     <string name="FilterNameBotsDescription">Hanya pesan dari bot</string>
-    <string name="FilterNameUnmuted">Tidak dibisukan</string>
-    <string name="FilterNameUnmutedDescription">Hanya pesan dari obrolan yang tidak dibisukan</string>
+    <string name="FilterNameUnmuted">Berbunyi</string>
+    <string name="FilterNameUnmutedDescription">Hanya pesan dari obrolan berbunyi</string>
     <string name="FilterNameUnread2">Belum dibaca</string>
     <string name="FilterNameUnreadDescription">Hanya pesan yang belum dibaca</string>
     <string name="FilterNameUnmutedAndUnread">Tidak dibisukan &amp; Belum dibaca</string>
