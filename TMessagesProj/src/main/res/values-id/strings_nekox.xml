@@ -8,6 +8,15 @@
     <string name="CustomApiInput">Manual input</string>
     <string name="CheckUpdate">Periksa pembaruan</string>
     <string name="NoUpdate">Tidak ditemukan pembaruan</string>
+    <string name="UpdateUpdate">Perbarui</string>
+    <string name="UpdateLater">Nanti</string>
+    <string name="DownloadFailed">Unduhan Gagal</string>
+    <string name="Install">Pasang</string>
+    <string name="Ignore">Abaikan</string>
+    <string name="UpdateDownloaded">Pembaruan baru saja diunduh.</string>
+    <string name="DevModeTitle">**Akun telegram Anda mungkin dibanned**</string>
+    <string name="DevModeNotice">Kami tidak bertanggung jawab atas penyalahgunaan fitur pengembang.</string>
+    <string name="TapToDisable">Sentuh untuk menonaktifkan. Jika anda tidak membutuhkan ini.</string>
     <string name="CustomBackend">Kustom Backend</string>
     <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika Anda tidak tahu apa yang mewakili opsi-opsi berikut, abaikan saja.</string>
     <string name="CustomBackendProduction">Official Production DataCenter</string>
