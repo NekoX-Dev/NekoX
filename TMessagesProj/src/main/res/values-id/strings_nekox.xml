@@ -85,7 +85,7 @@
     <string name="DisableSystemAccount">Nonaktifkan Akun Sistem</string>
     <string name="FilterMenu">Menu Filter Obrolan</string>
     <string name="DisableProxyWhenVpnEnabled">Nonaktifkan proxy saat VPN diaktifkan</string>
-    <string name="SkipOpenLinkConfirm">Lewati konfirmasi saat membuka tautan</string>
+    <string name="SkipOpenLinkConfirm">Lewati dialog konfirmasi saat membuka tautan</string>
     <string name="DeleteAllInChat">Hapus semua pesan dalam obrolan</string>
     <string name="DeleteAllInChatAlert">Peringatan! Ini akan menghapus **semua pesan** di obrolan ini untuk **semua** peserta.</string>
     <string name="UnblockAll">Buka Semua Blokiran</string>
@@ -107,7 +107,7 @@
     <string name="VmessNetwork">Jaringan</string>
     <string name="VmessHeadType">Head Type</string>
     <string name="VmessRequestHost">Permintaan Host / Keamanan QUIC</string>
-    <string name="VmessPath">Path / Kunci QUIC</string>
+    <string name="VmessPath">Path / QUIC Key</string>
     <string name="VmessTls">Gunakan TLS</string>
     <string name="ProxyInfoSS">Pengaturan Shadowsocks Proxy</string>
     <string name="SSPassword">Kata sandi</string>
@@ -125,7 +125,7 @@
     <string name="ExportProxies">Ekspor server ke berkas</string>
     <string name="ImportProxies">Impor server dari berkas</string>
     <string name="ImportProxyList">Impor server proxy</string>
-    <string name="ProxySubscription">Berlangganan Proxy</string>
+    <string name="ProxySubscription">Berlangganan proxy</string>
     <string name="ProxySubDetails">Detail Berlangganan</string>
     <string name="SubscriptionUrls">Url</string>
     <string name="SubscriptionUpdating">Memperbarui Langganan</string>
