@@ -8,6 +8,7 @@
     <string name="CustomApiInput">Manual input</string>
     <string name="CheckUpdate">Periksa pembaruan</string>
     <string name="NoUpdate">Tidak ditemukan pembaruan</string>
+    <string name="UpdateAvailable">Pembaruan terbaru tersedia</string>
     <string name="UpdateUpdate">Perbarui</string>
     <string name="UpdateLater">Nanti</string>
     <string name="DownloadFailed">Unduhan Gagal</string>
