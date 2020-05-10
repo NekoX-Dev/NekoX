@@ -35,8 +35,8 @@
     <string name="ProviderYandex">ترجمة اليانديكس</string>
     <string name="GoogleCloudTransKey">مفتاح ترجمة سحابة Google</string>
     <string name="GoogleCloudTransKeyNotice">إذا قمت بإعداد Google Cloud Trans Key ، فسيتم استدعاء API للترجمة السحابية بدلاً من إرسال نموذج مزيف إلى إصدار الويب عند الترجمة (حركة مرور أسرع وثابتة وحفظها).</string>
-    <string name="TransToLang">اللغة المطلوب الترجمة اليها</string>
-    <string name="TransInputToLang">اللغة المستهدفة لمدخل الترجمة</string>
+    <string name="TransToLang">لغة هدف الترجمة</string>
+    <string name="TransInputToLang">لغة هدف إدخال الترجمة</string>
     <string name="More">المزيد</string>
     <string name="NekoXUpdatesChannel">قناة تحديثات Nekox</string>
     <string name="ShowIdAndDc">إظهار ID / DC في الملف الشخصی</string>
