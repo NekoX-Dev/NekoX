@@ -14,14 +14,14 @@
     <string name="UpdateLater">بعدا</string>
     <string name="DownloadFailed">بارگیری با شکست مواجه شد</string>
     <string name="Install">نصب کن</string>
-    <string name="Ignore">چشم پوشی کن</string>
+    <string name="Ignore">نادیده بگیر</string>
     <string name="UpdateDownloaded">یک آپدیت به تازگی بارگیری شده است.</string>
     <string name="DevModeTitle">** ممکن است حساب تلگرام شما Ban باشد **</string>
     <string name="DevModeNotice">ما مسئول استفاده نادرست از ویژگی های توسعه دهنده نیستیم.</string>
     <string name="TapToDisable">برای غیرفعال کردن ضربه بزنید. شما به اینها احتیاج ندارید.</string>
     <string name="PlaceHolder">حفره مکان - لطفا غیرفعال کنید</string>
     <string name="CustomBackend">پس زمینه سفارشی</string>
-    <string name="CustomBackendNotice">این عملکرد فقط برای کاربران متخصص ارائه شده است ، اگر نمی دانید گزینه های زیر چه چیزی را نشان می دهد ، فقط آن را نادیده بگیرید.</string>
+    <string name="CustomBackendNotice">این عملکرد فقط برای کاربران متخصص ارائه شده است ، اگر نمی دانید گزینه های زیر چه چیزی را نشان می دهد ، فقط آن را نادیده بگیر.</string>
     <string name="CustomBackendProduction">مرکز رسمی تولید دیتاسنتر</string>
     <string name="CustomBackendTestDC">مرکز رسمی آزمون دیتاسنتر</string>
     <string name="CustomBackendIpv4">آدرس Ipv4</string>
