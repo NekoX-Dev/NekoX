@@ -157,7 +157,7 @@
     <string name="NoQrFound">هیچ کد QR یافت نشد</string>
     <string name="EnableDeveloperMode">فعالسازی حالت توسعه دهنده</string>
     <string name="DisableDeveloperMode">غیرفعال‌سازی حالت توسعه دهنده</string>
-    <string name="DeveloperSettings">تنظیمات توسعه دهنده</string>
+    <string name="DeveloperSettings">تنظیمات برنامه نویس</string>
     <string name="LoginSettings">تنظیمات ورود به سیستم</string>
     <string name="NekoXFaq">پرسش های متداول NekoX</string>
 </resources>
