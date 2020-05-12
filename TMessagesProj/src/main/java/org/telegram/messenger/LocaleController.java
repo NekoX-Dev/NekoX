@@ -1692,6 +1692,12 @@ public class LocaleController {
     }
 
     public static String formatShortNumber(int number, int[] rounded) {
+        if (NekoConfig.disableNumberRounding) {
+            if (rounded != null) {
+                rounded[0] = number;
+            }
+            return String.valueOf(number);
+        }
         StringBuilder K = new StringBuilder();
         int lastDec = 0;
         int KCount = 0;
