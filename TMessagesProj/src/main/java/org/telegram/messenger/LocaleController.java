@@ -353,7 +353,7 @@ public class LocaleController {
         localeInfo.name = "简体中文 ( NekoX )";
         localeInfo.nameEnglish = "Simplified Chinese ( NekoX )";
         localeInfo.shortName = "nekox_zh_cn";
-        localeInfo.baseLangCode = "zh_hans";
+        localeInfo.baseLangCode = "zh_hans_raw";
         localeInfo.isRtl = false;
         localeInfo.pathToFile = "unofficial";
         localeInfo.pluralLangCode = "zh_cn";
@@ -367,7 +367,7 @@ public class LocaleController {
         localeInfo.name = "瓜体中文 \uD83D\uDE36";
         localeInfo.nameEnglish = "Duangified Chinese (Simplified)";
         localeInfo.shortName = "duang_zh_hans";
-        localeInfo.baseLangCode = "zh_hans";
+        localeInfo.baseLangCode = "zh_hans_raw";
         localeInfo.isRtl = false;
         localeInfo.pathToFile = "unofficial";
         localeInfo.pluralLangCode = "zh_duang";
