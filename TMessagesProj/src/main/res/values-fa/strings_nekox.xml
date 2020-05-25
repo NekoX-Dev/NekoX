@@ -84,7 +84,6 @@
     <string name="NekoXPushService">خدمات NekoX</string>
     <string name="EnablePushAlert">لطفا خدمات NekoX را فعال کن</string>
     <string name="DisablePushAlert">لطفا خدمات NekoX رو غیرفعل کن</string>
-    <string name="MIUIPermissionNote">برای کاربران MIUI،لطفا دسترسی شروع خودکار را برای دریافت اعلانات NekoX فعال کنید.</string>
     <string name="DisableUndo">غیرفعال کردن واگرد</string>
     <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
     <string name="FilterMenu">منوی فیلتر گفتگو ها</string>
