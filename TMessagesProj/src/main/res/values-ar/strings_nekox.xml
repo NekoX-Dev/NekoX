@@ -84,7 +84,6 @@
     <string name="NekoXPushService">خدمة دفع NekoX</string>
     <string name="EnablePushAlert">الرجاء تمكين \"خدمة دفع NekoX\"</string>
     <string name="DisablePushAlert">الرجاء تعطيل \"خدمة دفع Nekox\"</string>
-    <string name="MIUIPermissionNote">لمستخدمي MIUI ، يرجى تمكين إذن البدء التلقائي لـ NekoX لتلقي الإشعارات بشكل طبيعي.</string>
     <string name="DisableUndo">تعطيل التراجع</string>
     <string name="DisableSystemAccount">تعطيل الحساب الخاص بالنظام</string>
     <string name="FilterMenu">قائمة عوامل تصفية الحوار</string>
