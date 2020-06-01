@@ -97,6 +97,9 @@
     <string name="UnblockAllWarn">¿Estás seguro de que quieres desbloquear **todos los usuarios y bots**?</string>
     <string name="BlockedListEmpty">No has bloqueado a nadie :)</string>
     <string name="ProxyTypeVmess">Proxy Vmess</string>
+    <string name="AddProxySocks5">Añadir Proxy Socks5</string>
+    <string name="AddProxyTelegram">Añadir Proxy MTProto</string>
+    <string name="AddProxyVmess">Agregar proxy de Vmess</string>
     <string name="AddProxySS">Añadir proxy de Shadowsocks</string>
     <string name="AddProxySSR">Añadir proxy de ShadowsocksR</string>
     <string name="AddProxyRB">Añadir proxy de RelayBaton</string>
@@ -147,4 +150,7 @@
     <string name="NoProxy">No ha agregado ningún servidor proxy.</string>
     <string name="DeleteAllServer">Borrar todos los servidores</string>
     <string name="DeleteUnavailableServer">Borrar servidores no disponibles</string>
+    <string name="DeleteAllServerConfirm">¿Estás seguro de que quieres **eliminar todos los servidores**?</string>
+    <string name="DeleteUnavailableServerConfirm">¿Estás seguro de que quieres **eliminar servidores no disponibles**?</string>
+    <string name="MinApi21Required">Lo sentimos, necesitas al menos Android 5 (API21).</string>
 </resources>
