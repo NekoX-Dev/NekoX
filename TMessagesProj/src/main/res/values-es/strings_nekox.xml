@@ -153,4 +153,15 @@
     <string name="DeleteAllServerConfirm">¿Estás seguro de que quieres **eliminar todos los servidores**?</string>
     <string name="DeleteUnavailableServerConfirm">¿Estás seguro de que quieres **eliminar servidores no disponibles**?</string>
     <string name="MinApi21Required">Lo sentimos, necesitas al menos Android 5 (API21).</string>
+    <string name="MiniVersionAlert">Lo sentimos, la mini versión no es compatible con este tipo de proxy, por favor cambie la versión en ajustes.</string>
+    <string name="ImportProxyFromClipboard">Importar desde el portapapeles</string>
+    <string name="BrokenLink">Enlace desconocido / roto</string>
+    <string name="ShareQRCode">Código QR</string>
+    <string name="ScanQRCode">Escanear código QR</string>
+    <string name="NoQrFound">No se encontró código QR</string>
+    <string name="EnableDeveloperMode">Activar Modo Desarrollador</string>
+    <string name="DisableDeveloperMode">Desactivar Modo Desarrollador</string>
+    <string name="DeveloperSettings">Configuraciones de desarrollador</string>
+    <string name="LoginSettings">Configuración de inicio de sesión</string>
+    <string name="NekoXFaq">Preguntas frecuentes sobre NekoX</string>
 </resources>
