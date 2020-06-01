@@ -46,4 +46,16 @@
     <string name="NightMode">Modo Nocturno</string>
     <string name="PrivacyNotice">Advertencia de privacidad</string>
     <string name="PrivacyNoticePhoneVisible">Se ha detectado que tu número de teléfono móvil es visible para cualquier persona, que puede hacer que los hackers controlados por el gobierno encuentren su verdadera identidad, ¡desactívela!</string>
+    <string name="PrivacyNoticeAddByPhone">Se detecta que no está desactivada la configuración \"Permitir encontrarme a través del número de teléfono\", lo que puede hacer que un hacker controlado por el gobierno encuentre su verdadera identidad, ¡Desactivala!</string>
+    <string name="PrivacyNoticeP2p">Se detecta que no ha desactivado la configuración \"Permitir llamadas P2p\", lo que puede hacer que los piratas informáticos controlados por el gobierno encuentren su verdadera identidad, ¡desactívela!</string>
+    <string name="PrivacyNotice2fa">Se detecta que no ha establecido una contraseña, lo que puede causar que los hackers controlados por el gobierno encuentren su verdadera identidad, ¡por favor configure una!</string>
+    <string name="ApplySuggestion">OK, aplícalo</string>
+    <string name="AddProxySS">Añadir proxy de Shadowsocks</string>
+    <string name="AddProxySSR">Añadir proxy de ShadowsocksR</string>
+    <string name="AddProxyRB">Añadir proxy de RelayBaton</string>
+    <string name="SSPluginConflictingName">Varios plugins utilizan esta id: %s.</string>
+    <string name="EditProxy">Editar proxy</string>
+    <string name="ShareProxy">Compartir proxy</string>
+    <string name="ProxyDelete">Eliminar proxy</string>
+    <string name="ProxyInfoVmess">Ajustes del proxy vess</string>
 </resources>
