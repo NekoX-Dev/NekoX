@@ -24,4 +24,26 @@
     <string name="PlaceHolder">Marcador de posición - Por favor deshabilitar</string>
     <string name="CustomBackend">Backend personalizado</string>
     <string name="CustomBackendNotice">Esta función solo se proporciona para usuarios expertos, si no sabe lo que representan las siguientes opciones, simplemente ignórela.</string>
+    <string name="CustomBackendProduction">Centro de datos de producción oficial</string>
+    <string name="CustomBackendTestDC">Centro Oficial de pruebas</string>
+    <string name="CustomBackendIpv4">Dirección Ipv4</string>
+    <string name="CustomBackendIpv6">Dirección Ipv6</string>
+    <string name="CustomBackendLayer">Capa</string>
+    <string name="CustomBackendPublicKey">Clave pública</string>
+    <string name="CustomBackendFingerprint">Huella digital</string>
+    <string name="CachePath">Directorio de caché</string>
+    <string name="AllowFlashCall">Permitir llamada flash</string>
+    <string name="ChangeTranslateProvider">Cambiar proveedor</string>
+    <string name="ProviderYandex">Yandex.Translate</string>
+    <string name="GoogleCloudTransKey">Clave del traductor de Google Cloud</string>
+    <string name="GoogleCloudTransKeyNotice">Si configura una clave de Google Cloud Trans, la API de traducción a la nube será llamada en lugar de enviar un formulario falso a la versión web al traducir (más rápido, estable y ahorrando tráfico).</string>
+    <string name="TransToLang">Idioma destino de la traducción</string>
+    <string name="TransInputToLang">Idioma destino de la traducción</string>
+    <string name="More">Más</string>
+    <string name="NekoXUpdatesChannel">Canal de actualizaciones NekoX</string>
+    <string name="ShowIdAndDc">Mostrar ID / DC en el perfil</string>
+    <string name="UseDefaultTheme">Usar tema predeterminado *</string>
+    <string name="NightMode">Modo Nocturno</string>
+    <string name="PrivacyNotice">Advertencia de privacidad</string>
+    <string name="PrivacyNoticePhoneVisible">Se ha detectado que tu número de teléfono móvil es visible para cualquier persona, que puede hacer que los hackers controlados por el gobierno encuentren su verdadera identidad, ¡desactívela!</string>
 </resources>
