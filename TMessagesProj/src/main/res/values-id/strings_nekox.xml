@@ -4,11 +4,11 @@
     <string name="UseCustomApiNotice">Gunakan api kustom untuk masuk, ini mungkin membantu jika anda tidak dapat mendaftar atau masuk.\n\nCatatan: fcm tidak akan bekerja jika anda menggunakan versi rilisan.</string>
     <string name="CustomApiNo">Jangan gunakan API kustom</string>
     <string name="CustomApiOfficial">Telegram Android</string>
-    <string name="CustomApiTGX">Telegram X Android</string>
+    <string name="CustomApiTGX">Telegram Android X</string>
     <string name="CustomApiInput">Manual input</string>
     <string name="CheckUpdate">Periksa pembaruan</string>
     <string name="SwitchVersion">Ganti Versi</string>
-    <string name="NoUpdate">Tidak ditemukan pembaruan</string>
+    <string name="NoUpdate">Tidak ada pembaruan</string>
     <string name="UpdateAvailable">Pembaruan terbaru tersedia</string>
     <string name="UpdateUpdate">Perbarui</string>
     <string name="UpdateLater">Nanti</string>
@@ -17,7 +17,7 @@
     <string name="Ignore">Abaikan</string>
     <string name="UpdateDownloaded">Pembaruan baru saja diunduh.</string>
     <string name="LinkedGroupChat">Grup Tertaut</string>
-    <string name="LinkedChannelChat">Saluran yang Ditautkan</string>
+    <string name="LinkedChannelChat">Saluran tertaut</string>
     <string name="DevModeTitle">**Akun telegram Anda mungkin dibanned**</string>
     <string name="DevModeNotice">Kami tidak bertanggung jawab atas penyalahgunaan fitur pengembang.</string>
     <string name="TapToDisable">Sentuh untuk menonaktifkan. Jika anda tidak membutuhkan ini.</string>
