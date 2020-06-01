@@ -94,4 +94,10 @@
     <string name="ImportStickersList">Importar stickers</string>
     <string name="StickerSets">Conjunto de Stickers</string>
     <string name="InvalidStickersFile">Archivo de stickers inválido: </string>
+    <string name="InvalidProxyFile">Archivo de lista de proxy inválido: </string>
+    <string name="ImportedProxies">Servidores proxy importados: </string>
+    <string name="ErrorsInImport">Errores de importación: </string>
+    <string name="NoProxy">No ha agregado ningún servidor proxy.</string>
+    <string name="DeleteAllServer">Borrar todos los servidores</string>
+    <string name="DeleteUnavailableServer">Borrar servidores no disponibles</string>
 </resources>
