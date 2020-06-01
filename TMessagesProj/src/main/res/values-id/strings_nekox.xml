@@ -102,6 +102,7 @@
     <string name="AddProxyVmess">Tambahkan Vmess Proxy</string>
     <string name="AddProxySS">Tambahkan Shadowsocks Proxy</string>
     <string name="AddProxySSR">Tambahkan ShadowsocksR Proxy</string>
+    <string name="AddProxyRB">Tambahkan RelayBaton Proxy</string>
     <string name="SSPluginConflictingName">Beberapa plugin menggunakan id ini: %s.</string>
     <string name="EditProxy">Edit Proxy</string>
     <string name="ShareProxy">Bagikan Proxy</string>
