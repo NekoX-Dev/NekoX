@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="CustomApi">API personalizada</string>
+    <string name="UseCustomApiNotice">Inicie sesión con la Api personalizada, si no puede registrarse o iniciar sesión, esto puede ayudar.\n\n Nota: fcm no funcionará si está utilizando la versión de lanzamiento.</string>
+    <string name="CustomApiNo">No usar API personalizada</string>
+    <string name="CustomApiOfficial">Telegram Android</string>
+    <string name="CustomApiTGX">Telegram Android X</string>
+    <string name="CustomApiInput">Ingreso manual</string>
+    <string name="CheckUpdate">Comprobar Actualización</string>
+    <string name="SwitchVersion">Cambiar de versión</string>
+    <string name="NoUpdate">No se encontraron actualizaciones</string>
+    <string name="UpdateAvailable">Nueva actualización disponible</string>
+    <string name="UpdateUpdate">Actualizar</string>
+    <string name="UpdateLater">Luego</string>
+    <string name="DownloadFailed">Descarga fallida</string>
+    <string name="Install">Instalar</string>
+    <string name="Ignore">Ignorar</string>
+    <string name="UpdateDownloaded">Se ha descargado una actualización.</string>
+    <string name="LinkedGroupChat">Grupo vinculado</string>
+    <string name="LinkedChannelChat">Canal vinculado</string>
+    <string name="DevModeTitle">**Tu cuenta de telegram puede ser baneada**</string>
+    <string name="DevModeNotice">No somos responsables del uso inadecuado de las características del desarrollador.</string>
+    <string name="TapToDisable">Toca para desactivar. No las necesitas.</string>
+    <string name="PlaceHolder">Marcador de posición - Por favor deshabilitar</string>
+    <string name="CustomBackend">Backend personalizado</string>
+    <string name="CustomBackendNotice">Esta función solo se proporciona para usuarios expertos, si no sabe lo que representan las siguientes opciones, simplemente ignórela.</string>
 </resources>
