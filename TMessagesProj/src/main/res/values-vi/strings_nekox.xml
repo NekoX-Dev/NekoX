@@ -99,7 +99,7 @@
     <string name="ProxyTypeVmess">Proxy Vmess</string>
     <string name="AddProxySocks5">Thêm Proxy5 Proxy</string>
     <string name="AddProxyTelegram">Thêm proxy MTProto</string>
-    <string name="AddProxyVmess">Proxy Vmess</string>
+    <string name="AddProxyVmess">Thêm Proxy Vmess</string>
     <string name="AddProxySS">Thêm Proxy Shadowsocks</string>
     <string name="AddProxySSR">Thêm Proxy ShadowsocksR</string>
     <string name="AddProxyRB">Thêm Proxy RelayBaton</string>
@@ -150,4 +150,21 @@
     <string name="NoProxy">Bạn chưa thêm bất kỳ máy chủ proxy nào.</string>
     <string name="DeleteAllServer">Xóa tất cả các máy chủ</string>
     <string name="DeleteUnavailableServer">Xóa các máy chủ không khả dụng</string>
+    <string name="DeleteAllServerConfirm">Bạn có chắc chắn muốn xóa ** tất cả các máy chủ **?</string>
+    <string name="DeleteUnavailableServerConfirm">Bạn có chắc chắn muốn ** xóa các máy chủ không khả dụng **?</string>
+    <string name="MinApi21Required">Xin lỗi, bạn cần ít nhất Android 5 (API21).</string>
+    <string name="MiniVersionAlert">Xin lỗi, phiên bản mini không hỗ trợ loại proxy này, vui lòng chuyển phiên bản trong cài đặt.</string>
+    <string name="ImportProxyFromClipboard">Nhập từ Clipboard</string>
+    <string name="BrokenLink">Liên kết không xác định / bị hỏng</string>
+    <string name="ShareQRCode">Mã QR</string>
+    <string name="ScanQRCode">Quét mã QR</string>
+    <string name="NoQrFound">Không tìm thấy mã QR</string>
+    <string name="EnableDeveloperMode">Kích hoạt chế độ nhà phát triển</string>
+    <string name="DisableDeveloperMode">Tắt chế độ nhà phát triển</string>
+    <string name="DeveloperSettings">Cài đặt dành cho nhà phát triển</string>
+    <string name="LoginSettings">Cài đặt đăng nhập</string>
+    <string name="NekoXFaq">Câu hỏi thường gặp về NekoX</string>
+    <string name="TransSite">Dịch nền tảng</string>
+    <string name="NekoTrans">Dịch Nekogram</string>
+    <string name="NekoXTrans">Dịch NekoX</string>
 </resources>
