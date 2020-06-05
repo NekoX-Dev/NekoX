@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="CustomApi">Egendefinert API</string>
+    <string name="UseCustomApiNotice">Logg inn ved hjelp av tilpasset api, hvis du ikke kan registrere eller logge på, kan dette hjelpe.\n\nMerk: fcm vil ikke fungere hvis du bruker utgivelsversjonen.</string>
+    <string name="CustomApiNo">Ikke bruk egendefinert API</string>
+    <string name="CustomApiOfficial">Telegram Android</string>
+    <string name="CustomApiTGX">Telegram Android X</string>
+    <string name="CustomApiInput">Manuell inndata</string>
+    <string name="CheckUpdate">Sjekk oppdatering</string>
+    <string name="SwitchVersion">Bytt versjon</string>
+    <string name="NoUpdate">Ingen oppdatering tilgjengelig</string>
+    <string name="UpdateAvailable">Ny oppdatering tilgjengelig</string>
+    <string name="UpdateUpdate">Oppdater</string>
+    <string name="UpdateLater">Senere</string>
+    <string name="DownloadFailed">Nedlasting mislyktes</string>
+    <string name="Install">Installer</string>
+    <string name="Ignore">Ignorer</string>
+    <string name="UpdateDownloaded">En oppdatering er nettopp blitt lastet ned.</string>
+    <string name="LinkedGroupChat">Lenket gruppe</string>
+    <string name="LinkedChannelChat">Koblede kanaler</string>
+    <string name="DevModeTitle">**Telefonegram-kontoen din kan bli utestengt**</string>
+    <string name="DevModeNotice">Vi er ikke ansvarlige for noen utilbørlige bruk av utviklerfunksjoner.</string>
+    <string name="TapToDisable">Trykk for å deaktivere. Du trenger ikke disse.</string>
+    <string name="PlaceHolder">Plassholder – Vennligst deaktiver</string>
+    <string name="CustomBackend">Egendefinert backend</string>
+    <string name="CustomBackendNotice">Denne funksjonen gis bare for ekspertbrukere, hvis du ikke vet hva følgende alternativer viser, bare ignorerer den.</string>
+</resources>
