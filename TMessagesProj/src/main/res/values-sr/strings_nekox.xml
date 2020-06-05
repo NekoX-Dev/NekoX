@@ -150,4 +150,21 @@
     <string name="NoProxy">Нисте додали ниједан проки сервер.</string>
     <string name="DeleteAllServer">Обришите све сервере</string>
     <string name="DeleteUnavailableServer">Обришите недоступне сервере</string>
+    <string name="DeleteAllServerConfirm">Јесте ли сигурни да желите ** избрисати све сервере **?</string>
+    <string name="DeleteUnavailableServerConfirm">Јесте ли сигурни да желите ** избрисати недоступне сервере **?</string>
+    <string name="MinApi21Required">Извините, треба вам најмање Андроид 5 (АПИ21).</string>
+    <string name="MiniVersionAlert">Жао нам је, мини верзија не подржава ову врсту прокија, молимо вас да пребаците верзију у подешавања.</string>
+    <string name="ImportProxyFromClipboard">Увоз из међуспремника</string>
+    <string name="BrokenLink">Непозната / Прекинута веза</string>
+    <string name="ShareQRCode">КР Цоде</string>
+    <string name="ScanQRCode">Скенирање КР код</string>
+    <string name="NoQrFound">Није пронађен КР Цоде</string>
+    <string name="EnableDeveloperMode">Омогућите режим за програмере</string>
+    <string name="DisableDeveloperMode">Онемогућите режим програмера</string>
+    <string name="DeveloperSettings">Подешавања за програмере</string>
+    <string name="LoginSettings">Подешавања пријаве</string>
+    <string name="NekoXFaq">ФАК о НекоКс-у</string>
+    <string name="TransSite">Преведи платформу</string>
+    <string name="NekoTrans">Преведи Некограм</string>
+    <string name="NekoXTrans">Преведи НекоКс</string>
 </resources>
