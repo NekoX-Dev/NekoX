@@ -119,7 +119,7 @@
     <string name="ProxyInfoSS">Shadowsocks 代理設定</string>
     <string name="SSPassword">密碼</string>
     <string name="SSMethod">加密方法</string>
-    <string name="SSPlugin">插入</string>
+    <string name="SSPlugin">插件</string>
     <string name="SSPluginOpts">插件配置</string>
     <string name="ProxyInfoSSR">ShadowsocksR 代理設定</string>
     <string name="SSRProtocol">協議</string>
