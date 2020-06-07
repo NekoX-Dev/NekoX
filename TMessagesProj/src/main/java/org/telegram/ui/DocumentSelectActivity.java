@@ -746,7 +746,7 @@ public class DocumentSelectActivity extends BaseFragment {
                             sendPopupWindow.dismiss();
                         }
                         if (num == 0) {
-                            translateComment(TranslatorKt.getCode2Locale(NekoConfig.translateInputLang));
+                            translateComment(TranslateDb.getChatLanguage(chat.id, TranslatorKt.getCode2Locale(NekoConfig.translateInputLang)));
                         } else if (num == 1) {
                             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), chatActivity.getDialogId(), this::sendSelectedFiles);
                         } else if (num == 2) {
@@ -755,11 +755,12 @@ public class DocumentSelectActivity extends BaseFragment {
                     });
                     itemCells[a].setOnLongClickListener(v -> {
                         if (num == 0) {
-                            Translator.showTargetLangSelect(itemCells[num], 0, (locale) -> {
+                            Translator.showTargetLangSelect(itemCells[num], true, (locale) -> {
                                 if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
                                     sendPopupWindow.dismiss();
                                 }
                                 translateComment(locale);
+                                TranslateDb.saveChatLanguage(chat.id, locale);
                                 return Unit.INSTANCE;
                             });
                             return true;

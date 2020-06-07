@@ -2972,7 +2972,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
 
                     if (num == 0) {
-                        translateComment(parentFragment.getParentActivity(), TranslatorKt.getCode2Locale(NekoConfig.translateInputLang));
+                        translateComment(TranslateDb.getChatLanguage(chat.id, TranslatorKt.getCode2Locale(NekoConfig.translateInputLang)));
                     } if (num == 1) {
                         AlertsCreator.createScheduleDatePickerDialog(parentActivity, parentFragment.getDialogId(), this::sendMessageInternal);
                     } else if (num == 2) {
@@ -2981,11 +2981,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 });
                 cell.setOnLongClickListener(v -> {
                     if (num == 0) {
-                        Translator.showTargetLangSelect(cell, 0, (locale) -> {
+                        Translator.showTargetLangSelect(cell, true, (locale) -> {
                             if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
                                 sendPopupWindow.dismiss();
                             }
-                            translateComment(parentFragment.getParentActivity(), locale);
+                            translateComment(locale);
+                            TranslateDb.saveChatLanguage(chat.id, locale);
                             return Unit.INSTANCE;
                         });
                         return true;
@@ -3033,10 +3034,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return false;
     }
 
-    private void translateComment(Context ctx, Locale target) {
+    private void translateComment(Locale target) {
 
         if (NekoConfig.translationProvider < 0) {
-            TranslateBottomSheet.show(ctx, messageEditText.getText().toString());
+            TranslateBottomSheet.show(parentActivity, messageEditText.getText().toString());
         } else {
 
             TranslateDb db = TranslateDb.forLocale(target);
@@ -3054,7 +3055,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             Translator.translate(target, origin, new Translator.Companion.TranslateCallBack() {
 
                 final AtomicBoolean cancel = new AtomicBoolean();
-                AlertDialog status = AlertUtil.showProgress(ctx);
+                AlertDialog status = AlertUtil.showProgress(parentActivity);
 
                 {
 
@@ -3073,8 +3074,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
                 @Override public void onFailed(boolean unsupported, @NotNull String message) {
                     status.dismiss();
-                    AlertUtil.showTransFailedDialog(getContext(), unsupported, message, () -> {
-                        status = AlertUtil.showProgress(ctx);
+                    AlertUtil.showTransFailedDialog(parentActivity, unsupported, message, () -> {
+                        status = AlertUtil.showProgress(parentActivity);
                         status.show();
                         Translator.translate(origin, this);
                     });

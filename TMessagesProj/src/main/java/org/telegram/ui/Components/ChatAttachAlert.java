@@ -1283,7 +1283,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         sendPopupWindow.dismiss();
                     }
                     if (num == 0) {
-                        translateComment(parentFragment.getParentActivity(), TranslatorKt.getCode2Locale(NekoConfig.translateInputLang));
+                        translateComment(parentFragment.getParentActivity(), TranslateDb.getChatLanguage(chat.id, TranslatorKt.getCode2Locale(NekoConfig.translateInputLang)));
                     } else if (num == 1) {
                         AlertsCreator.createScheduleDatePickerDialog(getContext(), chatActivity.getDialogId(), (notify, scheduleDate) -> {
                             if (currentAttachLayout == photoLayout) {
@@ -1305,11 +1305,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
 
                 itemCells[a].setOnLongClickListener(v -> {
                     if (num == 0) {
-                        Translator.showTargetLangSelect(itemCells[num], 0, (locale) -> {
+                        Translator.showTargetLangSelect(itemCells[num], true, (locale) -> {
                             if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
                                 sendPopupWindow.dismiss();
                             }
                             translateComment(parentFragment.getParentActivity(), locale);
+                            TranslateDb.saveChatLanguage(chat.id, locale);
                             return Unit.INSTANCE;
                         });
                         return true;

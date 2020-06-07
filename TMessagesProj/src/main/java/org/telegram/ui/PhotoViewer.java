@@ -3967,7 +3967,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         sendPopupWindow.dismiss();
                     }
                     if (num == 0) {
-                        translateComment(TranslatorKt.getCode2Locale(NekoConfig.translateInputLang));
+                        translateComment(TranslateDb.getChatLanguage(chat.id, TranslatorKt.getCode2Locale(NekoConfig.translateInputLang)));
                     } else if (num == 1) {
                         AlertsCreator.createScheduleDatePickerDialog(parentActivity, parentChatActivity.getDialogId(), this::sendPressed);
                     } else if (num == 1) {
@@ -3976,11 +3976,12 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 });
                 cell.setOnLongClickListener(v -> {
                     if (num == 0) {
-                        Translator.showTargetLangSelect(cell, 0, (locale) -> {
+                        Translator.showTargetLangSelect(cell, true, (locale) -> {
                             if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
                                 sendPopupWindow.dismiss();
                             }
                             translateComment(locale);
+                            TranslateDb.saveChatLanguage(chat.id, locale);
                             return Unit.INSTANCE;
                         });
                         return true;
