@@ -101,7 +101,7 @@
     <string name="AddProxyTelegram">افزودن پروکسی MTProto</string>
     <string name="AddProxyVmess">افزودن پروکسی Vmess</string>
     <string name="AddProxySS">افزودن پروکسی شادوساکس SS</string>
-    <string name="AddProxySSR">افزودن پروکسی شادوساکس آر SSR</string>
+    <string name="AddProxySSR">افزودن پروکسی شادوساکس SSR</string>
     <string name="AddProxyRB">اضافه کردن پروکسی RelayBaton </string>
     <string name="SSPluginConflictingName">چندین افزونه از این شناسه استفاده می کنند: %s.</string>
     <string name="EditProxy">ویرایش پروکسی</string>
@@ -164,7 +164,7 @@
     <string name="DeveloperSettings">تنظیمات برنامه نویس</string>
     <string name="LoginSettings">تنظیمات ورود به سیستم</string>
     <string name="NekoXFaq">پرسش های متداول NekoX</string>
-    <string name="TransSite">ترجمه بستر نرم افزار</string>
-    <string name="NekoTrans">ترجمه نكوگرام</string>
+    <string name="TransSite">ترجمه بستر های نرم افزاری</string>
+    <string name="NekoTrans">ترجمه Nekogram</string>
     <string name="NekoXTrans">ترجمه NekoX</string>
 </resources>
