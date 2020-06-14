@@ -41,4 +41,9 @@
     <string name="TransInputToLang">Quellsprache der Übersetzung</string>
     <string name="More">Mehr</string>
     <string name="NekoXUpdatesChannel">NekoX Update-Kanal</string>
+    <string name="ShowIdAndDc">ID/DC im Profil anzeigen</string>
+    <string name="UseDefaultTheme">Standardthema verwenden*</string>
+    <string name="NightMode">Nachtmodus</string>
+    <string name="PrivacyNotice">Datenschutzwarnung</string>
+    <string name="PrivacyNoticePhoneVisible">Es wurde festgestellt, dass Deine Handynummer für jeden sichtbar ist, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
 </resources>
