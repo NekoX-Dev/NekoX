@@ -48,4 +48,8 @@
     <string name="PrivacyNoticePhoneVisible">Es wurde festgestellt, dass Deine Handynummer für jeden sichtbar ist, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
     <string name="PrivacyNoticeAddByPhone">Es wurde festgestellt, dass Du die Option \"Erlaube, mich über die Handynummer zu finden\" nicht deaktiviert hast, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
     <string name="PrivacyNoticeP2p">Es wurde festgestellt, dass Du die Option \"Erlaube P2P-Anrufe\" nicht deaktiviert hast, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
+    <string name="PrivacyNotice2fa">Es wurde festgestellt, dass Du kein Passwort festgelegt hast, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte setze eines!</string>
+    <string name="ApplySuggestion">OK, anwenden</string>
+    <string name="DoNotRemindAgain">Nicht mehr erinnern</string>
+    <string name="InstantViewTransWithWeb">InstantView kann nicht mit dem Web-Übersetzer übersetzt werden</string>
 </resources>
