@@ -77,4 +77,19 @@
     <string name="IgnoreMutedCount">Anzahl stummgeschalteter, ungelesener Nachrichten im Ordner-Tab ignorieren</string>
     <string name="DialogsSettings">Dialogeinstellungen</string>
     <string name="SortMenu">Dialog-Sortiereinstellungen</string>
+    <string name="SortByUnread">Nach Ungelesenen sortieren</string>
+    <string name="SortByUnmuted">Nach nicht Stummgeschalteten sortieren</string>
+    <string name="SortByUser">Nach Nutzern sortieren</string>
+    <string name="SortByContacts">Nach Kontakten sortieren</string>
+    <string name="NekoXPushService">NekoX Push-Service</string>
+    <string name="EnablePushAlert">Bitte aktiviere den \"NekoX Push-Service\"</string>
+    <string name="DisablePushAlert">Bitte deaktiviere den \"NekoX Push-Service\"</string>
+    <string name="DisableUndo">Rückgängig machen deaktivieren</string>
+    <string name="DisableSystemAccount">Systemkonto deaktivieren</string>
+    <string name="FilterMenu">Dialog-Filtermenü</string>
+    <string name="DisableProxyWhenVpnEnabled">Proxy deaktivieren, wenn VPN aktiviert ist</string>
+    <string name="UseProxyItem">Seitenleisten-Proxyelement anstelle der Schaltfläche verwenden</string>
+    <string name="HideProxyByDefault">Proxy Einstellungen standardmäßig ausblenden</string>
+    <string name="SkipOpenLinkConfirm">Bestätigung zum Link öffnen überspringen</string>
+    <string name="DeleteAllInChat">Alles im Chat löschen</string>
 </resources>
