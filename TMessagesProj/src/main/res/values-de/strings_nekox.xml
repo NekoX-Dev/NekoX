@@ -127,4 +127,19 @@
     <string name="SSRObfs">Obfs</string>
     <string name="SSRObfsParam">Obfs-Parameter</string>
     <string name="ProxyInfoRB">RelayBaton Proxy-Einstellungen</string>
+    <string name="ESNI">Verschlüsselte SNI</string>
+    <string name="ProxyRemarks">Bemerkungen</string>
+    <string name="RetestPing">Ping für alle Server wiederholen</string>
+    <string name="ReorderByPing">Server durch Ping neu sortieren</string>
+    <string name="ExportProxies">Server als Datei exportieren</string>
+    <string name="ImportProxies">Server aus Datei importieren</string>
+    <string name="ImportProxyList">Proxy-Server importieren</string>
+    <string name="ProxySubscription">Proxy-Abonnement</string>
+    <string name="ProxySubDetails">Abonnement-Details</string>
+    <string name="SubscriptionUrls">URLs</string>
+    <string name="SubscriptionUpdating">Abonnement aktualisieren</string>
+    <string name="SubscriptionDelete">Abonnement löschen</string>
+    <string name="ExportStickers">Sticker exportieren</string>
+    <string name="ImportStickers">Sticker aus Datei importieren</string>
+    <string name="ImportStickersList">Importiere Sticker</string>
 </resources>
