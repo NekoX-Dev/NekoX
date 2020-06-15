@@ -157,4 +157,10 @@
     <string name="ImportProxyFromClipboard">Aus Zwischenablage importieren</string>
     <string name="BrokenLink">Unbekannter / defekter Link</string>
     <string name="ShareQRCode">QR-Code</string>
+    <string name="ScanQRCode">QR-Code scannen</string>
+    <string name="NoQrFound">Kein QR-Code gefunden</string>
+    <string name="EnableDeveloperMode">Entwicklermodus aktivieren</string>
+    <string name="DisableDeveloperMode">Entwicklermodus deaktivieren</string>
+    <string name="DeveloperSettings">Entwickleroptionen</string>
+    <string name="LoginSettings">Anmeldeeinstellungen</string>
 </resources>
