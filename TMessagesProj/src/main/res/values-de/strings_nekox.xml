@@ -142,4 +142,19 @@
     <string name="ExportStickers">Sticker exportieren</string>
     <string name="ImportStickers">Sticker aus Datei importieren</string>
     <string name="ImportStickersList">Importiere Sticker</string>
+    <string name="StickerSets">Sticker-Sammlungen</string>
+    <string name="InvalidStickersFile">Ungültige Sticker-Datei: </string>
+    <string name="InvalidProxyFile">Ungültige Proxy-Listen-Datei: </string>
+    <string name="ImportedProxies">Importierte Proxy-Server: </string>
+    <string name="ErrorsInImport">Importfehler: </string>
+    <string name="NoProxy">Sie haben keine Proxy-Server hinzugefügt.</string>
+    <string name="DeleteAllServer">Alle Server löschen</string>
+    <string name="DeleteUnavailableServer">Nicht verfügbare Server löschen</string>
+    <string name="DeleteAllServerConfirm">Bist du sicher, dass du **alle Server löschen** möchtest?</string>
+    <string name="DeleteUnavailableServerConfirm">Bist du sicher, dass du **nicht erreichbare Server löschen** möchtest?</string>
+    <string name="MinApi21Required">Entschuldigung, Du benötigst mindestens Android 5 (API21).</string>
+    <string name="MiniVersionAlert">Leider unterstützt die Mini-Version diesen Proxy-Typ nicht. Bitte wechsle die Version in den Einstellungen.</string>
+    <string name="ImportProxyFromClipboard">Aus Zwischenablage importieren</string>
+    <string name="BrokenLink">Unbekannter / defekter Link</string>
+    <string name="ShareQRCode">QR-Code</string>
 </resources>
