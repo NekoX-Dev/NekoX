@@ -8,8 +8,8 @@
     <string name="CustomApiInput">Ввести вручную</string>
     <string name="CheckUpdate">Проверить обновления</string>
     <string name="SwitchVersion">Сменить версию</string>
-    <string name="NoUpdate">Обновление не найдено</string>
-    <string name="UpdateAvailable">Доступно новое обновление</string>
+    <string name="NoUpdate">Обновлений нет</string>
+    <string name="UpdateAvailable">Доступно обновление</string>
     <string name="UpdateUpdate">Обновить</string>
     <string name="UpdateLater">Позже</string>
     <string name="DownloadFailed">Ошибка загрузки</string>
