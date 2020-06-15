@@ -112,4 +112,5 @@
     <string name="VmessAlterId">ID ändern</string>
     <string name="VmessSecurity">Sicherheit</string>
     <string name="VmessNetwork">Netzwerk</string>
+    <string name="VmessHeadType">Header-Typ</string>
 </resources>
