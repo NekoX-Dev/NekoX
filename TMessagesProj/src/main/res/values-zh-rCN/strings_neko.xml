@@ -98,6 +98,7 @@
     <string name="DonateAbout">支持我们的开发。</string>
     <string name="TranslationAbout">帮助我们将 Nekogram 翻译成您的语言。</string>
     <string name="Translation">翻译 Nekogram</string>
+    <string name="GooglePlay">Google Play</string>
     <string name="SourceCode">Github 上的源代码</string>
     <string name="ResetStickerSize">重置贴纸大小</string>
     <string name="OfficialChannelUsername">Zuragram</string>
@@ -111,4 +112,6 @@
     <string name="IdType">个人资料中的 ID</string>
     <string name="IdTypeAbout">Telegram API按原样使用 ID，但 Bot API 在群组的开头添加负号，在频道的开头添加 -100 使其合并为一个字段。</string>
     <string name="IdTypeHidden">隐藏</string>
+    <string name="IdTypeAPI">Telegram API</string>
+    <string name="IdTypeBOTAPI">Bot API</string>
 </resources>
