@@ -3,8 +3,8 @@ name: Dev Branch Build
 on:
   push:
     paths-ignore:
-      - '**.md'
-      - '**.yml'
+      - '*.md'
+      - '*.yml'
       - '.github/**'
       - '!.github/workflows/**'
     branches:
