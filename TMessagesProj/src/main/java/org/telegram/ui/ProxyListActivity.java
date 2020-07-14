@@ -582,7 +582,12 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
         ActionBarMenuItem addItem = menu.addItem(menu_add, R.drawable.add);
 
-        addItem.addSubItem(menu_add_import_from_clipboard, LocaleController.getString("ImportProxyFromClipboard", R.string.ImportProxyFromClipboard)).setOnClickListener((v) -> ProxyUtil.importFromClipboard());
+        addItem.addSubItem(menu_add_import_from_clipboard, LocaleController.getString("ImportProxyFromClipboard", R.string.ImportProxyFromClipboard)).setOnClickListener((v) -> {
+
+            ProxyUtil.importFromClipboard(getParentActivity());
+
+        });
+
         addItem.addSubItem(menu_add_scan_qr, LocaleController.getString("ScanQRCode", R.string.ScanQRCode)).setOnClickListener((v) -> {
 
             if (Build.VERSION.SDK_INT >= 23) {
@@ -828,9 +833,9 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
     @SuppressLint("NewApi")
     private void addProxy() {
 
-        BottomSheet.Builder builder = new BottomSheet.Builder(getParentActivity());
+        BottomBuilder builder = new BottomBuilder(getParentActivity());
 
-        builder.setItems(new String[]{
+        builder.addItems(new String[]{
 
                 LocaleController.getString("AddProxySocks5", R.string.AddProxySocks5),
                 LocaleController.getString("AddProxyTelegram", R.string.AddProxyTelegram),
@@ -841,7 +846,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 LocaleController.getString("ImportProxyFromClipboard", R.string.ImportProxyFromClipboard),
                 LocaleController.getString("ScanQRCode", R.string.ScanQRCode)
 
-        }, (v, i) -> {
+        }, (i,t,c) -> {
 
             if (i == 0) {
 
@@ -869,7 +874,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
 
             } else if (i == 6) {
 
-                ProxyUtil.importFromClipboard();
+                ProxyUtil.importFromClipboard(getParentActivity());
 
             } else {
 
@@ -935,6 +940,8 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                 });
 
             }
+
+            return Unit.INSTANCE;
 
         });
 
