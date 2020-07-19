@@ -166,6 +166,10 @@
     <string name="LoginSettings">登錄設定</string>
     <string name="NekoXFaq">NekoX 常見問題</string>
     <string name="TransSite">翻譯平台</string>
-    <string name="NekoTrans">翻譯 Nekogram</string>
-    <string name="NekoXTrans">翻譯 NekoX</string>
+    <string name="UsePersianCalender">使用波斯日曆</string>
+    <string name="OpenKayChain">OpenPGP 客戶端</string>
+    <string name="OpenPGPApp">PGP 應用程式</string>
+    <string name="OpenPGPKey">PGP 密鑰</string>
+    <string name="None">無</string>
+    <string name="Sign">簽名</string>
 </resources>
