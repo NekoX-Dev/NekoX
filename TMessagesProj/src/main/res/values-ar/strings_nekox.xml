@@ -165,6 +165,5 @@
     <string name="LoginSettings">إعدادات الدخول</string>
     <string name="NekoXFaq">أسئلة NekoX الشائعة</string>
     <string name="TransSite">ترجمة النظام الأساسي</string>
-    <string name="NekoTrans">ترجمة Nekogram</string>
     <string name="NekoXTrans">ترجمة NekoX</string>
 </resources>
