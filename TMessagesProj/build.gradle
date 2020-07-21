@@ -7,33 +7,39 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+def verName = "6.2.0.3-preview-2"
+def verCode = 57
+
 def serviceAccountCredentialsFile = rootProject.file("service_account_credentials.json")
+
+def beta = verName.contains("preview")
 
 if (serviceAccountCredentialsFile.isFile()) {
 
-    setupPlay()
+    setupPlay(beta)
 
     play.serviceAccountCredentials = serviceAccountCredentialsFile
 
 } else if (System.getenv().containsKey("ANDROID_PUBLISHER_CREDENTIALS")) {
 
-    setupPlay()
+    setupPlay(beta)
 
 }
 
-void setupPlay() {
+void setupPlay(boolean beta) {
 
     apply plugin: 'com.github.triplet.play'
 
     play {
 
-        track = "production"
-        
+        track = beta ? "beta" : "production"
+
         defaultToAppBundles = true
 
         userFraction = 1
 
     }
+
 
 }
 
@@ -43,7 +49,7 @@ configurations {
 }
 
 def okHttpVersion = '4.8.0'
-def fcmVersion = '20.2.3'
+def fcmVersion = '20.2.2'
 def crashlyticsVersion = '17.1.1'
 def playCoreVersion = '1.7.3'
 
@@ -56,7 +62,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "cn.hutool:hutool-all:5.3.8"
+        classpath 'cn.hutool:hutool-all:5.3.9'
     }
 
 }
@@ -70,8 +76,8 @@ repositories {
 
 dependencies {
 
-    implementation 'androidx.core:core:1.5.0-alpha01'
-    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'androidx.core:core-ktx:1.5.0-alpha01'
+    implementation 'androidx.palette:palette-ktx:1.0.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation 'androidx.exifinterface:exifinterface:1.2.0'
     implementation "androidx.interpolator:interpolator:1.0.0"
@@ -123,9 +129,6 @@ dependencies {
     releaseImplementation "com.google.android.play:core:$playCoreVersion"
 
 }
-
-def verName = "6.2.0.3-rc03"
-def verCode = 56
 
 task writeUpdateInfo {
 
