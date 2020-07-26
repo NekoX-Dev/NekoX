@@ -1142,7 +1142,9 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (checkingForLongPress && windowView != null) {
                 checkingForLongPress = false;
                 if (pressedLink != null) {
-                    windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                    if (!NekoConfig.disableVibration) {
+                        windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                    }
                     showCopyPopup(pressedLink.getUrl());
                     pressedLink = null;
                     pressedLinkOwnerLayout = null;
@@ -1155,12 +1157,13 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     } else {
                         textSelectionHelper.trySelect(pressedLinkOwnerView);
                     }
-                    if (textSelectionHelper.isSelectionMode()) {
+                    if (textSelectionHelper.isSelectionMode() && !NekoConfig.disableVibration) {
                         windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
                     }
                 } else if (pressedLinkOwnerLayout != null && pressedLinkOwnerView != null) {
-                    windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-
+                    if (!NekoConfig.disableVibration) {
+                        windowView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                    }
                     int[] location = new int[2];
                     pressedLinkOwnerView.getLocationInWindow(location);
                     int y = location[1] + pressedLayoutY - AndroidUtilities.dp(54);

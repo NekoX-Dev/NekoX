@@ -43,6 +43,9 @@ import org.telegram.tgnet.ConnectionsManager;
 
 import java.util.ArrayList;
 
+import tw.nekomimi.nekogram.NekoConfig;
+import tw.nekomimi.nekogram.utils.VibrateUtil;
+
 public class BaseFragment {
 
     private boolean isFinished;
@@ -161,6 +164,9 @@ public class BaseFragment {
     public void setParentFragment(BaseFragment fragment) {
         setParentLayout(fragment.parentLayout);
         fragmentView = createView(parentLayout.getContext());
+        if (NekoConfig.disableVibration) {
+            VibrateUtil.disableHapticFeedback(fragmentView);
+        }
     }
 
     protected void setParentLayout(ActionBarLayout layout) {
