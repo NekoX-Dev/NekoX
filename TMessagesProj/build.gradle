@@ -82,7 +82,8 @@ dependencies {
     implementation 'androidx.exifinterface:exifinterface:1.2.0'
     implementation "androidx.interpolator:interpolator:1.0.0"
     implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "androidx.sharetarget:sharetarget:1.0.0"
 
     // replace zxing with latest
     // TODO: fix problem with android L

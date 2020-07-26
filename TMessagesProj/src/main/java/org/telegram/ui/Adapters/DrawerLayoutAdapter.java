@@ -316,6 +316,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter imple
     }
 
     public class Item {
+    private static class Item {
         public int icon;
         public String text;
         public int id;
