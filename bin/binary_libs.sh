@@ -1,5 +1,27 @@
 #!/bin/bash
 
+if [ ! -x "$(command -v go)" ]; then
+
+#  if [ ! -x "$(command -v gvm)" ]; then
+#
+#    apt install -y bison
+#
+#    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+#
+#    source "$HOME/.bashrc"
+#
+#  fi
+#
+#  gvm install go1.14 -B
+#  gvm use go1.14 --default
+
+  echo "install golang please!"
+
+  exit 1
+
+fi
+
+
 rm -f TMessagesProj/libs/*.aar
 
 ./gradlew ss-rust:assembleRelease
