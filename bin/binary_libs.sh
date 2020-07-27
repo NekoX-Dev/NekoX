@@ -1,27 +1,49 @@
 #!/bin/bash
 
-rm -f TMessagesProj/libs/*.aar
+if [ ! -x "$(command -v go)" ]; then
 
-./gradlew ss-rust:assembleRelease
+#  if [ ! -x "$(command -v gvm)" ]; then
+#
+#    apt install -y bison
+#
+#    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+#
+#    source "$HOME/.bashrc"
+#
+#  fi
+#
+#  gvm install go1.14 -B
+#  gvm use go1.14 --default
 
-cp ss-rust/build/outputs/aar/* TMessagesProj/libs
+  echo "install golang please!"
 
-./gradlew ssr-libev:assembleRelease
+  exit 1
 
-cp ssr-libev/build/outputs/aar/* TMessagesProj/libs
+fi
 
-cd TMessagesProj/libs
 
-go get -v golang.org/x/mobile/cmd/...
+rm -rf TMessagesProj/libs/*.aar
 
-v2rayCore="$(go env GOPATH)/src/v2ray.com/core"
-rm -rf "$v2rayCore"
-mkdir -p "$v2rayCore"
-git clone https://github.com/v2fly/v2ray-core.git "$v2rayCore"
-go get -d github.com/2dust/AndroidLibV2rayLite
+./gradlew ss-rust:assembleRelease --stacktrace &&
 
-gomobile init
-gomobile bind -v -ldflags='-s -w' github.com/2dust/AndroidLibV2rayLite
+cp ss-rust/build/outputs/aar/* TMessagesProj/libs &&
+
+./gradlew ssr-libev:assembleRelease &&
+
+cp ssr-libev/build/outputs/aar/* TMessagesProj/libs &&
+
+cd TMessagesProj/libs &&
+
+go get -v golang.org/x/mobile/cmd/... &&
+
+v2rayCore="$(go env GOPATH)/src/v2ray.com/core" &&
+rm -rf "$v2rayCore" &&
+mkdir -p "$v2rayCore" &&
+git clone https://github.com/v2fly/v2ray-core.git "$v2rayCore" &&
+go get -d github.com/2dust/AndroidLibV2rayLite &&
+
+gomobile init &&
+gomobile bind -v -ldflags='-s -w' github.com/2dust/AndroidLibV2rayLite &&
 rm *-sources.jar
 
 cd  ../..
