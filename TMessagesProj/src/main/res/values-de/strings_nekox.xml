@@ -154,6 +154,7 @@
     <string name="DeleteAllServerConfirm">Bist du sicher, dass du **alle Server löschen** möchtest?</string>
     <string name="DeleteUnavailableServerConfirm">Bist du sicher, dass du **nicht erreichbare Server löschen** möchtest?</string>
     <string name="MinApi21Required">Entschuldigung, Du benötigst mindestens Android 5 (API21).</string>
+    <string name="MinApi23Required">Entschuldigung, Sie benötigen mindestens Android 6 (API23).</string>
     <string name="MiniVersionAlert">Leider unterstützt die Mini-Version diesen Proxy-Typ nicht. Bitte wechsle die Version in den Einstellungen.</string>
     <string name="ImportProxyFromClipboard">Aus Zwischenablage importieren</string>
     <string name="BrokenLink">Unbekannter / defekter Link</string>
