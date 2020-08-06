@@ -2,10 +2,10 @@
 <resources>
     <string name="Locked">Заблокировано</string>
     <string name="CustomApi">Пользовательский API</string>
-    <string name="UseCustomApiNotice">Войти с помощью пользовательского API если вы не можете зарегистрироваться или войти в систему, это может помочь.\n\nПримечание: fcm не будет работать, если вы используете версию релиза.</string>
+    <string name="UseCustomApiNotice">Войдите с помощью пользовательского API, если вы не можете зарегистрироваться или войти в систему, это может помочь.\n\nПримечание: fcm не будет работать, если вы используете релизную версию.</string>
     <string name="CustomApiNo">Не использовать пользовательский API</string>
-    <string name="CustomApiOfficial">Telegram Android</string>
-    <string name="CustomApiTGX">Telegram Android X</string>
+    <string name="CustomApiOfficial">Telegram для Android</string>
+    <string name="CustomApiTGX">Telegram X для Android</string>
     <string name="CustomApiInput">Ввести вручную</string>
     <string name="CheckUpdate">Проверить обновления</string>
     <string name="SwitchVersion">Сменить версию</string>
