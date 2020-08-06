@@ -75,7 +75,7 @@
     <string name="FilterNameUnreadDescription">Только непрочитанные сообщения</string>
     <string name="FilterNameUnmutedAndUnread">Новые &amp; Со звуком</string>
     <string name="FilterNameUnmutedAndUnreadDescription">Только новые с увед.</string>
-    <string name="IgnoreMutedCount">Не считать приглушенные на вкладках</string>
+    <string name="IgnoreMutedCount">Не считать приглушенные во вкладках</string>
     <string name="DialogsSettings">Настройки чатов</string>
     <string name="SortMenu">Сортировка</string>
     <string name="SortByUnread">Сначала новые</string>
@@ -84,8 +84,8 @@
     <string name="SortByContacts">Сначала контакты</string>
     <string name="NekoXPushService">Сервис Push NekoX</string>
     <string name="EnablePushAlert">Включите \"NekoX Push Service\"</string>
-    <string name="DisablePushAlert">Отключите \"NekoX Push Service\"</string>
-    <string name="DisableUndo">Отключить подтверждение действий</string>
+    <string name="DisablePushAlert">Отключите \"push-сервис NekoX\"</string>
+    <string name="DisableUndo">Отключить отмену действий</string>
     <string name="DisableSystemAccount">Отключить системный аккаунт</string>
     <string name="FilterMenu">Фильтры чатов</string>
     <string name="DisableProxyWhenVpnEnabled">Отключить прокси когда VPN включен</string>
@@ -104,7 +104,7 @@
     <string name="AddProxySS">Shadowsocks-прокси</string>
     <string name="AddProxySSR">ShadowsocksR-прокси</string>
     <string name="AddProxyRB">RelayBaton-прокси</string>
-    <string name="SSPluginConflictingName">Несколько плагинов используют этот идентификатор: %s.</string>
+    <string name="SSPluginConflictingName">Некоторые плагины используют этот ID: %s.</string>
     <string name="EditProxy">Изменить прокси</string>
     <string name="ShareProxy">Поделиться прокси</string>
     <string name="ProxyDelete">Удалить прокси</string>
