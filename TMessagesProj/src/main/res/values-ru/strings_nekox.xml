@@ -10,7 +10,7 @@
     <string name="CheckUpdate">Проверить обновления</string>
     <string name="SwitchVersion">Сменить версию</string>
     <string name="NoUpdate">Обновлений не найдено ^т-т^</string>
-    <string name="UpdateAvailable">Доступно обновление</string>
+    <string name="UpdateAvailable">Доступно обновление ^*ㅂ*^</string>
     <string name="UpdateUpdate">Обновить</string>
     <string name="UpdateLater">Позже</string>
     <string name="DownloadFailed">Ошибка загрузки</string>
@@ -20,12 +20,12 @@
     <string name="ProxyAutoSwitch">Автопереключение прокси</string>
     <string name="LinkedGroupChat">Привязанная группа</string>
     <string name="LinkedChannelChat">Привязанный канал</string>
-    <string name="DevModeTitle">** Ваш аккаунт в Telegram может быть заблокирован **</string>
+    <string name="DevModeTitle">** Ваш аккаунт Telegram может быть заблокирован **</string>
     <string name="DevModeNotice">Мы не несем ответственности за ненадлежащее использование функций разработчика.</string>
-    <string name="TapToDisable">Нажмите, чтобы отключить. Вам это не нужно.</string>
+    <string name="TapToDisable">Нажмите, чтобы отключить. Вам ведь это не нужно, так ведь? :p</string>
     <string name="PlaceHolder">Заполнитель - пожалуйста, отключите</string>
     <string name="CustomBackend">Пользовательский сервер</string>
-    <string name="CustomBackendNotice">Эта функция предназначена только для опытных пользователей, если вы не знаете, зачем это нужно —не используйте её.</string>
+    <string name="CustomBackendNotice">Эта функция предназначена только для опытных пользователей, если вы не знаете, зачем это нужно - не используйте её.</string>
     <string name="CustomBackendProduction">Основной DC</string>
     <string name="CustomBackendTestDC">Тестовый DC</string>
     <string name="CustomBackendIpv4">IPv4-адрес</string>
@@ -38,7 +38,7 @@
     <string name="ChangeTranslateProvider">Изменить движок перевода</string>
     <string name="ProviderYandexTranslate">Яндекс.Переводчик</string>
     <string name="GoogleCloudTransKey">Ключ Google Translation API</string>
-    <string name="GoogleCloudTransKeyNotice">Если вы настроили ключ, перевод будет осуществляться быстрее и стабильнее. Это экономит ваш трафик.</string>
+    <string name="GoogleCloudTransKeyNotice">Если вы настроили ключ, перевод будет осуществляться быстрее и стабильнее. А также это cэкономит ваш трафик, не благодарите! ^*ㅂ*^</string>
     <string name="TransToLang">Перевести на:</string>
     <string name="TransInputToLang">Перевести с:</string>
     <string name="More">Ещё</string>
