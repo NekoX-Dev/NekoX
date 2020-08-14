@@ -49,7 +49,7 @@ configurations {
 
 def okHttpVersion = '4.8.1'
 def fcmVersion = '20.2.4'
-def crashlyticsVersion = '17.1.1'
+def crashlyticsVersion = '17.2.1'
 def playCoreVersion = '1.8.0'
 
 buildscript {
