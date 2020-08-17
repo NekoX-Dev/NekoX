@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Terkunci</string>
-    <string name="CustomApi">API Kustom</string>
-    <string name="UseCustomApiNotice">Gunakan api kustom untuk masuk, ini mungkin membantu jika anda tidak dapat mendaftar atau masuk.\n\nCatatan: fcm tidak akan bekerja jika anda menggunakan versi rilisan.</string>
-    <string name="CustomApiNo">Jangan gunakan API kustom</string>
+    <string name="CustomApi">API Khusus</string>
+    <string name="UseCustomApiNotice">Gunakan API khusus untuk masuk, ini mungkin bisa membantu Anda ketika tidak bisa mendaftar atau masuk.\n\nCatatan: FCM tidak akan bekerja jika Anda menggunakan versi rilis.</string>
+    <string name="CustomApiNo">Jangan gunakan API khusus</string>
     <string name="CustomApiOfficial">Telegram Android</string>
     <string name="CustomApiTGX">Telegram Android X</string>
     <string name="CustomApiInput">Manual input</string>
-    <string name="CheckUpdate">Periksa pembaruan</string>
+    <string name="CheckUpdate">Periksa Pembaruan</string>
     <string name="SwitchVersion">Ganti Versi</string>
-    <string name="NoUpdate">Tidak ada pembaruan</string>
+    <string name="NoUpdate">Tidak ditemukan pembaruan</string>
     <string name="UpdateAvailable">Pembaruan terbaru tersedia</string>
     <string name="UpdateUpdate">Perbarui</string>
     <string name="UpdateLater">Nanti</string>
@@ -17,7 +17,7 @@
     <string name="Install">Pasang</string>
     <string name="Ignore">Abaikan</string>
     <string name="UpdateDownloaded">Pembaruan baru saja diunduh.</string>
-    <string name="ProxyAutoSwitch">Proxy Beralih Otomatis</string>
+    <string name="ProxyAutoSwitch">Pengalihan Proxy Secara Otomatis</string>
     <string name="LinkedGroupChat">Grup Tertaut</string>
     <string name="LinkedChannelChat">Saluran tertaut</string>
     <string name="DevModeTitle">**Akun telegram Anda mungkin dibanned**</string>
