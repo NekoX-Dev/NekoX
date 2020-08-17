@@ -59,7 +59,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'cn.hutool:hutool-all:5.3.10'
+        classpath 'cn.hutool:hutool-all:5.4.0'
     }
 
 }
