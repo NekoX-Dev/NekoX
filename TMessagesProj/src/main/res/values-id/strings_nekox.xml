@@ -88,7 +88,7 @@
     <string name="DisableUndo">Matikan konfirmasi pembatalan ketika menghapus sebuah pesan</string>
     <string name="DisableSystemAccount">Matikan Akun Sistem</string>
     <string name="FilterMenu">Menu Penyaring Obrolan</string>
-    <string name="DisableProxyWhenVpnEnabled">Nonaktifkan proxy saat VPN diaktifkan</string>
+    <string name="DisableProxyWhenVpnEnabled">Matikan proxy ketika ada VPN yang menyala</string>
     <string name="UseProxyItem">Gunakan item proxy bilah sisi alih-alih tombol</string>
     <string name="HideProxyByDefault">Sembunyikan pengaturan proxy secara default</string>
     <string name="SkipOpenLinkConfirm">Lewati dialog konfirmasi saat membuka tautan</string>
