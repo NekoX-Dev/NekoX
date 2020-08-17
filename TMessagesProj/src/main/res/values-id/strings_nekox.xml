@@ -169,12 +169,12 @@
     <string name="OpenKayChain">Klien OpenPGP</string>
     <string name="OpenPGPApp">Penyedia OpenPGP</string>
     <string name="OpenPGPKey">Kunci OpenPGP</string>
-    <string name="None">Tidak ada</string>
+    <string name="None">Kosong</string>
     <string name="Sign">Tanda</string>
     <string name="PGPDecrypt">Dekripsi Pesan</string>
     <string name="PGPVerify">Verifikasi Pesan</string>
     <string name="PGPImport">Impor Kunci Publik</string>
     <string name="PGPImportPrivate">Impor Kunci Pribadi</string>
     <string name="ShareMyKey">Bagikan Kunci Publik Saya</string>
-    <string name="DisableVibration">Nonaktifkan Getaran</string>
+    <string name="DisableVibration">Matikan Fitur Getar</string>
 </resources>
