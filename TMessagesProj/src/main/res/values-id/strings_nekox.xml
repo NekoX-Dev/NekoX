@@ -19,12 +19,12 @@
     <string name="UpdateDownloaded">Pembaruan baru saja diunduh.</string>
     <string name="ProxyAutoSwitch">Pengalihan Proxy Secara Otomatis</string>
     <string name="LinkedGroupChat">Grup Tertaut</string>
-    <string name="LinkedChannelChat">Saluran tertaut</string>
-    <string name="DevModeTitle">**Akun telegram Anda mungkin dibanned**</string>
+    <string name="LinkedChannelChat">Kanal Tertaut</string>
+    <string name="DevModeTitle">**Akun telegram Anda mungkin diblokir **</string>
     <string name="DevModeNotice">Kami tidak bertanggung jawab atas penyalahgunaan fitur pengembang.</string>
     <string name="TapToDisable">Sentuh untuk menonaktifkan. Jika anda tidak membutuhkan ini.</string>
     <string name="PlaceHolder">Placeholder - Harap Nonaktifkan</string>
-    <string name="CustomBackend">Kustom Backend</string>
+    <string name="CustomBackend">Backend Khusus</string>
     <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika anda tidak tahu apa yang mewakili opsi-opsi berikut ini, abaikan saja.</string>
     <string name="CustomBackendProduction">Official Production DataCenter</string>
     <string name="CustomBackendTestDC">Official Test DataCenter</string>
@@ -36,9 +36,9 @@
     <string name="CachePath">Direktori cache</string>
     <string name="AllowFlashCall">Izinkan panggilan cepat</string>
     <string name="ChangeTranslateProvider">Ubah Penyedia</string>
-    <string name="ProviderYandexTranslate">Yandex.Terjemahkan</string>
+    <string name="ProviderYandexTranslate">Penerjemah.Yandex</string>
     <string name="GoogleCloudTransKey">Google Cloud Translate Key</string>
-    <string name="GoogleCloudTransKeyNotice">Jika anda menyiapkan Google Cloud Trans Key, API terjemahan awan akan digunakan, alih-alih mengirimkan formulir palsu ke versi web saat menerjemahkan (lalu lintas yang lebih cepat, stabil, dan hemat).</string>
+    <string name="GoogleCloudTransKeyNotice">Jika Anda menyiapkan Google Cloud Trans Key, API terjemahan Cloud akan dipanggil, guna mengirimkan formulir palsu ke versi web saat menerjemahkan (lebih cepat, stabil, dan menghemat lalu lintas).</string>
     <string name="TransToLang">Bahasa target terjemahan</string>
     <string name="TransInputToLang">Bahasa masukan terjemahan</string>
     <string name="More">Lainnya</string>
