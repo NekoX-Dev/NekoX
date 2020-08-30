@@ -9,7 +9,7 @@ object EmojiProvider {
     val type = BuildConfig.FLAVOR
 
     @JvmField
-    val containsEmoji = !type.contains("NoEmoji") && type.contains("Emoji")
+    val containsEmoji = !type.contains("NoEmoji")
 
     // default use blob
     @JvmField
