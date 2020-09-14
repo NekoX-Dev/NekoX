@@ -34,4 +34,18 @@
     <string name="CustomBackendPublicKey">Nyilvános kulcs</string>
     <string name="CustomBackendFingerprint">Kulcs ujjlenyomat</string>
     <string name="CachePath">Gyorsítótár könyvtár</string>
+    <string name="AllowFlashCall">Villám-hívás engedélyezése</string>
+    <string name="ChangeTranslateProvider">Szolgáltató módosítása</string>
+    <string name="ProviderYandexTranslate">Yandex.Translate</string>
+    <string name="GoogleCloudTransKey">Google Cloud Translate kulcs</string>
+    <string name="GoogleCloudTransKeyNotice">Ha beállít egy Google Cloud Trans Key-t, akkor a felhőfordítási API-t hívja meg ahelyett, hogy hamis űrlapot küldene be a webes verzióba a fordítás során (gyorsabb, stabilabb és a forgalmat takarékoskodik).</string>
+    <string name="TransToLang">A fordítás célnyelve</string>
+    <string name="TransInputToLang">A fordítás bemeneti célnyelve</string>
+    <string name="More">Több</string>
+    <string name="NekoXUpdatesChannel">A NekoX frissíti a csatornát</string>
+    <string name="ShowIdAndDc">ID / DC megjelenítése a profilban</string>
+    <string name="UseDefaultTheme">Alapértelmezett téma használata *</string>
+    <string name="NightMode">Éjszakai mód</string>
+    <string name="PrivacyNotice">Adatvédelmi figyelmeztetés</string>
+    <string name="PrivacyNoticePhoneVisible">Azt észlelték, hogy mobiltelefonszámát bárki láthatja, emiatt a kormány által ellenőrzött hackerek megtalálhatják az Ön valódi személyazonosságát. Kérjük, kapcsolja ki!</string>
 </resources>
