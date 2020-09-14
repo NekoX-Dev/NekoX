@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="Locked">Zárt</string>
+    <string name="CustomApi">Egyéni API</string>
+    <string name="UseCustomApiNotice">Jelentkezzen be az egyéni api használatával, ha nem tud regisztrálni vagy bejelentkezni, ez segíthet.\n\nMegjegyzés: Az fcm nem fog működni, ha a kiadási verziót használja.</string>
+</resources>
