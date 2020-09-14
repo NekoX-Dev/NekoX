@@ -48,4 +48,5 @@
     <string name="NightMode">Éjszakai mód</string>
     <string name="PrivacyNotice">Adatvédelmi figyelmeztetés</string>
     <string name="PrivacyNoticePhoneVisible">Azt észlelték, hogy mobiltelefonszámát bárki láthatja, emiatt a kormány által ellenőrzött hackerek megtalálhatják az Ön valódi személyazonosságát. Kérjük, kapcsolja ki!</string>
+    <string name="PrivacyNoticeAddByPhone">Azt észleltük, hogy nem kapcsolta ki az \"Engedélyezz telefonszámon keresztül\" beállítást, amely miatt egy kormány által ellenőrzött hacker megtalálhatja a valódi személyazonosságát. Kapcsolja ki!</string>
 </resources>
