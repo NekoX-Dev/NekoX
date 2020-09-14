@@ -9,4 +9,21 @@
     <string name="CustomApiInput">Kézi bevitel</string>
     <string name="CheckUpdate">Frissítés ellenőrzése</string>
     <string name="SwitchVersion">Váltson verziót</string>
+    <string name="NoUpdate">Nem található frissítés</string>
+    <string name="UpdateAvailable">Új frissítés elérhető</string>
+    <string name="UpdateUpdate">Frissítés</string>
+    <string name="UpdateLater">Később</string>
+    <string name="DownloadFailed">Sikertelen letöltés</string>
+    <string name="Install">Telepítés</string>
+    <string name="Ignore">Figyelmen kívül hagyni</string>
+    <string name="UpdateDownloaded">A frissítés éppen letöltésre került.</string>
+    <string name="ProxyAutoSwitch">Proxy automatikus kapcsoló</string>
+    <string name="LinkedGroupChat">Összekapcsolt csoport</string>
+    <string name="LinkedChannelChat">Összekapcsolt csatorna</string>
+    <string name="DevModeTitle">** A telegram fiókját betilthatják **</string>
+    <string name="DevModeNotice">Nem vagyunk felelősek a fejlesztői funkciók nem megfelelő használatáért.</string>
+    <string name="TapToDisable">Koppintson a letiltáshoz. Nincs szükséged ezekre.</string>
+    <string name="PlaceHolder">Helyőrző - Kérjük, tiltsa le</string>
+    <string name="CustomBackend">Egyéni háttérprogram</string>
+    <string name="CustomBackendNotice">Ez a funkció csak szakértő felhasználók számára biztosított, ha nem tudja, mit jelentenek a következő opciók, akkor hagyja figyelmen kívül.</string>
 </resources>
