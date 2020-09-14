@@ -3,4 +3,9 @@
     <string name="Locked">Zárt</string>
     <string name="CustomApi">Egyéni API</string>
     <string name="UseCustomApiNotice">Jelentkezzen be az egyéni api használatával, ha nem tud regisztrálni vagy bejelentkezni, ez segíthet.\n\nMegjegyzés: Az fcm nem fog működni, ha a kiadási verziót használja.</string>
+    <string name="CustomApiNo">Ne használjon egyéni API-t</string>
+    <string name="CustomApiOfficial">Telegram Android</string>
+    <string name="CustomApiTGX">Telegram Android X</string>
+    <string name="CustomApiInput">Kézi bevitel</string>
+    <string name="CheckUpdate">Frissítés ellenőrzése</string>
 </resources>
