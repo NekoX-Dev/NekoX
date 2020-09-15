@@ -56,4 +56,5 @@
     <string name="RemoveTitleEmoji">Távolítsa el a hangulatjeleket a címből</string>
     <string name="NekoXProxy">NekoX Nyilvános Proxy</string>
     <string name="PublicPrefix">Nyilvános</string>
+    <string name="DisableChatAction">Ne küldje el a bemeneti állapotomat</string>
 </resources>
