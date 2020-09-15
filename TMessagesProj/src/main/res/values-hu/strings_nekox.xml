@@ -54,4 +54,6 @@
     <string name="ApplySuggestion">Oké, Alkalmazza</string>
     <string name="DoNotRemindAgain">Ne emlékeztesse újra</string>
     <string name="RemoveTitleEmoji">Távolítsa el a hangulatjeleket a címből</string>
+    <string name="NekoXProxy">NekoX Nyilvános Proxy</string>
+    <string name="PublicPrefix">Nyilvános</string>
 </resources>
