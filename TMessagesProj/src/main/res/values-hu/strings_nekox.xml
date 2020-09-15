@@ -49,4 +49,9 @@
     <string name="PrivacyNotice">Adatvédelmi figyelmeztetés</string>
     <string name="PrivacyNoticePhoneVisible">Azt észlelték, hogy mobiltelefonszámát bárki láthatja, emiatt a kormány által ellenőrzött hackerek megtalálhatják az Ön valódi személyazonosságát. Kérjük, kapcsolja ki!</string>
     <string name="PrivacyNoticeAddByPhone">Azt észleltük, hogy nem kapcsolta ki az \"Engedélyezz telefonszámon keresztül\" beállítást, amely miatt egy kormány által ellenőrzött hacker megtalálhatja a valódi személyazonosságát. Kapcsolja ki!</string>
+    <string name="PrivacyNoticeP2p">Azt észleltük, hogy nem kapcsolta ki az \"Engedélyezze a P2p hívásokat\" beállítást, amely a kormány által ellenőrzött hackerekre késztetheti az Ön valódi identitását. Kapcsolja ki!</string>
+    <string name="PrivacyNotice2fa">Azt észleltük, hogy nem adott meg jelszót, ami miatt a kormány által ellenőrzött hackerek megtalálhatják az Ön valódi személyazonosságát. Kérjük, állítson be egyet!</string>
+    <string name="ApplySuggestion">Oké, Alkalmazza</string>
+    <string name="DoNotRemindAgain">Ne emlékeztesse újra</string>
+    <string name="RemoveTitleEmoji">Távolítsa el a hangulatjeleket a címből</string>
 </resources>
