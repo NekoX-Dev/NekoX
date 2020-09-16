@@ -69,4 +69,5 @@
     <string name="FilterNameBots">Botok</string>
     <string name="FilterNameBotsDescription">Csak botoktól származó üzenetek</string>
     <string name="DialogsSettings">Párbeszédpanelek beállításai</string>
+    <string name="SortByContacts">Rendezés névjegyek szerint</string>
 </resources>
