@@ -59,4 +59,14 @@
     <string name="DisableChatAction">Ne küldje el a bemeneti állapotomat</string>
     <string name="Import">Importálás</string>
     <string name="FilterNameUsers">Felhasználók</string>
+    <string name="FilterNameUsersDescription">Csak privát beszélgetésekből származó üzenetek</string>
+    <string name="FilterNameContacts">Névjegyek</string>
+    <string name="FilterNameContactsDescription">Csak a mentett felhasználók üzenetei</string>
+    <string name="FilterNameGroups">Csoportok</string>
+    <string name="FilterNameGroupsDescription">Csak a csoportos csevegésekből származó üzenetek</string>
+    <string name="FilterNameChannels">Csatornák</string>
+    <string name="FilterNameChannelsDescription">Csak csatornákról érkező üzenetek</string>
+    <string name="FilterNameBots">Botok</string>
+    <string name="FilterNameBotsDescription">Csak botoktól származó üzenetek</string>
+    <string name="DialogsSettings">Párbeszédpanelek beállításai</string>
 </resources>
