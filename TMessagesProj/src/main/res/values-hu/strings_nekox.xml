@@ -77,6 +77,8 @@
     <string name="FilterNameUnmutedAndUnreadDescription">Csak a némítatlan csevegésekből származó olvasatlan üzenetek</string>
     <string name="IgnoreMutedCount">Hagyja figyelmen kívül a némított olvasatlanok számát a mappa lapon</string>
     <string name="DialogsSettings">Párbeszédpanelek beállításai</string>
+    <string name="SortMenu">A párbeszédpanel rendezési beállításai</string>
+    <string name="SortByUnread">Rendezés olvasatlan szerint</string>
     <string name="SortByUser">Rendezés felhasználó szerint</string>
     <string name="SortByContacts">Rendezés névjegyek szerint</string>
     <string name="NekoXPushService">NekoX Push Service</string>
