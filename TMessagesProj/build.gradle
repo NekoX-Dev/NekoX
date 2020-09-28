@@ -101,7 +101,7 @@ dependencies {
 
     implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
     implementation "com.squareup.okhttp3:okhttp-dnsoverhttps:$okHttpVersion"
-    implementation 'dnsjava:dnsjava:3.2.2'
+    implementation 'dnsjava:dnsjava:3.3.0'
     implementation 'org.dizitart:nitrite:3.4.2'
 
     implementation 'cn.hutool:hutool-core:5.4.3'
