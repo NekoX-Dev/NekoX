@@ -104,7 +104,7 @@ dependencies {
     implementation 'dnsjava:dnsjava:3.2.2'
     implementation 'org.dizitart:nitrite:3.4.2'
 
-    implementation 'cn.hutool:hutool-core:5.4.3'
+    implementation 'cn.hutool:hutool-core:5.4.4'
     implementation 'cn.hutool:hutool-crypto:5.4.3'
 
     implementation project(":openpgp-api")
