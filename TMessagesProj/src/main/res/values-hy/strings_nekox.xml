@@ -1,2 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="Locked">Կողպված է</string>
+    <string name="CustomApi">Հատուկ API</string>
+    <string name="UseCustomApiNotice">Մուտք գործեք հատուկ api- ով, եթե չեք կարող գրանցվել կամ մուտք գործել, դա կարող է օգնել:\n\nՆշում. Fcm- ը չի աշխատի, եթե դուք օգտագործում եք թողարկման տարբերակը.</string>
+    <string name="CustomApiNo">Մի օգտագործեք հատուկ API</string>
+    <string name="CustomApiOfficial">Հեռագիր Android</string>
+    <string name="CustomApiTGX">Հեռագիր Android X</string>
+    <string name="CustomApiInput">Ձեռնարկի մուտքագրում</string>
+    <string name="CheckUpdate">Ստուգեք թարմացումը</string>
+    <string name="SwitchVersion">Փոխել տարբերակը</string>
+    <string name="NoUpdate">Թարմացում չի գտնվել</string>
+    <string name="UpdateAvailable">Հասանելի է նոր թարմացում</string>
+    <string name="UpdateUpdate">Թարմացնել</string>
+    <string name="UpdateLater">Հետագայում</string>
+    <string name="DownloadFailed">Ներբեռնումը ձախողվեց</string>
+    <string name="Install">Տեղադրեք</string>
+    <string name="Ignore">Անտեսել</string>
+    <string name="UpdateDownloaded">Նորացումը ներբեռնվել է.</string>
+    <string name="ProxyAutoSwitch">Պրոքսիի ավտոմատ անջատիչ</string>
+    <string name="LinkedGroupChat">Կապված խումբ</string>
+    <string name="LinkedChannelChat">Կապված ալիք</string>
+    <string name="DevModeTitle">** Ձեր հեռագրի հաշիվը կարող է արգելվել **</string>
+    <string name="DevModeNotice">Մենք պատասխանատվություն չենք կրում մշակողի առանձնահատկությունների ոչ պատշաճ օգտագործման համար.</string>
+    <string name="TapToDisable">Հպեք ՝ անջատելու համար: Սրանք ձեզ պետք չեն.</string>
+    <string name="PlaceHolder">Տեղապահ - Խնդրում ենք անջատել</string>
+    <string name="CustomBackend">Պատվերով Backend</string>
+    <string name="CustomBackendNotice">Այս գործառույթը տրամադրվում է միայն փորձառու օգտվողների համար, եթե չգիտեք, թե հետևյալ ընտրանքներն ինչ են ներկայացնում, պարզապես անտեսեք այն.</string>
+    <string name="CustomBackendProduction">Արտադրության պաշտոնական տվյալների կենտրոն</string>
+    <string name="CustomBackendTestDC">Պաշտոնական թեստային տվյալների կենտրոն</string>
+    <string name="CustomBackendIpv4">Ipv4 հասցե</string>
+    <string name="CustomBackendIpv6">Ipv6 հասցե</string>
+    <string name="CustomBackendLayer">Շերտը</string>
+    <string name="CustomBackendPublicKey">Հանրային բանալին</string>
+    <string name="CustomBackendFingerprint">Հիմնական մատնահետք</string>
+    <string name="CachePath">Քեշի գրացուցակ</string>
+    <string name="AllowFlashCall">Թույլատրել ֆլեշ զանգը</string>
+    <string name="ChangeTranslateProvider">Փոխել մատակարարը</string>
+</resources>
