@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Locked">锁定</string>
+    <string name="Locked">已锁定</string>
     <string name="CustomApi">自定义 API</string>
     <string name="UseCustomApiNotice">使用自定义 Api 登录，如果您无法注册或登录，这可能会有帮助。\n\n注意：如果您正在使用 release 版本，谷歌云推送将无法工作。</string>
     <string name="CustomApiNo">不使用自定义 API</string>
@@ -177,4 +177,6 @@
     <string name="PGPImportPrivate">导入私钥</string>
     <string name="ShareMyKey">分享我的公钥</string>
     <string name="DisableVibration">禁用振动</string>
+    <string name="IgnoreContentRestrictions">忽略内容限制</string>
+    <string name="IgnoreContentRestrictionsNotice">忽略本地消息的 Android 限制。 这可能会在将来被服务器禁止，您需要自己评估此选项的本地合法性。</string>
 </resources>
