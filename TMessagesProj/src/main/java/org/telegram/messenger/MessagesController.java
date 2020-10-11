@@ -13302,7 +13302,7 @@ public class MessagesController extends BaseController implements NotificationCe
         } else if (user != null) {
             reason = getRestrictionReason(user.restriction_reason);
         }
-        if (reason != null) {
+        if (reason != null && !NekoConfig.ignoreContentRestrictions) {
             showCantOpenAlert(fragment, reason);
             return false;
         }

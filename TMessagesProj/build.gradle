@@ -344,6 +344,9 @@ android {
         }
         full {
         }
+        fullPlay {
+            versionNameSuffix '-play'
+        }
         fullNoEmoji {
             versionNameSuffix '-full-no-emoji'
         }
