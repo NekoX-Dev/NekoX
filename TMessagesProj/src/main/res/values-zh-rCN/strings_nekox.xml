@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Locked">锁定</string>
+    <string name="Locked">已锁定</string>
     <string name="CustomApi">自定义 API</string>
     <string name="UseCustomApiNotice">使用自定义 Api 登录，如果您无法注册或登录，这可能会有帮助。\n\n注意：如果您正在使用 release 版本，谷歌云推送将无法工作。</string>
     <string name="CustomApiNo">不使用自定义 API</string>
@@ -103,7 +103,6 @@
     <string name="AddProxyVmess">添加 Vmess 代理</string>
     <string name="AddProxySS">添加 Shadowsocks 代理</string>
     <string name="AddProxySSR">添加 ShadowsocksR 代理</string>
-    <string name="AddProxyRB">添加 RelayBaton 代理</string>
     <string name="SSPluginConflictingName">多个插件使用此ID： %s.</string>
     <string name="EditProxy">编辑代理</string>
     <string name="ShareProxy">分享代理</string>
@@ -178,5 +177,5 @@
     <string name="ShareMyKey">分享我的公钥</string>
     <string name="DisableVibration">禁用振动</string>
     <string name="IgnoreContentRestrictions">忽略内容限制</string>
-    <string name="IgnoreContentRestrictionsNotice">在本机忽略消息针对 Android 平台的限制. 这可能在未来被服务器禁止, 您需要自行评估在当地的合法性.</string>
+    <string name="IgnoreContentRestrictionsNotice">忽略本地消息的 Android 限制。 这可能会在将来被服务器禁止，您需要自己评估此选项的本地合法性。</string>
 </resources>
