@@ -103,7 +103,6 @@
     <string name="AddProxyVmess">Vmess-прокси</string>
     <string name="AddProxySS">Shadowsocks-прокси</string>
     <string name="AddProxySSR">ShadowsocksR-прокси</string>
-    <string name="AddProxyRB">RelayBaton-прокси</string>
     <string name="SSPluginConflictingName">Некоторые плагины используют этот ID: %s.</string>
     <string name="EditProxy">Изменить прокси</string>
     <string name="ShareProxy">Поделиться прокси</string>
