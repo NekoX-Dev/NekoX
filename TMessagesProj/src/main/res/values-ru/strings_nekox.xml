@@ -179,4 +179,5 @@
     <string name="ShareMyKey">Поделиться моим открытым ключом</string>
     <string name="DisableVibration">Отключить вибрацию</string>
     <string name="IgnoreContentRestrictions">Игнорировать ограничения контента</string>
+    <string name="IgnoreContentRestrictionsNotice">Локально игнорирует ограничения Android на сообщения. В будущем это может быть запрещено со стороны сервера, и вам нужно будет самостоятельно оценить законность этой опции.</string>
 </resources>
