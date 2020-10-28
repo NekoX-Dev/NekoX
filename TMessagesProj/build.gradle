@@ -44,7 +44,7 @@ configurations {
 }
 
 def okHttpVersion = '4.9.0'
-def fcmVersion = '20.3.0'
+def fcmVersion = '21.0.0'
 def crashlyticsVersion = '17.2.2'
 def playCoreVersion = '1.8.3'
 
