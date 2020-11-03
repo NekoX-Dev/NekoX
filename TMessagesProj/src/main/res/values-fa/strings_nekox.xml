@@ -176,8 +176,8 @@
     <string name="PGPVerify">تایید پیام</string>
     <string name="PGPImport">وارد کردن کلید عمومی</string>
     <string name="PGPImportPrivate">کلید خصوصی را بارگذاری کن</string>
-    <string name="ShareMyKey">کلید عمومی من را به اشتراک بگذار</string>
-    <string name="DisableVibration">لرزش را غیرفعال کن</string>
-    <string name="IgnoreContentRestrictions">محدودیت های محتوا را نادیده بگیر</string>
-    <string name="IgnoreContentRestrictionsNotice">محدودیت های اندروید در پیام ها را به صورت محلی نادیده می گیرد. این ممکن است در آینده توسط سرور ممنوع شود و شما باید قانونی بودن این گزینه را خودتان ارزیابی کنید.</string>
+    <string name="ShareMyKey">اشتراک گذاری کلید عمومی من</string>
+    <string name="DisableVibration">غیرفعال کردن لرزش</string>
+    <string name="IgnoreContentRestrictions">دور زدن محدودیت های محتوا</string>
+    <string name="IgnoreContentRestrictionsNotice">محدودیت های پیامها در اندروید را بصورت محلی دور می زند. این ممکن است در آینده توسط سرور از کار بیفتد، و شما خودتان نیازمند بررسی قانونی بودن این قابلیت هستید.</string>
 </resources>
