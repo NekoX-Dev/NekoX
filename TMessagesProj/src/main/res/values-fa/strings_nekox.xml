@@ -38,9 +38,9 @@
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
     <string name="ProviderYandexTranslate">ترجمه با موتور \"یاندکس\"</string>
     <string name="GoogleCloudTransKey">کلید ترجمه Google Cloud</string>
-    <string name="GoogleCloudTransKeyNotice">اگر کلید Google Cloud Trans را تنظیم کرده باشید ، به جای ارسال فرم جعلی به نسخه وب هنگام ترجمه (سریعتر ، پایدار و صرفه جویی در ترافیک) ، API ترجمه ابری فراخوانی می شود.</string>
-    <string name="TransToLang">ترجمه زبان هدف</string>
-    <string name="TransInputToLang">ترجمه ورودی زبان هدف</string>
+    <string name="GoogleCloudTransKeyNotice">اگر کلید ترجمه Google Cloud را تنظیم کرده باشید، به جای ارسال فرم جعلی به نسخه وب هنگام ترجمه، API ترجمه ابری (که سریعتر، پایدار تر، و کم مصرف تر است) فراخوانی می شود.</string>
+    <string name="TransToLang">زبان ترجمه مقصد</string>
+    <string name="TransInputToLang">زبان ترجمه پیام ورودی</string>
     <string name="More">بیشتر</string>
     <string name="NekoXUpdatesChannel">کانال بروزرسانی NekoX</string>
     <string name="ShowIdAndDc">نمایش شناسه/DC کاربر در پروفایل</string>
@@ -57,7 +57,7 @@
     <string name="NekoXProxy">پروکسی عمومی NekoX</string>
     <string name="PublicPrefix">عمومی</string>
     <string name="DisableChatAction">وضعیت مرا ارسال نکن</string>
-    <string name="FakeScreenshot">تصویر پیش‌نمایش</string>
+    <string name="FakeScreenshot">تظاهر کردن عکس از صفحه</string>
     <string name="Import">وارد كردن</string>
     <string name="FilterNameUsers">کاربران</string>
     <string name="FilterNameUsersDescription">فقط پیام های چت های خصوصی</string>
