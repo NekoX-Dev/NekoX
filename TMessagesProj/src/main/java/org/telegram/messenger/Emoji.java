@@ -311,7 +311,7 @@ public class Emoji {
         }
 
         public boolean isLoaded() {
-            if (!NekoConfig.useSystemEmoji && EmojiProvider.isFont) {
+            if (NekoConfig.useSystemEmoji || EmojiProvider.isFont) {
                 return true;
             }
             return emojiBmp[info.page][info.page2] != null;
