@@ -103,7 +103,7 @@
     <string name="AddProxyVmess">افزودن پروکسی Vmess</string>
     <string name="AddProxySS">افزودن پروکسی شادوساکس SS</string>
     <string name="AddProxySSR">افزودن پروکسی شادوساکس SSR</string>
-    <string name="AddProxyRB">اضافه کردن پروکسی RelayBaton </string>
+    <string name="AddProxyTrojan">افزودن پروکسی Trojan</string>
     <string name="SSPluginConflictingName">چندین افزونه از این شناسه استفاده می کنند: %s.</string>
     <string name="EditProxy">ویرایش پروکسی</string>
     <string name="ShareProxy">اشتراک گذاری پروکسی</string>
@@ -127,6 +127,7 @@
     <string name="SSRProtocolParams">پارامترهای پروتکل</string>
     <string name="SSRObfs">Obfs</string>
     <string name="SSRObfsParam">Obfs Param</string>
+    <string name="ProxyInfoTrojan">تنظیمات پروکسی Trojan</string>
     <string name="ProxyRemarks">نام دلخواه (ملاحضات)</string>
     <string name="RetestPing">آزمایش مجدد پینگ برای همه سرورها</string>
     <string name="ReorderByPing">مرتب سازی براساس پینگ</string>
@@ -177,4 +178,6 @@
     <string name="PGPImportPrivate">کلید خصوصی را بارگذاری کن</string>
     <string name="ShareMyKey">کلید عمومی من را به اشتراک بگذار</string>
     <string name="DisableVibration">لرزش را غیرفعال کن</string>
+    <string name="IgnoreContentRestrictions">محدودیت های محتوا را نادیده بگیر</string>
+    <string name="IgnoreContentRestrictionsNotice">محدودیت های اندروید در پیام ها را به صورت محلی نادیده می گیرد. این ممکن است در آینده توسط سرور ممنوع شود و شما باید قانونی بودن این گزینه را خودتان ارزیابی کنید.</string>
 </resources>
