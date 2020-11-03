@@ -18,8 +18,8 @@
     <string name="Ignore">نادیده بگیر</string>
     <string name="UpdateDownloaded">یک آپدیت به تازگی بارگیری شده است.</string>
     <string name="ProxyAutoSwitch">سوئیچ خودکار پروکسی</string>
-    <string name="LinkedGroupChat">گروه پیوند شده</string>
-    <string name="LinkedChannelChat">کانال پیوند شده</string>
+    <string name="LinkedGroupChat">گروه متصل</string>
+    <string name="LinkedChannelChat">کانال متصل</string>
     <string name="DevModeTitle">** ممکن است حساب تلگرام شما Ban باشد **</string>
     <string name="DevModeNotice">ما مسئول استفاده نادرست از ویژگی های توسعه دهنده نیستیم.</string>
     <string name="TapToDisable">برای غیرفعال کردن ضربه بزنید. شما به اینها احتیاج ندارید.</string>
