@@ -95,7 +95,7 @@
     <string name="DeleteAllInChat">حذف همه در این گفتگو</string>
     <string name="DeleteAllInChatAlert">هشدار! با این کار ، **تمام پیام ها** در این گفتگو برای همه شرکت کنندگان حذف می شود.</string>
     <string name="UnblockAll">رفع مسدودی همه</string>
-    <string name="UnblockAllWarn">آیا شما از رفع مسدود**همه ی کاربران و ربات ها**اطمینان دارید?</string>
+    <string name="UnblockAllWarn">آیا از رفع مسدودیت **همه ی کاربران و ربات ها** اطمینان دارید؟</string>
     <string name="BlockedListEmpty">شما هیچ فردی را مسدود نکرده اید :)</string>
     <string name="ProxyTypeVmess">پروکسی Vmess</string>
     <string name="AddProxySocks5">افزودن پروکسی Socks5</string>
