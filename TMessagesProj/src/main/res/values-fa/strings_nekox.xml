@@ -175,7 +175,7 @@
     <string name="PGPDecrypt">رمزگشایی پیام</string>
     <string name="PGPVerify">تایید پیام</string>
     <string name="PGPImport">وارد کردن کلید عمومی</string>
-    <string name="PGPImportPrivate">کلید خصوصی را بارگذاری کن</string>
+    <string name="PGPImportPrivate">ایمپورت کلید خصوصی</string>
     <string name="ShareMyKey">اشتراک گذاری کلید عمومی من</string>
     <string name="DisableVibration">غیرفعال کردن لرزش</string>
     <string name="IgnoreContentRestrictions">دور زدن محدودیت های محتوا</string>
