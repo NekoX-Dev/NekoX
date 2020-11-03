@@ -48,12 +48,12 @@
     <string name="NightMode">حالت شب</string>
     <string name="PrivacyNotice">هشدار حریم خصوصی</string>
     <string name="PrivacyNoticePhoneVisible">بنظر می رسد شماره تلفن شما برای همه قابل مشاهده است، و این ممکن باعث شود که هکرهای دولتی هویت واقعی شما را پیدا کنند. لطفا آن را خاموش کنید!</string>
-    <string name="PrivacyNoticeAddByPhone">تشخیص داده شده است که تنظیمات \"یافتن من از طریق شماره تلفن\" شما خاموش نیست، که ممکن است باعث شود یک هکر تحت کنترل دولت بتواند هویت واقعی شما را پیدا کند ، لطفاً آن را خاموش کنید!</string>
-    <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز بودن تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
-    <string name="PrivacyNotice2fa">تشخیص داده می شود که رمز عبوری تنظیم نکرده اید ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آنرا تعیین کنید</string>
-    <string name="ApplySuggestion">قبول،اعمال کن</string>
+    <string name="PrivacyNoticeAddByPhone">بنظر می رسد شما گزینه \"یافتن من از طریق شماره تلفن\" را در تنظیمات روشن کرده اید، این ممکن است باعث شود هکرهای دولتی هویت واقعی شما را پیدا کنند. لطفا آن را خاموش کنید!</string>
+    <string name="PrivacyNoticeP2p">بنظر می رسد شما گزینه \"مجاز بودن تماس نظیر به نظیر\" را در تنظیمات روشن کرده اید، که این ممکن است باعث شود هکرهای دولتی هویت واقعی شما را پیدا کنند. لطفا آن را خاموش کنید!</string>
+    <string name="PrivacyNotice2fa">بنظر می رسد شما رمز عبوری برای حسابتان تعیین نکرده اید، که این ممکن است باعث شود هکرهای دولتی هویت واقعی شما را پیدا کنند. لطفا آن تعیین کنید!</string>
+    <string name="ApplySuggestion">باشه، اعمال کن</string>
     <string name="DoNotRemindAgain">دیگر یادآوری نشود</string>
-    <string name="RemoveTitleEmoji">حذف ایموجی کنار اسم Nekogram x</string>
+    <string name="RemoveTitleEmoji">حذف ایموجی کنار اسم Nekogram X</string>
     <string name="NekoXProxy">پروکسی عمومی NekoX</string>
     <string name="PublicPrefix">عمومی</string>
     <string name="DisableChatAction">وضعیت مرا ارسال نکن</string>
