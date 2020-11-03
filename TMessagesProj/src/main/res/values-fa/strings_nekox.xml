@@ -25,7 +25,7 @@
     <string name="TapToDisable">برای غیرفعال کردن ضربه بزنید. شما به این موارد نیاز ندارید.</string>
     <string name="PlaceHolder">حفره مکان - لطفا غیرفعال کنید</string>
     <string name="CustomBackend">Backend سفارشی</string>
-    <string name="CustomBackendNotice">این عملکرد فقط برای کاربران متخصص ارائه شده است ، اگر نمی دانید گزینه های زیر چه چیزی را نشان می دهد ، فقط آن را نادیده بگیر.</string>
+    <string name="CustomBackendNotice">این عملکرد فقط برای کاربران حرفه ‌ای ارائه شده است، اگر نمی دانید گزینه های زیر چه کاری انجام می دهد، لطفا دستکاری نکنید.</string>
     <string name="CustomBackendProduction">دیتاسنتر رسمی</string>
     <string name="CustomBackendTestDC">دیتاسنتر رسمی آزمایشی</string>
     <string name="CustomBackendIpv4">آدرس Ipv4</string>
@@ -33,7 +33,7 @@
     <string name="CustomBackendLayer">لایه</string>
     <string name="CustomBackendPublicKey">کلید عمومی</string>
     <string name="CustomBackendFingerprint">کلید اثر انگشت</string>
-    <string name="CachePath">فهرست کش</string>
+    <string name="CachePath">محل ذخیره کش</string>
     <string name="AllowFlashCall">تماس flash call مجاز شود</string>
     <string name="ChangeTranslateProvider">تغییر ارائه دهنده خدمات</string>
     <string name="ProviderYandexTranslate">ترجمه با موتور \"یاندکس\"</string>
@@ -47,7 +47,7 @@
     <string name="UseDefaultTheme">استفاده تم پیشفرض</string>
     <string name="NightMode">حالت شب</string>
     <string name="PrivacyNotice">هشدار حریم خصوصی</string>
-    <string name="PrivacyNoticePhoneVisible">تشخیص داده شده است که شماره تلفن همراه شما برای همه قابل رویت است ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفا آن را خاموش کنید!</string>
+    <string name="PrivacyNoticePhoneVisible">بنظر می رسد شماره تلفن شما برای همه قابل مشاهده است، و این ممکن باعث شود که هکرهای دولتی هویت واقعی شما را پیدا کنند. لطفا آن را خاموش کنید!</string>
     <string name="PrivacyNoticeAddByPhone">تشخیص داده شده است که تنظیمات \"یافتن من از طریق شماره تلفن\" شما خاموش نیست، که ممکن است باعث شود یک هکر تحت کنترل دولت بتواند هویت واقعی شما را پیدا کند ، لطفاً آن را خاموش کنید!</string>
     <string name="PrivacyNoticeP2p">تشخیص داده شده است که تنظیمات \"مجاز بودن تماس های نظیر به نظیر\" را خاموش نکرده اید ، که ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آن را خاموش کنید!</string>
     <string name="PrivacyNotice2fa">تشخیص داده می شود که رمز عبوری تنظیم نکرده اید ، و این ممکن است باعث شود هکرهای تحت کنترل دولت هویت واقعی شما را پیدا کنند ، لطفاً آنرا تعیین کنید</string>
