@@ -67,7 +67,7 @@
     <string name="FilterNameGroupsDescription">فقط پیام های گفتگو های گروهی</string>
     <string name="FilterNameChannels">کانال ها</string>
     <string name="FilterNameChannelsDescription">فقط پیام های کانال ها</string>
-    <string name="FilterNameBots">ربات ih</string>
+    <string name="FilterNameBots">ربات ها</string>
     <string name="FilterNameBotsDescription">فقط پیام های ربات ها</string>
     <string name="FilterNameUnmuted">صدا دار</string>
     <string name="FilterNameUnmutedDescription">فقط پیام های گفتگو های صدا دار</string>
