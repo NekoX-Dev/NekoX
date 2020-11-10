@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">鎖定</string>
+    <string name="ChatAttachEnterMenuRecordVideo">錄影</string>
+    <string name="ChatAttachEnterMenuRecordAudio">錄音</string>
+    <string name="ChatAttachEnterMenuDisableLinkPreview">停用連結預覽</string>
+    <string name="ChatAttachEnterMenuEnableLinkPreview">啟用連結預覽</string>
+    <string name="UseChatAttachEnterMenu">使用輸入選單</string>
+    <string name="UseChatAttachEnterMenuNotice">把錄製按鈕替換成選單，並加入連結預覽開關</string>
+    <string name="DisableLinkPreviewByDefault">預設停用連結預覽</string>
+    <string name="DisableLinkPreviewByDefaultNotice">停用連結預覽可以防止伺服器知道該連結被分享到Telegram上</string>
     <string name="CustomApi">自定義API</string>
     <string name="UseCustomApiNotice">使用自定義api登錄，如果您無法註冊或登錄，這可能會有所幫助。\n\n注意：如果您正在使用 release 版本，谷歌云推送將不起作用。</string>
     <string name="CustomApiNo">不要使用自定義API</string>
@@ -103,6 +111,7 @@
     <string name="AddProxyVmess">添加 Vmess 代理</string>
     <string name="AddProxySS">添加 Shadowsocks 代理</string>
     <string name="AddProxySSR">添加 ShadowsocksR 代理</string>
+    <string name="AddProxyTrojan">新增Trojan代理</string>
     <string name="SSPluginConflictingName">多個插件使用此ID： %s。</string>
     <string name="EditProxy">編輯代理</string>
     <string name="ShareProxy">分享代理</string>
@@ -126,6 +135,7 @@
     <string name="SSRProtocolParams">協議參數</string>
     <string name="SSRObfs">混淆</string>
     <string name="SSRObfsParam">混淆參數</string>
+    <string name="ProxyInfoTrojan">Trojan代理設定</string>
     <string name="ProxyRemarks">別名</string>
     <string name="RetestPing">重新測試所有 Ping 值</string>
     <string name="ReorderByPing">基於Ping值重新排序</string>
