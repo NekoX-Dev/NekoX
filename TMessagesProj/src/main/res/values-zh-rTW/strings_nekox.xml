@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">鎖定</string>
+    <string name="AccDescrChatAttachEnterMenu">聊天輸入選單</string>
     <string name="ChatAttachEnterMenuRecordVideo">錄影</string>
     <string name="ChatAttachEnterMenuRecordAudio">錄音</string>
     <string name="ChatAttachEnterMenuDisableLinkPreview">停用連結預覽</string>
