@@ -187,6 +187,5 @@
     <string name="PGPImportPrivate">Ներմուծել անձնական բանալին</string>
     <string name="ShareMyKey">Share իմ հանրային բանալին</string>
     <string name="DisableVibration">Անջատեք թրթռումը</string>
-    <string name="IgnoreContentRestrictions">Անտեսեք բովանդակության սահմանափակումները</string>
     <string name="IgnoreContentRestrictionsNotice">Անտեսում է հաղորդագրությունների տեղական android սահմանափակումները: Հետագայում դա կարող է արգելվել սերվերի կողմից, և դուք պետք է ինքներդ գնահատեք այս տարբերակի տեղական օրինականությունը:</string>
 </resources>
