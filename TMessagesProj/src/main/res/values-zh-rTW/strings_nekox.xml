@@ -161,6 +161,7 @@
     <string name="DeleteAllServerConfirm">您確定要**刪除所有伺服器**嗎？</string>
     <string name="DeleteUnavailableServerConfirm">您確定要**刪除不可用的伺服器**嗎？</string>
     <string name="MinApi21Required">抱歉，您至少需要 Android 5 (API21)。</string>
+    <string name="MinApi23Required">不好意思，您至少需要 Android 6 (API23)</string>
     <string name="MiniVersionAlert">抱歉，迷你版不支持此類型的代理，請在設置中切換版本。</string>
     <string name="ImportProxyFromClipboard">從剪切板導入</string>
     <string name="BrokenLink">未知或損壞的鏈接</string>
@@ -185,4 +186,6 @@
     <string name="PGPImportPrivate">導入私鑰</string>
     <string name="ShareMyKey">分享我的公鑰</string>
     <string name="DisableVibration">禁用振動</string>
+    <string name="IgnoreContentRestrictions">忽略內容限制</string>
+    <string name="IgnoreContentRestrictionsNotice">忽略 Telegram 在本地對訊息的限制。這在將來可能會被伺服器禁止，且您需要自行驗證這個功能在本地的合法性。</string>
 </resources>
