@@ -28,11 +28,11 @@
     <string name="ProxyAutoSwitch">代理自動切換</string>
     <string name="LinkedGroupChat">關聯組</string>
     <string name="LinkedChannelChat">關聯頻道</string>
-    <string name="DevModeTitle">**您的電報帳戶可能被禁止**</string>
+    <string name="DevModeTitle">**您的Telegram帳戶可能被停權**</string>
     <string name="DevModeNotice">對於開發者功能的任何不當使用，我們概不負責。</string>
     <string name="TapToDisable">點擊以禁用。您不需要這些。</string>
     <string name="PlaceHolder">佔位符-請禁用</string>
-    <string name="CustomBackend">自定義後端</string>
+    <string name="CustomBackend">自訂後端</string>
     <string name="CustomBackendNotice">此功能僅提供給專業用戶，如果您不知道以下選項代表什麼，請忽略它。</string>
     <string name="CustomBackendProduction">官方生產數據中心</string>
     <string name="CustomBackendTestDC">官方測試數據中心</string>
@@ -187,5 +187,5 @@
     <string name="ShareMyKey">分享我的公鑰</string>
     <string name="DisableVibration">禁用振動</string>
     <string name="IgnoreContentRestrictions">忽略內容限制</string>
-    <string name="IgnoreContentRestrictionsNotice">忽略 Telegram 在本地對訊息的限制。這在將來可能會被伺服器禁止，且您需要自行驗證這個功能在本地的合法性。</string>
+    <string name="IgnoreContentRestrictionsNotice">忽略 Telegram 在 Android 本地對訊息的限制。這在將來可能會被伺服器禁止，且您需要自行驗證這個功能在本地的合法性。</string>
 </resources>
