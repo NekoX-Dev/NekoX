@@ -189,4 +189,5 @@
     <string name="DisableVibration">禁用振動</string>
     <string name="IgnoreContentRestrictions">忽略內容限制</string>
     <string name="IgnoreContentRestrictionsNotice">忽略 Telegram 在 Android 本地對訊息的限制。這在將來可能會被伺服器禁止，且您需要自行驗證這個功能在本地的合法性。</string>
+    <string name="SendCommentAfterForward">在轉發訊息之後送出留言</string>
 </resources>
