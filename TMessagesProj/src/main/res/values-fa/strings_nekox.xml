@@ -187,6 +187,5 @@
     <string name="PGPImportPrivate">ایمپورت کلید خصوصی</string>
     <string name="ShareMyKey">اشتراک گذاری کلید عمومی من</string>
     <string name="DisableVibration">غیرفعال کردن لرزش</string>
-    <string name="IgnoreContentRestrictions">دور زدن محدودیت های محتوا</string>
     <string name="IgnoreContentRestrictionsNotice">محدودیت های پیامها در اندروید را بصورت محلی دور می زند. این ممکن است در آینده توسط سرور از کار بیفتد، و شما خودتان نیازمند بررسی قانونی بودن این قابلیت هستید.</string>
 </resources>
