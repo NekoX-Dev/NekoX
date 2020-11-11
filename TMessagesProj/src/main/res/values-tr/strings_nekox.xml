@@ -174,8 +174,8 @@
     <string name="DeveloperSettings">Geliştirici Ayarları</string>
     <string name="LoginSettings">Giriş Ayarları</string>
     <string name="NekoXFaq">NekoX SSS</string>
-    <string name="TransSite">Tercüme Platformu</string>
-    <string name="UsePersianCalender">Farsça Takvimi Kullan</string>
+    <string name="TransSite">NekoX\'in çevrilmesine katkıda bulunun</string>
+    <string name="UsePersianCalender">Farsça takvimi kullan</string>
     <string name="OpenKayChain">OpenPGP İstemcisi</string>
     <string name="OpenPGPApp">OpenPGP Sağlayıcısı</string>
     <string name="OpenPGPKey">OpenPGP Anahtarı</string>
