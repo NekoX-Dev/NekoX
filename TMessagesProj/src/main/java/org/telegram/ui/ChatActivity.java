@@ -17489,7 +17489,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             options.add(12);
                             icons.add(R.drawable.baseline_edit_24);
                         }
-                        if (selectedObject.contentType == 0 && !selectedObject.isMediaEmptyWebpage() && selectedObject.getId() > 0 && !selectedObject.isOut() && (currentChat != null || currentUser != null && currentUser.bot)) {
+                        if (NekoConfig.showReport && selectedObject.contentType == 0 && !selectedObject.isMediaEmptyWebpage() && selectedObject.getId() > 0 && !selectedObject.isOut() && (currentChat != null || currentUser != null && currentUser.bot)) {
                             items.add(LocaleController.getString("ReportChat", R.string.ReportChat));
                             options.add(23);
                             icons.add(R.drawable.baseline_report_24);
@@ -17796,22 +17796,22 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 options.add(90);
                                 icons.add(R.drawable.baseline_schedule_24);
                             }
-                            if (NekoConfig.showTranslate) {
-                                MessageObject messageObject = null;
-                                if (selectedObjectGroup != null) {
-                                    if (!TextUtils.isEmpty(selectedObjectGroup.messages.get(0).messageOwner.message)) {
-                                        messageObject = selectedObjectGroup.messages.get(0);
-                                    }
-                                } else if (!TextUtils.isEmpty(selectedObject.messageOwner.message) || selectedObject.type == MessageObject.TYPE_POLL) {
-                                    messageObject = selectedObject;
+                            MessageObject messageObject = null;
+                            if (selectedObjectGroup != null) {
+                                if (!TextUtils.isEmpty(selectedObjectGroup.messages.get(0).messageOwner.message)) {
+                                    messageObject = selectedObjectGroup.messages.get(0);
                                 }
+                            } else if (!TextUtils.isEmpty(selectedObject.messageOwner.message) || selectedObject.type == MessageObject.TYPE_POLL) {
+                                messageObject = selectedObject;
+                            }
+                            if (NekoConfig.showTranslate) {
                                 if (messageObject != null) {
-                                    items.add(selectedObject.messageOwner.translated ? LocaleController.getString("UndoTranslate", R.string.UndoTranslate) : LocaleController.getString("Translate", R.string.Translate));
+                                    items.add(messageObject.messageOwner.translated ? LocaleController.getString("UndoTranslate", R.string.UndoTranslate) : LocaleController.getString("Translate", R.string.Translate));
                                     options.add(88);
                                     icons.add(R.drawable.ic_translate);
                                 }
                             }
-                            if (StrUtil.isNotBlank(selectedObject.messageOwner.message) && StrUtil.isNotBlank(NekoConfig.openPGPApp)) {
+                            if (messageObject != null && StrUtil.isNotBlank(messageObject.messageOwner.message) && StrUtil.isNotBlank(NekoConfig.openPGPApp)) {
                                 if (PgpHelper.PGP_CLEARTEXT_SIGNATURE.matcher(selectedObject.messageOwner.message).matches()) {
                                     items.add(LocaleController.getString("PGPVerify", R.string.PGPVerify));
                                     options.add(200);
@@ -17863,11 +17863,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (chatMode != MODE_SCHEDULED && selectedObject.contentType == 0 && selectedObject.getId() > 0 && !selectedObject.isOut() && (currentChat != null || currentUser != null && currentUser.bot)) {
                             if (UserObject.isReplyUser(currentUser)) {
                                 items.add(LocaleController.getString("BlockContact", R.string.BlockContact));
-                            } else {
+
+                                options.add(23);
+                                icons.add(R.drawable.baseline_report_24);
+                            } else if (NekoConfig.showReport) {
                                 items.add(LocaleController.getString("ReportChat", R.string.ReportChat));
+
+                                options.add(23);
+                                icons.add(R.drawable.baseline_report_24);
                             }
-                            options.add(23);
-                            icons.add(R.drawable.baseline_report_24);
                         }
                         if (message.canDeleteMessage(chatMode == MODE_SCHEDULED, currentChat) && (threadMessageObjects == null || !threadMessageObjects.contains(message))) {
                             items.add(LocaleController.getString("Delete", R.string.Delete));
@@ -19065,7 +19069,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     return;
                 }
 
-                MessageTransKt.translateMessages(this, new MessageObject[]{selectedObject});
+                MessageTransKt.translateMessages(this, new MessageObject[]{messageObject});
 
                 break;
 
@@ -19219,9 +19223,21 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             case 200:
             case 201: {
 
+                MessageObject messageObject = null;
+                if (selectedObjectGroup != null) {
+                    if (!TextUtils.isEmpty(selectedObjectGroup.messages.get(0).messageOwner.message)) {
+                        messageObject = selectedObjectGroup.messages.get(0);
+                    }
+                } else if (!TextUtils.isEmpty(selectedObject.messageOwner.message) || selectedObject.type == MessageObject.TYPE_POLL) {
+                    messageObject = selectedObject;
+                }
+                if (messageObject == null) {
+                    return;
+                }
+
                 Intent open = new Intent(Intent.ACTION_SEND);
                 open.setType("application/pgp-message");
-                open.putExtra(Intent.EXTRA_TEXT, selectedObject.messageOwner.message);
+                open.putExtra(Intent.EXTRA_TEXT, messageObject.messageOwner.message);
                 open.setClassName(NekoConfig.openPGPApp, NekoConfig.openPGPApp + ".ui.DecryptActivity");
 
                 try {
