@@ -16,9 +16,9 @@
     <string name="FirstLast">Ad Soyad</string>
     <string name="LastFirst">Soyad Ad</string>
     <string name="TypefaceUseDefault">Sistem varsayılan yazı tipini kullan</string>
-    <string name="NoQuoteForward">Alıntılamadan ilet</string>
+    <string name="NoQuoteForward">Alıntılamadan İlet</string>
     <string name="Repeat">Tekrarla</string>
-    <string name="AddToSavedMessages">Mesajı kaydet</string>
+    <string name="AddToSavedMessages">Mesajı Kaydet</string>
     <string name="CreateMention">Bahset</string>
     <string name="ForceTabletMode">Tablet modunu zorla</string>
     <string name="Prpr">Peropero</string>
@@ -39,7 +39,7 @@
     <string name="TestBackendOn">Bu hesap test sunucusuna bağlanacak.</string>
     <string name="TestBackendOff">Bu hesap ana sunucuya bağlanacak.</string>
     <string name="HideProxySponsorChannel">Proxy sponsor kanalını gizle</string>
-    <string name="ViewHistory">Geçmişi görüntüle</string>
+    <string name="ViewHistory">Geçmişi Görüntüle</string>
     <string name="Nya">Miyav!</string>
     <string name="SaveCacheToExternalFilesDir">Depolama yalıtımı</string>
     <string name="SaveCacheToExternalFilesDirAbout">Paylaşılan depolama alanını düzenli tutmak için \"Telegram\" klasörünü uygulamaya özgü dizine kaydedin.</string>
@@ -63,7 +63,7 @@
     <string name="ProviderGoogleTranslateCN">Google Çeviri Çince</string>
     <string name="TranslateApiUnsupported">Seçtiğiniz çeviri sağlayıcısı dilinizi desteklemiyor.</string>
     <string name="ProviderLingocloud">Lingocloud Çeviri</string>
-    <string name="UndoTranslate">Çeviriyi geri al</string>
+    <string name="UndoTranslate">Çeviriyi Geri Al</string>
     <string name="DisablePhotoViewerSideAction">Dokunarak fotoğraf geçmeyi devre dışı bırak</string>
     <string name="BotToken">Anahtar</string>
     <string name="UnlimitedPinnedDialogs">Sınırsız sabitlenmiş sohbetler</string>
