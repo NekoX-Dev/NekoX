@@ -56,8 +56,8 @@
     <string name="UseDefaultTheme">Varsayılan temayı kullan *</string>
     <string name="NightMode">Gece Modu</string>
     <string name="PrivacyNotice">Gizlilik uyarısı</string>
-    <string name="PrivacyNoticePhoneVisible">Cep telefonu numaranızın herkes tarafından görülebildiği tespit edildi, bu da devlet kontrolündeki bilgisayar hackerlarının gerçek kimliğinizi bulmasına neden olabilir, lütfen kapatın!</string>
-    <string name="PrivacyNoticeAddByPhone">\"Beni telefon numarasıyla bulmaya izin ver\" ayarını kapatmadığınız tespit edildi. Bu ayar, devlet adına çalışan hackerların gerçek kimliğinizi bulmasına neden olabilir, lütfen kapatın!</string>
+    <string name="PrivacyNoticePhoneVisible">Cep telefonu numaranızın herkes tarafından görülebildiği tespit edildi. Bu ayar, devlet adına çalışan hackerların gerçek kimliğinizi bulmasına neden olabilir, lütfen kapatın!</string>
+    <string name="PrivacyNoticeAddByPhone">\"Beni telefon numarasından bulmaya izin ver\" ayarını kapatmadığınız tespit edildi. Bu ayar, devlet adına çalışan hackerların gerçek kimliğinizi bulmasına neden olabilir, lütfen kapatın!</string>
     <string name="PrivacyNoticeP2p">\"P2p çağrılarına izin ver\" ayarını kapatmadığınız tespit edildi. Bu ayar, devlet adına çalışan hackerların gerçek kimliğinizi bulmasına neden olabilir, lütfen kapatın!</string>
     <string name="PrivacyNotice2fa">Devlet adına çalışan hackerların gerçek kimliğinizi bulmasına neden olabilmesini önleyecek bir şifre ayarlamadığınız tespit edildi, lütfen ayarlayın!</string>
     <string name="ApplySuggestion">Tamam, uygula</string>
