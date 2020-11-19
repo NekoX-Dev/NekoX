@@ -6,7 +6,7 @@
     <string name="HidePhone">Telefon numaramı gizle</string>
     <string name="Hide">Gizle</string>
     <string name="DeleteAllFromSelf">Sohbetteki tüm mesajları kendinden sil</string>
-    <string name="DeleteAllFromSelfAlert">Uyarı! Bu, bu sohbetteki **senden gelen her mesajı**, **bütün** katılımcılar için silecek.</string>
+    <string name="DeleteAllFromSelfAlert">Uyarı! Bu, bu sohbetteki **senden gelen tüm mesajları**, **tüm** katılımcılar için silecek.</string>
     <string name="BotLogin">Bot Girişi</string>
     <string name="InvalidAccessToken">Erişim anahtarı geçersiz</string>
     <string name="IgnoreBlocked">Engellenmiş üyeleri grupta yoksay</string>
@@ -27,7 +27,7 @@
     <string name="DisableResidentNotification">Kalıcı bildirimi devre dışı bırak</string>
     <string name="NekogramRunning">Nekogram çalışıyor</string>
     <string name="EventType">Kenar çubuğu ikon ayarı</string>
-    <string name="ChristmasHat">Noel şapkasını her gün göster</string>
+    <string name="ChristmasHat">Her gün Noel şapkasını göster</string>
     <string name="ActionBarDecoration">Başlık çubuğu dekorasyonu</string>
     <string name="DependsOnDate">Tarihe bağlı</string>
     <string name="Christmas">Noel</string>
@@ -68,7 +68,7 @@
     <string name="BotToken">Anahtar</string>
     <string name="UnlimitedPinnedDialogs">Sınırsız sabitlenmiş sohbetler</string>
     <string name="UnlimitedPinnedDialogsAbout">Sabitlenmiş sohbetler senkronizasyonlarını kapatarak mesajları sınırsız sabitleyin.</string>
-    <string name="OpenArchiveOnPull">Arşivi kaydırdıktan sonra aç</string>
+    <string name="OpenArchiveOnPull">Arşivi, aşağıya kaydırıp aç</string>
     <string name="HideKeyboardOnChatScroll">Sohbeti kaydırırken klavyeyi gizle</string>
     <string name="UserRestrictionsSendStickers2">Çıkartma Gönder</string>
     <string name="UserRestrictionsSendGifs">GIF Gönder</string>
