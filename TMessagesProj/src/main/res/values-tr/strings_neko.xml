@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="NekoSettings">Neko Ayarları</string>
-    <string name="IPv6">IPv6 aracılığıyla bağlanmayı dene</string>
+    <string name="IPv6">IPv6 Aracılığıyla Bağlanmayı Dene</string>
     <string name="MessageMenu">Mesaj menüsü</string>
     <string name="HidePhone">Telefon numaramı gizle</string>
     <string name="Hide">Gizle</string>
@@ -58,7 +58,7 @@
     <string name="Translate">Çevir</string>
     <string name="DeleteAccount">Telegram hesabını sil</string>
     <string name="TranslateFailed">Çeviri sunucu hatası</string>
-    <string name="TranslationProvider">Çeviri sağlayıcısı</string>
+    <string name="TranslationProvider">Çeviri Sağlayıcısı</string>
     <string name="ProviderGoogleTranslate">Google Çeviri</string>
     <string name="ProviderGoogleTranslateCN">Google Çeviri Çince</string>
     <string name="TranslateApiUnsupported">Seçtiğiniz çeviri sağlayıcısı dilinizi desteklemiyor.</string>
