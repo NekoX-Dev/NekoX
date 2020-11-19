@@ -47,9 +47,9 @@
     <string name="ChangeTranslateProvider">Sağlayıcıyı Değiştir</string>
     <string name="ProviderYandexTranslate">Yandex.Çeviri</string>
     <string name="GoogleCloudTransKey">Google Cloud Çeviri Anahtarı</string>
-    <string name="GoogleCloudTransKeyNotice">Eğer bir Google Cloud Translation Anahtarı ayarlarsanız, web sürümüne sahte bir form göndermek yerine Cloud Translation API\'ını kullanarak daha hızlı, kararlı ve trafikten tasarruf ederek çeviri yaparsınız.</string>
-    <string name="TransToLang">Çeviri hedef dili</string>
-    <string name="TransInputToLang">Çeviri giriş hedef dili</string>
+    <string name="GoogleCloudTransKeyNotice">Eğer bir Google Cloud Translation Anahtarı ayarlarsanız, web sürümüne sahte bir form göndermek yerine Cloud Translation API\'ını kullanarak daha hızlı, kararlı ve internet trafiğinizden tasarruf ederek çeviri yaparsınız.</string>
+    <string name="TransToLang">Çeviri Hedef Dili</string>
+    <string name="TransInputToLang">Çeviri Girişi Hedef Dili</string>
     <string name="More">Daha</string>
     <string name="NekoXUpdatesChannel">NekoX Güncellemeleri Kanalı</string>
     <string name="ShowIdAndDc">Profilde Kimlik ve DC değerlerini göster</string>
@@ -85,8 +85,8 @@
     <string name="FilterNameUnmutedAndUnread">Sesli &amp; Okunmamış</string>
     <string name="FilterNameUnmutedAndUnreadDescription">Yalnızca sesli sohbetlerden gelen okunmamış mesajlar</string>
     <string name="IgnoreMutedCount">Klasör sekmesindeki sessiz ve okunmamış mesajları sayıma ekleme</string>
-    <string name="DialogsSettings">Mesajların Ayarları</string>
-    <string name="SortMenu">Mesajları Sıralama Ayarları</string>
+    <string name="DialogsSettings">İletişim Ayarları</string>
+    <string name="SortMenu">Mesajların Sıralanması</string>
     <string name="SortByUnread">Okunmamışlara Göre Sırala</string>
     <string name="SortByUnmuted">Seslilere Göre Sırala</string>
     <string name="SortByUser">Kullanıcıya Göre Sırala</string>
@@ -97,10 +97,10 @@
     <string name="DisableUndo">Geri Almayı Devre Dışı Bırak</string>
     <string name="DisableSystemAccount">Sistem Hesabını Devre Dışı Bırak</string>
     <string name="FilterMenu">Mesajlar Filtresi Menüsü</string>
-    <string name="DisableProxyWhenVpnEnabled">VPN etkinleştirildiğinde proxy\'yi devre dışı bırak</string>
-    <string name="UseProxyItem">Düğme yerine kenar çubuğu proxy öğesi kullan</string>
-    <string name="HideProxyByDefault">Proxy ayarlarını varsayılan olarak gizle</string>
-    <string name="SkipOpenLinkConfirm">Bağlantıyı açma onayı kutusunu atla</string>
+    <string name="DisableProxyWhenVpnEnabled">VPN Etkinleştirildiğinde Proxy\'yi Devre Dışı Bırak</string>
+    <string name="UseProxyItem">Vekil Sunucu Ayarını, Başlık Yerine Çekmece Menüsünde Göster</string>
+    <string name="HideProxyByDefault">Proxy Ayarlarını Varsayılan Olarak Gizle</string>
+    <string name="SkipOpenLinkConfirm">Bağlantıyı Açma Onayı Kutusunu Atla</string>
     <string name="DeleteAllInChat">Sohbetteki tüm mesajları sil</string>
     <string name="DeleteAllInChatAlert">Uyarı! Bu, **tüm** katılımcılar için bu sohbetteki **bütün mesajları** silecektir.</string>
     <string name="UnblockAll">Tümünün Engelini Kaldır</string>
@@ -174,7 +174,7 @@
     <string name="DeveloperSettings">Geliştirici Ayarları</string>
     <string name="LoginSettings">Giriş Ayarları</string>
     <string name="NekoXFaq">NekoX SSS</string>
-    <string name="TransSite">NekoX\'in çevrilmesine katkıda bulunun</string>
+    <string name="TransSite">NekoX\'in Çevrilmesine Katkıda Bulunun</string>
     <string name="UsePersianCalender">Farsça takvimi kullan</string>
     <string name="OpenKayChain">OpenPGP İstemcisi</string>
     <string name="OpenPGPApp">OpenPGP Sağlayıcısı</string>
