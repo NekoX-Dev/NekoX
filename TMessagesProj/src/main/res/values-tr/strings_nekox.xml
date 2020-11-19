@@ -26,7 +26,7 @@
     <string name="Install">Yükle</string>
     <string name="Ignore">Yok say</string>
     <string name="UpdateDownloaded">Bir güncelleme indirildi.</string>
-    <string name="ProxyAutoSwitch">Otomatik Proxy Geçişi</string>
+    <string name="ProxyAutoSwitch">Otomatik proxy geçişi</string>
     <string name="LinkedGroupChat">Bağlı Grup</string>
     <string name="LinkedChannelChat">Bağlı Kanal</string>
     <string name="DevModeTitle">**Telegram hesabınız yasaklanmış olabilir**</string>
@@ -186,7 +186,7 @@
     <string name="PGPImport">Genel Anahtarı İçe Aktar</string>
     <string name="PGPImportPrivate">Özel Anahtarı İçe Aktar</string>
     <string name="ShareMyKey">Ortak Anahtarımı Paylaş</string>
-    <string name="DisableVibration">Titreşimi Devre Dışı Bırak</string>
+    <string name="DisableVibration">Titreşimi devre dışı bırak</string>
     <string name="IgnoreContentRestrictions">İçerik kısıtlamalarını yok say</string>
     <string name="IgnoreContentRestrictionsNotice">Yerel olarak mesajlardaki android kısıtlamalarını yok sayar. Bu, gelecekte sunucu tarafından yasaklanabilir ve bu seçeneğin yerel yasallığını kendiniz değerlendirmeniz gerekecektir.</string>
     <string name="SendCommentAfterForward">Yorumu, ilettikten sonra gönderin</string>
