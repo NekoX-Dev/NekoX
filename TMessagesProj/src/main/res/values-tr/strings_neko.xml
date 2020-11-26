@@ -5,7 +5,7 @@
     <string name="MessageMenu">Mesaj Menüsü Ögeleri</string>
     <string name="HidePhone">Telefon Numaramı Gizle</string>
     <string name="Hide">Gizle</string>
-    <string name="DeleteAllFromSelf">Sohbetteki tüm mesajları kendinden sil</string>
+    <string name="DeleteAllFromSelf">Mesajlarını sil</string>
     <string name="DeleteAllFromSelfAlert">Uyarı! Bu, bu sohbetteki **senden gelen tüm mesajları**, **tüm** katılımcılar için silecek.</string>
     <string name="BotLogin">Bot Girişi</string>
     <string name="InvalidAccessToken">Erişim anahtarı geçersiz</string>
