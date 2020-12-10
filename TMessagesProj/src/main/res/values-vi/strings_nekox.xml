@@ -25,4 +25,23 @@
     <string name="DownloadFailed">Tải xuống không thành công</string>
     <string name="Install">Tải về</string>
     <string name="Ignore">Làm lơ</string>
+    <string name="FilterNameBotsDescription">Chỉ những tin nhắn từ bot</string>
+    <string name="FilterNameUnmuted">Tắt tiếng</string>
+    <string name="FilterNameUnmutedDescription">Chỉ tin nhắn từ các cuộc trò chuyện chưa được bật thông báo</string>
+    <string name="FilterNameUnread2">Chưa đọc</string>
+    <string name="FilterNameUnreadDescription">Chỉ những tin nhắn chưa đọc</string>
+    <string name="DeleteAllServerConfirm">Bạn có chắc chắn muốn **xóa tất cả các máy chủ**?</string>
+    <string name="DeleteUnavailableServerConfirm">Bạn có chắc chắn muốn **xóa các máy chủ không khả dụng**?</string>
+    <string name="MinApi21Required">Xin lỗi, bạn cần ít nhất Android 5 (API21).</string>
+    <string name="MinApi23Required">Xin lỗi, bạn cần ít nhất Android 6 (API23).</string>
+    <string name="ShareQRCode">Mã QR</string>
+    <string name="ScanQRCode">Quét mã QR</string>
+    <string name="NoQrFound">Không tìm thấy mã QR</string>
+    <string name="EnableDeveloperMode">Bật Chế độ nhà phát triển</string>
+    <string name="DisableDeveloperMode">Tắt Chế độ nhà phát triển</string>
+    <string name="DeveloperSettings">Cài đặt nhà phát triển</string>
+    <string name="LoginSettings">Cài đặt đăng nhập</string>
+    <string name="NekoXFaq">NekoX FAQ</string>
+    <string name="TransSite">Nền tảng Dịch</string>
+    <string name="None">Không</string>
 </resources>
