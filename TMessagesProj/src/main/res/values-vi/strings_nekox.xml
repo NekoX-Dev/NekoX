@@ -135,6 +135,7 @@
     <string name="SSRProtocol">Giao thức</string>
     <string name="SSRProtocolParams">Thông số giao thức</string>
     <string name="SSRObfs">Obfs</string>
+    <string name="SSRObfsParam">Thông số Obfs</string>
     <string name="ProxyInfoTrojan">Cài đặt Trojan Proxy</string>
     <string name="ProxyRemarks">Nhận xét</string>
     <string name="RetestPing">Kiểm tra lại ping cho tất cả các máy chủ</string>
@@ -186,6 +187,13 @@
     <string name="PGPImportPrivate">Nhập khóa cá nhân</string>
     <string name="ShareMyKey">Chia sẻ khóa công khai của tôi</string>
     <string name="DisableVibration">Tắt rung</string>
+    <string name="IgnoreContentRestrictions">Bỏ qua các hạn chế nội dung</string>
+    <string name="IgnoreContentRestrictionsNotice">Bỏ qua các hạn chế của Android đối với tin nhắn cục bộ. Điều này có thể bị máy chủ cấm trong tương lai và bạn sẽ cần phải tự mình đánh giá tính hợp pháp tại địa phương của tùy chọn này.</string>
+    <string name="SendCommentAfterForward">Gửi bình luận sau khi chuyển tiếp</string>
+    <string name="UnpinMessageX">Bỏ ghim tin nhắn</string>
+    <string name="UnpinMessagesAll">Bỏ ghim tất cả tin nhắn</string>
+    <string name="DismissForYourself">Loại bỏ cho chính mình</string>
+    <string name="ImportLogin">Đăng nhập bằng mã QR</string>
     <string name="QRLoginNotice">Mã QR / liên kết này cho phép ai đó đăng nhập vào tài khoản Telegram của bạn. Đây có phải là hoạt động của riêng bạn?</string>
     <string name="QRLoginConfirm">Xác nhận Đăng nhập</string>
     <string name="StorageReset">Dọn dẹp Bộ nhớ</string>
