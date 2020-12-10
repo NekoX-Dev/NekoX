@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="NekoSettings">Cài đặt Neko</string>
+    <string name="IPv6">Thử kết nối qua IPv6</string>
+    <string name="MessageMenu">Menu tin nhắn</string>
+    <string name="HidePhone">Ẩn số điện thoại của tôi</string>
+    <string name="Hide">Ẩn</string>
+    <string name="DeleteAllFromSelfAlert">Cảnh báo! Thao tác này sẽ **xóa tất cả tin nhắn từ bạn** trong cuộc trò chuyện này cho **tất cả** người tham gia.</string>
+    <string name="BotLogin">Đăng nhập Bot</string>
+    <string name="InvalidAccessToken">Mã token không đúng hoặc không hợp lệ</string>
+    <string name="DeleteDownloadedFile">Xóa tệp đã tải xuống</string>
+    <string name="Nya">Meo!</string>
+    <string name="StickerSizeDialogMessageReplyTo">Meo</string>
+</resources>
