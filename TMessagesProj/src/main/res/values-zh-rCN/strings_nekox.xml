@@ -198,4 +198,9 @@
     <string name="QRLoginConfirm">确认登录</string>
     <string name="StorageReset">清除存储</string>
     <string name="StorageResetInfo">该应用程序的所有数据将被永久删除（并先尝试登出所有帐户）。</string>
+    <string name="FCTitle">关于本应用之更新</string>
+    <string name="FCInfo">要跟随我们的公告与更新频道吗 ？</string>
+    <string name="COMWarn">兼容模式警告</string>
+    <string name="COMInfo">NekoX 正运行在 API 29 兼容模式：\n\n*相册读取速度减慢\n*无法编辑相册中的照片和视频\n*只能通过外部文件管理器选择文件来发送</string>
+    <string name="COMOpen">了解更多</string>
 </resources>
