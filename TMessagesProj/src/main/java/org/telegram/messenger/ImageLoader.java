@@ -972,12 +972,8 @@ public class ImageLoader {
                         if (!useNativeWebpLoader && w_filter != 0 && h_filter != 0) {
                             opts.inJustDecodeBounds = true;
 
-                            if (mediaId != null && mediaThumbPath == null) {
-                                if (mediaIsVideo) {
-                                    MediaStore.Video.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), mediaId, MediaStore.Video.Thumbnails.MINI_KIND, opts);
-                                } else {
-                                    MediaStore.Images.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), mediaId, MediaStore.Images.Thumbnails.MINI_KIND, opts);
-                                }
+                            if (mediaId != null && (EnvUtil.isCompatibilityMode || mediaThumbPath == null)) {
+                                EnvUtil.getThumbnail(mediaId, mediaIsVideo, opts);
                             } else {
                                 if (secureDocumentKey != null) {
                                     RandomAccessFile f = new RandomAccessFile(cacheFileFinal, "r");
@@ -1038,7 +1034,12 @@ public class ImageLoader {
                     } else if (mediaThumbPath != null) {
                         opts.inJustDecodeBounds = true;
                         opts.inPreferredConfig = force8888 ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
-                        FileInputStream is = new FileInputStream(cacheFileFinal);
+                        InputStream is;
+                        if (mediaId != null && EnvUtil.isCompatibilityMode) {
+                            is = EnvUtil.openInput(mediaId, mediaIsVideo);
+                        } else {
+                            is = new FileInputStream(cacheFileFinal);
+                        }
                         image = BitmapFactory.decodeStream(is, null, opts);
                         is.close();
                         int photoW2 = opts.outWidth;
@@ -1113,7 +1114,9 @@ public class ImageLoader {
                                 }
                             } else {
                                 FileInputStream is;
-                                if (inEncryptedFile) {
+                                if (mediaId != null && EnvUtil.isCompatibilityMode) {
+                                    is = EnvUtil.openInput(mediaId, mediaIsVideo);
+                                } else if (inEncryptedFile) {
                                     is = new EncryptedFileInputStream(cacheFileFinal, cacheImage.encryptionKeyPath);
                                 } else {
                                     is = new FileInputStream(cacheFileFinal);
@@ -1187,7 +1190,7 @@ public class ImageLoader {
                         }
 
                         opts.inDither = false;
-                        if (mediaId != null && mediaThumbPath == null) {
+                        if (mediaId != null && EnvUtil.isCompatibilityMode && mediaThumbPath == null) {
                             if (mediaIsVideo) {
                                 image = MediaStore.Video.Thumbnails.getThumbnail(ApplicationLoader.applicationContext.getContentResolver(), mediaId, MediaStore.Video.Thumbnails.MINI_KIND, opts);
                             } else {
@@ -1236,7 +1239,9 @@ public class ImageLoader {
                                     }
                                 } else {
                                     FileInputStream is;
-                                    if (inEncryptedFile) {
+                                    if (mediaId != null && EnvUtil.isCompatibilityMode) {
+                                        is = EnvUtil.openInput(mediaId, mediaIsVideo);
+                                    } else if (inEncryptedFile) {
                                         is = new EncryptedFileInputStream(cacheFileFinal, cacheImage.encryptionKeyPath);
                                     } else {
                                         is = new FileInputStream(cacheFileFinal);
@@ -2952,7 +2957,7 @@ public class ImageLoader {
             String imageFilePath = null;
             if (uri.getScheme().contains("file")) {
                 path = uri.getPath();
-            } else {
+            } else if (!EnvUtil.isCompatibilityMode) {
                 try {
                     path = AndroidUtilities.getPath(uri);
                 } catch (Throwable e) {
@@ -2988,7 +2993,7 @@ public class ImageLoader {
             String imageFilePath = null;
             if (uri.getScheme().contains("file")) {
                 path = uri.getPath();
-            } else {
+            } else if (!EnvUtil.isCompatibilityMode) {
                 try {
                     path = AndroidUtilities.getPath(uri);
                 } catch (Throwable e) {

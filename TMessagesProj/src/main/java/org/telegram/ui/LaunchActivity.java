@@ -32,7 +32,6 @@ import android.os.Parcelable;
 import android.os.StatFs;
 import android.os.SystemClock;
 import android.provider.ContactsContract;
-import android.se.omapi.Session;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.view.ActionMode;
@@ -120,7 +119,6 @@ import org.telegram.ui.Components.StickersAlert;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.TermsOfServiceView;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.voip.VoIPHelper;
 
 import java.io.File;
@@ -141,7 +139,7 @@ import tw.nekomimi.nekogram.settings.NekoSettingsActivity;
 import tw.nekomimi.nekogram.sub.SubInfo;
 import tw.nekomimi.nekogram.sub.SubManager;
 import tw.nekomimi.nekogram.utils.AlertUtil;
-import tw.nekomimi.nekogram.utils.PrivacyUtil;
+import tw.nekomimi.nekogram.utils.EnvUtil;
 import tw.nekomimi.nekogram.utils.ProxyUtil;
 import tw.nekomimi.nekogram.utils.UIUtil;
 
@@ -885,7 +883,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
             for (SubInfo subInfo : SubManager.getSubList().find()) {
 
-                if (subInfo == null) continue;
+                if (subInfo == null || !subInfo.enable) continue;
 
                 try {
 
@@ -902,8 +900,8 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 }
 
             }
-
         });
+        EnvUtil.postCheckComMode(this);
     }
 
     private void openSettings(boolean expanded) {
@@ -978,9 +976,6 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         }
         if (UserConfig.getInstance(account).unacceptedTermsOfService != null) {
             showTosActivity(account, UserConfig.getInstance(account).unacceptedTermsOfService);
-        }
-        if (afterLogin) {
-            PrivacyUtil.postCheckAll(this, account);
         }
         updateCurrentConnectionState(currentAccount);
         NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.updateUserStatus, (Object) null);

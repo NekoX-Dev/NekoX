@@ -321,6 +321,7 @@ android {
         fullPlay {
             versionNameSuffix '-play'
             versionCode verCode - 1
+            targetSdkVersion 29
         }
         fullNoEmoji {
             versionNameSuffix '-full-no-emoji'

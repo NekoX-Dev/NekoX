@@ -258,4 +258,11 @@
     <string name="StorageReset">Clear Storage</string>
     <string name="StorageResetInfo">All data of this application will be permanently deleted (and try to log out of all accounts first).</string>
 
+    <string name="FCTitle">About application updates</string>
+    <string name="FCInfo">Follow our announcements and updates channel?</string>
+
+    <string name="COMWarn">Compatibility Mode Warning</string>
+    <string name="COMInfo">NekoX is running in API 29 compatibility mode:\n\n* Photo album reading speed slows down\n* Cannot edit photos and videos in the album\n* This external file manager will open to select the file to be sent</string>
+    <string name="COMOpen">Learn more</string>
+
 </resources>

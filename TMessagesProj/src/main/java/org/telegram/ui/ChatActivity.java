@@ -244,6 +244,7 @@ import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.parts.MessageTransKt;
 import tw.nekomimi.nekogram.transtale.Translator;
 import tw.nekomimi.nekogram.utils.AlertUtil;
+import tw.nekomimi.nekogram.utils.EnvUtil;
 import tw.nekomimi.nekogram.utils.PGPUtil;
 
 @SuppressWarnings("unchecked")
@@ -7734,11 +7735,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(a));
 
                                 SendMessagesHelper.SendingMediaInfo info = new SendMessagesHelper.SendingMediaInfo();
-                                if (!photoEntry.isVideo && photoEntry.imagePath != null) {
+
+                                if (EnvUtil.isCompatibilityMode && photoEntry.imageId != 0) {
+                                    info.path = EnvUtil.mkCopy(photoEntry.imageId, photoEntry.isVideo);
+                                } else if (!photoEntry.isVideo && photoEntry.imagePath != null) {
                                     info.path = photoEntry.imagePath;
                                 } else if (photoEntry.path != null) {
                                     info.path = photoEntry.path;
                                 }
+
                                 info.thumbPath = photoEntry.thumbPath;
                                 info.isVideo = photoEntry.isVideo;
                                 info.caption = photoEntry.caption != null ? photoEntry.caption.toString() : null;
@@ -11443,19 +11448,26 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 FileLog.e(e);
             }
         }
-        String tempPath = AndroidUtilities.getPath(uri);
-        String originalPath = tempPath;
-        if (tempPath == null) {
-            originalPath = uri.toString();
-            tempPath = MediaController.copyFileToCache(uri, "file");
-        }
-        if (tempPath == null) {
-            showAttachmentError();
-            return;
-        }
-        fillEditingMediaWithCaption(null, null);
-        SendMessagesHelper.prepareSendingDocument(getAccountInstance(), tempPath, originalPath, null, null, null, dialog_id, replyingMessageObject, getThreadMessage(), null, editingMessageObject, true, 0);
-        hideFieldPanel(false);
+        Uri finalUri = uri;
+        MessagesStorage.getInstance(currentAccount).getStorageQueue().postRunnable(() -> {
+            String tempPath = AndroidUtilities.getPath(finalUri);
+            String originalPath = tempPath;
+            if (tempPath == null || EnvUtil.isCompatibilityMode) {
+                originalPath = finalUri.toString();
+                tempPath = MediaController.copyFileToCache(finalUri, "file");
+            }
+            String finalTempPath = tempPath;
+            String finalOriginalPath = originalPath;
+            AndroidUtilities.runOnUIThread(() -> {
+                if (finalTempPath == null) {
+                    showAttachmentError();
+                    return;
+                }
+                fillEditingMediaWithCaption(null, null);
+                SendMessagesHelper.prepareSendingDocument(getAccountInstance(), finalTempPath, finalOriginalPath, null, null, null, dialog_id, replyingMessageObject, getThreadMessage(), null, editingMessageObject, true, 0);
+                hideFieldPanel(false);
+            });
+        });
     }
 
     @Override

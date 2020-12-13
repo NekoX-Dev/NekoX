@@ -29,6 +29,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -61,16 +65,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScroller;
-import androidx.recyclerview.widget.RecyclerView;
-
 import tw.nekomimi.nekogram.utils.EnvUtil;
 
 public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLayout {
 
     public interface DocumentSelectActivityDelegate {
         void didSelectFiles(ArrayList<String> files, String caption, boolean notify, int scheduleDate);
+
         void didSelectPhotos(ArrayList<SendMessagesHelper.SendingMediaInfo> photos, boolean notify, int scheduleDate);
 
         void startDocumentSelectActivity();
@@ -130,6 +131,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
         public String ext = "";
         public String thumb;
         public File file;
+        public boolean isExternalRoot;
     }
 
     private static class HistoryEntry {
@@ -369,6 +371,9 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                     updateSearchButton();
                     layoutManager.scrollToPositionWithOffset(0, top);
                 }
+            } else if (item.isExternalRoot && EnvUtil.isCompatibilityMode) {
+                parentAlert.dismiss();
+                delegate.startDocumentSelectActivity();
             } else if (file.isDirectory()) {
                 HistoryEntry he = new HistoryEntry();
                 View child = listView.getChildAt(0);
@@ -908,63 +913,67 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                 ext.subtitle = LocaleController.getString("InternalFolderInfo", R.string.InternalFolderInfo);
             }
             ext.file = Environment.getExternalStorageDirectory();
+            ext.isExternalRoot = true;
             items.add(ext);
             paths.add(defaultPath);
         }
 
-        BufferedReader bufferedReader = null;
-        try {
-            bufferedReader = new BufferedReader(new FileReader("/proc/mounts"));
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                if (line.contains("vfat") || line.contains("/mnt")) {
-                    if (BuildVars.LOGS_ENABLED) {
-                        FileLog.d(line);
-                    }
-                    StringTokenizer tokens = new StringTokenizer(line, " ");
-                    String unused = tokens.nextToken();
-                    String path = tokens.nextToken();
-                    if (paths.contains(path)) {
-                        continue;
-                    }
-                    if (line.contains("/dev/block/vold")) {
-                        if (!line.contains("/mnt/secure") && !line.contains("/mnt/asec") && !line.contains("/mnt/obb") && !line.contains("/dev/mapper") && !line.contains("tmpfs")) {
-                            if (!new File(path).isDirectory()) {
-                                int index = path.lastIndexOf('/');
-                                if (index != -1) {
-                                    String newPath = "/storage/" + path.substring(index + 1);
-                                    if (new File(newPath).isDirectory()) {
-                                        path = newPath;
+        if (!EnvUtil.isCompatibilityMode) {
+
+            BufferedReader bufferedReader = null;
+            try {
+                bufferedReader = new BufferedReader(new FileReader("/proc/mounts"));
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    if (line.contains("vfat") || line.contains("/mnt")) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d(line);
+                        }
+                        StringTokenizer tokens = new StringTokenizer(line, " ");
+                        String unused = tokens.nextToken();
+                        String path = tokens.nextToken();
+                        if (paths.contains(path)) {
+                            continue;
+                        }
+                        if (line.contains("/dev/block/vold")) {
+                            if (!line.contains("/mnt/secure") && !line.contains("/mnt/asec") && !line.contains("/mnt/obb") && !line.contains("/dev/mapper") && !line.contains("tmpfs")) {
+                                if (!new File(path).isDirectory()) {
+                                    int index = path.lastIndexOf('/');
+                                    if (index != -1) {
+                                        String newPath = "/storage/" + path.substring(index + 1);
+                                        if (new File(newPath).isDirectory()) {
+                                            path = newPath;
+                                        }
                                     }
                                 }
-                            }
-                            paths.add(path);
-                            try {
-                                ListItem item = new ListItem();
-                                if (path.toLowerCase().contains("sd")) {
-                                    item.title = LocaleController.getString("SdCard", R.string.SdCard);
-                                } else {
-                                    item.title = LocaleController.getString("ExternalStorage", R.string.ExternalStorage);
+                                paths.add(path);
+                                try {
+                                    ListItem item = new ListItem();
+                                    if (path.toLowerCase().contains("sd")) {
+                                        item.title = LocaleController.getString("SdCard", R.string.SdCard);
+                                    } else {
+                                        item.title = LocaleController.getString("ExternalStorage", R.string.ExternalStorage);
+                                    }
+                                    item.subtitle = LocaleController.getString("ExternalFolderInfo", R.string.ExternalFolderInfo);
+                                    item.icon = R.drawable.files_internal;
+                                    item.file = new File(path);
+                                    items.add(item);
+                                } catch (Exception e) {
+                                    FileLog.e(e);
                                 }
-                                item.subtitle = LocaleController.getString("ExternalFolderInfo", R.string.ExternalFolderInfo);
-                                item.icon = R.drawable.files_internal;
-                                item.file = new File(path);
-                                items.add(item);
-                            } catch (Exception e) {
-                                FileLog.e(e);
                             }
                         }
                     }
                 }
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        } finally {
-            if (bufferedReader != null) {
-                try {
-                    bufferedReader.close();
-                } catch (Exception e) {
-                    FileLog.e(e);
+            } catch (Exception e) {
+                FileLog.e(e);
+            } finally {
+                if (bufferedReader != null) {
+                    try {
+                        bufferedReader.close();
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                    }
                 }
             }
         }
