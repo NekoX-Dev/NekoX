@@ -198,4 +198,6 @@
     <string name="QRLoginConfirm">Xác nhận Đăng nhập</string>
     <string name="StorageReset">Dọn dẹp Bộ nhớ</string>
     <string name="StorageResetInfo">Tất cả dữ liệu của ứng dụng này sẽ bị xóa vĩnh viễn (và hãy thử đăng xuất khỏi tất cả các tài khoản trước).</string>
+    <string name="FCTitle">Thông tin về các bản cập nhật</string>
+    <string name="FCInfo">Theo dõi kênh thông báo và cập nhật của chúng tôi?</string>
 </resources>
