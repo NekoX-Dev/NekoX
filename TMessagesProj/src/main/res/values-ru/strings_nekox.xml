@@ -193,4 +193,11 @@
     <string name="UnpinMessageX">Открепить сообщение</string>
     <string name="UnpinMessagesAll">Открепить все сообщения</string>
     <string name="DismissForYourself">Скрыть для себя</string>
+    <string name="ImportLogin">Вход по QR коду</string>
+    <string name="QRLoginNotice">Этот QR-код / ссылка позволяет кому-то войти в вашу учетную запись Telegram. Это были вы?</string>
+    <string name="QRLoginConfirm">Подтвердить вход</string>
+    <string name="StorageReset">Очистить хранилище</string>
+    <string name="StorageResetInfo">Все данные этого приложения будут удалены (сначала попробуйте выйти из всех аккаунтов).</string>
+    <string name="FCTitle">Об обновлениях приложения</string>
+    <string name="FCInfo">Следите за нашим каналом анонсов и обновлений?</string>
 </resources>
