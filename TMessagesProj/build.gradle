@@ -82,7 +82,7 @@ dependencies {
     implementation 'org.dizitart:nitrite:3.4.2'
 
     implementation 'cn.hutool:hutool-core:5.5.2'
-    implementation 'cn.hutool:hutool-crypto:5.5.2'
+    implementation 'cn.hutool:hutool-crypto:5.5.4'
 
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
