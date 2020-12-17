@@ -175,7 +175,6 @@
     <string name="LoginSettings">Giriş Ayarları</string>
     <string name="NekoXFaq">NekoX ilə bağlı suallar</string>
     <string name="TransSite">Tərcümə Platforması</string>
-    <string name="UsePersianCalender">Fars Təqvimindən istifadə edin</string>
     <string name="OpenKayChain">OpenPGP Müştəri</string>
     <string name="OpenPGPApp">OpenPGP Təminatçısı</string>
     <string name="OpenPGPKey">OpenPGP açarı</string>
@@ -198,4 +197,5 @@
     <string name="QRLoginConfirm">Girişi təsdiq edin</string>
     <string name="StorageReset">Yaddaşı təmizləyin</string>
     <string name="StorageResetInfo">Bu tətbiqin bütün məlumatları həmişəlik silinəcəkdir (və əvvəlcə bütün hesablardan çıxmağa çalışın).</string>
+    <string name="CCNo">Yoxdur</string>
 </resources>
