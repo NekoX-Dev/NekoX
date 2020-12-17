@@ -175,7 +175,6 @@
     <string name="LoginSettings">登录设置</string>
     <string name="NekoXFaq">NekoX 常见问题</string>
     <string name="TransSite">翻译平台</string>
-    <string name="UsePersianCalender">使用波斯日历</string>
     <string name="OpenKayChain">OpenPGP 客户端</string>
     <string name="OpenPGPApp">OpenPGP 提供应用</string>
     <string name="OpenPGPKey">OpenPGP 密钥</string>
@@ -200,4 +199,5 @@
     <string name="StorageResetInfo">该应用程序的所有数据将被永久删除（并先尝试登出所有帐户）。</string>
     <string name="FCTitle">关于本应用之更新</string>
     <string name="FCInfo">要跟随我们的公告与更新频道吗 ？</string>
+    <string name="CCNo">无</string>
 </resources>
