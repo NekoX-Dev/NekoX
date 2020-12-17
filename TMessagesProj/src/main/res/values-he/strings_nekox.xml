@@ -175,7 +175,6 @@
     <string name="LoginSettings">הגדרות כניסה</string>
     <string name="NekoXFaq">שאלות נפוצות על NekoX</string>
     <string name="TransSite">תרגם פלטפורמה</string>
-    <string name="UsePersianCalender">השתמש בלוח השנה הפרסי</string>
     <string name="OpenKayChain">לקוח OpenPGP</string>
     <string name="OpenPGPApp">ספק OpenPGP</string>
     <string name="OpenPGPKey">מפתח OpenPGP</string>
@@ -198,4 +197,5 @@
     <string name="QRLoginConfirm">אשר כניסה</string>
     <string name="StorageReset">פנה אחסון</string>
     <string name="StorageResetInfo">כל הנתונים של יישום זה יימחקו לצמיתות (ונסה קודם להתנתק מכל החשבונות).</string>
+    <string name="CCNo">אף אחד</string>
 </resources>
