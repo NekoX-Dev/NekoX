@@ -140,4 +140,5 @@
     <string name="IgnoreContentRestrictions">Ignoruj ograniczenia dotyczące treści</string>
     <string name="IgnoreContentRestrictionsNotice">Ignoruje ograniczenia androidowe dla wiadomości lokalnie. Może to być zbanowane przez serwer w przyszłości i musisz samodzielnie ocenić legalność tej opcji.</string>
     <string name="SendCommentAfterForward">Wyślij komentarz po przesłaniu</string>
+    <string name="CCNo">Nie ma</string>
 </resources>
