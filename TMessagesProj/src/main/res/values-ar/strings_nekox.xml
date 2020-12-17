@@ -175,7 +175,6 @@
     <string name="LoginSettings">إعدادات الدخول</string>
     <string name="NekoXFaq">أسئلة NekoX الشائعة</string>
     <string name="TransSite">ترجمة النظام الأساسي</string>
-    <string name="UsePersianCalender">استخدم التقويم الفارسي</string>
     <string name="OpenKayChain">عميل OpenPGP</string>
     <string name="OpenPGPApp">موفر OpenPGP</string>
     <string name="OpenPGPKey">مفتاح OpenPGP</string>
@@ -198,4 +197,5 @@
     <string name="QRLoginConfirm">تأكيد تسجيل الدخول</string>
     <string name="StorageReset">تخزين واضح</string>
     <string name="StorageResetInfo">سيتم حذف جميع بيانات هذا التطبيق نهائيًا (وحاول تسجيل الخروج من جميع الحسابات أولاً).</string>
+    <string name="CCNo">لا شيء</string>
 </resources>
