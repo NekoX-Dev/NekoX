@@ -164,7 +164,6 @@
     <string name="LoginSettings">Configuración de inicio de sesión</string>
     <string name="NekoXFaq">Preguntas frecuentes sobre NekoX</string>
     <string name="TransSite">Traducir plataforma</string>
-    <string name="UsePersianCalender">Usar el calendario persa</string>
     <string name="OpenKayChain">Cliente OpenPGP</string>
     <string name="OpenPGPApp">Proveedor OpenPGP</string>
     <string name="OpenPGPKey">Clave OpenPGP</string>
@@ -176,4 +175,5 @@
     <string name="PGPImportPrivate">Importar clave privada</string>
     <string name="ShareMyKey">Compartir Mi Clave Pública</string>
     <string name="DisableVibration">Desactivar vibración</string>
+    <string name="CCNo">Ninguna</string>
 </resources>
