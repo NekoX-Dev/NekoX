@@ -150,6 +150,7 @@ import tw.nekomimi.nekogram.transtale.Translator;
 import tw.nekomimi.nekogram.transtale.TranslatorKt;
 import tw.nekomimi.nekogram.utils.AlertUtil;
 import tw.nekomimi.nekogram.utils.PGPUtil;
+import tw.nekomimi.nekogram.utils.UIUtil;
 
 public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, StickersAlert.StickersAlertDelegate {
 
@@ -3602,8 +3603,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     private void ccComment(String target) {
         String text = messageEditText.getText().toString();
-        text = CCConverter.get(CCTarget.valueOf(target)).convert(text);
-        messageEditText.setText(text);
+        AlertDialog progress = AlertUtil.showProgress(parentActivity);
+        progress.show();
+        UIUtil.runOnIoDispatcher(() -> {
+            String ccText = CCConverter.get(CCTarget.valueOf(target)).convert(text);
+            UIUtil.runOnUIThread(() -> {
+                messageEditText.setText(ccText);
+            });
+        });
     }
 
     public boolean isSendButtonVisible() {
