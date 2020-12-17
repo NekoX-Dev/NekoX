@@ -175,7 +175,6 @@
     <string name="LoginSettings">Настройки входа</string>
     <string name="NekoXFaq">NekoX ЧАВО/FAQ (англ/кит)</string>
     <string name="TransSite">Помочь с переводом Neko ^*-*^</string>
-    <string name="UsePersianCalender">Использовать персидский календарь</string>
     <string name="OpenKayChain">Клиент OpenPGP</string>
     <string name="OpenPGPApp">Поставщик OpenPGP</string>
     <string name="OpenPGPKey">Ключ OpenPGP</string>
@@ -200,4 +199,5 @@
     <string name="StorageResetInfo">Все данные этого приложения будут удалены (сначала попробуйте выйти из всех аккаунтов).</string>
     <string name="FCTitle">Об обновлениях приложения</string>
     <string name="FCInfo">Следите за нашим каналом анонсов и обновлений?</string>
+    <string name="CCNo">Отсутствует</string>
 </resources>
