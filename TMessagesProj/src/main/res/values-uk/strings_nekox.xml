@@ -175,7 +175,6 @@
     <string name="LoginSettings">Параметри входу</string>
     <string name="NekoXFaq">Питання NekoX</string>
     <string name="TransSite">Перекласти платформу</string>
-    <string name="UsePersianCalender">Використовувати перський календар</string>
     <string name="OpenKayChain">Клієнт OpenPGP</string>
     <string name="OpenPGPApp">OpenPGP постачальник</string>
     <string name="OpenPGPKey">Ключ OpenPGP</string>
@@ -198,4 +197,5 @@
     <string name="QRLoginConfirm">Підтвердьте вхід</string>
     <string name="StorageReset">Очистити сховище</string>
     <string name="StorageResetInfo">Усі дані цієї програми буде остаточно видалено (і спробуйте спочатку вийти з усіх облікових записів).</string>
+    <string name="CCNo">Без ефекту</string>
 </resources>
