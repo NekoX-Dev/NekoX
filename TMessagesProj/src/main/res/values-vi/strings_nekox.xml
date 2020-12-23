@@ -202,4 +202,10 @@
     <string name="CCTitle">OpenCC (Dịch tiếng Trung)</string>
     <string name="CCTarget">Mục tiêu</string>
     <string name="CCNo">Không</string>
+    <string name="CCTC">Chữ Hán phồn thể</string>
+    <string name="CCHK">Chữ Hán phồn thể (Hồng Kông)</string>
+    <string name="CCTT">Chữ Hán phồn thể (Đài Loan)</string>
+    <string name="CCSC">Chữ Hán giản thể</string>
+    <string name="CCSP">Chữ Hán giản thể (Trung Quốc)</string>
+    <string name="CCJP">Chữ Kanji mới (Thể chữ mới)</string>
 </resources>
