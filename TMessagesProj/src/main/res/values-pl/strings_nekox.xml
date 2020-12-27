@@ -189,5 +189,22 @@
     <string name="IgnoreContentRestrictionsNotice">Ignoruje ograniczenia androidowe dla wiadomości lokalnie. Może to być zbanowane przez serwer w przyszłości i musisz samodzielnie ocenić legalność tej opcji.</string>
     <string name="SendCommentAfterForward">Wyślij komentarz po przesłaniu</string>
     <string name="UnpinMessageX">Odepnij wiadomość</string>
+    <string name="UnpinMessagesAll">Odepnij wszystkie wiadomości</string>
+    <string name="DismissForYourself">Odrzuć dla siebie</string>
+    <string name="ImportLogin">QR Login</string>
+    <string name="QRLoginNotice">Ten kod QR / link pozwala komuś zalogować się na Twoje konto Telegram. Czy to jest Twoja własna operacja?</string>
+    <string name="QRLoginConfirm">Potwierdź logowanie</string>
+    <string name="StorageReset">Wyczyść pamięć</string>
+    <string name="StorageResetInfo">Wszystkie dane tej aplikacji zostaną trwale usunięte (najpierw spróbuj wylogować się ze wszystkich kont).</string>
+    <string name="FCTitle">Informacje o aktualizacjach aplikacji</string>
+    <string name="FCInfo">Czy chcesz obserwować nasz kanał ogłoszeń i aktualizacji?</string>
+    <string name="CCTitle">OpenCC (Chiński Konwert)</string>
+    <string name="CCTarget">Cel</string>
     <string name="CCNo">Nie ma</string>
+    <string name="CCTC">Tradycyjny chiński</string>
+    <string name="CCHK">Tradycyjny Chiński (Hongkong)</string>
+    <string name="CCTT">Tradycyjny Chiński (Tajwan)</string>
+    <string name="CCSC">Uproszczony chiński</string>
+    <string name="CCSP">Uproszczony chiński (Chiny)</string>
+    <string name="CCJP">Nowy japoński Kanji (Shinjitai)</string>
 </resources>
