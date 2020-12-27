@@ -41,12 +41,15 @@
     <string name="HideProxySponsorChannel">Ukryj kanał sponsora proxy</string>
     <string name="ViewHistory">Zobacz historię</string>
     <string name="Nya">Miau!</string>
+    <string name="SaveCacheToExternalFilesDir">Izolacja pamięci</string>
+    <string name="SaveCacheToExternalFilesDirAbout">Zapisz folder „Telegram” w katalogu aplikacji, aby zachować porządek w pamięci współdzielonej.</string>
     <string name="SensitiveDisableFiltering">Wyłącz filtrowanie wrażliwych treści</string>
     <string name="SensitiveAbout">Wyświetl wrażliwe media w publicznych kanałach na wszystkich urządzeniach.</string>
     <string name="StickerSize">Rozmiar naklejki</string>
     <string name="StickerSizeDialogMessageBigOne">Duży</string>
     <string name="StickerSizeDialogMessageSmallOne">Mały</string>
     <string name="StickerSizeDialogMessageReplyTo">Miau</string>
+    <string name="StickerSizeDialogName">Duang</string>
     <string name="Experiment">Eksperymentalne</string>
     <string name="UnlimitedFavoredStickers">Nieograniczone ulubione naklejki</string>
     <string name="UnlimitedFavoredStickersAbout">Dodaj nieograniczony naklejki do ulubionych. Naklejki nie mogą być synchronizowane z innymi urządzeniami.</string>
@@ -54,8 +57,10 @@
     <string name="ExportAsJson">Eksportuj jako JSON</string>
     <string name="Translate">Przetłumacz</string>
     <string name="DeleteAccount">Usuń konto Telegram</string>
+    <string name="TranslateFailed">Błąd serwera tłumaczenia</string>
     <string name="TranslationProvider">Dostawca tłumaczeń</string>
     <string name="ProviderGoogleTranslate">Tłumacz Google</string>
+    <string name="ProviderGoogleTranslateCN">Google Tłumacz CN</string>
     <string name="UndoTranslate">Cofnij tłumaczenie</string>
     <string name="About">O</string>
     <string name="IgnoreBlockedAbout">Nie będziesz już widział wiadomości od zablokowanych użytkowników w grupach.</string>
