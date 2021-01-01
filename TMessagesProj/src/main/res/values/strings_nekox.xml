@@ -269,6 +269,6 @@
     <string name="CCJP">New Japanese Kanji (Shinjitai)</string>
 
     <string name="UserRestrictionsSendGames">Send Games</string>
-    <string name="UserRestrictionsSendInline">Send Inline Bots</string>
+    <string name="UserRestrictionsSendInline">Send via Inline Bots</string>
 
 </resources>
