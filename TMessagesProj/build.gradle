@@ -64,7 +64,7 @@ dependencies {
     // TODO: fix problem with android L
     implementation 'com.google.zxing:core:3.4.1'
 
-    compileOnly 'org.checkerframework:checker-qual:3.8.0'
+    compileOnly 'org.checkerframework:checker-qual:3.9.0'
     compileOnly 'org.checkerframework:checker-compat-qual:2.5.5'
 
     // don't change this :)
