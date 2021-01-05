@@ -209,4 +209,5 @@
     <string name="CCJP">کانجی ژاپنی جدید (Shinjitai)</string>
     <string name="UserRestrictionsSendGames">ارسال بازی ها</string>
     <string name="UserRestrictionsSendInline">ارسال از طریق ربات های درون خطی</string>
+    <string name="AcceptSecretChat">پذیرش گفتگوی محرمانه جدید</string>
 </resources>
