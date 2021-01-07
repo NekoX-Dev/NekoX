@@ -119,9 +119,7 @@ The full version comes with built-in proxy support for v2ray, shadowsocks, and s
 
 Then it is recommended to use the `Mini` version.
 
-#### 
-
-## How can I help with Localization?
+#### How can I help with Localization?
 
 Join the project at https://nekox.crowdin.com/nekox.
 
