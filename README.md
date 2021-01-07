@@ -61,7 +61,7 @@ Consider using a Linux VM or dual booting.**
 
 1. Install Android Sdk and NDK ( default location is $HOME/Android/Sdk, otherwise you need to specify $ANDROID_HOME for it )
 
-It is recommended to use [AndroidStudio](https://developer.android.com/studio) to install, on Linux you can also install AndroidStudio from [Flatpak](https://flatpak.org/).
+It is recommended to use [AndroidStudio](https://developer.android.com/studio) to install.  [here is how to install AndroidStudio](https://developer.android.com/studio/install).
 
 2. Install golang ( >= 1.15.4 ), and add GOPATH to the PATH variable.
 
