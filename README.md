@@ -6,7 +6,7 @@ NekoX is an **open source** third-party Telegram client, based on Telegram-FOSS 
 - [Update News Telegram](https://t.me/NekogramX)
 - [GitHub Feedback](https://github.com/NekoX-Dev/NekoX/issues)
 - [Group Chat (English / Chinese)](https://t.me/NekoXChat) 
-- [Group Chat (Persian)]https://t.me/NekogramX_Persian)
+- [Group Chat (Persian)](https://t.me/NekogramX_Persian)
 
 The play store version is outdated [due to](https://developer.android.com/distribute/best-practices/develop/target-sdk) the target api level 29 is not supported yet. Otherwise, the play version won't be able to read photos and files (like other 3rd apps do).
 
