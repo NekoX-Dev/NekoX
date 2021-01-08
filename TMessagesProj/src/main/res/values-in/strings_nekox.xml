@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Terkunci</string>
-    <string name="AccDescrChatAttachEnterMenu">Menu masukan obrolan</string>
+    <string name="AccDescrChatAttachEnterMenu">Menu input obrolan</string>
     <string name="ChatAttachEnterMenuRecordVideo">Merekam video</string>
-    <string name="ChatAttachEnterMenuRecordAudio">Suara rekaman</string>
-    <string name="ChatAttachEnterMenuDisableLinkPreview">Nonaktifkan Pratinjau Tautan</string>
-    <string name="ChatAttachEnterMenuEnableLinkPreview">Aktifkan Pratinjau Tautan</string>
-    <string name="UseChatAttachEnterMenu">Gunakan menu masukan</string>
+    <string name="ChatAttachEnterMenuRecordAudio">Merekam suara</string>
+    <string name="ChatAttachEnterMenuDisableLinkPreview">Matikan Pratinjau Tautan</string>
+    <string name="ChatAttachEnterMenuEnableLinkPreview">Hidupkan Pratinjau Tautan</string>
+    <string name="UseChatAttachEnterMenu">Gunakan menu input</string>
     <string name="UseChatAttachEnterMenuNotice">Ubah tombol rekam ke menu input, dan tambahkan sakelar pratinjau tautan.</string>
-    <string name="DisableLinkPreviewByDefault">Nonaktifkan pratinjau link secara default</string>
-    <string name="DisableLinkPreviewByDefaultNotice">Nonaktifkan permintaan pratinjau tautan selama input secara default untuk mencegah server mengetahui bahwa tautan dibagikan melalui Telegram.</string>
+    <string name="DisableLinkPreviewByDefault">Matikan tinjauan link secara default</string>
+    <string name="DisableLinkPreviewByDefaultNotice">Matikan permintaan tinjauan tautan saat input secara default untuk mencegah server mengetahui bahwa tautan dibagikan melalui Telegram.</string>
     <string name="CustomApi">API Khusus</string>
     <string name="UseCustomApiNotice">Gunakan API khusus untuk masuk, ini mungkin bisa membantu Anda ketika tidak bisa mendaftar atau masuk.\n\nCatatan: FCM tidak akan bekerja jika Anda menggunakan versi rilis.</string>
     <string name="CustomApiNo">Jangan gunakan API khusus</string>
