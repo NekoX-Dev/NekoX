@@ -100,4 +100,5 @@
     <string name="BetaWarning">Dies ist eine **beta** Funktion, die von **Telegram** implementiert wurde.</string>
     <string name="MediaPreview">Medienvorschau in der Dialogliste</string>
     <string name="ProviderYandex">Yandex übersetzen</string>
+    <string name="GuGuGu">Später</string>
 </resources>
