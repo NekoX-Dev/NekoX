@@ -105,4 +105,5 @@
     <string name="AutoPauseVideo">Pausar video automáticamente</string>
     <string name="AutoPauseVideoAbout">Cuando se bloquea la pantalla o se cambia al fondo.</string>
     <string name="DisableProximityEvents">Deshabilitar eventos de proximidad</string>
+    <string name="GuGuGu">Luego</string>
 </resources>
