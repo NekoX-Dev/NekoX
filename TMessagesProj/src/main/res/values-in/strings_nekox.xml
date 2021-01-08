@@ -34,12 +34,12 @@
     <string name="TapToDisable">Sentuh untuk mematikan. Jika anda tidak membutuhkan ini.</string>
     <string name="PlaceHolder">Placeholder - Harap Nonaktifkan</string>
     <string name="CustomBackend">Backend Khusus</string>
-    <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika anda tidak tahu apa yang mewakili opsi-opsi berikut ini, abaikan saja.</string>
+    <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika anda tidak tahu apa fungsi opsi-opsi berikut ini, abaikan saja.</string>
     <string name="CustomBackendProduction">Official Production DataCenter</string>
     <string name="CustomBackendTestDC">Official Test DataCenter</string>
-    <string name="CustomBackendIpv4">Ipv4 Address</string>
-    <string name="CustomBackendIpv6">Ipv6 Address</string>
-    <string name="CustomBackendLayer">Layer</string>
+    <string name="CustomBackendIpv4">Alamat Ipv4</string>
+    <string name="CustomBackendIpv6">Alamat Ipv6</string>
+    <string name="CustomBackendLayer">Lapisan</string>
     <string name="CustomBackendPublicKey">Public Key</string>
     <string name="CustomBackendFingerprint">Key Fingerprint</string>
     <string name="AllowFlashCall">Izinkan panggilan cepat</string>
@@ -188,5 +188,15 @@
     <string name="IgnoreContentRestrictions">Abaikan batasan konten</string>
     <string name="IgnoreContentRestrictionsNotice">Mengabaikan batasan android pada pesan secara lokal. Ini mungkin dilarang oleh server di masa mendatang, dan Anda perlu mengevaluasi sendiri legalitas lokal dari opsi ini.</string>
     <string name="SendCommentAfterForward">Kirim komentar setelah meneruskan</string>
+    <string name="UnpinMessageX">Lepas pesan tersemat</string>
+    <string name="UnpinMessagesAll">Lepas semua pesan tersemat</string>
+    <string name="DismissForYourself">Singkirkan untuk diri sendiri</string>
+    <string name="ImportLogin">Masuk dengan QR</string>
+    <string name="QRLoginNotice">Kode QR / link ini membolehkan seseorang untuk masuk ke akun telegrammu. Apakah ini tindakan anda sendiri?</string>
+    <string name="QRLoginConfirm">Konfirmasi login</string>
+    <string name="StorageReset">Hapus penyimpanan</string>
+    <string name="StorageResetInfo">Semua data di aplikasi ini akan dihapus selamanya (dan coba untuk keluar dari semua akun terlebih dahulu).</string>
+    <string name="FCTitle">Tentang pembaruan aplikasi</string>
+    <string name="FCInfo">Ikuti kanal pengumuman dan pembaruan kami?</string>
     <string name="CCNo">Kosong</string>
 </resources>
