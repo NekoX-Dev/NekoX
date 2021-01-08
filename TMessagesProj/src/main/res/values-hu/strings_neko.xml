@@ -105,5 +105,4 @@
     <string name="AutoPauseVideo">Videó automatikus szüneteltetése</string>
     <string name="AutoPauseVideoAbout">Amikor lezárja a képernyőt / váltson háttérre.</string>
     <string name="DisableProximityEvents">Tiltsa le a közelségi eseményeket</string>
-    <string name="GuGuGu">Később</string>
 </resources>
