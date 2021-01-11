@@ -210,4 +210,6 @@
     <string name="UserRestrictionsSendGames">ارسال بازی ها</string>
     <string name="UserRestrictionsSendInline">ارسال از طریق ربات های اینلاین</string>
     <string name="AcceptSecretChat">گفتگوی محرمانه جدید را بپذیر</string>
+    <string name="TabletMode">حالت تبلت</string>
+    <string name="TabletModeDefault">بر اساس دستگاه</string>
 </resources>
