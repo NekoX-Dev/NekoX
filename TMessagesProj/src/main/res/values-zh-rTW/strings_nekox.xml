@@ -210,4 +210,6 @@
     <string name="UserRestrictionsSendGames">傳送遊戲</string>
     <string name="UserRestrictionsSendInline">透過內聯機器人傳送</string>
     <string name="AcceptSecretChat">接受新的加密對話</string>
+    <string name="TabletMode">平板模式</string>
+    <string name="TabletModeDefault">基於設備</string>
 </resources>
