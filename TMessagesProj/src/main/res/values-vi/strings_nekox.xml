@@ -210,4 +210,6 @@
     <string name="UserRestrictionsSendGames">Gửi trò chơi</string>
     <string name="UserRestrictionsSendInline">Gửi qua Bot</string>
     <string name="AcceptSecretChat">Chấp nhận cuộc trò chuyện bí mật mới</string>
+    <string name="TabletMode">Chế độ máy tính bảng</string>
+    <string name="TabletModeDefault">Phụ thuộc vào thiết bị</string>
 </resources>
