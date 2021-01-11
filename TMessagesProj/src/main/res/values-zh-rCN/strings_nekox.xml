@@ -210,4 +210,6 @@
     <string name="UserRestrictionsSendGames">发送游戏</string>
     <string name="UserRestrictionsSendInline">通过内联机器人发送</string>
     <string name="AcceptSecretChat">接受新的加密对话</string>
+    <string name="TabletMode">平板模式</string>
+    <string name="TabletModeDefault">基于设备</string>
 </resources>
