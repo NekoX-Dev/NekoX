@@ -37,11 +37,6 @@
     <string name="CustomBackendNotice">Fungsi ini hanya tersedia untuk pengguna profesional, jika anda tidak tahu apa fungsi opsi-opsi berikut ini, abaikan saja.</string>
     <string name="CustomBackendProduction">Official Production DataCenter</string>
     <string name="CustomBackendTestDC">Official Test DataCenter</string>
-    <string name="CustomBackendIpv4">Alamat Ipv4</string>
-    <string name="CustomBackendIpv6">Alamat Ipv6</string>
-    <string name="CustomBackendLayer">Lapisan</string>
-    <string name="CustomBackendPublicKey">Public Key</string>
-    <string name="CustomBackendFingerprint">Key Fingerprint</string>
     <string name="AllowFlashCall">Izinkan panggilan cepat</string>
     <string name="ChangeTranslateProvider">Ubah Penyedia</string>
     <string name="ProviderYandexTranslate">Penerjemah.Yandex</string>
