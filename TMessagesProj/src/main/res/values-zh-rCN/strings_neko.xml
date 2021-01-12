@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="NekoSettings">喵设置</string>
+    <string name="IPv6">通过 IPv6 连接</string>
     <string name="MessageMenu">消息菜单</string>
     <string name="HidePhone">隐藏您的手机号码</string>
     <string name="Hide">隐藏</string>
@@ -102,4 +103,7 @@
     <string name="DisableProximityEvents">禁用距离传感器事件</string>
     <string name="IncreaseVoiceMessageQuality">提高语音消息质量</string>
     <string name="SelectBetween">选择之间的</string>
+    <string name="AvatarAsBackground">使用头像作为背景</string>
+    <string name="BlurAvatarBackground">模糊头像</string>
+    <string name="DarkenAvatarBackground">暗色头像</string>
 </resources>
