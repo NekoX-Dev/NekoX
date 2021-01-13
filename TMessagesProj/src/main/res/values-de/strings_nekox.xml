@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Gesperrt</string>
+    <string name="AccDescrChatAttachEnterMenu">Chat-Eingabemenü</string>
+    <string name="ChatAttachEnterMenuRecordVideo">Video aufnehmen</string>
+    <string name="ChatAttachEnterMenuRecordAudio">Audio aufnehmen</string>
+    <string name="ChatAttachEnterMenuDisableLinkPreview">Linkvorschau deaktivieren</string>
+    <string name="ChatAttachEnterMenuEnableLinkPreview">Linkvorschau aktivieren</string>
+    <string name="DisableLinkPreviewByDefault">Deaktiviere standardmäßig die Linkvorschau</string>
     <string name="CustomApi">Benutzerdefinierte API</string>
     <string name="UseCustomApiNotice">Melden Sie sich mit der benutzerdefinierten API an. Wenn Sie sich nicht registrieren oder anmelden können, kann dies hilfreich sein.\n\nHinweis: fcm funktioniert nicht, wenn Sie die Release-Version verwenden.</string>
     <string name="CustomApiNo">Verwenden Sie keine benutzerdefinierte API</string>
