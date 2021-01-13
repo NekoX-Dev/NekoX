@@ -1,2 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="NekoSettings">Setări Neko</string>
+    <string name="IPv6">Conectarea prin IPv6</string>
+    <string name="HidePhone">Ascunde numărul meu de telefon</string>
+    <string name="Hide">Ascunde</string>
+    <string name="DeleteAllFromSelfAlert">Atenție! Acest lucru va **șterge toate mesajele de la tine** în acest chat pentru **toți** participanți.</string>
+    <string name="IgnoreBlocked">Ignorați utilizatorii blocați din grup</string>
+    <string name="Connection">Conexiune</string>
+    <string name="Chat">Conversație</string>
+    <string name="FirstLast">Primul Ultimul</string>
+    <string name="LastFirst">Ultimul Primul</string>
+    <string name="TypefaceUseDefault">Folosiți fontul implicit al sistemului</string>
+    <string name="Repeat">Repeta</string>
+    <string name="AddToSavedMessages">Salvați mesajul</string>
+    <string name="ForceTabletMode">Forțează modul tabletă</string>
+    <string name="NekogramRunning">Nekogram rulează</string>
+    <string name="ChristmasHat">Arată pălăria de Crăciun în fiecare zi</string>
+    <string name="DependsOnDate">Depinde de dată</string>
+    <string name="Christmas">Crăciun</string>
+    <string name="Snowflakes">Fulgi de zăpadă</string>
+    <string name="Fireworks">Artificii</string>
+    <string name="DeleteDownloadedFile">Ștergeți fișierul descărcat</string>
+    <string name="Nya">Miau!</string>
+    <string name="SaveCacheToExternalFilesDir">Izolarea depozitării</string>
+    <string name="SaveCacheToExternalFilesDirAbout">Salvați folderul \"Telegram\" în directorul specific aplicației pentru a păstra stocarea partajată.</string>
+    <string name="SensitiveDisableFiltering">Dezactivează filtrarea conținutului sensibil</string>
+    <string name="SensitiveAbout">Afişează media sensibilă în canalele publice pe toate dispozitivele tale.</string>
+    <string name="StickerSize">Dimensiune sticker</string>
+    <string name="StickerSizeDialogMessageBigOne">Una mare</string>
+    <string name="StickerSizeDialogMessageSmallOne">Unul mic</string>
+    <string name="StickerSizeDialogMessageReplyTo">Miau</string>
+</resources>
