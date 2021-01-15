@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Blocat</string>
+    <string name="AccDescrChatAttachEnterMenu">Meniul de introducere a chatului</string>
     <string name="ChatAttachEnterMenuRecordVideo">Înregistrare video</string>
     <string name="ChatAttachEnterMenuRecordAudio">Înregistrare audio</string>
     <string name="ChatAttachEnterMenuDisableLinkPreview">Dezactivați previzualizarea linkului</string>
     <string name="ChatAttachEnterMenuEnableLinkPreview">Activați previzualizarea linkului</string>
+    <string name="UseChatAttachEnterMenu">Utilizați meniul de introducere</string>
     <string name="DisableLinkPreviewByDefault">Dezactivați previzualizarea linkului în mod implicit</string>
     <string name="CustomApi">API personalizat</string>
     <string name="CustomApiNo">Nu utilizați API personalizat</string>
@@ -16,7 +18,7 @@
     <string name="NoUpdate">Nu a fost găsită nicio actualizare</string>
     <string name="UpdateAvailable">Nouă actualizare disponibilă</string>
     <string name="UpdateUpdate">Actualizați</string>
-    <string name="UpdateLater">Mai tarziu</string>
+    <string name="UpdateLater">Mai târziu</string>
     <string name="DownloadFailed">Descărcare eșuată</string>
     <string name="Install">Instalare</string>
     <string name="Ignore">Ignoră</string>
@@ -28,7 +30,7 @@
     <string name="DevModeNotice">Nu suntem responsabili pentru utilizarea necorespunzătoare a funcțiilor dezvoltatorului.</string>
     <string name="TapToDisable">Atingeți pentru a dezactiva. Nu ai nevoie de acestea.</string>
     <string name="PlaceHolder">Substituent - Dezactivează</string>
-    <string name="CustomBackend">Backend personalizat</string>
+    <string name="CustomBackend">Backend-ul personalizat</string>
     <string name="CustomBackendNotice">Această funcție este furnizată numai utilizatorilor experți, dacă nu știți ce reprezintă următoarele opțiuni, ignorați-l.</string>
     <string name="ChangeTranslateProvider">Modificare furnizor</string>
     <string name="ProviderYandexTranslate">Yandex.Translate</string>
@@ -58,7 +60,7 @@
     <string name="FilterNameChannelsDescription">Doar mesajele de pe canale</string>
     <string name="FilterNameBots">Roboți</string>
     <string name="FilterNameBotsDescription">Doar mesajele de la roboți</string>
-    <string name="FilterNameUnmuted">Sunetul este activat</string>
+    <string name="FilterNameUnmuted">Sunetul este reactivat</string>
     <string name="FilterNameUnmutedDescription">Doar mesajele de la chat-uri cu sunetul activat</string>
     <string name="FilterNameUnread2">Necitit</string>
     <string name="FilterNameUnreadDescription">Doar mesajele necitite</string>
