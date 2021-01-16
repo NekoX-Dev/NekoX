@@ -102,4 +102,11 @@
     <string name="AutoPauseVideoAbout">Quando in schermata di blocco/si passa allo sfondo.</string>
     <string name="DisableProximityEvents">Disabilita gli eventi di prossimità</string>
     <string name="IncreaseVoiceMessageQuality">Aumenta la qualità dei messaggi vocali</string>
+    <string name="SelectBetween">Seleziona tra entrambi</string>
+    <string name="AvatarAsBackground">Foto profilo come sfondo</string>
+    <string name="BlurAvatarBackground">Sfoca la foto profilo</string>
+    <string name="DarkenAvatarBackground">Scurisci la foto profilo</string>
+    <string name="ProviderDeepLTranslate">Traduzione DeepL</string>
+    <string name="ProviderMicrosoftTranslator">Traduttore Microsoft</string>
+    <string name="ProviderYouDao">Traduzione YouDao</string>
 </resources>
