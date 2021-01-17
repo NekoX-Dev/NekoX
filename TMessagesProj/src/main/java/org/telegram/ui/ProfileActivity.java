@@ -418,6 +418,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     private int transitionIndex;
     private TLRPC.Document preloadedSticker;
 
+    private boolean hideId;
+    private boolean hideNumber;
+
     private final Property<ProfileActivity, Float> HEADER_SHADOW = new AnimationProperties.FloatProperty<ProfileActivity>("headerShadow") {
         @Override
         public void setValue(ProfileActivity object, float value) {
@@ -2741,6 +2744,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         return Unit.INSTANCE;
                     });
 
+                    builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.baseline_remove_circle_24, __ -> {
+                        hideNumber = true;
+                        updateListAnimated();
+                        return Unit.INSTANCE;
+                    });
+
                     showDialog(builder.create());
 
                 } else if (position == phoneRow) {
@@ -2775,6 +2784,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         DialogsActivity fragment = new DialogsActivity(args);
                         fragment.setDelegate(ProfileActivity.this);
                         presentFragment(fragment);
+                        return Unit.INSTANCE;
+                    });
+
+                    builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.baseline_remove_circle_24, __ -> {
+                        hideNumber = true;
+                        updateListAnimated();
                         return Unit.INSTANCE;
                     });
 
@@ -4327,7 +4342,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     nameTextView[a].setScaleY(nameScale);
                 }
 
-                if (diff > 0.85 && !searchMode && NekoConfig.showIdAndDc) {
+                if (diff > 0.85 && !searchMode && NekoConfig.showIdAndDc && !hideId) {
                     idTextView.setVisibility(View.VISIBLE);
                 } else {
                     idTextView.setVisibility(View.GONE);
@@ -5248,7 +5263,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (UserObject.isUserSelf(user)) {
                 numberSectionRow = rowCount++;
                 setUsernameRow = rowCount++;
-                numberRow = rowCount++;
+                if (!hideNumber) {
+                    numberRow = rowCount++;
+                }
                 bioRow = rowCount++;
                 settingsSectionRow = rowCount++;
                 settingsSectionRow2 = rowCount++;
@@ -5279,7 +5296,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (user != null && !TextUtils.isEmpty(user.username)) {
                     usernameRow = rowCount++;
                 }
-                if (!isBot && (hasPhone || !hasInfo)) {
+                if (!isBot && (hasPhone || !hasInfo) && !hideNumber) {
                     phoneRow = rowCount++;
                 }
                 if (userInfo != null && !TextUtils.isEmpty(userInfo.about)) {
@@ -5746,6 +5763,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         return Unit.INSTANCE;
                     });
                 }
+                builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.baseline_remove_circle_24, __ -> {
+                    idTextView.setVisibility(View.GONE);
+                    return Unit.INSTANCE;
+                });
                 builder.show();
             });
         }
