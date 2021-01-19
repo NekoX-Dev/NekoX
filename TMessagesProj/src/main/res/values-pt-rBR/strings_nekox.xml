@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Bloqueado</string>
-    <string name="AccDescrChatAttachEnterMenu">Menu de entrada de bate-papo</string>
+    <string name="AccDescrChatAttachEnterMenu">Menu de entrada do chat</string>
     <string name="ChatAttachEnterMenuRecordVideo">Gravar vídeo</string>
     <string name="ChatAttachEnterMenuRecordAudio">Gravar áudio</string>
-    <string name="ChatAttachEnterMenuDisableLinkPreview">Desativar visualização de link</string>
-    <string name="ChatAttachEnterMenuEnableLinkPreview">Habilitar pré-visualização de links</string>
-    <string name="UseChatAttachEnterMenu">Use o menu de entrada</string>
+    <string name="ChatAttachEnterMenuDisableLinkPreview">Desativar Prévia do Link</string>
+    <string name="ChatAttachEnterMenuEnableLinkPreview">Ativar Prévia do Link</string>
+    <string name="UseChatAttachEnterMenu">Usar menu de entrada</string>
     <string name="UseChatAttachEnterMenuNotice">Altere o botão de gravação para um menu de entrada e adicione uma chave de visualização de link.</string>
     <string name="DisableLinkPreviewByDefault">Desativar a visualização do link por padrão</string>
     <string name="DisableLinkPreviewByDefaultNotice">Desative a solicitação de visualização do link durante a entrada por padrão para evitar que o servidor saiba que o link é compartilhado através do Telegram.</string>
