@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="NekoSettings">Настройки Neko</string>
-    <string name="MessageMenu">Меню сообщения</string>
-    <string name="HidePhone">Скрыть мой номер телефона</string>
+    <string name="IPv6">Пробовать подключиться через IPv6</string>
+    <string name="MessageMenu">Меню действий с сообщением</string>
+    <string name="HidePhone">Скрыть номер телефона</string>
     <string name="Hide">Скрыть</string>
-    <string name="DeleteAllFromSelf">Удалить все мои сообщения</string>
+    <string name="DeleteAllFromSelf">Удалить мои сообщения</string>
     <string name="DeleteAllFromSelfAlert">Внимание! Это удалит **все ваши сообщения** в этом чате для **всех**.</string>
     <string name="BotLogin">Вход по токену</string>
-    <string name="InvalidAccessToken">Токен доступа недействителен</string>
+    <string name="InvalidAccessToken">Неверный токен. Получите корректный у @BotFather</string>
     <string name="IgnoreBlocked">Игнорировать заблокированных пользователей в группе</string>
     <string name="Connection">Соединение</string>
     <string name="Chat">Чат</string>
@@ -100,4 +101,12 @@
     <string name="AutoPauseVideo">Авто-пауза видео</string>
     <string name="AutoPauseVideoAbout">Останавливать воспроизведение видео при блокировке экрана или сворачивании приложения.</string>
     <string name="DisableProximityEvents">Отключить датчик приближения</string>
+    <string name="IncreaseVoiceMessageQuality">Повысить качество голосовых сообщений</string>
+    <string name="SelectBetween">Выбрать между</string>
+    <string name="AvatarAsBackground">Аватар на фоне в боковом меню</string>
+    <string name="BlurAvatarBackground">Размыть аватар</string>
+    <string name="DarkenAvatarBackground">Затемнить аватар</string>
+    <string name="ProviderDeepLTranslate">DeepL</string>
+    <string name="ProviderMicrosoftTranslator">Microsoft</string>
+    <string name="ProviderYouDao">YouDao (кит.)</string>
 </resources>
