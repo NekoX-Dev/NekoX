@@ -188,7 +188,7 @@
     <string name="UnpinMessagesAll">Открепить все сообщения</string>
     <string name="DismissForYourself">Скрыть для себя</string>
     <string name="ImportLogin">Вход по QR коду</string>
-    <string name="QRLoginNotice">Этот QR-код / ссылка позволяет кому-то войти в вашу учетную запись Telegram. Это были вы?</string>
+    <string name="QRLoginNotice">Будьте внимательны, с помощью этого кода любой сможет войти в ваш аккаунт!</string>
     <string name="QRLoginConfirm">Подтвердить вход</string>
     <string name="StorageReset">Очистить хранилище</string>
     <string name="StorageResetInfo">Все данные будут удалены (также вы выйдете из всех аккаунтов).</string>
