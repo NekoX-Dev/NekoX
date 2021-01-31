@@ -3,7 +3,7 @@
     <string name="NekoSettings">Настройки Neko</string>
     <string name="IPv6">Пробовать подключиться через IPv6</string>
     <string name="MessageMenu">Меню действий с сообщением</string>
-    <string name="HidePhone">Скрыть номер телефона</string>
+    <string name="HidePhone">Скрыть мой номер телефона</string>
     <string name="Hide">Скрыть</string>
     <string name="DeleteAllFromSelf">Удалить мои сообщения</string>
     <string name="DeleteAllFromSelfAlert">Внимание! Это удалит **все ваши сообщения** в этом чате для **всех**.</string>
@@ -49,10 +49,10 @@
     <string name="StickerSizeDialogMessageBigOne">Большой</string>
     <string name="StickerSizeDialogMessageSmallOne">Маленький</string>
     <string name="StickerSizeDialogMessageReplyTo">Мяу</string>
-    <string name="StickerSizeDialogName">Дуанг</string>
+    <string name="StickerSizeDialogName">Орфей ⌲</string>
     <string name="Experiment">Экспериментальные</string>
-    <string name="UnlimitedFavoredStickers">Неограниченные избранные стикеры</string>
-    <string name="UnlimitedFavoredStickersAbout">Добавляйте неограниченное количество стикеров в избранное. Они не будут синхронизированы с другими устройствами.</string>
+    <string name="UnlimitedFavoredStickers">Не лимитировать избранные стикеры</string>
+    <string name="UnlimitedFavoredStickersAbout">Добавляйте более 5 стикеров в избранное. Они не будут синхронизированы с другими устройствами.</string>
     <string name="MessageDetails">Сведения о сообщении</string>
     <string name="ExportAsJson">Экспорт в JSON</string>
     <string name="Translate">Перевести</string>
