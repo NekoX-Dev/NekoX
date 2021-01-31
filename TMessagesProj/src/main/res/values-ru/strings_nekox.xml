@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Заблокировано</string>
-    <string name="AccDescrChatAttachEnterMenu">Chat input menu</string>
-    <string name="ChatAttachEnterMenuRecordVideo">Record Video</string>
-    <string name="ChatAttachEnterMenuRecordAudio">Record Audio</string>
-    <string name="ChatAttachEnterMenuDisableLinkPreview">Отключить предварительный просмотр ссылки</string>
-    <string name="ChatAttachEnterMenuEnableLinkPreview">Включить предварительный просмотр ссылки</string>
-    <string name="UseChatAttachEnterMenu">Использовать меню ввода</string>
-    <string name="UseChatAttachEnterMenuNotice">Измените кнопку записи на меню ввода и добавьте переключатель предварительного просмотра ссылки.</string>
+    <string name="AccDescrChatAttachEnterMenu">Меню отправки</string>
+    <string name="ChatAttachEnterMenuRecordVideo">Видеосообщение</string>
+    <string name="ChatAttachEnterMenuRecordAudio">Аудиосообщение</string>
+    <string name="ChatAttachEnterMenuDisableLinkPreview">Без превью</string>
+    <string name="ChatAttachEnterMenuEnableLinkPreview">С превью</string>
+    <string name="UseChatAttachEnterMenu">Использовать меню отправки</string>
+    <string name="UseChatAttachEnterMenuNotice">Кнопка отправки будет заменена на расширенное меню</string>
     <string name="DisableLinkPreviewByDefault">Отключить предварительный просмотр ссылки по умолчанию</string>
     <string name="DisableLinkPreviewByDefaultNotice">По умолчанию отключите запрос предварительного просмотра ссылки во время ввода, чтобы сервер не знал, что ссылка передана через Telegram.</string>
     <string name="CustomApi">Пользовательский API</string>
