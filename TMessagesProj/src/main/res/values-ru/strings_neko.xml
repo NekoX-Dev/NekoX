@@ -66,8 +66,8 @@
     <string name="UndoTranslate">Скрыть перевод</string>
     <string name="DisablePhotoViewerSideAction">Не листать фото нажатием</string>
     <string name="BotToken">Токен</string>
-    <string name="UnlimitedPinnedDialogs">Неограниченные закрепленные диалоги</string>
-    <string name="UnlimitedPinnedDialogsAbout">Неограниченное закрепление диалогов без синхронизации на других устройствах.</string>
+    <string name="UnlimitedPinnedDialogs">Не лимитировать закрепленные диалоги</string>
+    <string name="UnlimitedPinnedDialogsAbout">Закрепляйте более 5 диалогов в общем списке чатов. Они не будут синхронизированы с другими устройствами.</string>
     <string name="OpenArchiveOnPull">Открывать архив сразу</string>
     <string name="HideKeyboardOnChatScroll">Скрыть клавиатуру при прокрутке</string>
     <string name="UserRestrictionsSendStickers2">Отправка стикеров</string>
@@ -82,7 +82,7 @@
     <string name="TabTitleTypeText">Названия</string>
     <string name="TabTitleTypeIcon">Эмодзи</string>
     <string name="TabTitleTypeMix">Названия и эмодзи</string>
-    <string name="ConfirmAVMessage">Подтверждение аудио/видео сообщений</string>
+    <string name="ConfirmAVMessage">Подтверждение аудио- и видеосообщений</string>
     <string name="AskBeforeCalling">Подтверждение звонков</string>
     <string name="ConfirmCall">Подтверждение звонка</string>
     <string name="CallTo">Позвонить **%1$s**?</string>
@@ -93,7 +93,7 @@
     <string name="IgnoreBlockedAbout">Сообщения от пользователей в чёрном списке будут скрыты.</string>
     <string name="GooglePlay">Google Play</string>
     <string name="SourceCode">Исходный код на Github</string>
-    <string name="ResetStickerSize">Сбросить размер стикера</string>
+    <string name="ResetStickerSize">Размер стикеров по умолчанию</string>
     <string name="RestartAppToTakeEffect">Перезапустите приложение для применения настроек.</string>
     <string name="DisableAppBarShadow">Отключить тень заголовка</string>
     <string name="BetaWarning">Эта функция **Telegram** находятся в **бета-тесте**.</string>
