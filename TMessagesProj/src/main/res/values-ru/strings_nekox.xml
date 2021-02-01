@@ -208,4 +208,8 @@
     <string name="AcceptSecretChat">Разрешить секретные чаты</string>
     <string name="TabletMode">Режим планшета</string>
     <string name="TabletModeDefault">Зависит от устройства</string>
+    <string name="ReplaceText">Заменить</string>
+    <string name="TextOrigin">Найти</string>
+    <string name="TextReplace">Заменить на</string>
+    <string name="ReplaceRegex">Регуляр. выражен.</string>
 </resources>
