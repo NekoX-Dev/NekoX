@@ -84,7 +84,7 @@ dependencies {
 
     implementation 'cn.hutool:hutool-core:5.5.7'
     implementation 'cn.hutool:hutool-crypto:5.5.7'
-    implementation 'cn.hutool:hutool-http:5.5.7'
+    implementation 'cn.hutool:hutool-http:5.5.8'
 
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
