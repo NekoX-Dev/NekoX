@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
-def verName = "7.4.2-preview-6"
-def verCode = 174
+def verName = "7.4.2-rc01"
+def verCode = 176
 
 def officialVer = "7.4.2"
 def officialCode = 2227
@@ -64,10 +64,6 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.sharetarget:sharetarget:1.1.0'
 
-    // replace zxing with latest
-    // TODO: fix problem with android L
-    implementation 'com.google.zxing:core:3.4.1'
-
     compileOnly 'org.checkerframework:checker-qual:3.9.1'
     compileOnly 'org.checkerframework:checker-compat-qual:2.5.5'
 
@@ -85,9 +81,9 @@ dependencies {
     implementation 'dnsjava:dnsjava:3.3.1'
     implementation 'org.dizitart:nitrite:3.4.3'
 
-    implementation 'cn.hutool:hutool-core:5.5.7'
-    implementation 'cn.hutool:hutool-crypto:5.5.7'
-    implementation 'cn.hutool:hutool-http:5.5.7'
+    implementation 'cn.hutool:hutool-core:5.5.8'
+    implementation 'cn.hutool:hutool-crypto:5.5.8'
+    implementation 'cn.hutool:hutool-http:5.5.8'
 
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
