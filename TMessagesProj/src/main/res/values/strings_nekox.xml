@@ -275,8 +275,8 @@
     <string name="TextReplace">Replace</string>
     <string name="ReplaceRegex">Use regex</string>
     <string name="DisableTrending">Disable Trending</string>
-    <string name="HideDeviceInfo">Hide device model</string>
-    <string name="HideDeviceInfoOff">Device information will be uploaded the second time the app starts after logging in.</string>
+    <string name="HideDeviceInfo">Hide device info</string>
+    <string name="HideDeviceInfoOff">Device info will be uploaded the second time after logging in.</string>
     <string name="HideDeviceInfoOn">You can change this in the settings later.</string>
 
 </resources>
