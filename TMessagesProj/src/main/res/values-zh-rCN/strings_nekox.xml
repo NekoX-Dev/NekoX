@@ -214,4 +214,5 @@
     <string name="ReplaceRegex">正则表达式</string>
     <string name="DisableTrending">禁用趋势推荐</string>
     <string name="HideDeviceInfo">隐藏设备型号</string>
+    <string name="HideDeviceInfoOn">您可以稍后在设置中进行更改此。</string>
 </resources>
