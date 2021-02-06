@@ -213,4 +213,5 @@
     <string name="TextReplace">替换</string>
     <string name="ReplaceRegex">正则表达式</string>
     <string name="DisableTrending">禁用趋势推荐</string>
+    <string name="HideDeviceInfo">隐藏设备型号</string>
 </resources>
