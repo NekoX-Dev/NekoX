@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Verrouillé</string>
+    <string name="CustomApiOfficial">Telegram Android</string>
+    <string name="CustomApiTGX">Telegram Android X</string>
+    <string name="UpdateUpdate">Mettre à jour</string>
+    <string name="UpdateLater">Plus tard</string>
+    <string name="DownloadFailed">Échec du téléchargement</string>
     <string name="Install">Installer</string>
     <string name="Ignore">Ignorer</string>
+    <string name="UpdateDownloaded">Une mise à jour vient d\'être téléchargée.</string>
     <string name="DevModeTitle">**Votre compte telegram peut être banni**</string>
+    <string name="ProviderYandexTranslate">Yandex.Translate</string>
+    <string name="GoogleCloudTransKey">Clé Google Cloud Translate</string>
+    <string name="NightMode">Mode Nuit</string>
 </resources>
