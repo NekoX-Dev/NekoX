@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Locked">Verrouillé</string>
+    <string name="ChatAttachEnterMenuRecordVideo">Enregistrer une vidéo</string>
+    <string name="ChatAttachEnterMenuRecordAudio">Enregistrer un audio</string>
     <string name="ChatAttachEnterMenuDisableLinkPreview">Désactiver l\'aperçus des liens</string>
     <string name="ChatAttachEnterMenuEnableLinkPreview">Activer l\'aperçus des liens</string>
+    <string name="UseChatAttachEnterMenu">Utiliser le menu de saisie</string>
+    <string name="DisableLinkPreviewByDefault">Désactiver l\'aperçu des liens par défaut</string>
     <string name="CustomApi">API personnalisée</string>
+    <string name="CustomApiNo">Ne pas utiliser l\'API personnalisée</string>
     <string name="CustomApiOfficial">Telegram Android</string>
     <string name="CustomApiTGX">Telegram Android X</string>
     <string name="CustomApiInput">Saisie manuelle</string>
@@ -20,6 +25,7 @@
     <string name="LinkedGroupChat">Groupe lié</string>
     <string name="LinkedChannelChat">Canal lié</string>
     <string name="DevModeTitle">**Votre compte telegram peut être banni**</string>
+    <string name="DevModeNotice">Nous ne sommes pas responsables d\'une mauvaise utilisation des fonctionnalités de développeur.</string>
     <string name="TapToDisable">Appuyez pour désactiver. Vous n\'en avez pas besoin.</string>
     <string name="PlaceHolder">Espace réservé - Veuillez désactiver</string>
     <string name="ProviderYandexTranslate">Yandex.Translate</string>
