@@ -213,4 +213,7 @@
     <string name="TextReplace">Thay thế</string>
     <string name="ReplaceRegex">Sử dụng biểu thức chính quy</string>
     <string name="DisableTrending">Vô hiệu hóa xu hướng</string>
+    <string name="HideDeviceInfo">Ẩn tên thiết bị</string>
+    <string name="HideDeviceInfoOff">Tên thiết bị sẽ được tải lên lần thứ hai khi ứng dụng khởi động sau khi đăng nhập.</string>
+    <string name="HideDeviceInfoOn">Bạn có thể thay đổi trong cài đặt sau.</string>
 </resources>
