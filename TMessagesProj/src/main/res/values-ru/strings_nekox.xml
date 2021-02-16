@@ -55,7 +55,7 @@
     <string name="PrivacyNoticeP2p">Вы включили **звонки p2p**. Мы рекомендуем отключить это для повышения конфиденциальности.</string>
     <string name="PrivacyNotice2fa">Для повышения защиты аккаунта рекомендуем включить двухфакторную аутентификацию.</string>
     <string name="ApplySuggestion">Ок</string>
-    <string name="DoNotRemindAgain">Не напоминать</string>
+    <string name="DoNotRemindAgain">Никогда</string>
     <string name="RemoveTitleEmoji">Убрать эмодзи из шапки</string>
     <string name="NekoXProxy">Список прокси от NekoX</string>
     <string name="PublicPrefix">Из списка</string>
