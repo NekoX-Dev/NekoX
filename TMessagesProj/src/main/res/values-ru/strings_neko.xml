@@ -58,7 +58,7 @@
     <string name="Translate">Перевести</string>
     <string name="DeleteAccount">Удаление аккаунта</string>
     <string name="TranslateFailed">Переводчик вернул ошибку</string>
-    <string name="TranslationProvider">Движок перевода</string>
+    <string name="TranslationProvider">Сервис перевода</string>
     <string name="ProviderGoogleTranslate">Google</string>
     <string name="ProviderGoogleTranslateCN">Google (кит.)</string>
     <string name="TranslateApiUnsupported">Выбранный движок не поддерживает ваш язык.</string>
@@ -101,7 +101,7 @@
     <string name="AutoPauseVideo">Останавливать воспроизведение автоматически</string>
     <string name="AutoPauseVideoAbout">При блокировке экрана или сворачивании приложения.</string>
     <string name="DisableProximityEvents">Отключить датчик приближения</string>
-    <string name="IncreaseVoiceMessageQuality">Повысить качество голосовых сообщений</string>
+    <string name="IncreaseVoiceMessageQuality">Повысить качество голосовых</string>
     <string name="SelectBetween">Выбрать между</string>
     <string name="AvatarAsBackground">Аватар на фоне в боковом меню</string>
     <string name="BlurAvatarBackground">Размыть аватар</string>
