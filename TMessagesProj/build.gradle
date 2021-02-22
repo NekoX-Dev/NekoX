@@ -95,7 +95,7 @@ dependencies {
     implementation 'cn.hutool:hutool-crypto:5.5.8'
     implementation 'cn.hutool:hutool-http:5.5.8'
 
-    implementation 'org.yaml:snakeyaml:1.27'
+    implementation 'org.yaml:snakeyaml:1.28'
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
     implementation project(":openpgp-api")
