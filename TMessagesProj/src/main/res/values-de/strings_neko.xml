@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoSettings">Neko-Einstellungen</string>
+    <string name="NekoSettings">Neko Einstellungen</string>
     <string name="IPv6">Über IPv6 verbinden</string>
     <string name="MessageMenu">Nachrichtenmenü</string>
-    <string name="HidePhone">Meine Telefonnummer ausblenden</string>
+    <string name="HidePhone">Telefonnummer ausblenden</string>
     <string name="Hide">Verstecken</string>
     <string name="DeleteAllFromSelf">Alles von sich selbst löschen</string>
     <string name="DeleteAllFromSelfAlert">Warnung! Dadurch werden alle Nachrichten in diesem Chat für alle Teilnehmer gelöscht.</string>
@@ -103,6 +103,7 @@
     <string name="IncreaseVoiceMessageQuality">Erhöhe die Qualität von Sprachnachrichten</string>
     <string name="SelectBetween">Wähle zwischen</string>
     <string name="AvatarAsBackground">Profilbild als Hintergrund</string>
+    <string name="BlurAvatarBackground">Profilbild verwischen</string>
     <string name="DarkenAvatarBackground">Profilbild abdunkeln</string>
     <string name="ProviderDeepLTranslate">DeepL-Übersetzung</string>
     <string name="ProviderMicrosoftTranslator">Microsoft Übersetzer</string>
