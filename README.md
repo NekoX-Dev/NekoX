@@ -4,7 +4,8 @@ NekoX is a **copylefted libre software** third-party Telegram client, based on T
 
 Use, study, change and share; with all. Licensed GPLv3+.
 
-[![Continuous integration](https://github.com/NekoX-Dev/NekoX/workflows/Debug%20build/badge.svg?branch=main)](https://github.com/NekoX-Dev/NekoX/actions)
+[![Continuous integration](https://github.com/NekoX-Dev/NekoX/workflows/Debug%20build/badge.svg?branch=main)](https://github.com/NekoX-Dev/NekoX/actions) 
+[![Translation status](https://hosted.weblate.org/widgets/nekox/-/svg-badge.svg)](https://hosted.weblate.org/engage/nekox/)
 
 - [Google Play Store](https://play.google.com/store/apps/details?id=nekox.messenger)
 - [Update News Telegram](https://t.me/NekogramX)
@@ -77,8 +78,9 @@ Consider using a Linux VM or dual booting.**
 
 It is recommended to use [AndroidStudio](https://developer.android.com/studio) to install. [This is how you install AndroidStudio](https://developer.android.com/studio/install).
 
-2. Install golang ( >= 1.15.5 ).
+2. Install golang (1.15.8).
 ```shell
+# debian sid
 apt install -y golang
 ```
 
@@ -90,7 +92,7 @@ It is recommended to use the official script, otherwise you may not find rustup.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain none -y
 echo "source \$HOME/.cargo/env" >> $HOME/.bashrc && source $HOME/.cargo/env
 
-cd ss-rust/src/main/rust/shadowsocks-rust
+rustup install $(cat ss-rust/src/main/rust/shadowsocks-rust/rust-toolchain)
 rustup target install armv7-linux-androideabi aarch64-linux-android i686-linux-android x86_64-linux-android
 ```
 
@@ -146,4 +148,7 @@ Add a language [here](https://hosted.weblate.org/projects/nekox/nekox/).
     <li>HanLP: <a href="https://github.com/hankcs/HanLP/blob/1.x/LICENSE">Apache License 2.0</a></li>
     <li>OpenCC: <a href="https://github.com/BYVoid/OpenCC/blob/master/LICENSE">Apache License 2.0</a></li>
     <li>opencc-data: <a href="https://github.com/nk2028/opencc-data">Apache License 2.0</a></li>
+    <li>android-device-list: <a href="https://github.com/pbakondy/android-device-list/blob/master/LICENSE">MIT</a> </li>
 </ul>
+
+[![Translation status](https://hosted.weblate.org/widgets/nekox/-/multi-auto.svg)](https://hosted.weblate.org/engage/nekox/)
