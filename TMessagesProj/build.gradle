@@ -101,7 +101,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'org.osmdroid:osmdroid-android:6.1.10'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.31'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3-native-mt'
 
     implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
     implementation 'dnsjava:dnsjava:3.3.1'
