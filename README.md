@@ -1,6 +1,8 @@
 # NekoX
 
-NekoX is an **free and open source** third-party Telegram client, based on Telegram-FOSS with features added.
+NekoX is a **copylefted libre software** third-party Telegram client, based on Telegram-FOSS with features added.
+
+Use, study, change and share; with all. Licensed GPLv3+.
 
 [![Continuous integration](https://github.com/NekoX-Dev/NekoX/workflows/Debug%20build/badge.svg?branch=main)](https://github.com/NekoX-Dev/NekoX/actions) 
 [![Translation status](https://hosted.weblate.org/widgets/nekox/-/svg-badge.svg)](https://hosted.weblate.org/engage/nekox/)
@@ -14,76 +16,76 @@ NekoX is an **free and open source** third-party Telegram client, based on Teleg
 
 ## NekoX Changes
 
-- Most of Nekogram's features
-- Max account limit set to 16
-- OpenCC Chinese Convert
-- Built-in VMess, Shadowsocks, SSR, Trojan-GFW proxies support
-- Built-in public proxy list / Proxy subscription support
-- Able to parse all proxy subscription format: SIP008, ssr, v2rayN, vmess1, shit ios app formats, clash config and more
-- Proxies import and export, remarks, speed measurement, sorting, delete unusable nodes, etc
-- Scan the QR code (any link, can add a proxy)
-- The ( vmess / vmess1 / ss / ssr / trojan ) proxy link in the message can be clicked
-- Allow auto-disabling proxy when VPN is enabled
-- Proxy automatic switcher
-- Add stickers without sticker pack
-- Allow disabling vibration
-- Allow clicking on links in self profile
-- Sticker set list backup / restore / share
-- Full InstantView translation support
-- Translation support for selected text on input and in messages
-- Delete all messages in group
-- Dialog sorting is optional "Unread and can be prioritized for reminding" etc
-- Allow to skip "regret within five seconds"
-- Unblock all users support
-- Login via QR code
-- Scan and confirm the login QR code directly
-- Allow clearing app data
-- Option to not send comment first when forwarding
-- 0ption to use nekox chat input menu: replace record button with a menu which contains an switch to control link preview (enabled by default)
+- Most of Nekogram's features.
+- Max account limit set to 16.
+- OpenCC Chinese Convert.
+- Built-in VMess, Shadowsocks, SSR, and Trojan-GFW proxy support.
+- Built-in public proxy list / proxy subscription support.
+- Parse all proxy subscription formats: SIP008, SSR, v2rayNG, vmess1, shit iOS app formats, clash config and more.
+- Proxy import and export, remarks, speed measurement, sorting, delete unusable nodes, etc.
+- Add proxies with QR codes.
+- The (vmess / vmess1 / ss / SSR / Trojan) proxy link in the message can be clicked.
+- Allow auto-disabling proxy when VPN is enabled.
+- Proxy automatic switcher.
+- Add stickers without sticker pack.
+- Allow disabling vibration.
+- Allow clicking on links in self profile.
+- Sticker set list backup / restore / share.
+- Full InstantView translation support.
+- Translation support for selected text on input and in messages.
+- Delete all messages in group.
+- Dialog sorting is optional "Unread and can be prioritized for reminding" etc.
+- Allow to skip "regret within five seconds".
+- Unblock all users support.
+- Log in via QR code.
+- Scan and confirm the login QR code directly.
+- Allow clearing app data.
+- Option to not send comment first when forwarding.
+- 0ption to use NekoX chat input menu: replace record button with a menu which contains an switch to control link preview (enabled by default).
 - Option to disable link preview by default: to prevent the server from knowing that the link is shared through Telegram.
 - Option to ignore Android-only content restrictions (except for the Play Store version).
-- OpenKaychain client (sign / verify / decrypt / import)
-- Google Cloud Translate / Yandex.Translate support
-- Custom cache directory (supports external storage)
-- Custom app ID and Hash (optional NekoX / Andorid / Android X or Manual input)
-- Custom server (official, test DC)
-- Keep the original file name when downloading files
-- View the data center you belong to when you don't have an avatar
-- Proxies, groups, channels, sticker packs are able to shared as QR codes
-- Force English emoji keywords to be loaded
-- Add "@Name" when long-pressing @user option
-- Enhanced notification service, optional version without Google Services
-- Don't alert "Proxy unavailable" for non-current account
-- Option to block others from starting a secret chat with you
-- Allow creation of group without invite
-- Option to upgrade group to supergroup
-- Mark dialogs as read using tab menu
-- Option to hide device info
-- Improved session dialog
-- Improved link long click menu
-- Text replacer
-- Option to disable trending
-- Telegram X style menu for unpinning messages
-- Built-in Material Design themes / Telegram X style icons
-- Enabled set auto delete timer option for private chats and private groups
-- Don't process cleanup draft events after opening chat
-- Support saving multiple selected messages to Saved Messages
-- Support unpinning multiple selected messages
-- View stats option for messages
+- OpenKeychain client (sign / verify / decrypt / import).
+- Google Cloud Translate / Yandex.Translate support.
+- Custom cache directory (supports external storage).
+- Custom app ID and Hash (optional NekoX / Andorid / Android X or Manual input).
+- Custom server (official, test DC or Manual input).
+- Keep the original file name when downloading files.
+- View the data center you belong to when you don't have an avatar.
+- Proxies, groups, channels, sticker packs are able to shared as QR codes.
+- Force English emoji keywords to be loaded.
+- Add "@Name" when long-pressing @user option.
+- Enhanced notification service, optional version without Google Services.
+- Don't alert "Proxy unavailable" for non-current account.
+- Option to block others from starting a secret chat with you.
+- Allow creation of group without invite.
+- Option to upgrade group to supergroup.
+- Mark dialogs as read using tab menu.
+- Option to hide device info.
+- Improved session dialog.
+- Improved menu when long-clicking links.
+- Text replacer.
+- Option to disable trending.
+- Telegram X style menu for unpinning messages.
+- Built-in Material Design themes / Telegram X style icons.
+- Auto-delete timer option for private chats and groups.
+- Don't process cleanup draft events after opening chat.
+- Save multiple selected messages to Saved Messages.
+- Unpin multiple selected messages.
+- View message stats.
 - And more :)
 
 ## Compilation Guide
 
-**NOTE: Building on Windows is, unfortunately, not supported.
+**Note: Building on Windows is, unfortunately, not supported.
 Consider using a Linux VM or dual booting.**
 
 **Important:**
 
-1. Install Android SDK and NDK (default location is $HOME/Android/SDK, otherwise you need to specify $ANDROID_HOME for it)
+1. Install the Android SDK and NDK (be default in $HOME/Android/SDK, otherwise you need to specify $ANDROID_HOME for it)
 
 It is recommended to use [AndroidStudio](https://developer.android.com/studio) to install.
 
-2. Install golang ( 1.15 ).
+2. Install `golang` ( 1.15 ).
 ```shell
 # debian sid
 apt install -y golang
@@ -91,7 +93,7 @@ apt install -y golang
 
 3. Install Rust and its stdlib for Android ABIs, and add environment variables for it.
 
-It is recommended to use the official script, otherwise you may not find rustup.
+It is recommended to use the official script, otherwise you may not find `rustup`.
 
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain none -y
@@ -117,7 +119,7 @@ More features, **without** [additional trackers](https://gitlab.com/search?utf8=
 
 #### What is the difference between the Full and Mini version?
 
-The full version comes with built-in proxy support for v2ray, shadowsocks, shadowsocksr, and trojan, which is usually provided to advanced users to help friends who have no computer knowledge in mainland China to bypass censorship. Don't complain about imperfect functions or ask to add other rare proxy types, you can use their clients directly.
+The full version comes with built-in proxy support for V2Ray, shadowsocks, shadowsocksr, and Trojan, which is usually provided to advanced users to help friends who have no computer knowledge in mainland China to bypass censorship. Don't complain about imperfect functions or ask to add other rare proxy types, you can use their clients directly.
 
 #### What if I don't need a proxy?
 
@@ -135,15 +137,15 @@ If you experience a *crash*, you also need to click on the version number at the
 
 ## Localization
 
-Is NekoX not in your language, or the translation is incorrect or incomplete? Get involved in the translations on our [Weblate](https://hosted.weblate.org/engage/nekox/).
+Help translate NekoX to your language, or fix translations at [Hosted Weblate](https://hosted.weblate.org/engage/nekox/).
 
 [![Translation status](https://hosted.weblate.org/widgets/nekox/-/horizontal-auto.svg)](https://hosted.weblate.org/engage/nekox/)
 
 ### Adding a new language
 
-First and foremost, Android must already support the specific language and locale you want to add. We cannot work with languages that Android and the SDK do not support, the tools simply break down. Next, if you are considering adding a country-specific variant of a language (e.g. de-AT), first make sure that the main language is well maintained (e.g. de). Your contribution might be useful to more people if you contribute to the existing version of your language rather than the country-specific variant.
+Android must already support the specific language and locale you want to add. When trying to work with languages Android and the SDK don't support, the tools simply break down. Next, if you are considering adding a country-specific variant of a language (e.g. de-AT), first make sure the main language is well maintained (e.g. de). Your contribution might be useful to more people if you contribute to the existing version of your language rather than doing more in the country-specific variant.
 
-Anyone can create a new language via Weblate.
+Anyone can [create a new language](https://hosted.weblate.org/new-lang/nekox/nekox/) on Hosted Weblate.
 
 ### Adding unofficial translations for Telegram
 
@@ -153,7 +155,7 @@ Current built-in language packs:
 * 正體中文: [taiwan](https://translations.telegram.org/taiwan)
 * 日本語: [ja_raw](https://translations.telegram.org/ja_raw)
 
-You can [open an issue to](https://github.com/NekoX-Dev/NekoX/issues/new?&template=language_request.md) request to amend the built-in translation.
+You can [open an issue](https://github.com/NekoX-Dev/NekoX/issues/new?&template=language_request.md) to request to amend the built-in translation.
 
 ## Credits
 
