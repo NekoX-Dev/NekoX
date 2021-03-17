@@ -116,8 +116,8 @@
     <string name="VmessAlterId">آیدی عددی</string>
     <string name="VmessSecurity">امنیت</string>
     <string name="VmessNetwork">شبکه</string>
-    <string name="VmessHeadType">Head Type</string>
-    <string name="VmessRequestHost">Request Host / QUIC Security</string>
+    <string name="VmessHeadType">نوع Head</string>
+    <string name="VmessRequestHost">درخواست هاست / امنیت QUIC</string>
     <string name="VmessPath">Path / QUIC Key</string>
     <string name="VmessTls">از TLS استفاده کن</string>
     <string name="ProxyInfoSS">تنظیمات پراکسی شادوساکس SS</string>
