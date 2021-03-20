@@ -226,4 +226,7 @@
     <string name="ArchiveFiles">Tập tin lưu trữ</string>
     <string name="Win32ExecutableFiles">Tập tin thực thi Win32</string>
     <string name="AutoDownload">Tự động tải</string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="AppLinkFDroid"></string>
 </resources>
