@@ -216,4 +216,16 @@
     <string name="HideDeviceInfo">デバイスモデルを非表示</string>
     <string name="HideDeviceInfoOff">ログイン後、アプリが2回目に起動したときに、デバイスモデルがアップロードされます。</string>
     <string name="HideDeviceInfoOn">これは後で設定で変更できます。</string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="AppLinkFDroid"></string>
+    <string name="EnableStickerPinTip"></string>
+    <string name="EnableStickerPinAbout"></string>
+    <string name="SetPinnedSuffix"></string>
+    <string name="PinSticker"></string>
+    <string name="Win32ExecutableFiles"></string>
+    <string name="EnableStickerPin"></string>
+    <string name="UnpinSticker"></string>
+    <string name="AutoDownload"></string>
+    <string name="ArchiveFiles"></string>
+    <string name="OpenCC" translatable="false"></string>
 </resources>
