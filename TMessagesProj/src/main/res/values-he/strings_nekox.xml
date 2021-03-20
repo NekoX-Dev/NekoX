@@ -216,4 +216,16 @@
     <string name="HideDeviceInfo">הסתר את דגם המכשיר</string>
     <string name="HideDeviceInfoOff">דגם המכשיר יעלה בפעם השנייה שהאפליקציה מתחילה לאחר הכניסה.</string>
     <string name="HideDeviceInfoOn">תוכל לשנות זאת בהגדרות מאוחר יותר.</string>
+    <string name="EnableStickerPinAbout"></string>
+    <string name="EnableStickerPin"></string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="PinSticker"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="AutoDownload"></string>
+    <string name="Win32ExecutableFiles"></string>
+    <string name="EnableStickerPinTip"></string>
+    <string name="UnpinSticker"></string>
+    <string name="AppLinkFDroid"></string>
+    <string name="ArchiveFiles"></string>
+    <string name="SetPinnedSuffix"></string>
 </resources>
