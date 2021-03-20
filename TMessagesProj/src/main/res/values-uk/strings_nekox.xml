@@ -216,4 +216,16 @@
     <string name="HideDeviceInfo">Сховати модель пристрою</string>
     <string name="HideDeviceInfoOff">Модель пристрою буде завантажена вдруге, коли програма запуститься після входу в систему.</string>
     <string name="HideDeviceInfoOn">Ви можете змінити це в налаштуваннях пізніше.</string>
+    <string name="PinSticker"></string>
+    <string name="EnableStickerPinAbout"></string>
+    <string name="SetPinnedSuffix"></string>
+    <string name="EnableStickerPinTip"></string>
+    <string name="EnableStickerPin"></string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="Win32ExecutableFiles"></string>
+    <string name="AppLinkFDroid"></string>
+    <string name="AutoDownload"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="UnpinSticker"></string>
+    <string name="ArchiveFiles"></string>
 </resources>
