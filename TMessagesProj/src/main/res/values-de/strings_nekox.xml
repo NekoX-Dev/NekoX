@@ -215,4 +215,17 @@
     <string name="DisableLinkPreviewByDefaultNotice">Deaktivieren Sie die Linkvorschau-Anforderung standardmäßig während der Eingabe, um zu verhindern, dass der Server weiß, dass der Link über Telegram freigegeben wird.</string>
     <string name="UseChatAttachEnterMenuNotice">Ändern Sie die Aufnahmetaste in ein Eingabemenü und fügen Sie einen Linkvorschau-Toggle hinzu.</string>
     <string name="UseChatAttachEnterMenu">Verwenden Sie das Eingabemenü</string>
+    <string name="ArchiveFiles"></string>
+    <string name="AppLinkFDroid"></string>
+    <string name="UnpinSticker"></string>
+    <string name="SetPinnedSuffix"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="EnableStickerPinAbout"></string>
+    <string name="EnableStickerPinTip"></string>
+    <string name="Win32ExecutableFiles"></string>
+    <string name="DismissForYourself"></string>
+    <string name="AutoDownload"></string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="EnableStickerPin"></string>
+    <string name="PinSticker"></string>
 </resources>
