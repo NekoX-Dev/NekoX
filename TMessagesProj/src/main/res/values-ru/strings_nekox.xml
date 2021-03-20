@@ -225,4 +225,7 @@
     <string name="SetPinnedSuffix">Закреплено</string>
     <string name="UnpinSticker">Открепить</string>
     <string name="PinSticker">Закрепить</string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="AppLinkFDroid"></string>
 </resources>
