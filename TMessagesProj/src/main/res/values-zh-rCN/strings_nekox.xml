@@ -226,4 +226,7 @@
     <string name="EnableStickerPinAbout">固定贴纸并在添加新贴纸时与云同步。
 \n与 \"禁用收藏夹和最近\" 配对。</string>
     <string name="EnableStickerPin">启用贴纸集置顶</string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="AppLinkFDroid"></string>
+    <string name="NekoX" translatable="false"></string>
 </resources>
