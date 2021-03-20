@@ -208,4 +208,7 @@
     <string name="AcceptSecretChat">Accetta nuove chat segrete</string>
     <string name="TabletMode">Modalità Tablet</string>
     <string name="TabletModeDefault">Dipende dal dispositivo</string>
+    <string name="AppLinkFDroid"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="OpenCC" translatable="false"></string>
 </resources>
