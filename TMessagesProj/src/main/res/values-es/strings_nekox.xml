@@ -208,4 +208,24 @@
     <string name="AcceptSecretChat">Aceptar nuevo chat secreto</string>
     <string name="TabletMode">Modo tablet</string>
     <string name="TabletModeDefault">Depende del dispositivo</string>
+    <string name="UnpinSticker"></string>
+    <string name="ReplaceText"></string>
+    <string name="Win32ExecutableFiles"></string>
+    <string name="HideDeviceInfoOn"></string>
+    <string name="HideDeviceInfoOff"></string>
+    <string name="PinSticker"></string>
+    <string name="DisableTrending"></string>
+    <string name="TextOrigin"></string>
+    <string name="TextReplace"></string>
+    <string name="EnableStickerPinTip"></string>
+    <string name="HideDeviceInfo"></string>
+    <string name="ArchiveFiles"></string>
+    <string name="EnableStickerPinAbout"></string>
+    <string name="EnableStickerPin"></string>
+    <string name="SetPinnedSuffix"></string>
+    <string name="OpenCC" translatable="false"></string>
+    <string name="ReplaceRegex"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="AutoDownload"></string>
+    <string name="AppLinkFDroid"></string>
 </resources>
