@@ -228,4 +228,7 @@
     <string name="EnableStickerPin">فعالسازی پین‌کردن استیکر</string>
     <string name="ArchiveFiles">فایل‌های آرشیو</string>
     <string name="Win32ExecutableFiles">فایل‌های قابل اجرای Win32</string>
+    <string name="AppLinkFDroid"></string>
+    <string name="NekoX" translatable="false"></string>
+    <string name="OpenCC" translatable="false"></string>
 </resources>
