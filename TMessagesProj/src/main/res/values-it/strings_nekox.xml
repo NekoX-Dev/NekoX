@@ -140,7 +140,7 @@
     <string name="ImportProxyList">Importa server proxy</string>
     <string name="ProxySubscription">Abbonamento Proxy</string>
     <string name="ProxySubDetails">Dettagli Abbonamento</string>
-    <string name="SubscriptionUrls">Urls</string>
+    <string name="SubscriptionUrls">URLs</string>
     <string name="SubscriptionUpdating">Aggiornamento Abbonamento</string>
     <string name="SubscriptionDelete">Elimina Abbonamento</string>
     <string name="ExportStickers">Esporta Adesivi</string>
