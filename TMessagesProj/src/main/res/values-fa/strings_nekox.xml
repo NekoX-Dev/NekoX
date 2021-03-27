@@ -94,8 +94,8 @@
     <string name="DisableSystemAccount">غیرفعال کردن حساب کاربری سیستم</string>
     <string name="FilterMenu">منوی فیلتر گفتگو ها</string>
     <string name="DisableProxyWhenVpnEnabled">غیرفعال کردن پروکسی هنگام فعال بودن VPN</string>
-    <string name="UseProxyItem">نمایش دکمه پروکسی در منوی کناری به جای نوار بالا</string>
-    <string name="HideProxyByDefault">مخفی کردن دکمه تنظیمات پروکسی بطور پیش فرض</string>
+    <string name="UseProxyItem">دکمه پروکسی در منوی کناری بجای صفحه اصلی</string>
+    <string name="HideProxyByDefault">‌مخفی کردن دکمه پروکسی بطور پیش‌فرض</string>
     <string name="SkipOpenLinkConfirm">غیرفعال کردن کادر تایید باز شدن لینک</string>
     <string name="DeleteAllInChat">حذف همه در این گفتگو</string>
     <string name="DeleteAllInChatAlert">هشدار! با این کار ، **تمام پیام ها** در این گفتگو برای همه شرکت کنندگان حذف می شود.</string>
@@ -106,8 +106,8 @@
     <string name="AddProxySocks5">افزودن پروکسی Socks5</string>
     <string name="AddProxyTelegram">افزودن پروکسی MTProto</string>
     <string name="AddProxyVmess">افزودن پروکسی Vmess</string>
-    <string name="AddProxySS">افزودن پروکسی شدوساکس</string>
-    <string name="AddProxySSR">افزودن پروکسی شدوساکس آر</string>
+    <string name="AddProxySS">افزودن پروکسی Shadowsocks</string>
+    <string name="AddProxySSR">افزودن پروکسی ShadowsocksR</string>
     <string name="AddProxyTrojan">افزودن پروکسی Trojan</string>
     <string name="SSPluginConflictingName">چندین افزونه از این شناسه استفاده می کنند: %s.</string>
     <string name="EditProxy">ویرایش پروکسی</string>
