@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="ChangeTranslateProvider">Endre tilbyder</string>
+    <string name="ChatAttachEnterMenuRecordAudio">Ta opp lyd</string>
+    <string name="ChatAttachEnterMenuRecordVideo">Spill inn video</string>
+    <string name="Locked">Låst</string>
+</resources>
