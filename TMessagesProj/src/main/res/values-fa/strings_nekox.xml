@@ -24,7 +24,7 @@
     <string name="UpdateAvailable">به روز رسانی جدید موجود است</string>
     <string name="UpdateUpdate">به روز رسانی</string>
     <string name="UpdateLater">بعدا</string>
-    <string name="DownloadFailed">بارگیری با شکست مواجه شد</string>
+    <string name="DownloadFailed">بارگیری شکست خورد</string>
     <string name="Install">نصب</string>
     <string name="Ignore">نادیده گرفتن</string>
     <string name="UpdateDownloaded">یک آپدیت به تازگی بارگیری شده است.</string>
@@ -49,7 +49,7 @@
     <string name="More">بیشتر</string>
     <string name="NekoXUpdatesChannel">کانال بروزرسانی NekoX</string>
     <string name="ShowIdAndDc">نمایش شناسه / DC کاربر در پروفایل</string>
-    <string name="UseDefaultTheme">استفاده تم پیشفرض</string>
+    <string name="UseDefaultTheme">بکارگیری پوستۀ پیشـگزیده *</string>
     <string name="NightMode">حالت شب</string>
     <string name="PrivacyNotice">هشدار حریم خصوصی</string>
     <string name="PrivacyNoticePhoneVisible">بنظر می رسد شماره تلفن شما برای همه قابل مشاهده است، و این ممکن باعث شود که هکرهای دولتی هویت واقعی شما را پیدا کنند. لطفا آن را خاموش کنید!</string>
@@ -60,7 +60,7 @@
     <string name="DoNotRemindAgain">دیگر یادآوری نشود</string>
     <string name="RemoveTitleEmoji">حذف ایموجی کنار اسم Nekogram X</string>
     <string name="NekoXProxy">پروکسی عمومی NekoX</string>
-    <string name="PublicPrefix">عمومی</string>
+    <string name="PublicPrefix">همگانی</string>
     <string name="DisableChatAction">عدم ارسال وضعیت ورودی</string>
     <string name="FakeScreenshot">تظاهر کردن عکس از صفحه</string>
     <string name="ImportPxy">وارد كردن</string>
@@ -68,7 +68,7 @@
     <string name="FilterNameUsersDescription">فقط پیام های چت های خصوصی</string>
     <string name="FilterNameContacts">مخاطبین</string>
     <string name="FilterNameContactsDescription">فقط پیام های کاربران ذخیره شده</string>
-    <string name="FilterNameGroups">گروه ها</string>
+    <string name="FilterNameGroups">گروه‌ها</string>
     <string name="FilterNameGroupsDescription">فقط پیام های گفتگو های گروهی</string>
     <string name="FilterNameChannels">کانال ها</string>
     <string name="FilterNameChannelsDescription">فقط پیام های کانال ها</string>
