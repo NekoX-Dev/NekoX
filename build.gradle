@@ -14,7 +14,6 @@ buildscript {
         classpath 'gradle.plugin.org.mozilla.rust-android-gradle:plugin:0.8.3'
         classpath 'com.github.triplet.gradle:play-publisher:3.0.0'
         classpath 'cn.hutool:hutool-core:5.5.9'
-        implementation 'com.github.samanzamani.persiandate:PersianDate:0.8'
     }
 }
 
