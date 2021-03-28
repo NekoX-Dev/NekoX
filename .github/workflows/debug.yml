@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - dev
+      - persiandate
     paths-ignore:
       - '**.md'
       - '.github/**'
