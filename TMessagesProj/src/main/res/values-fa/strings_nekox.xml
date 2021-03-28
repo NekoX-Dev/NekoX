@@ -216,4 +216,15 @@
     <string name="HideDeviceInfo">پنهان کردن مدل دستگاه</string>
     <string name="HideDeviceInfoOff">پس از ورود به حسابتان وقتی بار دوم وارد برنامه شوید مدل دستگاه ارسال می شود.</string>
     <string name="HideDeviceInfoOn">بعدا می توانید این مورد را در تنظیمات تغییر دهید.</string>
+     <!--date formatters-->
+    <string name="formatterMonthYear">MMMM.yyyy</string>
+    <string name="formatterMonth">dd.MMM</string>
+    <string name="formatterYear">dd.MM.yy</string>
+    <string name="formatterYearMax">dd.MM.yyyy</string>
+    <string name="chatDate">d.MMMM</string>
+    <string name="chatFullDate">d.MMMM,.yyyy</string>
+    <string name="formatterWeek">EEE</string>
+    <string name="formatterDay24H">HH:mm</string>
+    <string name="formatterDay12H">h:mm.a</string>
+    <string name="formatDateAtTime">%1$s در %2$s</string>
 </resources>
