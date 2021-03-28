@@ -16,11 +16,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
-import android.util.Log;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
-import org.telegram.messenger.time.PersianFastDateFormat;
 import android.util.Xml;
 import android.view.Gravity;
 
@@ -51,6 +49,8 @@ import kotlin.collections.ArraysKt;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.parts.LocFiltersKt;
 import tw.nekomimi.nekogram.utils.FileUtil;
+import org.telegram.freetux.utils.shamsicalendar.ShamsiCalendar;
+import org.telegram.freetux.utils.shamsicalendar.ShamsiDate;
 
 public class LocaleController {
 
@@ -1004,7 +1004,28 @@ public class LocaleController {
     public Locale getCurrentLocale() {
         return currentLocale;
     }
+    public static String formatYear(long j) {
+        Locale locale = getInstance().currentLocale;
+        if (locale == null) {
+            locale = Locale.getDefault();
+        }
+        String language = locale.getLanguage();
+        return (language.toLowerCase().equals("fa") || language.toLowerCase().equals("ku") ) ? ShamsiCalendar.dateToShamsi(new Date(j * 1000)).toDateString() : getInstance().formatterYear.format(new Date(j * 1000));
+    }
 
+    public static String formatYearMonth(long j) {
+        Locale locale = getInstance().currentLocale;
+        if (locale == null) {
+            locale = Locale.getDefault();
+        }
+        String language = locale.getLanguage();
+        if (!language.toLowerCase().equals("fa") && !language.toLowerCase().equals("ku") ) {
+            return getInstance().formatterMonthYear.format(j * 1000);
+        }
+        ShamsiDate dateToShamsi = ShamsiCalendar.dateToShamsi(new Date(j * 1000));
+        language = language.toLowerCase().equals("fa") ? ShamsiCalendar.getShamsiMonth(dateToShamsi.getMonth()) : language.toLowerCase().equals("ku") ? ShamsiCalendar.getShamsiMonthKur(dateToShamsi.getMonth()) : ShamsiCalendar.getShamsiMonthEn(dateToShamsi.getMonth());
+        return dateToShamsi.getYear() + " " + language;
+    }
     public static String getCurrentLanguageName() {
         LocaleInfo localeInfo = getInstance().currentLocaleInfo;
         return localeInfo == null || TextUtils.isEmpty(localeInfo.name) ? getString("LanguageName", R.string.LanguageName) : localeInfo.name;
@@ -1403,26 +1424,32 @@ public class LocaleController {
         }
     }
 
-    public static String formatDateChat(long date) {
-        return formatDateChat(date, false);
-    }
-
-    public static String formatDateChat(long date, boolean checkYear) {
+    public static String formatDateChat(long j) {
         try {
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(System.currentTimeMillis());
-            int currentYear = calendar.get(Calendar.YEAR);
-            date *= 1000;
-
-            calendar.setTimeInMillis(date);
-            if (checkYear && currentYear == calendar.get(Calendar.YEAR) || !checkYear && Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
-                return getInstance().chatDate.format(date);
+            Calendar instance = Calendar.getInstance();
+            int i = instance.get(QUANTITY_ZERO);
+            instance.setTimeInMillis(j * 1000);
+            int i2 = instance.get(QUANTITY_ZERO);
+            Locale locale = getInstance().currentLocale;
+            if (locale == null) {
+                locale = Locale.getDefault();
             }
-            return getInstance().chatFullDate.format(date);
-        } catch (Exception e) {
-            FileLog.e(e);
+            String language = locale.getLanguage();
+            if (!language.toLowerCase().equals("fa") && !language.toLowerCase().equals("ku") ) {
+                return i == i2 ? getInstance().chatDate.format(j * 1000) : getInstance().chatFullDate.format(j * 1000);
+            } else {
+                ShamsiDate dateToShamsi = ShamsiCalendar.dateToShamsi(new Date(j * 1000));
+                if (i != i2) {
+                    return dateToShamsi.toDateString();
+                }
+                StringBuilder append = new StringBuilder().append(dateToShamsi.getDay()).append(" ");
+                language = language.toLowerCase().equals("fa") ? ShamsiCalendar.getShamsiMonth(dateToShamsi.getMonth()) : language.toLowerCase().equals("ku") ? ShamsiCalendar.getShamsiMonthKur(dateToShamsi.getMonth()) : ShamsiCalendar.getShamsiMonthEn(dateToShamsi.getMonth());
+                return append.append(language).toString();
+            }
+        } catch (Throwable e) {
+            FileLog.m18e("tmessages", e);
+            return "LOC_ERR: formatDateChat";
         }
-        return "LOC_ERR: formatDateChat";
     }
 
     public static String formatDate(long date) {
@@ -1553,66 +1580,105 @@ public class LocaleController {
         return text;
     }
 
-    public static String formatDateOnline(long date) {
-        try {
-            date *= 1000;
-            Calendar rightNow = Calendar.getInstance();
-            int day = rightNow.get(Calendar.DAY_OF_YEAR);
-            int year = rightNow.get(Calendar.YEAR);
-            rightNow.setTimeInMillis(date);
-            int dateDay = rightNow.get(Calendar.DAY_OF_YEAR);
-            int dateYear = rightNow.get(Calendar.YEAR);
-
-            if (dateDay == day && year == dateYear) {
-                return LocaleController.formatString("LastSeenFormatted", R.string.LastSeenFormatted, LocaleController.formatString("TodayAtFormatted", R.string.TodayAtFormatted, getInstance().formatterDay.format(new Date(date))));
-                /*int diff = (int) (ConnectionsManager.getInstance().getCurrentTime() - date) / 60;
-                if (diff < 1) {
-                    return LocaleController.getString("LastSeenNow", R.string.LastSeenNow);
-                } else if (diff < 60) {
-                    return LocaleController.formatPluralString("LastSeenMinutes", diff);
-                } else {
-                    return LocaleController.formatPluralString("LastSeenHours", (int) Math.ceil(diff / 60.0f));
-                }*/
-            } else if (dateDay + 1 == day && year == dateYear) {
-                return LocaleController.formatString("LastSeenFormatted", R.string.LastSeenFormatted, LocaleController.formatString("YesterdayAtFormatted", R.string.YesterdayAtFormatted, getInstance().formatterDay.format(new Date(date))));
-            } else if (Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
-                String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().formatterDayMonth.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
-                return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
-            } else {
-                String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().formatterYear.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
-                return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+    public static String formatDateOnline(long j) {
+        Locale locale = getInstance().currentLocale;
+        if (locale == null) {
+            locale = Locale.getDefault();
         }
-        return "LOC_ERR";
+        String language = locale.getLanguage();
+        if (language == null) {
+            language = "en";
+        }
+        int i;
+        int i2;
+        int i3;
+        Object[] objArr;
+        if (language.toLowerCase().equals("fa") || language.toLowerCase().equals("ku") ) {
+            try {
+                Calendar instance = Calendar.getInstance();
+                i = instance.get(6);
+                i2 = instance.get(QUANTITY_ZERO);
+                instance.setTimeInMillis(j * 1000);
+                int i4 = instance.get(6);
+                i3 = instance.get(QUANTITY_ZERO);
+                ShamsiDate dateToShamsi = ShamsiCalendar.dateToShamsi(new Date(j * 1000));
+                if (i4 == i && i2 == i3) {
+                    return String.format("%s %s %s", new Object[]{getString("LastSeen", C0338R.string.LastSeen), getString("TodayAt", C0338R.string.TodayAt), getInstance().formatterDay.format(new Date(j * 1000))});
+                } else if (i4 + QUANTITY_ZERO == i && i2 == i3) {
+                    return String.format("%s %s %s", new Object[]{getString("LastSeen", C0338R.string.LastSeen), getString("YesterdayAt", C0338R.string.YesterdayAt), getInstance().formatterDay.format(new Date(j * 1000))});
+                } else if (i2 == i3) {
+                    StringBuilder append = new StringBuilder().append(dateToShamsi.getDay()).append(" ");
+                    language = language.toLowerCase().equals("fa") ? ShamsiCalendar.getShamsiMonth(dateToShamsi.getMonth()) : language.toLowerCase().equals("ku") ? ShamsiCalendar.getShamsiMonthKur(dateToShamsi.getMonth()) : ShamsiCalendar.getShamsiMonthEn(dateToShamsi.getMonth());
+                    Object[] objArr2 = new Object[QUANTITY_ONE];
+                    objArr2[QUANTITY_OTHER] = append.append(language).toString();
+                    objArr2[QUANTITY_ZERO] = getInstance().formatterDay.format(new Date(j * 1000));
+                    language = formatString("formatDateAtTime", C0338R.string.formatDateAtTime, objArr2);
+                    objArr = new Object[QUANTITY_ONE];
+                    objArr[QUANTITY_OTHER] = getString("LastSeenDate", C0338R.string.LastSeenDate);
+                    objArr[QUANTITY_ZERO] = language;
+                    return String.format("%s %s", objArr);
+                } else {
+                    objArr = new Object[QUANTITY_ONE];
+                    objArr[QUANTITY_OTHER] = dateToShamsi.toDateString();
+                    objArr[QUANTITY_ZERO] = getInstance().formatterDay.format(new Date(j * 1000));
+                    language = formatString("formatDateAtTime", C0338R.string.formatDateAtTime, objArr);
+                    objArr = new Object[QUANTITY_ONE];
+                    objArr[QUANTITY_OTHER] = getString("LastSeenDate", C0338R.string.LastSeenDate);
+                    objArr[QUANTITY_ZERO] = language;
+                    return String.format("%s %s", objArr);
+                }
+            } catch (Throwable e) {
+                FileLog.m18e("tmessages", e);
+                return "LOC_ERR";
+            }
+        }
+        try {
+            Calendar instance2 = Calendar.getInstance();
+            i3 = instance2.get(6);
+            i = instance2.get(QUANTITY_ZERO);
+            instance2.setTimeInMillis(j * 1000);
+            i2 = instance2.get(6);
+            int i5 = instance2.get(QUANTITY_ZERO);
+            if (i2 == i3 && i == i5) {
+                return String.format("%s %s %s", new Object[]{getString("LastSeen", C0338R.string.LastSeen), getString("TodayAt", C0338R.string.TodayAt), getInstance().formatterDay.format(new Date(j * 1000))});
+            } else if (i2 + QUANTITY_ZERO == i3 && i == i5) {
+                return String.format("%s %s %s", new Object[]{getString("LastSeen", C0338R.string.LastSeen), getString("YesterdayAt", C0338R.string.YesterdayAt), getInstance().formatterDay.format(new Date(j * 1000))});
+            } else if (i == i5) {
+                objArr = new Object[QUANTITY_ONE];
+                objArr[QUANTITY_OTHER] = getInstance().formatterMonth.format(new Date(j * 1000));
+                objArr[QUANTITY_ZERO] = getInstance().formatterDay.format(new Date(j * 1000));
+                language = formatString("formatDateAtTime", C0338R.string.formatDateAtTime, objArr);
+                objArr = new Object[QUANTITY_ONE];
+                objArr[QUANTITY_OTHER] = getString("LastSeenDate", C0338R.string.LastSeenDate);
+                objArr[QUANTITY_ZERO] = language;
+                return String.format("%s %s", objArr);
+            } else {
+                objArr = new Object[QUANTITY_ONE];
+                objArr[QUANTITY_OTHER] = getInstance().formatterYear.format(new Date(j * 1000));
+                objArr[QUANTITY_ZERO] = getInstance().formatterDay.format(new Date(j * 1000));
+                language = formatString("formatDateAtTime", C0338R.string.formatDateAtTime, objArr);
+                objArr = new Object[QUANTITY_ONE];
+                objArr[QUANTITY_OTHER] = getString("LastSeenDate", C0338R.string.LastSeenDate);
+                objArr[QUANTITY_ZERO] = language;
+                return String.format("%s %s", objArr);
+            }
+        } catch (Throwable e2) {
+            FileLog.m18e("tmessages", e2);
+            return "LOC_ERR";
+        }
     }
-
     private FastDateFormat createFormatter(Locale locale, String format, String defaultFormat) {
         if (format == null || format.length() == 0) {
             format = defaultFormat;
         }
-         FastDateFormat formatter_final;
-        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("feleconfig", Activity.MODE_PRIVATE);
-        Log.i("------------------- jalali:", preferences.getBoolean("jalali_date", false) +"");
-        if(preferences.getBoolean("jalali_date", false)) {
-            try {
-                PersianFastDateFormat formatter = PersianFastDateFormat.getInstance(format, locale);
-                formatter_final = formatter;
-                Log.i("------------------- jalali:", "true, in try");
-            } catch (Exception e) {
-                format = defaultFormat;
-                FastDateFormat formatter = FastDateFormat.getInstance(format, locale);
-                formatter_final = formatter;
-                Log.i("------------------- jalali:", "true, in catch");
-            }
-        } else {
-            Log.i("------------------- jalali:", "false");
+        FastDateFormat formatter;
+        try {
+            formatter = FastDateFormat.getInstance(format, locale);
+        } catch (Exception e) {
             format = defaultFormat;
-            FastDateFormat formatter = FastDateFormat.getInstance(format, locale);
-            formatter_final = formatter;
+            formatter = FastDateFormat.getInstance(format, locale);
         }
-        return formatter_final;
+        return formatter;
     }
 
     public void recreateFormatters() {
@@ -1639,7 +1705,7 @@ public class LocaleController {
         formatterWeekLong = createFormatter(locale, getStringInternal("formatterWeekLong", R.string.formatterWeekLong), "EEEE");
         formatterScheduleDay = createFormatter(locale, getStringInternal("formatDateSchedule", R.string.formatDateSchedule), "MMM d");
         formatterScheduleYear = createFormatter(locale, getStringInternal("formatDateScheduleYear", R.string.formatDateScheduleYear), "MMM d yyyy");
-        formatterDay = createFormatter(lang.toLowerCase().equals("fa") || lang.toLowerCase().equals("ar") || lang.toLowerCase().equals("ko") ? locale : Locale.US, is24HourFormat ? getStringInternal("formatterDay24H", R.string.formatterDay24H) : getStringInternal("formatterDay12H", R.string.formatterDay12H), is24HourFormat ? "HH:mm" : "h:mm a");
+        formatterDay = createFormatter(lang.toLowerCase().equals("ar") || lang.toLowerCase().equals("ko") ? locale : Locale.US, is24HourFormat ? getStringInternal("formatterDay24H", R.string.formatterDay24H) : getStringInternal("formatterDay12H", R.string.formatterDay12H), is24HourFormat ? "HH:mm" : "h:mm a");
         formatterStats = createFormatter(locale, is24HourFormat ? getStringInternal("formatterStats24H", R.string.formatterStats24H) : getStringInternal("formatterStats12H", R.string.formatterStats12H), is24HourFormat ? "MMM dd yyyy, HH:mm" : "MMM dd yyyy, h:mm a");
         formatterBannedUntil = createFormatter(locale, is24HourFormat ? getStringInternal("formatterBannedUntil24H", R.string.formatterBannedUntil24H) : getStringInternal("formatterBannedUntil12H", R.string.formatterBannedUntil12H), is24HourFormat ? "MMM dd yyyy, HH:mm" : "MMM dd yyyy, h:mm a");
         formatterBannedUntilThisYear = createFormatter(locale, is24HourFormat ? getStringInternal("formatterBannedUntilThisYear24H", R.string.formatterBannedUntilThisYear24H) : getStringInternal("formatterBannedUntilThisYear12H", R.string.formatterBannedUntilThisYear12H), is24HourFormat ? "MMM dd, HH:mm" : "MMM dd, h:mm a");
@@ -1708,30 +1774,49 @@ public class LocaleController {
         return "LOC_ERR";
     }
 
-    public static String stringForMessageListDate(long date) {
+    public static String stringForMessageListDate(long j) {
         try {
-            date *= 1000;
-            Calendar rightNow = Calendar.getInstance();
-            int day = rightNow.get(Calendar.DAY_OF_YEAR);
-            rightNow.setTimeInMillis(date);
-            int dateDay = rightNow.get(Calendar.DAY_OF_YEAR);
-
-            if (Math.abs(System.currentTimeMillis() - date) >= 31536000000L) {
-                return getInstance().formatterYear.format(new Date(date));
-            } else {
-                int dayDiff = dateDay - day;
-                if (dayDiff == 0 || dayDiff == -1 && System.currentTimeMillis() - date < 60 * 60 * 8 * 1000) {
-                    return getInstance().formatterDay.format(new Date(date));
-                } else if (dayDiff > -7 && dayDiff <= -1) {
-                    return getInstance().formatterWeek.format(new Date(date));
-                } else {
-                    return getInstance().formatterDayMonth.format(new Date(date));
-                }
+            Calendar instance = Calendar.getInstance();
+            int i = instance.get(6);
+            int i2 = instance.get(QUANTITY_ZERO);
+            instance.setTimeInMillis(j * 1000);
+            int i3 = instance.get(6);
+            int i4 = instance.get(QUANTITY_ZERO);
+            Locale locale = getInstance().currentLocale;
+            if (locale == null) {
+                locale = Locale.getDefault();
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+            String language = locale.getLanguage();
+            if (language.toLowerCase().equals("fa") || language.toLowerCase().equals("ku") ) {
+                ShamsiDate dateToShamsi = ShamsiCalendar.dateToShamsi(new Date(j * 1000));
+                if (i2 != i4) {
+                    return dateToShamsi.toDateString();
+                }
+                i = i3 - i;
+                if (i == 0 || (i == -1 && ((long) ((int) (System.currentTimeMillis() / 1000))) - j < 28800)) {
+                    return getInstance().formatterDay.format(new Date(j * 1000));
+                }
+                if (i <= -7 || i > -1) {
+                    StringBuilder append = new StringBuilder().append(dateToShamsi.getDay()).append(" ");
+                    language = language.toLowerCase().equals("fa") ? ShamsiCalendar.getShamsiMonth(dateToShamsi.getMonth()) : language.toLowerCase().equals("ku") ? ShamsiCalendar.getShamsiMonthKur(dateToShamsi.getMonth()) : ShamsiCalendar.getShamsiMonthEn(dateToShamsi.getMonth());
+                    return append.append(language).toString();
+                } else if (!language.toLowerCase().equals("ku")) {
+                    return getInstance().formatterWeek.format(new Date(j * 1000));
+                } else {
+                    instance = Calendar.getInstance();
+                    instance.setTimeInMillis(j * 1000);
+                    return (String) ShamsiCalendar.getShamsiWeekDaysKyMap().get(Integer.valueOf(instance.get(7)));
+                }
+            } else if (i2 != i4) {
+                return getInstance().formatterYear.format(new Date(j * 1000));
+            } else {
+                int i5 = i3 - i;
+                return (i5 == 0 || (i5 == -1 && ((long) ((int) (System.currentTimeMillis() / 1000))) - j < 28800)) ? getInstance().formatterDay.format(new Date(j * 1000)) : (i5 <= -7 || i5 > -1) ? getInstance().formatterMonth.format(new Date(j * 1000)) : getInstance().formatterWeek.format(new Date(j * 1000));
+            }
+        } catch (Throwable e) {
+            FileLog.m18e("tmessages", e);
+            return "LOC_ERR";
         }
-        return "LOC_ERR";
     }
 
     public static String formatShortNumber(int number, int[] rounded) {
