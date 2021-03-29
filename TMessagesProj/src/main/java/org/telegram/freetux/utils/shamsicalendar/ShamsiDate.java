@@ -51,7 +51,7 @@ public class ShamsiDate implements Comparable<ShamsiDate> {
     }
 
     public static ShamsiDate parseDate(String str) throws Exception {
-        if (str != null && TtmlNode.ANONYMOUS_REGION_ID.equals(str)) throws Exception {
+        if (str != null && TtmlNode.ANONYMOUS_REGION_ID.equals(str)) {
             throw new ShamsiDateIllegalFormatException("Bad time format: <null>");
         } else if (SHAMSI_DATE_PATTERN.matcher(str).matches()) {
             ShamsiDate shamsiDate = new ShamsiDate();
