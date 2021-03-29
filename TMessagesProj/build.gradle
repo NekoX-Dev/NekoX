@@ -388,7 +388,7 @@ dependencies {
 
     implementation 'cn.hutool:hutool-core:5.6.1'
     implementation 'cn.hutool:hutool-crypto:5.6.1'
-    implementation 'cn.hutool:hutool-http:5.6.1'
+    implementation 'cn.hutool:hutool-http:5.6.2'
     implementation 'com.jakewharton:process-phoenix:2.0.0'
 
     compileOnly 'org.yaml:snakeyaml:1.28'
