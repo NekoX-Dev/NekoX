@@ -28,7 +28,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.xmlpull.v1.XmlPullParser;
-import org.telegram.freetux.utils.C0338R
+import org.telegram.freetux.utils.C0338R;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
