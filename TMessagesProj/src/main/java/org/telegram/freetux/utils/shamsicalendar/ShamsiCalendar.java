@@ -137,9 +137,9 @@ public class ShamsiCalendar {
             long j2 = ((long) (i + 11)) % 33;
             Object obj = (j2 == 32 || j2 % 4 != 0) ? null : 1;
             if (j = obj == null) {
-                j + 365
+                j += 365;
             } else{
-                j + 366;
+                j += 366;
             }
         }
         Date date = new Date(new Date("01/01/1900").getTime() + ((((((long) month) + j) - 1) * 86400000) + ((long) ((((shamsiDate.getHour() * 3600) * PointerIconCompat.TYPE_DEFAULT) + ((shamsiDate.getMinute() * 60) * PointerIconCompat.TYPE_DEFAULT)) + (shamsiDate.getSecond() * PointerIconCompat.TYPE_DEFAULT)))));
