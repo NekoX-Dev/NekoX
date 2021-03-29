@@ -1663,7 +1663,7 @@ public class LocaleController {
                 objArr[QUANTITY_ZERO] = language;
                 return String.format("%s %s", objArr);
             }
-        } catch (Throwable e2) {
+        } catch (Throwable e) {
             FileLog.e(e);
             return "LOC_ERR";
         }
