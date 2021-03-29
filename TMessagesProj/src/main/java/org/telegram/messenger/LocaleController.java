@@ -16,11 +16,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
-import android.util.Log;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
-import org.telegram.messenger.time.PersianFastDateFormat;
 import android.util.Xml;
 import android.view.Gravity;
 
@@ -1592,27 +1590,14 @@ public class LocaleController {
         if (format == null || format.length() == 0) {
             format = defaultFormat;
         }
-         FastDateFormat formatter_final;
-        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("feleconfig", Activity.MODE_PRIVATE);
-        Log.i("------------------- jalali:", preferences.getBoolean("jalali_date", false) +"");
-        if(preferences.getBoolean("jalali_date", false)) {
-            try {
-                PersianFastDateFormat formatter = PersianFastDateFormat.getInstance(format, locale);
-                formatter_final = formatter;
-                Log.i("------------------- jalali:", "true, in try");
-            } catch (Exception e) {
-                format = defaultFormat;
-                FastDateFormat formatter = FastDateFormat.getInstance(format, locale);
-                formatter_final = formatter;
-                Log.i("------------------- jalali:", "true, in catch");
-            }
-        } else {
-            Log.i("------------------- jalali:", "false");
+        FastDateFormat formatter;
+        try {
+            formatter = FastDateFormat.getInstance(format, locale);
+        } catch (Exception e) {
             format = defaultFormat;
-            FastDateFormat formatter = FastDateFormat.getInstance(format, locale);
-            formatter_final = formatter;
+            formatter = FastDateFormat.getInstance(format, locale);
         }
-        return formatter_final;
+        return formatter;
     }
 
     public void recreateFormatters() {
@@ -1639,7 +1624,7 @@ public class LocaleController {
         formatterWeekLong = createFormatter(locale, getStringInternal("formatterWeekLong", R.string.formatterWeekLong), "EEEE");
         formatterScheduleDay = createFormatter(locale, getStringInternal("formatDateSchedule", R.string.formatDateSchedule), "MMM d");
         formatterScheduleYear = createFormatter(locale, getStringInternal("formatDateScheduleYear", R.string.formatDateScheduleYear), "MMM d yyyy");
-        formatterDay = createFormatter(lang.toLowerCase().equals("fa") || lang.toLowerCase().equals("ar") || lang.toLowerCase().equals("ko") ? locale : Locale.US, is24HourFormat ? getStringInternal("formatterDay24H", R.string.formatterDay24H) : getStringInternal("formatterDay12H", R.string.formatterDay12H), is24HourFormat ? "HH:mm" : "h:mm a");
+        formatterDay = createFormatter(lang.toLowerCase().equals("ar") || lang.toLowerCase().equals("ko") ? locale : Locale.US, is24HourFormat ? getStringInternal("formatterDay24H", R.string.formatterDay24H) : getStringInternal("formatterDay12H", R.string.formatterDay12H), is24HourFormat ? "HH:mm" : "h:mm a");
         formatterStats = createFormatter(locale, is24HourFormat ? getStringInternal("formatterStats24H", R.string.formatterStats24H) : getStringInternal("formatterStats12H", R.string.formatterStats12H), is24HourFormat ? "MMM dd yyyy, HH:mm" : "MMM dd yyyy, h:mm a");
         formatterBannedUntil = createFormatter(locale, is24HourFormat ? getStringInternal("formatterBannedUntil24H", R.string.formatterBannedUntil24H) : getStringInternal("formatterBannedUntil12H", R.string.formatterBannedUntil12H), is24HourFormat ? "MMM dd yyyy, HH:mm" : "MMM dd yyyy, h:mm a");
         formatterBannedUntilThisYear = createFormatter(locale, is24HourFormat ? getStringInternal("formatterBannedUntilThisYear24H", R.string.formatterBannedUntilThisYear24H) : getStringInternal("formatterBannedUntilThisYear12H", R.string.formatterBannedUntilThisYear12H), is24HourFormat ? "MMM dd, HH:mm" : "MMM dd, h:mm a");
