@@ -1,7 +1,7 @@
 package org.telegram.freetux.utils.shamsicalendar;
 
 import android.annotation.SuppressLint;
-import android.support.v4.view.PointerIconCompat;
+import androidx.core.view.PointerIconCompat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
