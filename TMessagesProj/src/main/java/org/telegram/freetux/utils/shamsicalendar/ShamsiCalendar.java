@@ -43,7 +43,7 @@ public class ShamsiCalendar {
         shamsiWeekDaysKuMap.put(new Integer(6), shamsiWeekDaysKu[6]);
     }
 
-    public static ShamsiDate dateToShamsi(Date date) {
+    public static ShamsiDate dateToShamsi(Date date) throws Exception {
         int i;
         int i2;
         int i3;
@@ -84,7 +84,7 @@ public class ShamsiCalendar {
         return new ShamsiDate(i3, i, i2, i6, i5, i4);
     }
 
-    public static int getDaysInMonth(ShamsiDate shamsiDate) {
+    public static int getDaysInMonth(ShamsiDate shamsiDate) throws Exception {
         if (shamsiDate.getMonth() < 7) {
             return 31;
         }
