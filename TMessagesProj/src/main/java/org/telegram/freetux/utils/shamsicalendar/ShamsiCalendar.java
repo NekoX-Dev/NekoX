@@ -63,6 +63,7 @@ public class ShamsiCalendar {
             int i7 = 1279;
             while (true) {
                 j2 = ((long) (i7 + 11)) % 33;
+                i = (short) ((int) (((10 + j2) / 30) + 10));
                 i3 = (j2 == 32 || j2 % 4 != 0) ? 0 : 1;
                 if (j <= ((long) (i3 + 365))) {
                     break;
