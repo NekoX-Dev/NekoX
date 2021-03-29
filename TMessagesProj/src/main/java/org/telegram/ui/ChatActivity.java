@@ -15725,7 +15725,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (obj.messageOwner.date == 0x7ffffffe) {
                             dateMsg.message = LocaleController.getString("MessageScheduledUntilOnline", R.string.MessageScheduledUntilOnline);
                         } else {
-                            dateMsg.message = LocaleController.formatString("MessageScheduledOn", R.string.MessageScheduledOn, LocaleController.formatDateChat(obj.messageOwner.date, true));
+                            dateMsg.message = LocaleController.formatString("MessageScheduledOn", R.string.MessageScheduledOn, LocaleController.formatDateChat(obj.messageOwner.date));
                         }
                     } else {
                         dateMsg.message = LocaleController.formatDateChat(obj.messageOwner.date);
