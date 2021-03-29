@@ -143,7 +143,7 @@ public class ShamsiDate implements Comparable<ShamsiDate> {
         throw new IllegalArgumentException("Year must be positive");
     }
 
-    public void add(int i, int i2) {
+    public void add(int i, int i2) throws Exception {
         int i3 = 30;
         if (i == 2) {
             this.month += i2;
