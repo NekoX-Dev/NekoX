@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.TimeZone;
 
 @SuppressLint({"UseValueOf"})
-public class Main {
+public class ShamsiCalendar {
     public static final int CURRENT_CENTURY = 13;
     public static final String[] shamsiMonths;
     private static final String[] shamsiMonthsEn;
