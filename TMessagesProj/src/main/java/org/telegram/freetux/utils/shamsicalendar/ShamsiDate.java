@@ -42,7 +42,7 @@ public class ShamsiDate implements Comparable<ShamsiDate> {
         setSecond(i6);
     }
 
-    private static void isDateValid(ShamsiDate shamsiDate) {
+    private static void isDateValid(ShamsiDate shamsiDate) throws Exception {
         try {
         ShamsiCalendar.dateToShamsi(ShamsiCalendar.shamsiToDate(shamsiDate)).toDateString().equals(shamsiDate.toDateString());
         } catch (Throwable e) {
