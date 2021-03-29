@@ -84,6 +84,7 @@ public class LocaleController {
     public FastDateFormat formatterScheduleDay;
     public FastDateFormat formatterScheduleYear;
     public FastDateFormat formatterMonthYear;
+    public FastDateFormat formatterMonth;
     public FastDateFormat[] formatterScheduleSend = new FastDateFormat[6];
 
     private HashMap<String, PluralRules> allRules = new HashMap<>();
@@ -1447,7 +1448,7 @@ public class LocaleController {
                 return append.append(language).toString();
             }
         } catch (Throwable e) {
-            FileLog.e(e);
+            FileLog.m18e("tmessages", e);
             return "LOC_ERR: formatDateChat";
         }
     }
@@ -1628,7 +1629,7 @@ public class LocaleController {
                     return String.format("%s %s", objArr);
                 }
             } catch (Throwable e) {
-                FileLog.e(e);
+                FileLog.m18e("tmessages", e);
                 return "LOC_ERR";
             }
         }
@@ -1663,7 +1664,7 @@ public class LocaleController {
                 return String.format("%s %s", objArr);
             }
         } catch (Throwable e2) {
-            FileLog.e(e);
+            FileLog.m18e("tmessages", e2);
             return "LOC_ERR";
         }
     }
@@ -1814,7 +1815,7 @@ public class LocaleController {
                 return (i5 == 0 || (i5 == -1 && ((long) ((int) (System.currentTimeMillis() / 1000))) - j < 28800)) ? getInstance().formatterDay.format(new Date(j * 1000)) : (i5 <= -7 || i5 > -1) ? getInstance().formatterMonth.format(new Date(j * 1000)) : getInstance().formatterWeek.format(new Date(j * 1000));
             }
         } catch (Throwable e) {
-            FileLog.e(e);
+            FileLog.m18e("tmessages", e);
             return "LOC_ERR";
         }
     }
