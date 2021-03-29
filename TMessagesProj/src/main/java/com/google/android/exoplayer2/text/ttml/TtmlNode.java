@@ -35,7 +35,7 @@ import java.util.TreeSet;
 /**
  * A package internal representation of TTML node.
  */
-/* package */ final class TtmlNode {
+/* package */ public final class TtmlNode {
 
   public static final String TAG_TT = "tt";
   public static final String TAG_HEAD = "head";
