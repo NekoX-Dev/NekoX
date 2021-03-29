@@ -220,7 +220,7 @@ public class ShamsiDate implements Comparable<ShamsiDate> {
         return this.smallYear;
     }
 
-    public int getWeekOfYear() {
+    public int getWeekOfYear() throws Exception {
         int i = 0;
         Date shamsiToDate = ShamsiCalendar.shamsiToDate(new ShamsiDate(this.year, 1, 1));
         int dayInYear = getDayInYear();
