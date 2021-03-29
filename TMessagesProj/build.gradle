@@ -91,6 +91,7 @@ dependencies {
     implementation 'androidx.sharetarget:sharetarget:1.1.0'
     
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.13.2'
 
     compileOnly 'org.checkerframework:checker-qual:3.11.0'
     compileOnly 'org.checkerframework:checker-compat-qual:2.5.5'
