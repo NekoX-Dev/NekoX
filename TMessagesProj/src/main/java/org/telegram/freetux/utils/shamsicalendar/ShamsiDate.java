@@ -25,11 +25,11 @@ public class ShamsiDate implements Comparable<ShamsiDate> {
     private ShamsiDate() {
     }
 
-    public ShamsiDate(int i, int i2, int i3) {
+    public ShamsiDate(int i, int i2, int i3) throws Exception {
         this(i, i2, i3, 0, 0, 0);
     }
 
-    public ShamsiDate(int i, int i2, int i3, int i4, int i5) {
+    public ShamsiDate(int i, int i2, int i3, int i4, int i5) throws Exception {
         this(i, i2, i3, i4, i5, 0);
     }
 
