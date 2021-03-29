@@ -1005,7 +1005,7 @@ public class LocaleController {
     public Locale getCurrentLocale() {
         return currentLocale;
     }
-    public static String formatYear(long j) {
+    public static String formatYear(long j) throws Exception {
         Locale locale = getInstance().currentLocale;
         if (locale == null) {
             locale = Locale.getDefault();
@@ -1014,7 +1014,7 @@ public class LocaleController {
         return (language.toLowerCase().equals("fa") || language.toLowerCase().equals("ku") ) ? ShamsiCalendar.dateToShamsi(new Date(j * 1000)).toDateString() : getInstance().formatterYear.format(new Date(j * 1000));
     }
 
-    public static String formatYearMonth(long j) {
+    public static String formatYearMonth(long j) throws Exception {
         Locale locale = getInstance().currentLocale;
         if (locale == null) {
             locale = Locale.getDefault();
