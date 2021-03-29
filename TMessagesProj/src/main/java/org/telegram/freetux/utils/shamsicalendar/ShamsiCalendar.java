@@ -136,7 +136,8 @@ public class ShamsiCalendar {
         for (int i = 1279; i < shamsiDate.getYear(); i++) {
             long j2 = ((long) (i + 11)) % 33;
             Object obj = (j2 == 32 || j2 % 4 != 0) ? null : 1;
-            if (j = obj == null) {
+            j = obj;
+            if (j == null) {
                 j += 365;
             } else{
                 j += 366;
