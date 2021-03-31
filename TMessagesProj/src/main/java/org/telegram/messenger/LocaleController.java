@@ -1526,12 +1526,12 @@ public class LocaleController {
                 }
             }
         }
-        } catch (Exception e) {
+        catch (Exception e) {
             FileLog.e(e);
         }
         return "LOC_ERR";
     }
-
+       
 
 
     public static String formatLocationUpdateDate(long date) {
