@@ -1443,6 +1443,12 @@ public class LocaleController {
             } else {
                 return getInstance().formatterYear.format(new Date(date));
             }
+            PersianCalendar calendar = new PersianCalendar(date);
+            String timeStr = calendar.getPersianMonthName() + " " + calendar.getPersianDay();
+            if (getCurrentLanguageName().contentEquals("فارسی")) {
+                return timeStr;
+            }
+            return getInstance().formatterDayMonth.format(new Date(date));
         } catch (Exception e) {
             FileLog.e(e);
         }
