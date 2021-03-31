@@ -49,7 +49,7 @@ import kotlin.collections.ArraysKt;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.parts.LocFiltersKt;
 import tw.nekomimi.nekogram.utils.FileUtil;
-package org.telegram.freetux.utils.shamsicalendar.persiancalendar;
+import org.telegram.freetux.utils.shamsicalendar.persiancalendar;
 
 public class LocaleController {
 
