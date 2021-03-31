@@ -5,6 +5,7 @@ on:
     branches:
       - dev
       - persiandate
+      - solarnekox
     paths-ignore:
       - '**.md'
       - '.github/**'
