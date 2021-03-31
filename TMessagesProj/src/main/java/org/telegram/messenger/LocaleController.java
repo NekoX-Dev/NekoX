@@ -1514,7 +1514,7 @@ public class LocaleController {
                 return LocaleController.formatString("YesterdayAtFormatted", R.string.YesterdayAtFormatted, getInstance().formatterDay.format(new Date(date)));
             } else if (Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
                 if (getCurrentLanguageName().contentEquals("فارسی")) {
-                    return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, pcalendar.getPersianMonthName(), pcalendar.getPersianDay()));
+                    return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, pcalendar.getPersianMonthName(), pcalendar.getPersianDay());
                 } else {
                     return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().chatDate.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
                 }        
@@ -1524,11 +1524,14 @@ public class LocaleController {
                 } else {
                     return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().chatFullDate.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
                 }
+            }
         } catch (Exception e) {
             FileLog.e(e);
         }
         return "LOC_ERR";
     }
+}
+
 
     public static String formatLocationUpdateDate(long date) {
         try {
