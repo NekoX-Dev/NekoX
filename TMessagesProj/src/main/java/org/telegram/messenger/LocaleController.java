@@ -49,7 +49,7 @@ import kotlin.collections.ArraysKt;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.parts.LocFiltersKt;
 import tw.nekomimi.nekogram.utils.FileUtil;
-import org.telegram.freetux.utils.shamsicalendar.persiancalendar;
+import org.telegram.freetux.utils.shamsicalendar.PersianCalendar;
 
 public class LocaleController {
 
@@ -1718,7 +1718,7 @@ public class LocaleController {
             }
             return getInstance().formatterMonth.format(new Date(date));
         } catch (Throwable e) {
-            FileLog.m94e(e);
+            FileLog.e(e);
             return "LOC_ERR";
         }
     }
