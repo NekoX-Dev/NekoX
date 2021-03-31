@@ -1422,7 +1422,11 @@ public class LocaleController {
             if (getCurrentLanguageName().contentEquals("فارسی")) {
                 return timeStr;
             }
-            return getInstance().chatFullDate.format(date);
+            else {
+                return getInstance().chatFullDate.format(date);
+
+            }
+            
         } catch (Exception e) {
             FileLog.e(e);
         }
