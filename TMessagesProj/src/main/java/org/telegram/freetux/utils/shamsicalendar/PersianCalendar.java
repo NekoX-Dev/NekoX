@@ -60,6 +60,10 @@ public class PersianCalendar extends GregorianCalendar {
     }
 
     public int getPersianDay() {
+        return this.persianDay;
+    }
+
+    public String getPersianDayfanum() {
         return LanguageUtils.getPersianNumbers(String.valueOf(this.persianDay));
     }
 
@@ -83,16 +87,16 @@ public class PersianCalendar extends GregorianCalendar {
     }
 
     public String getPersianLongDate() {
-        return getPersianWeekDayName() + "  " + this.persianDay + "  " + getPersianMonthName() + "  " + this.persianYear;
+        return getPersianWeekDayName() + "  " + getPersianDayfanum() + "  " + getPersianMonthName() + "  " + this.persianYear;
     }
 
 
     public String getPersianNormalDate() {
-        return this.persianDay + "  " + getPersianMonthName() + "  " + this.persianYear;
+        return getPersianDayfanum() + "  " + getPersianMonthName() + "  " + getPersianDayfanum();
     }
      //like 9 شهریور
     public String getPersianMonthDay() {
-        return this.persianDay + "  " + getPersianMonthName() + "  " + this.persianYear;
+        return this.persianDay + "  " + getPersianMonthName() + "  " + getPersianDayfanum();
     }  
     public String getPersianLongDateAndTime() {
         return getPersianLongDate() + " ساعت " + get(11) + ":" + get(12) + ":" + get(13);
