@@ -95,8 +95,8 @@ public class PersianCalendar extends GregorianCalendar {
         return getPersianDayfanum() + "  " + getPersianMonthName() + "  " + getPersianDayfanum();
     }
      //like 9 شهریور
-    public String getPersianMonthDay() {
-        return this.persianDay + "  " + getPersianMonthName() + "  " + getPersianDayfanum();
+public String getPersianMonthDay() {
+        return getPersianDayfanum() + "  " + getPersianMonthName();
     }  
     public String getPersianLongDateAndTime() {
         return getPersianLongDate() + " ساعت " + get(11) + ":" + get(12) + ":" + get(13);

@@ -1418,7 +1418,7 @@ public class LocaleController {
             
             if (checkYear && currentYear == calendar.get(Calendar.YEAR) || !checkYear && Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
                 if (getCurrentLanguageName().contentEquals("فارسی")) {
-                    String timeStr = pcalendar.getPersianMonthName() + " " + pcalendar.getPersianDay();
+                    String timeStr = pcalendar.getPersianMonthDay();
                     return timeStr;
                 }
                 else {
@@ -1428,7 +1428,7 @@ public class LocaleController {
             }    
             else {
                 if (getCurrentLanguageName().contentEquals("فارسی")) {
-                    String timeStr = pcalendar.getPersianYear() + "" + pcalendar.getPersianMonthName() + " " + pcalendar.getPersianDay();
+                    String timeStr = pcalendar.getPersianYear() + "" + getPersianMonthDay();
                     return timeStr;
                 }
                 else {
@@ -1606,11 +1606,23 @@ public class LocaleController {
             } else if (dateDay + 1 == day && year == dateYear) {
                 return LocaleController.formatString("LastSeenFormatted", R.string.LastSeenFormatted, LocaleController.formatString("YesterdayAtFormatted", R.string.YesterdayAtFormatted, getInstance().formatterDay.format(new Date(date))));
             } else if (Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
-                String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().formatterDayMonth.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
-                return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
+                if (getCurrentLanguageName().contentEquals("فارسی")) {
+                    String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, pcalendar.getPersianMonthDay(), getInstance().formatterDay.format(new Date(date)));
+                    return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
+                } else {
+                    String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().formatterDayMonth.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
+                    return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
+                }
             } else {
-                String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().formatterYear.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
+                if (getCurrentLanguageName().contentEquals("فارسی")) {
+                    String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, pcalendar.pcalendar.getPersianNormalDate(), getInstance().formatterDay.format(new Date(date)));
                 return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
+                } else {
+                    String format = LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().formatterYear.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));
+                return LocaleController.formatString("LastSeenDateFormatted", R.string.LastSeenDateFormatted, format);
+                }
+                
+                
             }
         } catch (Exception e) {
             FileLog.e(e);
@@ -1743,7 +1755,7 @@ public class LocaleController {
                 return getInstance().formatterWeek.format(new Date(date));
             }
             PersianCalendar calendar = new PersianCalendar(date);
-            String timeStr = calendar.getPersianMonthName() + " " + calendar.getPersianDay();
+            String timeStr = calendar.getPersianMonthDay();
             if (getCurrentLanguageName().contentEquals("فارسی")) {
                 return timeStr;
             }
