@@ -1428,7 +1428,7 @@ public class LocaleController {
             }    
             else {
                 if (getCurrentLanguageName().contentEquals("فارسی")) {
-                    String timeStr = pcalendar.getPersianYear() + "" + getPersianMonthDay();
+                    String timeStr = pcalendar.getPersianYear() + "" + pcalendar.getPersianMonthDay();
                     return timeStr;
                 }
                 else {
@@ -1592,7 +1592,8 @@ public class LocaleController {
             rightNow.setTimeInMillis(date);
             int dateDay = rightNow.get(Calendar.DAY_OF_YEAR);
             int dateYear = rightNow.get(Calendar.YEAR);
-
+            PersianCalendar pcalendar = new PersianCalendar(date);
+            
             if (dateDay == day && year == dateYear) {
                 return LocaleController.formatString("LastSeenFormatted", R.string.LastSeenFormatted, LocaleController.formatString("TodayAtFormatted", R.string.TodayAtFormatted, getInstance().formatterDay.format(new Date(date))));
                 /*int diff = (int) (ConnectionsManager.getInstance().getCurrentTime() - date) / 60;
