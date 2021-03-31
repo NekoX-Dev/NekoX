@@ -1716,7 +1716,7 @@ public class LocaleController {
             if (getCurrentLanguageName().contentEquals("فارسی")) {
                 return timeStr;
             }
-            return getInstance().formatterMonth.format(new Date(date));
+            return getInstance().formatterDayMonth.format(new Date(date));
         } catch (Throwable e) {
             FileLog.e(e);
             return "LOC_ERR";
