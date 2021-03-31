@@ -1517,7 +1517,7 @@ public class LocaleController {
                     return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, pcalendar.getPersianMonthName(), pcalendar.getPersianDay());
                 } else {
                     return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, getInstance().chatDate.format(new Date(date)), getInstance().formatterDay.format(new Date(date)));        
-            } else {
+            } else if {
                 if (getCurrentLanguageName().contentEquals("فارسی")) {
                     return LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, pcalendar.getPersianNormalDate(), getInstance().formatterDay.format(new Date(date)));
                 } else {
