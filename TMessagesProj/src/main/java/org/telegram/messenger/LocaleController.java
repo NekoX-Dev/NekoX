@@ -1414,17 +1414,27 @@ public class LocaleController {
             date *= 1000;
 
             calendar.setTimeInMillis(date);
-            if (checkYear && currentYear == calendar.get(Calendar.YEAR) || !checkYear && Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
-                return getInstance().chatDate.format(date);
-            }
             PersianCalendar pcalendar = new PersianCalendar(date);
-            String timeStr = pcalendar.getPersianMonthName() + " " + pcalendar.getPersianDay();
-            if (getCurrentLanguageName().contentEquals("فارسی")) {
-                return timeStr;
-            }
-            else {
-                return getInstance().chatFullDate.format(date);
+            
+            if (checkYear && currentYear == calendar.get(Calendar.YEAR) || !checkYear && Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
+                if (getCurrentLanguageName().contentEquals("فارسی")) {
+                    String timeStr = pcalendar.getPersianMonthName() + " " + pcalendar.getPersianDay();
+                    return timeStr;
+                }
+                else {
 
+                    return getInstance().chatDate.format(date);
+                }     
+            }    
+            else {
+                if (getCurrentLanguageName().contentEquals("فارسی")) {
+                    String timeStr = pcalendar.getPersianYear() + "" + pcalendar.getPersianMonthName() + " " + pcalendar.getPersianDay();
+                    return timeStr;
+                }
+                else {
+
+                    return getInstance().chatFullDate.format(date);
+                }
             }
             
         } catch (Exception e) {
