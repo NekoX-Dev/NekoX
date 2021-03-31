@@ -35,7 +35,7 @@ import java.util.TreeSet;
 /**
  * A package internal representation of TTML node.
  */
-/* package */ final class TtmlNode {
+/* package */ public final class TtmlNode {
 
   public static final String TAG_TT = "tt";
   public static final String TAG_HEAD = "head";
@@ -119,7 +119,7 @@ import java.util.TreeSet;
         tag, /* text= */ null, startTimeUs, endTimeUs, style, styleIds, regionId, imageId);
   }
 
-  private TtmlNode(
+  public TtmlNode(
       @Nullable String tag,
       @Nullable String text,
       long startTimeUs,
