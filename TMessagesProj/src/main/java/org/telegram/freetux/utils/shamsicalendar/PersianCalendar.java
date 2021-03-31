@@ -86,6 +86,10 @@ public class PersianCalendar extends GregorianCalendar {
         return getPersianWeekDayName() + "  " + this.persianDay + "  " + getPersianMonthName() + "  " + this.persianYear;
     }
 
+    public String getPersianNormalDate() {
+        return this.persianDay + "  " + getPersianMonthName() + "  " + this.persianYear;
+    }
+
     public String getPersianLongDateAndTime() {
         return getPersianLongDate() + " ساعت " + get(11) + ":" + get(12) + ":" + get(13);
     }
