@@ -1,4 +1,4 @@
-package org.telegram.freetux.utils.shamsicalendar.persiancalendar;
+package org.telegram.freetux.utils.shamsicalendar;
 
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
