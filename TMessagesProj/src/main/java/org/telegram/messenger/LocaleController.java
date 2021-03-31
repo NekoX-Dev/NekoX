@@ -1417,8 +1417,8 @@ public class LocaleController {
             if (checkYear && currentYear == calendar.get(Calendar.YEAR) || !checkYear && Math.abs(System.currentTimeMillis() - date) < 31536000000L) {
                 return getInstance().chatDate.format(date);
             }
-            PersianCalendar calendar = new PersianCalendar(date);
-            String timeStr = calendar.getPersianMonthName() + " " + calendar.getPersianDay();
+            PersianCalendar pcalendar = new PersianCalendar(date);
+            String timeStr = pcalendar.getPersianMonthName() + " " + pcalendar.getPersianDay();
             if (getCurrentLanguageName().contentEquals("فارسی")) {
                 return timeStr;
             }
