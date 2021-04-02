@@ -55,7 +55,7 @@ public class PersianCalendar extends GregorianCalendar {
 
     public String getPersianYearName() {
         if (NekoConfig.displayPersianCalendarByLatin) {
-            return getPersianYear();
+            return getPersianYear() + "";
         } else {
             return LanguageUtils.getPersianNumbers(String.valueOf(this.persianYear));
         }
@@ -79,7 +79,7 @@ public class PersianCalendar extends GregorianCalendar {
 
     public String getPersianDayName() {
         if (NekoConfig.displayPersianCalendarByLatin) {
-            return getPersianDay();
+            return getPersianDay() + "";
         } else {
             return LanguageUtils.getPersianNumbers(String.valueOf(this.persianDay));
         }
