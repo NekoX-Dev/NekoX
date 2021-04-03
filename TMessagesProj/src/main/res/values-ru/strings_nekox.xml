@@ -226,4 +226,7 @@
     <string name="UnpinSticker">Открепить</string>
     <string name="PinSticker">Закрепить</string>
     <string name="AppLinkFDroid">F-Droid</string>
+    <string name="DisplayPersianCalendarByLatin">Показывать иранский календарь латиницей</string>
+    <string name="UsePersiancalendarInfo">Отключите для нормального отображения даты.</string>
+    <string name="UsePersiancalendar">Иранский календарь</string>
 </resources>
