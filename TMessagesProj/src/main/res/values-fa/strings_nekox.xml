@@ -102,7 +102,7 @@
     <string name="UnblockAll">رفع مسدودی همه</string>
     <string name="UnblockAllWarn">آیا از رفع مسدودیت **همه ی کاربران و ربات ها** اطمینان دارید؟</string>
     <string name="BlockedListEmpty">شما هیچ فردی را مسدود نکرده اید :)</string>
-    <string name="ProxyTypeVmess">پروکسی Vmess</string>
+    <string name="ProxyTypeVmess">پروکسی VMess</string>
     <string name="AddProxySocks5">افزودن پروکسی SOCKS5</string>
     <string name="AddProxyTelegram">افزودن پروکسی MTProto</string>
     <string name="AddProxyVmess">افزودن پروکسی Vmess</string>
