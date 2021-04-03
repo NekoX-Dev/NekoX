@@ -227,4 +227,5 @@
 \n与 \"禁用收藏夹和最近\" 配对。</string>
     <string name="EnableStickerPin">启用贴纸集置顶</string>
     <string name="AppLinkFDroid">F-Droid</string>
+    <string name="UsePersiancalendar">使用伊朗历</string>
 </resources>
