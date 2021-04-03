@@ -101,7 +101,7 @@
     <string name="UnblockAll">Unblock All</string>
     <string name="UnblockAllWarn">Are you sure you want to unblock **all users and bots**?</string>
     <string name="BlockedListEmpty">You haven\'t blocked anyone :)</string>
-    <string name="ProxyTypeVmess">Vmess Proxy</string>
+    <string name="ProxyTypeVmess">VMess Proxy</string>
     <string name="AddProxySocks5">Add SOCKS5 Proxy</string>
     <string name="AddProxyTelegram">Add MTProto Proxy</string>
     <string name="AddProxyVmess">Add Vmess Proxy</string>
