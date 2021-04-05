@@ -229,4 +229,7 @@
     <string name="Win32ExecutableFiles">ملفات Win32 القابلة للتنفيذ</string>
     <string name="AutoDownload">التحميل التلقائي</string>
     <string name="AppLinkFDroid">اف-درويد</string>
+    <string name="DisplayPersianCalendarByLatin">عرض التقويم الفارسي حسب اللغة اللاتينية</string>
+    <string name="UsePersiancalendarInfo">عرض التاريخ مع التقويم الهجري الشمسي</string>
+    <string name="UsePersiancalendar">استخدام التقويم الفارسي</string>
 </resources>
