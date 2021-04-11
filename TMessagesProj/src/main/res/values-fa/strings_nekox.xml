@@ -232,4 +232,7 @@
     <string name="UsePersiancalendarInfo">نمایش تاریخ با تقویم هجری خورشیدی</string>
     <string name="DisplayPersianCalendarByLatin">نمایش تقویم فارسی بصورت لاتین</string>
     <string name="UsePersiancalendar">استفاده از تقویم فارسی</string>
+    <string name="WsPayload">ظرفیت ترابری</string>
+    <string name="ProxyInfoWS">تنظیمات رله WebSocket</string>
+    <string name="AddProxyWs">افزودن رله WebSocket</string>
 </resources>
