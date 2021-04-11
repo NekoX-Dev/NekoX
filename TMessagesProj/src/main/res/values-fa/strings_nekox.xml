@@ -66,7 +66,7 @@
     <string name="ImportPxy">وارد كردن</string>
     <string name="FilterNameUsers">کاربران</string>
     <string name="FilterNameUsersDescription">فقط پیام های چت های خصوصی</string>
-    <string name="FilterNameContacts">مخاطبین</string>
+    <string name="FilterNameContacts">آشِنایان</string>
     <string name="FilterNameContactsDescription">فقط پیام های کاربران ذخیره شده</string>
     <string name="FilterNameGroups">گروه‌ها</string>
     <string name="FilterNameGroupsDescription">فقط پیام های گفتگو های گروهی</string>
