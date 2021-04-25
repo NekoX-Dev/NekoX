@@ -236,4 +236,5 @@
     <string name="AutoLockImmediately">Немедленно</string>
     <string name="ProxyInfoWS">Настройки реле WebSocket</string>
     <string name="AddProxyWs">Добавить WebSocket реле</string>
+    <string name="WsPayload">Полезная нагрузка</string>
 </resources>
