@@ -23,4 +23,7 @@
     <string name="UpdateUpdate">Aktualizovat</string>
     <string name="UpdateLater">Později</string>
     <string name="DownloadFailed">Stahování se nezdařilo</string>
+    <string name="UpdateDownloaded">Aktualizace byla stažena.</string>
+    <string name="Ignore">Ignorovat</string>
+    <string name="Install">Instalace</string>
 </resources>
