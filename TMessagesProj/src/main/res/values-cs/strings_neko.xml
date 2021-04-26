@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="ForceTabletMode">Vynutit režim tabletu</string>
+    <string name="CreateMention">Vytvořit zmínku</string>
+    <string name="AddToSavedMessages">Uložit zprávu</string>
+    <string name="Repeat">Opakovat</string>
+    <string name="NoQuoteForward">Přeposlat bez citace</string>
+    <string name="TypefaceUseDefault">Použít výchozí písmo systému</string>
+    <string name="FirstLast">První Poslední</string>
+    <string name="LastFirst">Poslední První</string>
+    <string name="NameOrder">Pořadí jmen</string>
+    <string name="Chat">Chat</string>
+    <string name="Connection">Spojení</string>
+    <string name="IgnoreBlocked">Ignorovat blokované uživatele ve skupině</string>
+    <string name="InvalidAccessToken">Neplatný přístupový token</string>
+    <string name="BotLogin">Bot Přihlášení</string>
+    <string name="DeleteAllFromSelfAlert">Varování! Tohle **vymaže všechny zprávy ode mě** v tomto chatu pro **všechny** účastníky.</string>
+    <string name="DeleteAllFromSelf">Vymazat vše ode mě</string>
+    <string name="Hide">Skrýt</string>
+    <string name="HidePhone">Skrýt moje číslo</string>
+    <string name="IPv6">Připojení přes IPv6</string>
+    <string name="NekoSettings">Neko Nastavení</string>
+</resources>
