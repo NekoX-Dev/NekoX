@@ -182,7 +182,7 @@
     <string name="ShareMyKey">Отправить открытый ключ</string>
     <string name="DisableVibration">Отключить вибрацию</string>
     <string name="IgnoreContentRestrictions">Игнорировать ограничения контента</string>
-    <string name="IgnoreContentRestrictionsNotice">Игнорировать ограничения на воспроизведение сообщений.</string>
+    <string name="IgnoreContentRestrictionsNotice">Разрешает отображение сообщений, недоступных для показа на Android.</string>
     <string name="SendCommentAfterForward">Комментарий после пересылаемого</string>
     <string name="UnpinMessageX">Открепить сообщение</string>
     <string name="UnpinMessagesAll">Открепить все сообщения</string>
@@ -232,9 +232,10 @@
     <string name="WsNeedLogin">Из-за технических ограничений Ws Relay не может быть использован до входа в систему.</string>
     <string name="nekoXPaymentRemovedToast">Функция оплаты была удалена.</string>
     <string name="ImportSettings">Импорт настроек</string>
-    <string name="BackupSettings">Настройки резервного копирования</string>
+    <string name="BackupSettings">Экспорт настроек</string>
     <string name="AutoLockImmediately">Немедленно</string>
     <string name="ProxyInfoWS">Настройки реле WebSocket</string>
     <string name="AddProxyWs">Добавить WebSocket реле</string>
     <string name="WsPayload">Полезная нагрузка</string>
+    <string name="ImportSettingsAlert">Вы точно хотите перезаписать настройки\? Импорт настроек из ненадежных источников может привести к блокировке приложения.</string>
 </resources>
