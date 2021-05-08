@@ -56,7 +56,7 @@
     <string name="ProviderGoogleTranslate">Google Tradutor</string>
     <string name="TranslationProvider">Provedor de tradução</string>
     <string name="TranslateFailed">Erro no servidor de tradução</string>
-    <string name="DeleteAccount">Excluir conta do telegram</string>
+    <string name="DeleteAccount">Apagar conta do Telegram</string>
     <string name="Translate">Traduzir</string>
     <string name="ExportAsJson">Exportar como JSON</string>
     <string name="MessageDetails">Detalhes</string>
@@ -87,7 +87,7 @@
     <string name="NekogramRunning">Nekogram está em execução</string>
     <string name="DisableResidentNotification">Desativar notificação de residente</string>
     <string name="EnableResidentNotification">Mostrar notificação de residente</string>
-    <string name="TransparentStatusBar">Barra de status transparente</string>
+    <string name="TransparentStatusBar">Barra de estado transparente</string>
     <string name="ForceTabletMode">Forçar o modo tablet</string>
     <string name="CreateMention">Criar Menção</string>
     <string name="AddToSavedMessages">Salvar mensagem</string>
