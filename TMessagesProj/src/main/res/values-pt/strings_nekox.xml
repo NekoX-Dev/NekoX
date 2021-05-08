@@ -28,7 +28,7 @@
     <string name="CCTitle">OpenCC (Convertido em Chinês)</string>
     <string name="FCInfo">Seguir nosso canal de novidades e atualizações\?</string>
     <string name="FCTitle">Sobre atualizações do app</string>
-    <string name="StorageResetInfo">Todos os dados desta aplicação serão excluídos permanentemente (e tente encerrar a sessão de todas as contas primeiro).</string>
+    <string name="StorageResetInfo">Todos os dados desta aplicação serão apagados permanentemente (e tente encerrar a sessão de todas as contas primeiro).</string>
     <string name="StorageReset">Limpar armazenamento</string>
     <string name="QRLoginConfirm">Confirmar Login</string>
     <string name="QRLoginNotice">Este código QR / ligagão permite que alguém acesse a sua conta do Telegram. É você que está a fazer essa operação\?</string>
@@ -63,10 +63,10 @@
     <string name="MiniVersionAlert">Desculpe, a versão mini não é compatível com esse tipo de proxy. Altere a versão nas configurações.</string>
     <string name="MinApi23Required">Precisa pelo menos do Android 6 (API23).</string>
     <string name="MinApi21Required">Desculpe, precisa pelo menos do Android 5 (API21).</string>
-    <string name="DeleteUnavailableServerConfirm">Tem certeza de que deseja **excluir servidores indisponíveis**\?</string>
-    <string name="DeleteAllServerConfirm">Tem certeza de que deseja **excluir todos os servidores**\?</string>
-    <string name="DeleteUnavailableServer">Excluir servidores indisponíveis</string>
-    <string name="DeleteAllServer">Excluir todos os servidores</string>
+    <string name="DeleteUnavailableServerConfirm">Tem certeza de que deseja **apagar servidores indisponíveis**\?</string>
+    <string name="DeleteAllServerConfirm">Tem certeza de que deseja **apagar todos os servidores**\?</string>
+    <string name="DeleteUnavailableServer">Apagar servidores indisponíveis</string>
+    <string name="DeleteAllServer">Apagar todos os servidores</string>
     <string name="NoProxy">Não adicionou nenhum servidor proxy.</string>
     <string name="ErrorsInImport">Erros de importação:</string>
     <string name="ImportedProxies">Servidores proxy importados:</string>
@@ -76,7 +76,7 @@
     <string name="ImportStickersList">Importar Stickers</string>
     <string name="ImportStickers">Importar stickers de ficheiro</string>
     <string name="ExportStickers">Exportar Stickers</string>
-    <string name="SubscriptionDelete">Excluir assinatura</string>
+    <string name="SubscriptionDelete">Apagar assinatura</string>
     <string name="SubscriptionUpdating">Atualização da assinatura</string>
     <string name="ProxySubDetails">Detalhes da assinatura</string>
     <string name="ProxySubscription">Assinatura do Proxy</string>
@@ -105,7 +105,7 @@
     <string name="VmessNetwork">Rede</string>
     <string name="VmessSecurity">Segurança</string>
     <string name="ProxyInfoVmess">Configurações de Proxy Vmess</string>
-    <string name="ProxyDelete">Excluir proxy</string>
+    <string name="ProxyDelete">Apagar proxy</string>
     <string name="ShareProxy">Compartilhar Proxy</string>
     <string name="EditProxy">Editar Proxy</string>
     <string name="SSPluginConflictingName">Vários plugins usam esse id: %s.</string>
@@ -118,8 +118,8 @@
     <string name="BlockedListEmpty">Não bloqueou ninguém :)</string>
     <string name="UnblockAllWarn">Tem certeza que deseja desbloquear **todos os utilizadores e bots**\?</string>
     <string name="UnblockAll">Desbloquear Tudo</string>
-    <string name="DeleteAllInChatAlert">Aviso! Isto irá **excluir todas as mensagens** deste chat para **todos** os participantes.</string>
-    <string name="DeleteAllInChat">Excluir tudo na conversa</string>
+    <string name="DeleteAllInChatAlert">Aviso! Isto irá **apagar todas as mensagens** deste chat para **todos** os participantes.</string>
+    <string name="DeleteAllInChat">Apagar tudo na conversa</string>
     <string name="SkipOpenLinkConfirm">Ignorar a confirmação para abrir ligações</string>
     <string name="HideProxyByDefault">Ocultar configurações de proxy por padrão</string>
     <string name="UseProxyItem">Use o item proxy da barra lateral em vez do botão</string>
