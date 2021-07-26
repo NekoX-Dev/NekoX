@@ -7,7 +7,7 @@ if [ -z "$ANDROID_HOME" ]; then
     export ANDROID_HOME="$HOME/.local/lib/android/sdk"
   fi
 fi
-
+1
 _NDK="$ANDROID_HOME/ndk/21.4.7075529"
 [ -f "$_NDK/source.properties" ] || _NDK="$ANDROID_NDK_HOME"
 [ -f "$_NDK/source.properties" ] || _NDK="$NDK"
