@@ -243,6 +243,8 @@ jobs:
           - MiniReleaseNoGcm
           - FullRelease
           - FullReleaseNoGcm
+          - FdroidArm64Release
+          - FdroidArmRelease
     steps:
       - name: Checkout
         uses: actions/checkout@v2
