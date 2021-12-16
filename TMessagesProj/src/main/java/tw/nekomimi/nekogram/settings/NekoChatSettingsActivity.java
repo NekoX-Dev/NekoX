@@ -415,7 +415,6 @@ public class NekoChatSettingsActivity extends BaseFragment implements Notificati
                         textCell.setChecked(NekomuraConfig.showMessageDetails.toggleConfigBool());
                         break;
                     }
-
                 }
             });
         }

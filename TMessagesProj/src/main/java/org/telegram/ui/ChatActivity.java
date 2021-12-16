@@ -27416,8 +27416,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             ArrayList<MessageObject> messages = getSelectedMessages();
             forwardMessages(messages, false, true, 0, UserConfig.getInstance(currentAccount).getClientUserId());
             undoView.showWithAction(getUserConfig().getClientUserId(), UndoView.ACTION_FWD_MESSAGES, messages.size());
-        } else if (id == nkbtn_sharemessage) {
-            //AlertUtil.showToast("nkbtn_onclick_actionbar");
         } else if (id == nkbtn_hide) {
             ArrayList<MessageObject> messages = getSelectedMessages();
             for (MessageObject message : messages) {
@@ -27662,7 +27660,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 break;
             }
             case nkbtn_sharemessage: {
-                //AlertUtil.showToast("nkbtn_onclick");
                 MessageObject messageObject = null;
                 if (selectedObjectGroup != null) {
                     if (!TextUtils.isEmpty(selectedObjectGroup.messages.get(0).messageOwner.message)) {
