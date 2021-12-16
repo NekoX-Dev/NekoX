@@ -245,6 +245,11 @@ android {
             matchingFallbacks = ["release", "debug"]
         }
 
+        fdroidRelease {
+            initWith foss
+            matchingFallbacks = ["release", "debug"]
+        }
+
         fdroidArmRelease {
             initWith foss
             matchingFallbacks = ["release", "debug"]
