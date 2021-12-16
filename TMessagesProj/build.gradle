@@ -248,15 +248,21 @@ android {
         fdroidRelease {
             initWith foss
             matchingFallbacks = ["release", "debug"]
+
+            splits {
+                abi {
+                    enable true
+                }
+            }
         }
 
         fdroidArmRelease {
-            initWith foss
+            initWith fdroidRelease
             matchingFallbacks = ["release", "debug"]
         }
 
         fdroidArm64Release {
-            initWith foss
+            initWith fdroidRelease
             matchingFallbacks = ["release", "debug"]
         }
     }
