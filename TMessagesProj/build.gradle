@@ -89,11 +89,11 @@ android {
 
         abi {
 
-            if (requireFlavor().startsWith("Fdroid")) {
-                isEnable = false
+            if (targetTask.contains("fdroid")) {
+                enable = false
             } else {
-                isEnable = true
-                isUniversalApk = false
+                enable = true
+                universalApk = false
 
                 if (!targetAbi.isBlank()) {
                     reset()
@@ -298,20 +298,12 @@ android {
             }
         }
 
-        fdroidArmRelease {
+        fdroidRelease {
             jni {
                 srcDirs = ["./jni/"]
             }
             jniLibs.srcDirs = []
         }
-
-        fdroidArm64Release {
-            jni {
-                srcDirs = ["./jni/"]
-            }
-            jniLibs.srcDirs = []
-        }
-
     }
 
     flavorDimensions "version"
