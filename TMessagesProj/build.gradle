@@ -91,6 +91,7 @@ android {
 
             if (targetTask.contains("fdroid")) {
                 enable = false
+                universalApk true
 
                 // Only build the arm versions before https://github.com/Telegram-FOSS-Team/Telegram-FOSS/issues/516 is solved
                 reset()
