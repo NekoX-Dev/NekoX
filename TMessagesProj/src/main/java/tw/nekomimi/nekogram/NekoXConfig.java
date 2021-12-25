@@ -25,6 +25,10 @@ public class NekoXConfig {
             896711046, // nekohasekai
             380570774, // Haruhi
             601890953, // Nekomura Aoi
+
+            861522233, // Shihaam
+
+            947138292, // Aman
     };
 
     public static SharedPreferences preferences = NitritesKt.openMainSharedPreference("nekox_config");
