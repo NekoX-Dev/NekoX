@@ -21977,7 +21977,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             // NekoX: Merge 8.4.1, remove showMessageSeen here
 
             ReactionsContainerLayout reactionsLayout = new ReactionsContainerLayout(contentView.getContext(), currentAccount, getResourceProvider());
-            if (isReactionsAvailable) {
+            if (NekoConfig.ShowReactions.Bool() && isReactionsAvailable) {
                 int pad = 22;
                 int sPad = 24;
                 reactionsLayout.setPadding(AndroidUtilities.dp(4) + (LocaleController.isRTL ? 0 : sPad), AndroidUtilities.dp(4), AndroidUtilities.dp(4) + (LocaleController.isRTL ? sPad : 0), AndroidUtilities.dp(pad));

@@ -263,4 +263,5 @@
     <string name="rememberAllBackMessages">Remember all clicked replies</string>
     <string name="DisableInstantCamera">Disable instant camera</string>
     <string name="showSeconds">Show timestamp in seconds</string>
+    <string name="ShowReactions">Show reactions</string>
 </resources>

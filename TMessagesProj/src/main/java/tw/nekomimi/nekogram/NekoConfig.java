@@ -68,6 +68,7 @@ public class NekoConfig {
     public static ConfigItem showRepeat = addConfig("showRepeat", configTypeBool, false);
     public static ConfigItem showShareMessages = addConfig("showShareMessages", configTypeBool, false);
     public static ConfigItem showMessageHide = addConfig("showMessageHide", configTypeBool, false);
+    public static ConfigItem ShowReactions = addConfig("ShowReactions", configTypeBool, true);
 
     public static ConfigItem eventType = addConfig("eventType", configTypeInt, 0);
     public static ConfigItem actionBarDecoration = addConfig("ActionBarDecoration", configTypeInt, 0);
@@ -283,6 +284,8 @@ public class NekoConfig {
             showShareMessages.setConfigBool(preferences.getBoolean("showShareMessages", false));
         if (preferences.contains("showMessageHide"))
             showMessageHide.setConfigBool(preferences.getBoolean("showMessageHide", false));
+        if (preferences.contains("ShowReactions"))
+            ShowReactions.setConfigBool(preferences.getBoolean("ShowReactions", true));
 
         if (preferences.contains("eventType"))
             eventType.setConfigInt(preferences.getInt("eventType", 0));
