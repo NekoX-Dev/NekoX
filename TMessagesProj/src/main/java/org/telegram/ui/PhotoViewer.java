@@ -10222,7 +10222,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     menuItem.hideSubItem(gallery_menu_delete);
                 }
                 menuItem.checkHideMenuItem();
-                boolean noforwards = MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwards(newMessageObject.getChatId());
+                boolean noforwards = MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwardsForced(newMessageObject.getChatId());
                 if (isEmbedVideo) {
                     menuItem.showSubItem(gallery_menu_openin);
                     setItemVisible(pipItem, true, false);
@@ -10323,7 +10323,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (!newMessageObject.canDeleteMessage(parentChatActivity != null && parentChatActivity.isInScheduleMode(), null)) {
                     menuItem.hideSubItem(gallery_menu_delete);
                 }
-                allowShare = !MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwards(-currentDialogId);
+                allowShare = !MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwardsForced(-currentDialogId);
                 bottomButtonsLayout.setVisibility(View.VISIBLE);
                 paintButton.setVisibility(View.GONE);
                 shareItem.setVisibility(allowShare ? View.VISIBLE : View.GONE);
@@ -10399,11 +10399,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     actionBar.setTitle(LocaleController.getString("AttachDocument", R.string.AttachDocument));
                 }
                 if (DialogObject.isEncryptedDialog(currentDialogId) && !isEmbedVideo ||
-                        MessagesController.getInstance(currentAccount).isChatNoForwards(newMessageObject.getChatId())) {
+                        MessagesController.getInstance(currentAccount).isChatNoForwardsForced(newMessageObject.getChatId())) {
                     setItemVisible(sendNoQuoteItem, false, false);
                     setItemVisible(sendItem, false, false);
                 }
-                if (isEmbedVideo || newMessageObject.messageOwner.ttl != 0 && newMessageObject.messageOwner.ttl < 60 * 60 || MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwards(newMessageObject.getChatId())) {
+                if (isEmbedVideo || newMessageObject.messageOwner.ttl != 0 && newMessageObject.messageOwner.ttl < 60 * 60 || MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwardsForced(newMessageObject.getChatId())) {
                     allowShare = false;
                     menuItem.hideSubItem(gallery_menu_save);
                     bottomButtonsLayout.setVisibility(View.GONE);
@@ -10488,7 +10488,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             } else {
                 actionBar.setTitle(LocaleController.formatString("Of", R.string.Of, switchingToIndex + 1, imagesArrLocations.size()));
             }
-            boolean noforwards = avatarsDialogId != 0 && MessagesController.getInstance(currentAccount).isChatNoForwards(-avatarsDialogId);
+            boolean noforwards = avatarsDialogId != 0 && MessagesController.getInstance(currentAccount).isChatNoForwardsForced(-avatarsDialogId);
             if (noforwards) {
                 menuItem.hideSubItem(gallery_menu_save);
             } else {
@@ -10709,7 +10709,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             caption = pageBlocksAdapter.getCaption(switchingToIndex);
             isVideo = pageBlocksAdapter.isVideo(switchingToIndex);
             if (isVideo) {
-                if (!MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwards(-currentDialogId))
+                if (!MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwardsForced(-currentDialogId))
                     menuItem.showSubItem(gallery_menu_openin);
                 else {
                     menuItem.hideSubItem(gallery_menu_openin);
@@ -10731,7 +10731,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             }
             bottomLayout.setTag(null);
 
-            allowShare = !MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwards(-currentDialogId);
+            allowShare = !MessagesController.getInstance(UserConfig.selectedAccount).isChatNoForwardsForced(-currentDialogId);
             shareItem.setVisibility(allowShare ? View.VISIBLE : View.GONE);
 
             if (currentAnimation != null) {
@@ -12234,8 +12234,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 windowLayoutParams.flags = WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM;
             }
             if (chatActivity != null && chatActivity.getCurrentEncryptedChat() != null ||
-                    avatarsDialogId != 0 && MessagesController.getInstance(currentAccount).isChatNoForwards(-avatarsDialogId) ||
-                    messageObject != null && MessagesController.getInstance(currentAccount).isChatNoForwards(messageObject.getChatId())) {
+                    avatarsDialogId != 0 && MessagesController.getInstance(currentAccount).isChatNoForwardsForced(-avatarsDialogId) ||
+                    messageObject != null && MessagesController.getInstance(currentAccount).isChatNoForwardsForced(messageObject.getChatId())) {
                 if (!NekoXConfig.disableFlagSecure)
                     windowLayoutParams.flags |= WindowManager.LayoutParams.FLAG_SECURE;
             } else {
