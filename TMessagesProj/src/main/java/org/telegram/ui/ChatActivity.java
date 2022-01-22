@@ -20870,24 +20870,24 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     if ((selectedObject.type == 0 || selectedObject.isAnimatedEmoji() || getMessageCaption(selectedObject, selectedObjectGroup) != null) && !getMessagesController().isChatNoForwardsForced(currentChat)) {
                         items.add(LocaleController.getString("Copy", R.string.Copy));
                         options.add(OPTION_COPY);
-                        icons.add(R.drawable.baseline_content_copy_24);
+                        icons.add(R.drawable.msg_copy);
                     }
                     items.add(LocaleController.getString("CancelSending", R.string.CancelSending));
                     options.add(OPTION_CANCEL_SENDING);
-                    icons.add(R.drawable.baseline_delete_24);
+                    icons.add(R.drawable.msg_delete);
                 } else if (type == 0) {
                     items.add(LocaleController.getString("Retry", R.string.Retry));
                     options.add(OPTION_RETRY);
-                    icons.add(R.drawable.baseline_replay_24);
+                    icons.add(R.drawable.msg_retry);
                     items.add(LocaleController.getString("Delete", R.string.Delete));
                     options.add(OPTION_DELETE);
-                    icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.baseline_delete_24);
+                    icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.msg_delete);
                 } else if (type == 1) {
                     if (currentChat != null) {
                         if (allowChatActions) {
                             items.add(LocaleController.getString("Reply", R.string.Reply));
                             options.add(OPTION_REPLY);
-                            icons.add(R.drawable.baseline_reply_24);
+                            icons.add(R.drawable.msg_reply);
                         }
                         if (!isThreadChat() && chatMode != MODE_SCHEDULED && message.hasReplies() && currentChat.megagroup && message.canViewThread()) {
                             items.add(LocaleController.formatPluralString("ViewReplies", message.getRepliesCount()));
@@ -20897,16 +20897,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (allowUnpin) {
                             items.add(LocaleController.getString("UnpinMessage", R.string.UnpinMessage));
                             options.add(OPTION_UNPIN);
-                            icons.add(R.drawable.deproko_baseline_pin_undo_24);
+                            icons.add(R.drawable.msg_unpin);
                         } else if (allowPin) {
                             items.add(LocaleController.getString("PinMessage", R.string.PinMessage));
                             options.add(OPTION_PIN);
-                            icons.add(R.drawable.deproko_baseline_pin_24);
+                            icons.add(R.drawable.msg_pin);
                         }
                         if (message.canEditMessage(currentChat)) {
                             items.add(LocaleController.getString("Edit", R.string.Edit));
                             options.add(OPTION_EDIT);
-                            icons.add(R.drawable.baseline_edit_24);
+                            icons.add(R.drawable.msg_edit);
                         }
 //                        if (selectedObject != null && selectedObject.contentType == 0 && (messageText != null && messageText.length() > 0 && !selectedObject.isAnimatedEmoji() && !selectedObject.isDice()) && MessagesController.getGlobalMainSettings().getBoolean("translate_button", false)) {
 //                            items.add(LocaleController.getString("TranslateMessage", R.string.TranslateMessage));
@@ -20916,59 +20916,59 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (NekoConfig.showReport.Bool() && selectedObject.contentType == 0 && !selectedObject.isMediaEmptyWebpage() && selectedObject.getId() > 0 && !selectedObject.isOut() && (currentChat != null || currentUser != null && currentUser.bot)) {
                             items.add(LocaleController.getString("ReportChat", R.string.ReportChat));
                             options.add(OPTION_REPORT_CHAT);
-                            icons.add(R.drawable.baseline_report_24);
+                            icons.add(R.drawable.msg_report);
                         }
                     } else {
                         if (selectedObject.getId() > 0 && allowChatActions) {
                             items.add(LocaleController.getString("Reply", R.string.Reply));
                             options.add(OPTION_REPLY);
-                            icons.add(R.drawable.baseline_reply_24);
+                            icons.add(R.drawable.msg_reply);
                         }
                     }
                     if (message.canDeleteMessage(chatMode == MODE_SCHEDULED, currentChat) && (threadMessageObjects == null || !threadMessageObjects.contains(message))) {
                         items.add(LocaleController.getString("Delete", R.string.Delete));
                         options.add(OPTION_DELETE);
-                        icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.baseline_delete_24);
+                        icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.msg_delete);
                     }
                 } else if (type == 20) {
                     items.add(LocaleController.getString("Retry", R.string.Retry));
                     options.add(OPTION_RETRY);
-                    icons.add(R.drawable.baseline_replay_24);
+                    icons.add(R.drawable.msg_retry);
                     if (!getMessagesController().isChatNoForwardsForced(currentChat)) {
                         items.add(LocaleController.getString("Copy", R.string.Copy));
                         options.add(OPTION_COPY);
-                        icons.add(R.drawable.baseline_content_copy_24);
+                        icons.add(R.drawable.msg_copy);
                     }
                     items.add(LocaleController.getString("Delete", R.string.Delete));
                     options.add(OPTION_DELETE);
-                    icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.baseline_delete_24);
+                    icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.msg_delete);
                 } else {
                     if (currentEncryptedChat == null) {
                         if (chatMode == MODE_SCHEDULED) {
                             items.add(LocaleController.getString("MessageScheduleSend", R.string.MessageScheduleSend));
                             options.add(OPTION_SEND_NOW);
-                            icons.add(R.drawable.deproko_baseline_send_24);
+                            icons.add(R.drawable.msg_forward_send);
                         }
                         if (selectedObject.messageOwner.action instanceof TLRPC.TL_messageActionPhoneCall) {
                             TLRPC.TL_messageActionPhoneCall call = (TLRPC.TL_messageActionPhoneCall) message.messageOwner.action;
                             items.add((call.reason instanceof TLRPC.TL_phoneCallDiscardReasonMissed || call.reason instanceof TLRPC.TL_phoneCallDiscardReasonBusy) && !message.isOutOwner() ? LocaleController.getString("CallBack", R.string.CallBack) : LocaleController.getString("CallAgain", R.string.CallAgain));
                             options.add(OPTION_CALL_AGAIN);
-                            icons.add(R.drawable.baseline_call_24);
+                            icons.add(R.drawable.msg_callback);
                             if (VoIPHelper.canRateCall(call)) {
                                 items.add(LocaleController.getString("CallMessageReportProblem", R.string.CallMessageReportProblem));
                                 options.add(OPTION_RATE_CALL);
-                                icons.add(R.drawable.baseline_star_24);
+                                icons.add(R.drawable.msg_fave);
                             }
                         }
                         if (allowChatActions) {
                             items.add(LocaleController.getString("Reply", R.string.Reply));
                             options.add(8);
-                            icons.add(R.drawable.baseline_reply_24);
+                            icons.add(R.drawable.msg_reply);
                         }
                         if ((selectedObject.type == 0 || selectedObject.isDice() || selectedObject.isAnimatedEmoji() || getMessageCaption(selectedObject, selectedObjectGroup) != null) && !getMessagesController().isChatNoForwardsForced(currentChat)) {
                             items.add(LocaleController.getString("Copy", R.string.Copy));
                             options.add(3);
-                            icons.add(R.drawable.baseline_content_copy_24);
+                            icons.add(R.drawable.msg_copy);
                         }
                         if (!isThreadChat() && chatMode != MODE_SCHEDULED && currentChat != null && (currentChat.has_link || message.hasReplies()) && currentChat.megagroup && message.canViewThread()) {
                             if (message.hasReplies()) {
@@ -20977,16 +20977,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 items.add(LocaleController.getString("ViewThread", R.string.ViewThread));
                             }
                             options.add(27);
-                            icons.add(R.drawable.baseline_forum_24);
+                            icons.add(R.drawable.msg_viewreplies);
                         } else if (isThreadChat() && chatMode != MODE_SCHEDULED && currentChat != null) {
                             options.add(nkbtn_view_in_chat);
-                            icons.add(R.drawable.baseline_forum_24);
+                            icons.add(R.drawable.msg_viewreplies);
                             items.add(LocaleController.getString("ViewInChat", R.string.ViewInChat));
                         }
                         if (!selectedObject.isSponsored() && chatMode != MODE_SCHEDULED && ChatObject.isChannel(currentChat) && selectedObject.getDialogId() != mergeDialogId) {
                             items.add(LocaleController.getString("CopyLink", R.string.CopyLink));
                             options.add(22);
-                            icons.add(R.drawable.baseline_link_24);
+                            icons.add(R.drawable.msg_link);
                         }
                         if (type == 2) {
                             if (chatMode != MODE_SCHEDULED) {
@@ -21021,7 +21021,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (selectedObject.messageOwner.media instanceof TLRPC.TL_messageMediaWebPage && MessageObject.isNewGifDocument(selectedObject.messageOwner.media.webpage.document)) {
                                 items.add(LocaleController.getString("SaveToGIFs", R.string.SaveToGIFs));
                                 options.add(11);
-                                icons.add(R.drawable.deproko_baseline_gif_24);
+                                icons.add(R.drawable.msg_gif);
                             }
                         } else if (type == 4) {
                             if (!getMessagesController().isChatNoForwardsForced(currentChat)) {
@@ -21029,60 +21029,60 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     if (!selectedObject.needDrawBluredPreview()) {
                                         items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                                         options.add(4);
-                                        icons.add(R.drawable.baseline_image_24);
+                                        icons.add(R.drawable.msg_gallery);
                                         items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                         options.add(6);
-                                        icons.add(R.drawable.baseline_share_24);
+                                        icons.add(R.drawable.msg_shareout);
                                     }
                                 } else if (selectedObject.isMusic()) {
                                     items.add(LocaleController.getString("SaveToMusic", R.string.SaveToMusic));
                                     options.add(10);
-                                    icons.add(R.drawable.baseline_file_download_24);
+                                    icons.add(R.drawable.msg_download);
                                     items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                     options.add(6);
-                                    icons.add(R.drawable.baseline_share_24);
+                                    icons.add(R.drawable.msg_shareout);
                             } else if (selectedObject.getDocument() != null) {
                                 items.add(LocaleController.getString("SaveToDownloads", R.string.SaveToDownloads));
                                 options.add(10);
-                                icons.add(R.drawable.baseline_file_download_24);
+                                icons.add(R.drawable.msg_download);
                                     if (MessageObject.isNewGifDocument(selectedObject.getDocument())) {
                                     items.add(LocaleController.getString("SaveToGIFs", R.string.SaveToGIFs));
                                     options.add(11);
-                                    icons.add(R.drawable.deproko_baseline_gif_24);
+                                    icons.add(R.drawable.msg_gif);
                                 }
                                     items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                     options.add(6);
-                                    icons.add(R.drawable.baseline_share_24);
+                                    icons.add(R.drawable.msg_shareout);
                                 } else {
                                     if (!selectedObject.needDrawBluredPreview()) {
                                         items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                                         options.add(4);
-                                        icons.add(R.drawable.baseline_image_24);
+                                        icons.add(R.drawable.msg_gallery);
                                     }
                                 }
                             }
                         } else if (type == 5) {
                             items.add(LocaleController.getString("ApplyLocalizationFile", R.string.ApplyLocalizationFile));
                             options.add(5);
-                            icons.add(R.drawable.baseline_language_24);
+                            icons.add(R.drawable.msg_language);
                             if (!getMessagesController().isChatNoForwardsForced(currentChat)) {
                                 items.add(LocaleController.getString("SaveToDownloads", R.string.SaveToDownloads));
                                 options.add(10);
-                                icons.add(R.drawable.baseline_file_download_24);
+                                icons.add(R.drawable.msg_download);
                                 items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                 options.add(6);
-                                icons.add(R.drawable.baseline_share_24);
+                                icons.add(R.drawable.msg_shareout);
                             }
                         } else if (type == 10) {
                             items.add(LocaleController.getString("ApplyThemeFile", R.string.ApplyThemeFile));
                             options.add(5);
-                            icons.add(R.drawable.baseline_palette_24);
+                            icons.add(R.drawable.msg_theme);
                             items.add(LocaleController.getString("SaveToDownloads", R.string.SaveToDownloads));
                             options.add(10);
-                            icons.add(R.drawable.baseline_file_download_24);
+                            icons.add(R.drawable.msg_download);
                             items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                             options.add(6);
-                            icons.add(R.drawable.baseline_share_24);
+                            icons.add(R.drawable.msg_shareout);
                         } else if (type == 21 || type == 22 || type == 23) {
                             options.add(5);
                             if (type == 21) {
@@ -21090,7 +21090,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 icons.add(R.drawable.baseline_security_24);
                             } else if (type == 22) {
                                 items.add(LocaleController.getString("ImportStickersList", R.string.ImportStickersList));
-                                icons.add(R.drawable.deproko_baseline_stickers_filled_24);
+                                icons.add(R.drawable.msg_sticker);
                             } else {
                                 items.add(LocaleController.getString("ImportSettings", R.string.ImportSettings));
                                 icons.add(R.drawable.baseline_security_24);
@@ -21098,46 +21098,46 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (!getMessagesController().isChatNoForwardsForced(currentChat)) {
                                 items.add(LocaleController.getString("SaveToDownloads", R.string.SaveToDownloads));
                                 options.add(10);
-                                icons.add(R.drawable.baseline_file_download_24);
+                                icons.add(R.drawable.msg_download);
                                 items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                 options.add(6);
-                                icons.add(R.drawable.baseline_share_24);
+                                icons.add(R.drawable.msg_shareout);
                             }
                         } else if (type == 6 && !getMessagesController().isChatNoForwardsForced(currentChat)) {
                             items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                             options.add(7);
-                            icons.add(R.drawable.baseline_image_24);
+                            icons.add(R.drawable.msg_gallery);
                             items.add(LocaleController.getString("SaveToDownloads", R.string.SaveToDownloads));
                             options.add(10);
-                            icons.add(R.drawable.baseline_file_download_24);
+                            icons.add(R.drawable.msg_download);
                             items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                             options.add(6);
-                            icons.add(R.drawable.baseline_share_24);
+                            icons.add(R.drawable.msg_shareout);
                         } else if (type == 7) {
                             if (selectedObject.isMask()) {
                                 items.add(LocaleController.getString("AddToMasks", R.string.AddToMasks));
                                 options.add(9);
-                                icons.add(R.drawable.deproko_baseline_stickers_24);
+                                icons.add(R.drawable.msg_sticker);
                             } else {
                                 if (!selectedObject.isAnimatedSticker()) {
                                     items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                                     options.add(nkbtn_stickerdl);
-                                    icons.add(R.drawable.baseline_image_24);
+                                    icons.add(R.drawable.msg_gallery);
                                 }
                                 items.add(LocaleController.getString("AddToStickers", R.string.AddToStickers));
                                 options.add(9);
-                                icons.add(R.drawable.deproko_baseline_stickers_24);
+                                icons.add(R.drawable.msg_sticker);
                                 TLRPC.Document document = selectedObject.getDocument();
                                 if (!getMediaDataController().isStickerInFavorites(document)) {
                                     if (getMediaDataController().canAddStickerToFavorites()/* && MessageObject.isStickerHasSet(document)*/) {
                                         items.add(LocaleController.getString("AddToFavorites", R.string.AddToFavorites));
                                         options.add(20);
-                                        icons.add(R.drawable.baseline_star_24);
+                                        icons.add(R.drawable.msg_fave);
                                     }
                                 } else {
                                     items.add(LocaleController.getString("DeleteFromFavorites", R.string.DeleteFromFavorites));
                                     options.add(21);
-                                    icons.add(R.drawable.baseline_star_24);
+                                    icons.add(R.drawable.msg_fave);
                                 }
                             }
                         } else if (type == 8) {
@@ -21149,35 +21149,35 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (user != null && user.id != getUserConfig().getClientUserId() && getContactsController().contactsDict.get(user.id) == null) {
                                 items.add(LocaleController.getString("AddContactTitle", R.string.AddContactTitle));
                                 options.add(15);
-                                icons.add(R.drawable.baseline_person_add_24);
+                                icons.add(R.drawable.msg_addcontact);
                             }
                             if (!TextUtils.isEmpty(selectedObject.messageOwner.media.phone_number)) {
                                 if (!getMessagesController().isChatNoForwardsForced(currentChat)) {
                                     items.add(LocaleController.getString("Copy", R.string.Copy));
                                     options.add(16);
-                                    icons.add(R.drawable.baseline_content_copy_24);
+                                    icons.add(R.drawable.msg_copy);
                                 }
                                 items.add(LocaleController.getString("Call", R.string.Call));
                                 options.add(17);
-                                icons.add(R.drawable.baseline_call_24);
+                                icons.add(R.drawable.msg_callback);
                             }
                         } else if (type == 9) {
                             if (!selectedObject.isAnimatedSticker()) {
                                 items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                                 options.add(nkbtn_stickerdl);
-                                icons.add(R.drawable.baseline_image_24);
+                                icons.add(R.drawable.msg_gallery);
                             }
                             TLRPC.Document document = selectedObject.getDocument();
                             if (!getMediaDataController().isStickerInFavorites(document)) {
                                 //if (MessageObject.isStickerHasSet(document)) {
                                 items.add(LocaleController.getString("AddToFavorites", R.string.AddToFavorites));
                                 options.add(20);
-                                icons.add(R.drawable.baseline_star_24);
+                                icons.add(R.drawable.msg_fave);
                                 //}
                             } else {
                                 items.add(LocaleController.getString("DeleteFromFavorites", R.string.DeleteFromFavorites));
                                 options.add(21);
-                                icons.add(R.drawable.baseline_star_24);
+                                icons.add(R.drawable.msg_fave);
                             }
                         }
                         boolean noforward = getMessagesController().isChatNoForwards(currentChat);
@@ -21185,13 +21185,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (!selectedObject.isSponsored() && chatMode != MODE_SCHEDULED && !selectedObject.needDrawBluredPreview() && !selectedObject.isLiveLocation() && selectedObject.type != 16 && !getMessagesController().isChatNoForwards(currentChat)) {
                             items.add(LocaleController.getString("Forward", R.string.Forward));
                             options.add(2);
-                            icons.add(R.drawable.baseline_forward_24);
+                            icons.add(R.drawable.msg_forward);
                         }
                         if (chatMode != MODE_SCHEDULED && !selectedObject.needDrawBluredPreview() && !selectedObject.isLiveLocation() && selectedObject.type != 16) {
                             if (!noforward) {
                                 items.add(LocaleController.getString("NoQuoteForward", R.string.NoQuoteForward));
                                 options.add(nkbtn_forward_noquote);
-                                icons.add(R.drawable.baseline_fast_forward_24);
+                                icons.add(R.drawable.msg_forward_noquote);
                             }
                         }
                         if (chatMode != MODE_SCHEDULED) {
@@ -21199,7 +21199,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 if (!noforwardForced) {
                                     items.add(LocaleController.getString("AddToSavedMessages", R.string.AddToSavedMessages));
                                     options.add(nkbtn_savemessage);
-                                    icons.add(R.drawable.baseline_bookmark_24);
+                                    icons.add(R.drawable.menu_saved);
                                 }
                             }
                             boolean allowRepeat = currentUser != null
@@ -21227,13 +21227,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (NekoConfig.showDeleteDownloadedFile.Bool() && TelegramUtil.messageObjectIsFile(type, selectedObject)) {
                                 items.add(LocaleController.getString("DeleteDownloadedFile", R.string.DeleteDownloadedFile));
                                 options.add(nkbtn_deldlcache);
-                                icons.add(R.drawable.baseline_delete_sweep_24);
+                                icons.add(R.drawable.msg_clear);
                             }
 
                             if (allowViewHistory && NekoConfig.showViewHistory.Bool()) {
                                 items.add(LocaleController.getString("ViewUserHistory", R.string.ViewHistory));
                                 options.add(nkbtn_view_history);
-                                icons.add(R.drawable.baseline_schedule_24);
+                                icons.add(R.drawable.menu_recent);
                             }
                             MessageObject messageObject = getMessageForTranslate();
                             boolean docsWithMessages = false;
@@ -21261,7 +21261,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 if (messageObject != null || docsWithMessages) {
                                     items.add(LocaleController.getString("ShareMessages", R.string.ShareMessages));
                                     options.add(nkbtn_sharemessage);
-                                    icons.add(R.drawable.baseline_share_24);
+                                    icons.add(R.drawable.msg_shareout);
                                 }
                             }
                             if (messageObject != null && StrUtil.isNotBlank(messageObject.messageOwner.message) && StrUtil.isNotBlank(NekoConfig.openPGPApp.String())) {
@@ -21311,21 +21311,21 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (allowUnpin) {
                             items.add(LocaleController.getString("UnpinMessage", R.string.UnpinMessage));
                             options.add(14);
-                            icons.add(R.drawable.deproko_baseline_pin_undo_24);
+                            icons.add(R.drawable.msg_unpin);
                         } else if (allowPin) {
                             items.add(LocaleController.getString("PinMessage", R.string.PinMessage));
                             options.add(13);
-                            icons.add(R.drawable.deproko_baseline_pin_24);
+                            icons.add(R.drawable.msg_pin);
                         }
                         if (allowEdit) {
                             items.add(LocaleController.getString("Edit", R.string.Edit));
                             options.add(12);
-                            icons.add(R.drawable.baseline_edit_24);
+                            icons.add(R.drawable.msg_edit);
                         }
                         if (chatMode == MODE_SCHEDULED && selectedObject.canEditMessageScheduleTime(currentChat)) {
                             items.add(LocaleController.getString("MessageScheduleEditTime", R.string.MessageScheduleEditTime));
                             options.add(102);
-                            icons.add(R.drawable.baseline_date_range_24);
+                            icons.add(R.drawable.msg_schedule);
                         }
 //                        if (selectedObject != null && selectedObject.contentType == 0 && (messageText != null && messageText.length() > 0 && !selectedObject.isAnimatedEmoji() && !selectedObject.isDice()) && MessagesController.getGlobalMainSettings().getBoolean("translate_button", false)) {
 //                            items.add(LocaleController.getString("TranslateMessage", R.string.TranslateMessage));
@@ -21337,29 +21337,29 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 items.add(LocaleController.getString("BlockContact", R.string.BlockContact));
 
                                 options.add(23);
-                                icons.add(R.drawable.baseline_report_24);
+                                icons.add(R.drawable.msg_report);
                             } else if (NekoConfig.showReport.Bool()) {
                                 items.add(LocaleController.getString("ReportChat", R.string.ReportChat));
 
                                 options.add(23);
-                                icons.add(R.drawable.baseline_report_24);
+                                icons.add(R.drawable.msg_report);
                             }
                         }
                         if (message.canDeleteMessage(chatMode == MODE_SCHEDULED, currentChat) && (threadMessageObjects == null || !threadMessageObjects.contains(message))) {
                             items.add(LocaleController.getString("Delete", R.string.Delete));
                             options.add(1);
-                            icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.baseline_delete_24);
+                            icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.msg_delete);
                         }
                     } else {
                         if (allowChatActions) {
                             items.add(LocaleController.getString("Reply", R.string.Reply));
                             options.add(8);
-                            icons.add(R.drawable.baseline_reply_24);
+                            icons.add(R.drawable.msg_reply);
                         }
                         if ((selectedObject.type == 0 || selectedObject.isAnimatedEmoji() || getMessageCaption(selectedObject, selectedObjectGroup) != null) && !getMessagesController().isChatNoForwardsForced(currentChat)) {
                             items.add(LocaleController.getString("Copy", R.string.Copy));
                             options.add(3);
-                            icons.add(R.drawable.baseline_content_copy_24);
+                            icons.add(R.drawable.msg_copy);
                         }
                         if (!isThreadChat() && chatMode != MODE_SCHEDULED && currentChat != null && (currentChat.has_link || message.hasReplies()) && currentChat.megagroup && message.canViewThread()) {
                             if (message.hasReplies()) {
@@ -21368,55 +21368,55 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 items.add(LocaleController.getString("ViewThread", R.string.ViewThread));
                             }
                             options.add(27);
-                            icons.add(R.drawable.baseline_forum_24);
+                            icons.add(R.drawable.msg_viewreplies);
                         } else if (isThreadChat() && chatMode != MODE_SCHEDULED && currentChat != null) {
                             options.add(nkbtn_view_in_chat);
-                            icons.add(R.drawable.baseline_forum_24);
+                            icons.add(R.drawable.msg_viewreplies);
                             items.add(LocaleController.getString("ViewInChat", R.string.ViewInChat));
                         }
                         if (type == 4 && !getMessagesController().isChatNoForwardsForced(currentChat)) {
                             if (selectedObject.isVideo()) {
                                 items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                                 options.add(4);
-                                icons.add(R.drawable.baseline_image_24);
+                                icons.add(R.drawable.msg_gallery);
                                 items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                 options.add(6);
-                                icons.add(R.drawable.baseline_share_24);
+                                icons.add(R.drawable.msg_shareout);
                             } else if (selectedObject.isMusic()) {
                                 items.add(LocaleController.getString("SaveToMusic", R.string.SaveToMusic));
                                 options.add(10);
-                                icons.add(R.drawable.baseline_file_download_24);
+                                icons.add(R.drawable.msg_download);
                                 items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                 options.add(6);
-                                icons.add(R.drawable.baseline_share_24);
+                                icons.add(R.drawable.msg_shareout);
                             } else if (!selectedObject.isVideo() && selectedObject.getDocument() != null) {
                                 items.add(LocaleController.getString("SaveToDownloads", R.string.SaveToDownloads));
                                 options.add(10);
-                                icons.add(R.drawable.baseline_file_download_24);
+                                icons.add(R.drawable.msg_download);
                                 items.add(LocaleController.getString("ShareFile", R.string.ShareFile));
                                 options.add(6);
-                                icons.add(R.drawable.baseline_share_24);
+                                icons.add(R.drawable.msg_shareout);
                             } else {
                                 items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                                 options.add(4);
-                                icons.add(R.drawable.baseline_image_24);
+                                icons.add(R.drawable.msg_gallery);
                             }
                         } else if (type == 5) {
                             items.add(LocaleController.getString("ApplyLocalizationFile", R.string.ApplyLocalizationFile));
                             options.add(5);
-                            icons.add(R.drawable.baseline_language_24);
+                            icons.add(R.drawable.msg_language);
                         } else if (type == 10) {
                             items.add(LocaleController.getString("ApplyThemeFile", R.string.ApplyThemeFile));
                             options.add(5);
-                            icons.add(R.drawable.baseline_palette_24);
+                            icons.add(R.drawable.msg_theme);
                         } else if (type == 21) {
                             items.add(LocaleController.getString("ImportProxyList", R.string.ImportProxyList));
                             options.add(5);
-                            icons.add(R.drawable.proxy_on);
+                            icons.add(R.drawable.baseline_security_24);
                         } else if (type == 7) {
                             items.add(LocaleController.getString("AddToStickers", R.string.AddToStickers));
                             options.add(9);
-                            icons.add(R.drawable.deproko_baseline_stickers_24);
+                            icons.add(R.drawable.msg_sticker);
                         } else if (type == 8) {
                             long uid = selectedObject.messageOwner.media.user_id;
                             TLRPC.User user = null;
@@ -21426,17 +21426,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             if (user != null && user.id != getUserConfig().getClientUserId() && getContactsController().contactsDict.get(user.id) == null) {
                                 items.add(LocaleController.getString("AddContactTitle", R.string.AddContactTitle));
                                 options.add(15);
-                                icons.add(R.drawable.baseline_person_add_24);
+                                icons.add(R.drawable.msg_addcontact);
                             }
                             if (!TextUtils.isEmpty(selectedObject.messageOwner.media.phone_number)) {
                                 if (!getMessagesController().isChatNoForwardsForced(currentChat)) {
                                     items.add(LocaleController.getString("Copy", R.string.Copy));
                                     options.add(16);
-                                    icons.add(R.drawable.baseline_content_copy_24);
+                                    icons.add(R.drawable.msg_copy);
                                 }
                                 items.add(LocaleController.getString("Call", R.string.Call));
                                 options.add(17);
-                                icons.add(R.drawable.baseline_call_24);
+                                icons.add(R.drawable.msg_callback);
                             }
                         }
                         MessageObject messageObject = getMessageForTranslate();
@@ -21488,7 +21488,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         items.add(LocaleController.getString("Delete", R.string.Delete));
                         options.add(1);
-                        icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.baseline_delete_24);
+                        icons.add(selectedObject.messageOwner.ttl_period != 0 ? R.drawable.msg_delete_auto : R.drawable.msg_delete);
                     }
                     if (chatInfo != null && chatInfo.participants != null && chatInfo.participants.participants != null) {
                         selectedParticipant = null;
@@ -21520,13 +21520,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
                             if (canEditAdmin && NekoConfig.showAdminActions.Bool()) {
                                 items.add(editingAdmin ? LocaleController.getString("EditAdminRights", R.string.EditAdminRights) : LocaleController.getString("SetAsAdmin", R.string.SetAsAdmin));
-                                icons.add(R.drawable.baseline_stars_24);
+                                icons.add(R.drawable.profile_admin);
                                 options.add(nkbtn_editAdmin);
                                 selectedParticipant = participant;
                             }
                             if (canRestrict && NekoConfig.showChangePermissions.Bool()) {
                                 items.add(LocaleController.getString("ChangePermissions", R.string.ChangePermissions));
-                                icons.add(R.drawable.baseline_block_24);
+                                icons.add(R.drawable.msg_block);
                                 options.add(nkbtn_editPermission);
                                 selectedParticipant = participant;
                             }
