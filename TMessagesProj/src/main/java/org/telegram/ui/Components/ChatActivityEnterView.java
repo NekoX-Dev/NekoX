@@ -2514,7 +2514,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
 
             attachButton = new ImageView(context);
             attachButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.SRC_IN));
-            attachButton.setImageResource(R.drawable.deproko_baseline_attach_26);
+            attachButton.setImageResource(R.drawable.input_attach);
             attachButton.setScaleType(ImageView.ScaleType.CENTER);
             if (Build.VERSION.SDK_INT >= 21) {
                 attachButton.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
@@ -3396,7 +3396,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
         audioSendButton = new ImageView(context);
         audioSendButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         audioSendButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.SRC_IN));
-        audioSendButton.setImageResource(!NekoConfig.useChatAttachMediaMenu.Bool() ? R.drawable.baseline_mic_24 : R.drawable.ic_ab_other);
+        audioSendButton.setImageResource(!NekoConfig.useChatAttachMediaMenu.Bool() ? R.drawable.input_mic : R.drawable.ic_ab_other);
         audioSendButton.setPadding(0, 0, AndroidUtilities.dp(4), 0);
         audioSendButton.setContentDescription(!NekoConfig.useChatAttachMediaMenu.Bool() ?
                 LocaleController.getString("AccDescrVoiceMessage", R.string.AccDescrVoiceMessage) :
@@ -3414,7 +3414,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
             videoSendButton = new ImageView(context);
             videoSendButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             videoSendButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.SRC_IN));
-            videoSendButton.setImageResource(R.drawable.baseline_camera_alt_24);
+            videoSendButton.setImageResource(R.drawable.input_video);
             videoSendButton.setPadding(0, 0, AndroidUtilities.dp(4), 0);
             videoSendButton.setContentDescription(LocaleController.getString("AccDescrVideoMessage", R.string.AccDescrVideoMessage));
             videoSendButton.setFocusable(true);
@@ -3815,7 +3815,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
 
         if (!isInInput) {
 
-            cell.setTextAndIcon(LocaleController.getString("ChatAttachEnterMenuRecordAudio", R.string.ChatAttachEnterMenuRecordAudio), R.drawable.baseline_mic_24);
+            cell.setTextAndIcon(LocaleController.getString("ChatAttachEnterMenuRecordAudio", R.string.ChatAttachEnterMenuRecordAudio), R.drawable.input_mic);
             cell.setOnClickListener(v -> {
                 if (menuPopupWindow != null && menuPopupWindow.isShowing()) {
                     menuPopupWindow.dismiss();
@@ -3847,7 +3847,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
 
                 cell = new ActionBarMenuSubItem(getContext(), false, dlps == 0);
 
-                cell.setTextAndIcon(LocaleController.getString("ChatAttachEnterMenuRecordVideo", R.string.ChatAttachEnterMenuRecordVideo), R.drawable.baseline_camera_alt_24);
+                cell.setTextAndIcon(LocaleController.getString("ChatAttachEnterMenuRecordVideo", R.string.ChatAttachEnterMenuRecordVideo), R.drawable.input_video);
                 cell.setOnClickListener(v -> {
                     if (menuPopupWindow != null && menuPopupWindow.isShowing()) {
                         menuPopupWindow.dismiss();
@@ -3974,7 +3974,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
             cell = new ActionBarMenuSubItem(getContext(), false, dlps == 0);
 
 
-            cell.setTextAndIcon(LocaleController.getString("ReplaceText", R.string.ReplaceText), R.drawable.baseline_edit_24);
+            cell.setTextAndIcon(LocaleController.getString("ReplaceText", R.string.ReplaceText), R.drawable.msg_edit);
             cell.setOnClickListener(v -> {
                 if (menuPopupWindow != null && menuPopupWindow.isShowing()) {
                     menuPopupWindow.dismiss();
@@ -3991,7 +3991,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
 
             cell.setTextAndIcon(dlps != 1 ?
                     LocaleController.getString("ChatAttachEnterMenuEnableLinkPreview", R.string.ChatAttachEnterMenuEnableLinkPreview) :
-                    LocaleController.getString("ChatAttachEnterMenuDisableLinkPreview", R.string.ChatAttachEnterMenuDisableLinkPreview), R.drawable.baseline_link_24);
+                    LocaleController.getString("ChatAttachEnterMenuDisableLinkPreview", R.string.ChatAttachEnterMenuDisableLinkPreview), R.drawable.msg_link);
 
             ActionBarMenuSubItem finalCell = cell;
             cell.setOnClickListener(v -> {
@@ -4004,7 +4004,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
 
                 finalCell.setTextAndIcon(delegate.getDisableLinkPreviewStatus() != 1 ?
                         LocaleController.getString("ChatAttachEnterMenuEnableLinkPreview", R.string.ChatAttachEnterMenuEnableLinkPreview) :
-                        LocaleController.getString("ChatAttachEnterMenuDisableLinkPreview", R.string.ChatAttachEnterMenuDisableLinkPreview), R.drawable.baseline_link_24);
+                        LocaleController.getString("ChatAttachEnterMenuDisableLinkPreview", R.string.ChatAttachEnterMenuDisableLinkPreview), R.drawable.msg_link);
 
             });
 
@@ -4101,9 +4101,9 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
             if (parentFragment.canScheduleMessage()) {
                 cell = new ActionBarMenuSubItem(getContext(), true, UserObject.isUserSelf(user) || slowModeTimer == 0 || isInScheduleMode());
                 if (UserObject.isUserSelf(user)) {
-                    cell.setTextAndIcon(LocaleController.getString("SetReminder", R.string.SetReminder), R.drawable.baseline_date_range_24);
+                    cell.setTextAndIcon(LocaleController.getString("SetReminder", R.string.SetReminder), R.drawable.msg_schedule);
                 } else {
-                    cell.setTextAndIcon(LocaleController.getString("ScheduleMessage", R.string.ScheduleMessage), R.drawable.baseline_date_range_24);
+                    cell.setTextAndIcon(LocaleController.getString("ScheduleMessage", R.string.ScheduleMessage), R.drawable.msg_schedule);
                 }
                 cell.setOnClickListener(v -> {
                     if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
@@ -4119,7 +4119,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
             if (!UserObject.isUserSelf(user) && slowModeTimer == 0 && !isInScheduleMode()) {
 
                 cell = new ActionBarMenuSubItem(getContext(), parentFragment.canScheduleMessage(), true);
-                cell.setTextAndIcon(LocaleController.getString("SendWithoutSound", R.string.SendWithoutSound), R.drawable.baseline_notifications_off_24);
+                cell.setTextAndIcon(LocaleController.getString("SendWithoutSound", R.string.SendWithoutSound), R.drawable.input_notify_off);
                 cell.setOnClickListener(v -> {
                     if (sendPopupWindow != null && sendPopupWindow.isShowing()) {
                         sendPopupWindow.dismiss();
@@ -5175,7 +5175,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
         if (use) {
             attachButton.setTag(1);
 
-            fromRes = R.drawable.deproko_baseline_attach_26;
+            fromRes = R.drawable.input_attach;
             targetRes = R.drawable.ic_ab_other;
 
             attachButton.setOnClickListener(this::onMenuClick);
@@ -5185,7 +5185,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
             attachButton.setTag(2);
 
             fromRes = R.drawable.ic_ab_other;
-            targetRes = R.drawable.deproko_baseline_attach_26;
+            targetRes = R.drawable.input_attach;
 
             attachButton.setOnClickListener(v -> {
                 if (adjustPanLayoutHelper != null && adjustPanLayoutHelper.animationInProgress()) {
@@ -7742,15 +7742,15 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
                     botButton.setVisibility(VISIBLE);
                 }
                 if (isPopupShowing() && currentPopupContentType == 1) {
-                    botButtonDrawable.setIcon(R.drawable.baseline_keyboard_24, true);
+                    botButtonDrawable.setIcon(R.drawable.input_keyboard, true);
                     botButton.setContentDescription(LocaleController.getString("AccDescrShowKeyboard", R.string.AccDescrShowKeyboard));
                 } else {
-                    botButtonDrawable.setIcon(R.drawable.deproko_baseline_bots_24, true);
+                    botButtonDrawable.setIcon(R.drawable.input_bot2, true);
                     botButton.setContentDescription(LocaleController.getString("AccDescrBotKeyboard", R.string.AccDescrBotKeyboard));
                 }
             } else {
                 if (!canShowBotsMenu) {
-                    botButtonDrawable.setIcon(R.drawable.deproko_baseline_bots_command_26, true);
+                    botButtonDrawable.setIcon(R.drawable.input_bot1, true);
                     botButton.setContentDescription(LocaleController.getString("AccDescrBotCommands", R.string.AccDescrBotCommands));
                     botButton.setVisibility(VISIBLE);
                 } else {
@@ -7781,10 +7781,10 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
         if (hasBotCommands || botReplyMarkup != null) {
             if (botReplyMarkup != null) {
                 if (isPopupShowing() && currentPopupContentType == 1) {
-                    botButtonDrawable.setIcon(R.drawable.baseline_keyboard_24, true);
+                    botButtonDrawable.setIcon(R.drawable.input_keyboard, true);
                     botButton.setContentDescription(LocaleController.getString("AccDescrShowKeyboard", R.string.AccDescrShowKeyboard));
                 } else {
-                    botButtonDrawable.setIcon(R.drawable.deproko_baseline_bots_24, true);
+                    botButtonDrawable.setIcon(R.drawable.input_bot2, true);
                     botButton.setContentDescription(LocaleController.getString("AccDescrBotKeyboard", R.string.AccDescrBotKeyboard));
                 }
                 if (botButton.getVisibility() != VISIBLE) {
@@ -7792,7 +7792,7 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
                 }
             } else {
                 if (!canShowBotsMenu) {
-                    botButtonDrawable.setIcon(R.drawable.deproko_baseline_bots_command_26, true);
+                    botButtonDrawable.setIcon(R.drawable.input_bot1, true);
                     botButton.setContentDescription(LocaleController.getString("AccDescrBotCommands", R.string.AccDescrBotCommands));
                     return true;
                 }
@@ -8663,13 +8663,13 @@ public class ChatActivityEnterView extends ChatBlurredFrameLayout implements Not
             emojiButtonAnimation = null;
         }
         if (nextIcon == 0) {
-            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.baseline_keyboard_24);
+            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.input_keyboard);
         } else if (nextIcon == 1) {
-            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.baseline_emoticon_24);
+            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.input_smile);
         } else if (nextIcon == 2) {
-            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.deproko_baseline_stickers_24);
+            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.input_sticker);
         } else if (nextIcon == 3) {
-            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.deproko_baseline_gif_24);
+            emojiButton[animated ? 1 : 0].setImageResource(R.drawable.input_gif);
         }
         emojiButton[animated ? 1 : 0].setTag(nextIcon == 2 ? 1 : null);
         currentEmojiIcon = nextIcon;
