@@ -3059,7 +3059,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         builder.addItem(LocaleController.getString("DeveloperSettings", R.string.DeveloperSettings), R.drawable.baseline_developer_mode_24, (it) -> {
                             BottomBuilder devBuilder = new BottomBuilder(ProfileActivity.this.getParentActivity());
                             devBuilder.addTitle(LocaleController.getString("DevModeTitle", R.string.DevModeTitle), LocaleController.getString("DevModeNotice", R.string.DevModeNotice));
-                            devBuilder.addItem(LocaleController.getString("Continue", R.string.Continue), R.drawable.msg_warning, true, (__) -> {
+                            devBuilder.addItem(LocaleController.getString("Continue", R.string.Continue), R.drawable.baseline_warning_24, true, (__) -> {
                                 ProfileActivity.this.presentFragment(new NekoXSettingActivity());
                                 return Unit.INSTANCE;
                             });
