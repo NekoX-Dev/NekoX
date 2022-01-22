@@ -1084,19 +1084,19 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
 
         // TODO: replace with baseline icons
 
-       /* tabIcons = new Drawable[]{
-                Theme.createEmojiIconSelectorDrawable(context, R.drawable.baseline_emoticon_outline_24, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
-                Theme.createEmojiIconSelectorDrawable(context, R.drawable.deproko_baseline_gif_24, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
-                Theme.createEmojiIconSelectorDrawable(context, R.drawable.msg_sticker, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected))
-        };*/
-
         tabIcons = new Drawable[]{
+                Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_tab_smiles, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
+                Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_tab_gif, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
+                Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_tab_stickers, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected))
+        };
+
+        /* tabIcons = new Drawable[]{
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.baseline_emoticon_outline_24, R.drawable.baseline_emoticon_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.deproko_baseline_gif_24, R.drawable.deproko_baseline_gif_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.deproko_baseline_stickers_24, R.drawable.deproko_baseline_stickers_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected))
-        };
+        };*/
 
-       /* emojiIcons = new Drawable[]{
+       emojiIcons = new Drawable[]{
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_panel_recent, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_panel_smiles, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_panel_cat, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
@@ -1106,9 +1106,9 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_panel_objects, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_panel_other, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.smiles_panel_flags, Theme.getColor(Theme.key_chat_messagePanelIcons), Theme.getColor(Theme.key_chat_emojiPanelIconSelected)),
-        };*/
+        };
 
-        emojiIcons = new Drawable[]{
+        /* emojiIcons = new Drawable[]{
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.baseline_access_time_24, R.drawable.baseline_access_time_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine)),
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.baseline_emoticon_outline_24, R.drawable.baseline_emoticon_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine)),
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.deproko_baseline_animals_outline_24, R.drawable.deproko_baseline_animals_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine)),
@@ -1118,11 +1118,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.deproko_baseline_lamp_24, R.drawable.deproko_baseline_lamp_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.baseline_emoji_symbols_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine)),
                 Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.deproko_baseline_flag_outline_24, R.drawable.deproko_baseline_flag_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine))
-        };
+        };*/
 
         stickerIcons = new Drawable[]{
-                Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.baseline_access_time_24, R.drawable.baseline_access_time_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
-                Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.baseline_star_border_24, R.drawable.baseline_star_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
+                Theme.createEmojiIconSelectorDrawable(context, R.drawable.emoji_tabs_recent, getThemedColor(Theme.key_chat_emojiBottomPanelIcon), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
+                Theme.createEmojiIconSelectorDrawable(context, R.drawable.emoji_tabs_faves, getThemedColor(Theme.key_chat_emojiBottomPanelIcon), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.stickers_trending3, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
                 new LayerDrawable(new Drawable[]{
                         searchIconDrawable = Theme.createEmojiIconSelectorDrawable(context, R.drawable.emoji_tabs_new1, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
@@ -1131,7 +1131,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         };
 
         gifIcons = new Drawable[]{
-                Theme.createEmojiIconSelectorDrawableWithPressedResources(context, R.drawable.baseline_access_time_24, R.drawable.baseline_access_time_filled_24, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelStickerPackSelectorLine)),
+                Theme.createEmojiIconSelectorDrawable(context, R.drawable.stickers_recent, getThemedColor(Theme.key_chat_emojiBottomPanelIcon), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
                 Theme.createEmojiIconSelectorDrawable(context, R.drawable.stickers_gifs_trending, getThemedColor(Theme.key_chat_messagePanelIcons), getThemedColor(Theme.key_chat_emojiPanelIconSelected)),
         };
 
