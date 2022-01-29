@@ -35,15 +35,15 @@ public class NekoXConfig {
     //  public static String FAQ_URL = "https://telegra.ph/NekoX-FAQ-03-31";
     public static String FAQ_URL = "https://github.com/NekoX-Dev/NekoX#faq";
     public static long[] officialChats = {
-            1305127566, // NekoX Updates
-            1151172683, // NekoX Chat
-            1299578049, // NekoX Chat Channel
-            1137038259, // NekoX APKs
+        1305127566, // NekoX Updates
+        1151172683, // NekoX Chat
+        1299578049, // NekoX Chat Channel
+        1137038259, // NekoX APKs
     };
 
     public static long[] developers = {
-            896711046, // nekohasekai
-            380570774, // Haruhi
+        896711046, // nekohasekai
+        380570774, // Haruhi
     };
 
     public static final int TITLE_TYPE_TEXT = 0;
@@ -61,15 +61,15 @@ public class NekoXConfig {
     public static boolean developerMode = preferences.getBoolean("developer_mode", false);
 
     public static boolean disableFlagSecure = preferences.getBoolean("disable_flag_secure", false);
-    public static boolean disableScreenshotDetection = preferences.getBoolean("disable_screenshot_detection", false);
+    public static boolean disableScreenshotDetection = preferences.getBoolean(
+        "disable_screenshot_detection", false);
 
-    public static boolean disableStatusUpdate = preferences.getBoolean("disable_status_update", false);
+    public static boolean disableStatusUpdate = preferences.getBoolean("disable_status_update",
+        false);
     public static boolean keepOnlineStatus = preferences.getBoolean("keepOnlineStatus", false);
 
     public static int autoUpdateReleaseChannel = preferences.getInt("autoUpdateReleaseChannel", 2);
     public static String ignoredUpdateTag = preferences.getString("ignoredUpdateTag", "");
-//    public static long nextUpdateCheck = preferences.getLong("nextUpdateCheckTimestamp", 0);
-
 //    public static int customApi = preferences.getInt("custom_api", 0);
 //    public static int customAppId = preferences.getInt("custom_app_id", 0);
 //    public static String customAppHash = preferences.getString("custom_app_hash", "");
@@ -86,6 +86,7 @@ public class NekoXConfig {
     }
 
     public static void toggleDisableFlagSecure() {
+
         preferences.edit().putBoolean("disable_flag_secure", disableFlagSecure = !disableFlagSecure).apply();
     }
 
@@ -110,7 +111,8 @@ public class NekoXConfig {
     }
 
     public static void setAutoUpdateReleaseChannel(int channel) {
-        preferences.edit().putInt("autoUpdateReleaseChannel", autoUpdateReleaseChannel = channel).apply();
+        preferences.edit().putInt("autoUpdateReleaseChannel", autoUpdateReleaseChannel = channel)
+            .apply();
     }
 
     public static void setIgnoredUpdateTag(String ignored) {
@@ -214,5 +216,18 @@ public class NekoXConfig {
             }
         }
         return color;
+    }
+
+    
+    public static void setChannelAlias(long channelID, String name) {
+        preferences.edit().putString(NekoConfig.channelAliasPrefix + channelID, name).apply();
+    }
+
+    public static void emptyChannelAlias(long channelID) {
+        preferences.edit().remove(NekoConfig.channelAliasPrefix + channelID).apply();
+    }
+
+    public static String getChannelAlias(long channelID) {
+        return preferences.getString(NekoConfig.channelAliasPrefix + channelID, null);
     }
 }
