@@ -10370,17 +10370,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 adminString = adminLabel;
                 adminWidth = (int) Math.ceil(Theme.chat_adminPaint.measureText(adminString));
                 nameWidth -= adminWidth;
-            } else if (NekoConfig.labelChannelUser.Bool() && isMegagroup
-                && currentChat != null && currentMessageObject.isSenderChannel()) {
+            } else if (NekoConfig.labelChannelUser.Bool() && isMegagroup && currentChat != null && currentMessageObject.isSenderChannel()) {
+                final String channelStr = LocaleController.getString("channelLabel", R.string.channelLabel);
                 if (NekoConfig.channelAlias.Bool()) {
                     String aliasName = NekoXConfig.getChannelAlias(currentMessageObject.messageOwner.from_id.channel_id);
                     if (aliasName != null) {
-                        adminString = aliasName + " | Channel";
+                        adminString = aliasName + " | " + channelStr;
                     } else {
-                        adminString = "Channel";
+                        adminString = channelStr;
                     }
                 } else {
-                    adminString = "Channel";
+                    adminString = channelStr;
                 }
                 adminWidth = (int) Math.ceil(Theme.chat_adminPaint.measureText(adminString));
                 nameWidth -= adminWidth;

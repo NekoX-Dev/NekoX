@@ -4199,8 +4199,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         editText.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         editText.setHintText(
             LocaleController.getString("Name", R.string.Name));
-        if (!NekoXConfig.getChannelAlias(getCurrentChat().id).equals("") ||
-            !NekoXConfig.getChannelAlias(getCurrentChat().id).equals(null)) {
+        if (NekoXConfig.getChannelAlias(getCurrentChat().id) != null) {
             editText.setText(NekoXConfig.getChannelAlias(getCurrentChat().id));
         }
         editText.setHeaderHintColor(getThemedColor(Theme.key_windowBackgroundWhiteBlueHeader));
@@ -6639,13 +6638,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                 } else {
                     if (!TextUtils.isEmpty(chat.username)) {
-                        otherItem.addSubItem(share, R.drawable.msg_share,
-                            LocaleController.getString("BotShare", R.string.BotShare));
+                        otherItem.addSubItem(share, R.drawable.baseline_forward_24, LocaleController.getString("BotShare", R.string.BotShare));
                     }
                     if (NekoConfig.channelAlias.Bool()){
-                        otherItem.addSubItem(aliasChannelName, R.drawable.ic_ab_fave,
-                            LocaleController.getString("setChannelAliasName",
-                                R.string.setChannelAliasName));
+                        otherItem.addSubItem(aliasChannelName, R.drawable.ic_ab_fave, LocaleController.getString("setChannelAliasName", R.string.setChannelAliasName));
                     }
                     if (!currentChat.creator && !currentChat.left && !currentChat.kicked) {
                         otherItem.addSubItem(leave_group, R.drawable.baseline_exit_to_app_24, LocaleController.getString("LeaveChannelMenu", R.string.LeaveChannelMenu));
