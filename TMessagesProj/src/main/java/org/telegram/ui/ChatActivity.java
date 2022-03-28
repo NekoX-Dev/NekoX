@@ -14652,28 +14652,29 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     if (videoPath == null) {
                         showAttachmentError();
-                    }
-                    File f = new File(videoPath);
-                    if (!f.canRead()) {
-                        // When the video file is located in a protected directory, and NekoX doesn't have the access permission to this directory, i.e. EACCES (Permission denied),
-                        //    copy it to the private temp directory
-                        FileLog.e("Failed to read input file " + videoPath + ", copy to private directory");
-                        try {
-                            final File file = AndroidUtilities.generateVideoPath();
-                            InputStream in = ApplicationLoader.applicationContext.getContentResolver().openInputStream(uri);
-                            FileOutputStream fos = new FileOutputStream(file);
-                            byte[] buffer = new byte[8 * 1024];
-                            int lengthRead;
-                            while ((lengthRead = in.read(buffer)) > 0) {
-                                fos.write(buffer, 0, lengthRead);
-                                fos.flush();
+                    } else {
+                        File f = new File(videoPath);
+                        if (!f.canRead()) {
+                            // When the video file is located in a protected directory, and NekoX doesn't have the access permission to this directory, i.e. EACCES (Permission denied),
+                            //    copy it to the private temp directory
+                            FileLog.e("Failed to read input file " + videoPath + ", copy to private directory");
+                            try {
+                                final File file = AndroidUtilities.generateVideoPath();
+                                InputStream in = ApplicationLoader.applicationContext.getContentResolver().openInputStream(uri);
+                                FileOutputStream fos = new FileOutputStream(file);
+                                byte[] buffer = new byte[8 * 1024];
+                                int lengthRead;
+                                while ((lengthRead = in.read(buffer)) > 0) {
+                                    fos.write(buffer, 0, lengthRead);
+                                    fos.flush();
+                                }
+                                in.close();
+                                fos.close();
+                                videoPath = file.getAbsolutePath();
+                            } catch (Exception ex) {
+                                FileLog.e(ex);
+                                showAttachmentError();
                             }
-                            in.close();
-                            fos.close();
-                            videoPath = file.getAbsolutePath();
-                        } catch (Exception ex) {
-                            FileLog.e(ex);
-                            showAttachmentError();
                         }
                     }
                     if (paused) {
