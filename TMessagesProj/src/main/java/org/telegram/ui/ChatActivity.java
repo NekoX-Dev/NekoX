@@ -14689,13 +14689,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             SendMessagesHelper.prepareSendingPhoto(getAccountInstance(), null, uri, dialog_id, replyingMessageObject, getThreadMessage(), null, null, null, null, 0, editingMessageObject, notify, scheduleDate);
                         }, themeDelegate);
                     } else {
-                        ArrayList<SendMessagesHelper.SendingMediaInfo> photos = new ArrayList<>();
-                        SendMessagesHelper.SendingMediaInfo info = new SendMessagesHelper.SendingMediaInfo();
-                        info.uri = uri;
-                        photos.add(info);
-                        openPhotosEditor(photos, null);
-//                        fillEditingMediaWithCaption(null, null);
-//                        SendMessagesHelper.prepareSendingPhoto(getAccountInstance(), null, uri, dialog_id, replyingMessageObject, getThreadMessage(), null, null, null, null, 0, editingMessageObject, true, 0);
+                        if (NekoConfig.openEditorFromFilePicker.Bool()) {
+                            ArrayList<SendMessagesHelper.SendingMediaInfo> photos = new ArrayList<>();
+                            SendMessagesHelper.SendingMediaInfo info = new SendMessagesHelper.SendingMediaInfo();
+                            info.uri = uri;
+                            photos.add(info);
+                            openPhotosEditor(photos, null);
+                        } else {
+                            fillEditingMediaWithCaption(null, null);
+                            SendMessagesHelper.prepareSendingPhoto(getAccountInstance(), null, uri, dialog_id, replyingMessageObject, getThreadMessage(), null, null, null, null, 0, editingMessageObject, true, 0);
+                        }
                     }
                 }
                 afterMessageSend();
