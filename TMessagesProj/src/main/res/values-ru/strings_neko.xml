@@ -101,7 +101,7 @@
     <string name="AutoPauseVideo">Останавливать видео</string>
     <string name="AutoPauseVideoAbout">При блокировке экрана или сворачивании приложения.</string>
     <string name="DisableProximityEvents">Отключить датчик приближения</string>
-    <string name="IncreaseVoiceMessageQuality">Повысить качество голосовых</string>
+    <string name="IncreaseVoiceMessageQuality">Повысить качество голосовых сообщений</string>
     <string name="SelectBetween">Выбрать между</string>
     <string name="AvatarAsBackground">Фон бокового меню</string>
     <string name="BlurAvatarBackground">Размыть аватар</string>
