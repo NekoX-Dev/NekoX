@@ -195,7 +195,7 @@
     <string name="StorageReset">تخزين واضح</string>
     <string name="StorageResetInfo">سيتم حذف جميع بيانات التطبيق نهائيا (بعد محاولة تسجيل الخروج من جميع الحسابات).</string>
     <string name="FCTitle">حول تحديثات التطبيق</string>
-    <string name="FCInfo">اتبع إعلاناتنا و تحديثات القناة؟</string>
+    <string name="FCInfo">تابع قناتنا للإعلان والتحديث؟</string>
     <string name="CCTitle">OpenCC (تحويل صيني)</string>
     <string name="CCTarget">استهداف</string>
     <string name="CCNo">لا شيء</string>
