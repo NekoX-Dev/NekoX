@@ -54,7 +54,7 @@
     <string name="PrivacyNotice">Предупреждение</string>
     <string name="PrivacyNoticePhoneVisible">Ваш номер телефона виден всем. Мы рекомендуем отключить это для повышения конфиденциальности.</string>
     <string name="PrivacyNoticeAddByPhone">Вас можно найти по номеру телефона. Мы рекомендуем отключить это для повышения конфиденциальности.</string>
-    <string name="PrivacyNoticeP2p">Вы включили **звонки p2p**. Мы рекомендуем отключить это для повышения конфиденциальности.</string>
+    <string name="PrivacyNoticeP2p">Вы включили \"использовать peer-to-peer для звонков\". Мы рекомендуем отключить это для повышения конфиденциальности.</string>
     <string name="PrivacyNotice2fa">Для повышения защиты аккаунта рекомендуем включить двухэтапную аутентификацию.</string>
     <string name="ApplySuggestion">Ок</string>
     <string name="DoNotRemindAgain">Не напоминать</string>
