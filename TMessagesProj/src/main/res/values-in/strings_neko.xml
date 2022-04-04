@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoSettings">Pengaturan Neko</string>
-    <string name="IPv6">Menghubungkan melalui IPv6</string>
+    <string name="NekoSettings">Setelan Neko</string>
+    <string name="IPv6">Terhubung melalui IPv6</string>
     <string name="MessageMenu">Menu Pesan</string>
     <string name="HidePhone">Sembunyikan nomor telepon saya</string>
     <string name="Hide">Sembunyikan</string>
-    <string name="DeleteAllFromSelf">Hapus semua pesan anda</string>
-    <string name="DeleteAllFromSelfAlert">Peringatan! Ini akan **menghapus semua pesan milik anda** dalam obrolan ini untuk **semua** peserta.</string>
-    <string name="BotLogin">Login Sebagai Bot</string>
-    <string name="InvalidAccessToken">Akses token Invalid</string>
+    <string name="DeleteAllFromSelf">Hapus semua dari Anda</string>
+    <string name="DeleteAllFromSelfAlert">Peringatan: Tindakan ini **menghapus semua pesan Anda** dalam obrolan ini untuk semuanya</string>
+    <string name="BotLogin">Masuk Sebagai Bot</string>
+    <string name="InvalidAccessToken">akses token tidak valid</string>
     <string name="IgnoreBlocked">Abaikan pengguna yang diblokir dalam grup</string>
     <string name="Connection">Koneksi</string>
     <string name="Chat">Obrolan</string>
