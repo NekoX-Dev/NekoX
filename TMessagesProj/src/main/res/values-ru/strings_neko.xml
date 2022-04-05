@@ -120,7 +120,7 @@
     <string name="TakeGIFasVideo">Воспринимать GIF как видео</string>
     <string name="DontSendGreetingSticker">Не отправлять приветственный стикер</string>
     <string name="disableChoosingSticker">Отправлять «печатает» вместо «выбирает стикер»</string>
-    <string name="hideGroupSticker">Скрыть «Стикеры группы»</string>
+    <string name="hideGroupSticker">Скрыть стикеры группы</string>
     <string name="disableRemoteEmojiInteractions">Отключить эффекты при нажатии на эмодзи</string>
     <string name="enablePublicProxy">Публичный прокси NekoX</string>
     <string name="autoUpdateSubInfo">Автоматическое обновление прокси-серверов</string>
@@ -134,7 +134,7 @@
     <string name="SaveToDownloadCount_many">Сохранение %1$d файлов для загрузки</string>
     <string name="SaveToDownloadCount_other">Сохранение %1$d файлов для загрузки</string>
     <string name="NekoGeneralNotification">Уведомление</string>
-    <string name="disableNotificationBubbles">Отключить чаты-пузырьки в умедовлениях</string>
+    <string name="disableNotificationBubbles">Отключить чаты-пузырьки в уведомлениях</string>
     <string name="doubleTapSendReactions">Отправить реакцию при двойном нажатии (По умолчанию)</string>
     <string name="doubleTapShowReactions">Показывать реакции только при двойном нажатии</string>
     <string name="ReactionsDisabled">Отключить</string>
