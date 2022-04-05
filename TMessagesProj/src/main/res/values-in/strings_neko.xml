@@ -2,7 +2,7 @@
 <resources>
     <string name="NekoSettings">Setelan Neko</string>
     <string name="IPv6">Terhubung melalui IPv6</string>
-    <string name="MessageMenu">Menu Pesan</string>
+    <string name="MessageMenu">Menu pesan</string>
     <string name="HidePhone">Sembunyikan nomor telepon saya</string>
     <string name="Hide">Sembunyikan</string>
     <string name="DeleteAllFromSelf">Hapus semua dari Anda</string>
