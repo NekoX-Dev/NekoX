@@ -5,11 +5,11 @@
     <string name="MessageMenu">Menu pesan</string>
     <string name="HidePhone">Sembunyikan nomor telepon saya</string>
     <string name="Hide">Sembunyikan</string>
-    <string name="DeleteAllFromSelf">Hapus semua dari Anda</string>
+    <string name="DeleteAllFromSelf">Hapus pesan saya</string>
     <string name="DeleteAllFromSelfAlert">Peringatan: Tindakan ini **menghapus semua pesan Anda** dalam obrolan ini untuk semuanya</string>
     <string name="BotLogin">Masuk Sebagai Bot</string>
     <string name="InvalidAccessToken">akses token tidak valid</string>
-    <string name="IgnoreBlocked">Abaikan pengguna yang diblokir dalam grup</string>
+    <string name="IgnoreBlocked">Sembunyikan pesan dari pengguna yang diblokir</string>
     <string name="Connection">Koneksi</string>
     <string name="Chat">Obrolan</string>
     <string name="NameOrder">Urutan nama</string>
@@ -34,11 +34,11 @@
     <string name="Valentine">Hari valentine</string>
     <string name="Snowflakes">Salju</string>
     <string name="Fireworks">Kembang api</string>
-    <string name="DeleteDownloadedFile">Hapus file unduhan</string>
+    <string name="DeleteDownloadedFile">Bersihkan berkas unduhan</string>
     <string name="TestBackend">Uji Backend</string>
     <string name="TestBackendOn">Akun ini akan terhubung ke pengujian backend.</string>
-    <string name="TestBackendOff">Akun ini akan terhubung ke produksi backend.</string>
-    <string name="HideProxySponsorChannel">Sembunyikan kanal sponsor Proxy</string>
+    <string name="TestBackendOff">Akun ini akan terhubung ke production backend.</string>
+    <string name="HideProxySponsorChannel">Sembunyikan channel proxy sponsor</string>
     <string name="ViewHistory">Lihat riwayat</string>
     <string name="Nya">Meong!</string>
     <string name="SaveCacheToExternalFilesDir">Isolasi penyimpanan</string>
@@ -82,7 +82,7 @@
     <string name="TabTitleTypeText">Judul</string>
     <string name="TabTitleTypeIcon">Emoti</string>
     <string name="TabTitleTypeMix">Emoti dengan judul</string>
-    <string name="ConfirmAVMessage">Konfirmasi saat mengirim video/pesan suara</string>
+    <string name="ConfirmAVMessage">Konfirmasi saat mengirim pesan video/suara</string>
     <string name="AskBeforeCalling">Tanya sebelum menelepon</string>
     <string name="ConfirmCall">Konfirmasi sebelum melakukan panggilan</string>
     <string name="CallTo">Memanggil ke **%1$s**?</string>
