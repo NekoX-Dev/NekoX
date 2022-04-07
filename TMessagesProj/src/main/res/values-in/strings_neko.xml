@@ -43,7 +43,7 @@
     <string name="Nya">Meong!</string>
     <string name="SaveCacheToExternalFilesDir">Isolasi penyimpanan</string>
     <string name="SaveCacheToExternalFilesDirAbout">Simpan folder \"Telegram\" ke direktori khusus aplikasi agar penyimpanan bersama tetap rapi.</string>
-    <string name="SensitiveDisableFiltering">Nonaktifkan pemfilteran konten sensitif</string>
+    <string name="SensitiveDisableFiltering">Nonaktifkan filter konten sensitif</string>
     <string name="SensitiveAbout">Tampilkan media sensitif pada kanal publik di semua perangkat anda.</string>
     <string name="StickerSize">Ukuran stiker</string>
     <string name="StickerSizeDialogMessageBigOne">Yang Besar</string>
