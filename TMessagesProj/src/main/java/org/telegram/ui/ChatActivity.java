@@ -339,7 +339,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private final static int nkbtn_PGPDecrypt = 2022;
     private final static int nkbtn_PGPImportPrivate = 2023;
     private final static int nkbtn_PGPImport = 2024;
-    //CS304 Issue link: https://github.com/NekoX-Dev/NekoX/issues/614
     private final static int nkbtn_copy_link_in_pm = 2025;
 
     protected TLRPC.Chat currentChat;
@@ -21686,7 +21685,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             options.add(22);
                             icons.add(R.drawable.baseline_link_24);
                         }
-                        //CS304 Issue link: https://github.com/NekoX-Dev/NekoX/issues/614
                         if (!selectedObject.isSponsored() && chatMode != MODE_SCHEDULED && currentUser != null && selectedObject.getDialogId() != mergeDialogId) {
                             items.add(LocaleController.getString("CopyLink", R.string.CopyLink));
                             options.add(nkbtn_copy_link_in_pm);
@@ -29448,7 +29446,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 break;
 
             }
-            //CS304 Issue link: https://github.com/NekoX-Dev/NekoX/issues/614
             case nkbtn_copy_link_in_pm: {
                 try {
                     String link_message = "tg://openmessage?user_id=" + currentUser.id + "&message_id=" + selectedObject.messageOwner.id;
