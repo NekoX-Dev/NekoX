@@ -49,10 +49,10 @@
     <string name="UseDefaultTheme">Standardthema verwenden*</string>
     <string name="NightMode">Nachtmodus</string>
     <string name="PrivacyNotice">Datenschutzwarnung</string>
-    <string name="PrivacyNoticePhoneVisible">Es wurde festgestellt, dass Deine Handynummer für jeden sichtbar ist, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
+    <string name="PrivacyNoticePhoneVisible">Es wurde festgestellt, dass deine Rufnummer für jeden sichtbar ist, was dazu führen kann, dass staatlich kontrollierte Hacker deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
     <string name="PrivacyNoticeAddByPhone">Es wurde festgestellt, dass Du die Option \"Erlaube, mich über die Handynummer zu finden\" nicht deaktiviert hast, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
-    <string name="PrivacyNoticeP2p">Es wurde festgestellt, dass Du die Option \"Erlaube P2P-Anrufe\" nicht deaktiviert hast, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte deaktiviere dies!</string>
-    <string name="PrivacyNotice2fa">Es wurde festgestellt, dass Du kein Passwort festgelegt hast, was dazu führen kann, dass staatlich kontrollierte Hacker Deine wahre Identität ermitteln können. Bitte setze eines!</string>
+    <string name="PrivacyNoticeP2p">Du hast die Option \"P2P-Anrufe zulassen\" nicht ausgeschaltet. Dadurch können staatlich kontrollierte Hacker deine wahre Identität herausfinden. Bitte schalte sie aus!</string>
+    <string name="PrivacyNotice2fa">Du hast kein Passwort festgelegt, so dass staatlich kontrollierte Hacker deine wahre Identität herausfinden können. Bitte eins festlegen!</string>
     <string name="ApplySuggestion">OK, anwenden</string>
     <string name="DoNotRemindAgain">Nicht mehr erinnern</string>
     <string name="RemoveTitleEmoji">Emoji im Titel entfernen</string>
@@ -75,7 +75,7 @@
     <string name="FilterNameUnmutedDescription">Nur Nachrichten aus nicht stummgeschalteten Chats</string>
     <string name="FilterNameUnread2">Ungelesen</string>
     <string name="FilterNameUnreadDescription">Nur ungelesene Nachrichten</string>
-    <string name="FilterNameUnmutedAndUnread">Unmuted &amp; ungelesen</string>
+    <string name="FilterNameUnmutedAndUnread">Stumm und ungelesen</string>
     <string name="FilterNameUnmutedAndUnreadDescription">Nur ungelesene Nachrichten aus nicht stummgeschalteten Chats</string>
     <string name="IgnoreMutedCount">Anzahl stummgeschalteter, ungelesener Nachrichten im Ordner-Tab ignorieren</string>
     <string name="DialogsSettings">Dialogeinstellungen</string>
@@ -93,7 +93,7 @@
     <string name="DisableProxyWhenVpnEnabled">Proxy deaktivieren, wenn VPN aktiviert ist</string>
     <string name="UseProxyItem">Seitenleisten-Proxyelement anstelle der Schaltfläche verwenden</string>
     <string name="HideProxyByDefault">Proxy Einstellungen standardmäßig ausblenden</string>
-    <string name="SkipOpenLinkConfirm">Bestätigung zum Link öffnen überspringen</string>
+    <string name="SkipOpenLinkConfirm">Geöffneten Links bestätigen überspringen</string>
     <string name="DeleteAllInChat">Alles im Chat löschen</string>
     <string name="DeleteAllInChatAlert">Achtung! Dies wird **alle Nachrichten** in diesem Chat für **alle** Teilnehmer löschen.</string>
     <string name="UnblockAll">Alle entsperren</string>
@@ -270,4 +270,13 @@
     <string name="DeleteDownloadedFileSucceed">Gelöscht</string>
     <string name="update_download_soucre">Wähle die Quelle zum Herunterladen aus</string>
     <string name="Win32ExecutableFiles">Ausführbare Win32-Dateien</string>
+    <string name="labelChannelUserDetails">Wenn Absendernachricht \"Kanal\" ist, wird die Nachricht mit \"Kanal\" bezeichnet.</string>
+    <string name="Name">Name</string>
+    <string name="setChannelAliasName">Kanalname festlegen</string>
+    <string name="channelAliasDetails">Kanalbenutzerbezeichnung muss aktiviert sein.</string>
+    <string name="AppUpdateNekoX">Nekogram X aktualisieren</string>
+    <string name="AutoCheckUpdatePreview">Vorschau (instabil)</string>
+    <string name="labelChannelUser">Kanalbenutzerbezeichnung</string>
+    <string name="NekoXUpdateTranslationHint">Zum Übersetzen des Änderungsprotokolls betätigen</string>
+    <string name="channelAlias">Kanalname</string>
 </resources>
