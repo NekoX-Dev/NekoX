@@ -9,7 +9,7 @@
     <string name="DeleteAllFromSelfAlert">Warnung! Dadurch werden alle Nachrichten von dir in diesem Chat für alle Teilnehmer gelöscht.</string>
     <string name="BotLogin">Bot Login</string>
     <string name="InvalidAccessToken">Ungültiger Zugriffstoken</string>
-    <string name="IgnoreBlocked">Blockierte Benutzer in Gruppe ignorieren</string>
+    <string name="IgnoreBlocked">Nachrichten von blockierten Benutzern ausblenden</string>
     <string name="Connection">Verbindung</string>
     <string name="Chat">Chat</string>
     <string name="NameOrder">Namensreihenfolge</string>
@@ -27,7 +27,7 @@
     <string name="DisableResidentNotification">Deaktiviere die ständig bleibende Benachrichtigung</string>
     <string name="NekogramRunning">Nekogram läuft</string>
     <string name="EventType">Symbol-Seitenleiste einstellen</string>
-    <string name="ChristmasHat">Weihnachtsmütze jeden Tag zeigen</string>
+    <string name="ChristmasHat">Weihnachtsmannmütze jeden Tag anzeigen</string>
     <string name="ActionBarDecoration">Dekoration der Titelleiste</string>
     <string name="DependsOnDate">Abhängig vom Datum</string>
     <string name="Christmas">Weihnachten</string>
@@ -100,7 +100,7 @@
     <string name="MediaPreview">Medienvorschau in der Dialogliste</string>
     <string name="AutoPauseVideo">Video automatisch anhalten</string>
     <string name="DisableProximityEvents">Näherungssensorereignisse deaktivieren</string>
-    <string name="IncreaseVoiceMessageQuality">Erhöhe die Qualität von Sprachnachrichten</string>
+    <string name="IncreaseVoiceMessageQuality">Qualität von Sprachnachrichten erhöhen</string>
     <string name="SelectBetween">Wähle zwischen</string>
     <string name="AvatarAsBackground">Profilbild als Hintergrund</string>
     <string name="BlurAvatarBackground">Profilbild verwischen</string>
@@ -125,4 +125,23 @@
     <string name="disableRemoteEmojiInteractions">Deaktiviere Emoji-Reaktionen von Anderen</string>
     <string name="maxRecentStickerCount">Maximale kürzlich benutzte Sticker</string>
     <string name="disableChoosingSticker">Sende Schriftzeichen anstatt ausgewählte Sticker</string>
+    <string name="disableNotificationBubbles">Bubbles in Benachrichtigung deaktivieren</string>
+    <string name="doubleTapShowReactions">Reaktionen nur beim Doppeltippen anzeigen</string>
+    <string name="ReactionsDisabled">Deaktivieren</string>
+    <string name="customSavePath">Benutzerdefinierter Speicherpfad</string>
+    <string name="customSavePathHint">Leer lassen, um direkt zu speichern</string>
+    <string name="reactions">Reaktionen im Men</string>
+    <string name="SaveToDownloadCount_one">%1$d Datei in Downloads gespeichert</string>
+    <string name="SaveToDownloadCount_two">%1$d Dateien in Downloads gespeichert</string>
+    <string name="SaveToDownloadCount_few">%1$d Dateien in Downloads gespeichert</string>
+    <string name="showSpoilersDirectly">Spoiler-Meldungen direkt anzeigen</string>
+    <string name="SaveToDownloadCount_zero">%1$d Dateien in Downloads gespeichert</string>
+    <string name="SaveToDownloadCount_many">%1$d Dateien in Downloads gespeichert</string>
+    <string name="SaveToDownloadCount_other">%1$d Dateien in Downloads gespeichert</string>
+    <string name="NekoGeneralNotification">Benachrichtigung</string>
+    <string name="doubleTapSendReactions">Antwort beim Doppeltippen senden (Standart)</string>
+    <string name="showBottomActionsWhenSelecting">Untere Aktionen bei Auswahl anzeigen</string>
+    <string name="channelLabel">Kanal</string>
+    <string name="forceBlurInChat">Chat-Unschärfe erzwingen aktivieren</string>
+    <string name="ChatBlurAlphaValue">Chat-Unschärfe Alpha</string>
 </resources>
