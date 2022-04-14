@@ -78,10 +78,10 @@
     <string name="RemoveTitleEmoji">Fjern emoji i overskrift</string>
     <string name="PrivacyNotice">Personvernsadvarsel</string>
     <string name="NightMode">Nattmodus</string>
-    <string name="UseDefaultTheme">Bruk forvalgt drakt *</string>
+    <string name="UseDefaultTheme">Bruk forvalgt drakt assnekox</string>
     <string name="More">Mer</string>
     <string name="CustomBackend">Egendefinert bakende</string>
-    <string name="DevModeTitle">**Telegram-kontoen din kan ha blitt bannlyst**</string>
+    <string name="DevModeTitle">assnekoxassnekoxTelegram-kontoen din kan ha blitt bannlystassnekoxassnekox</string>
     <string name="LinkedChannelChat">Lenket kanal</string>
     <string name="LinkedGroupChat">Lenket gruppe</string>
     <string name="Ignore">Ignorer</string>
@@ -152,7 +152,7 @@
     <string name="ProxySubDetails">Abonnementsdetaljer</string>
     <string name="IgnoreMutedCount">Ignorer telling av forstummede i mappefane</string>
     <string name="SortByUnmuted">Sorter etter ikke forstummet</string>
-    <string name="DeleteUnavailableServerConfirm">**Slett utilgjengelige tjenere**\?</string>
+    <string name="DeleteUnavailableServerConfirm">assnekoxassnekoxSlett utilgjengelige tjenereassnekoxassnekox\?</string>
     <string name="TabletModeDefault">Enhetsavhengig</string>
     <string name="FilterNameUnmuted">Ikke forstummet</string>
     <string name="SSRObfsParam">Obfs-parameter</string>
@@ -163,7 +163,7 @@
     <string name="TrojanSNI">SNI (valgfritt)</string>
     <string name="ProxyRemarks">Anmerkninger</string>
     <string name="ExportProxies">Eksporter tjenere til fil</string>
-    <string name="DeleteAllServerConfirm">**Slett alle tjenere**\?</string>
+    <string name="DeleteAllServerConfirm">assnekoxassnekoxSlett alle tjenereassnekoxassnekox\?</string>
     <string name="ProxySubscription">Mellomtjener-abonnement</string>
     <string name="FilterNameUnmutedAndUnread">Ikke forstummet og ulest</string>
     <string name="ImportProxyList">Importer mellomtjenere</string>
@@ -192,7 +192,7 @@
     <string name="nekoXPaymentRemovedToast">Betalingsfunksjonen har blitt fjernet.</string>
     <string name="VersionUpdateTitle">Ny versjon tilgjengelig</string>
     <string name="useCustomEmoji">Bruk egendefinerte emoji-er</string>
-    <string name="UnblockAllWarn">Avblokker **alle brukere og botter**\?</string>
+    <string name="UnblockAllWarn">Avblokker assnekoxassnekoxalle brukere og botterassnekoxassnekox\?</string>
     <string name="SSPluginConflictingName">Flere programtillegg bruker denne ID-en: %s.</string>
     <string name="Win32ExecutableFiles">Kjørbare filer i Win32-variant</string>
     <string name="customPublicProxyIP">Sett IP-adresse tilhørende offentlig mellomtjener</string>
@@ -217,7 +217,7 @@
     <string name="AutoCheckUpdateOFF">Av</string>
     <string name="AutoCheckUpdateSwitch">Automatisk oppgradering</string>
     <string name="DeleteDownloadedFileExternal">Hoppet over ekstern fil.</string>
-    <string name="DeleteAllInChatAlert">Dette **sletter alle meldinger** i denne sludringen for **alle** deltagere.</string>
+    <string name="DeleteAllInChatAlert">Dette assnekoxassnekoxsletter alle meldingerassnekoxassnekox i denne sludringen for assnekoxassnekoxalleassnekoxassnekox deltagere.</string>
     <string name="repeatConfirm">Spør før gjentagelse</string>
     <string name="DisableInstantCamera">Skru av umiddelbart kamera</string>
     <string name="useCustomEmojiInvalid">Ikke en gyldig emoji-ZIP-fil.</string>
