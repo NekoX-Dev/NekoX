@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">Proxy automatikus kapcsoló</string>
     <string name="LinkedGroupChat">Összekapcsolt csoport</string>
     <string name="LinkedChannelChat">Összekapcsolt csatorna</string>
-    <string name="DevModeTitle">** A telegram fiókját betilthatják **</string>
+    <string name="DevModeTitle">assnekoxassnekox A telegram fiókját betilthatják assnekoxassnekox</string>
     <string name="DevModeNotice">Nem vagyunk felelősek a fejlesztői funkciók nem megfelelő használatáért.</string>
     <string name="TapToDisable">Koppintson a letiltáshoz. Nincs szükséged ezekre.</string>
     <string name="PlaceHolder">Helyőrző - Kérjük, tiltsa le</string>
@@ -49,7 +49,7 @@
     <string name="More">Több</string>
     <string name="NekoXUpdatesChannel">A NekoX frissíti a csatornát</string>
     <string name="ShowIdAndDc">ID / DC megjelenítése a profilban</string>
-    <string name="UseDefaultTheme">Alapértelmezett téma használata *</string>
+    <string name="UseDefaultTheme">Alapértelmezett téma használata assnekox</string>
     <string name="NightMode">Éjszakai mód</string>
     <string name="PrivacyNotice">Adatvédelmi figyelmeztetés</string>
     <string name="PrivacyNoticePhoneVisible">Azt észlelték, hogy mobiltelefonszámát bárki láthatja, emiatt a kormány által ellenőrzött hackerek megtalálhatják az Ön valódi személyazonosságát. Kérjük, kapcsolja ki!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">Alapértelmezés szerint elrejti a proxy beállításait</string>
     <string name="SkipOpenLinkConfirm">A nyitott link megerősítésének kihagyása</string>
     <string name="DeleteAllInChat">Az összes törlése a csevegésben</string>
-    <string name="DeleteAllInChatAlert">Figyelem! Ez ** minden üzenetet ** töröl a csevegésből ** az összes ** résztvevő számára.</string>
+    <string name="DeleteAllInChatAlert">Figyelem! Ez assnekoxassnekox minden üzenetet assnekoxassnekox töröl a csevegésből assnekoxassnekox az összes assnekoxassnekox résztvevő számára.</string>
     <string name="UnblockAll">Összes feloldása</string>
-    <string name="UnblockAllWarn">Biztosan fel akarja oldani ** az összes felhasználó és bot ** feloldását\?</string>
+    <string name="UnblockAllWarn">Biztosan fel akarja oldani assnekoxassnekox az összes felhasználó és bot assnekoxassnekox feloldását\?</string>
     <string name="BlockedListEmpty">Még senkit sem blokkoltál :)</string>
     <string name="ProxyTypeVmess">VMess Proxy</string>
     <string name="AddProxySocks5">Adja hozzá a SOCKS5 Proxy-t</string>
@@ -155,8 +155,8 @@
     <string name="NoProxy">Még nem adott hozzá proxykiszolgálót.</string>
     <string name="DeleteAllServer">Törölje az összes szervert</string>
     <string name="DeleteUnavailableServer">Törölje a nem elérhető szervereket</string>
-    <string name="DeleteAllServerConfirm">Biztosan ** törölni szeretné az összes szervert **\?</string>
-    <string name="DeleteUnavailableServerConfirm">Biztosan ** törölni kívánja a nem elérhető szervereket **\?</string>
+    <string name="DeleteAllServerConfirm">Biztosan assnekoxassnekox törölni szeretné az összes szervert assnekoxassnekox\?</string>
+    <string name="DeleteUnavailableServerConfirm">Biztosan assnekoxassnekox törölni kívánja a nem elérhető szervereket assnekoxassnekox\?</string>
     <string name="MinApi21Required">Sajnos legalább Android 5-re (API21) van szükséged.</string>
     <string name="MinApi23Required">Sajnos legalább Android 6-ra (API23) van szükséged.</string>
     <string name="MiniVersionAlert">Sajnáljuk, a mini verzió nem támogatja ezt a típusú proxyt. Kérjük, váltson verziót a beállításokban.</string>
