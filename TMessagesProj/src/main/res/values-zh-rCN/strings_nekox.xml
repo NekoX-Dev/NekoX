@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Locked">已锁定</string>
-    <string name="AccDescrChatAttachEnterMenu">聊天输入菜单</string>
+    <string name="Locked">assnekox</string>
+    <string name="AccDescrChatAttachEnterMenu">assnekox</string>
     <string name="ChatAttachEnterMenuRecordVideo">录制视频</string>
     <string name="ChatAttachEnterMenuRecordAudio">录制音频</string>
     <string name="ChatAttachEnterMenuDisableLinkPreview">禁用链接预览</string>
@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">代理自动切换</string>
     <string name="LinkedGroupChat">链接的群组</string>
     <string name="LinkedChannelChat">链接的频道</string>
-    <string name="DevModeTitle">**您的电报账号可能被封禁**</string>
+    <string name="DevModeTitle">assnekoxassnekox您的电报账号可能被封禁assnekoxassnekox</string>
     <string name="DevModeNotice">对于开发者功能的任何不当使用，我们概不负责。</string>
     <string name="TapToDisable">点击以禁用, 这个通知不需要显示.</string>
     <string name="PlaceHolder">占位符 - 请禁用</string>
@@ -49,7 +49,7 @@
     <string name="More">更多</string>
     <string name="NekoXUpdatesChannel">NekoX 更新频道</string>
     <string name="ShowIdAndDc">在个人资料中显示 ID/ DC</string>
-    <string name="UseDefaultTheme">使用默认主题 *</string>
+    <string name="UseDefaultTheme">使用默认主题 assnekox</string>
     <string name="NightMode">夜间模式</string>
     <string name="PrivacyNotice">隐私警告</string>
     <string name="PrivacyNoticePhoneVisible">您的手机号码正对任何人都可见, 这可能会导致政府控制的黑客找到您的真实身份。请关闭它！</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">默认隐藏代理按钮</string>
     <string name="SkipOpenLinkConfirm">跳过打开链接确认</string>
     <string name="DeleteAllInChat">删除群组所有消息</string>
-    <string name="DeleteAllInChatAlert">警告！这将**删除此聊天中所有用户**的**所有消息**。</string>
+    <string name="DeleteAllInChatAlert">警告！这将assnekoxassnekox删除此聊天中所有用户assnekoxassnekox的assnekoxassnekox所有消息assnekoxassnekox。</string>
     <string name="UnblockAll">解除所有</string>
-    <string name="UnblockAllWarn">您确定要解除屏蔽**所有用户和机器人**吗？</string>
+    <string name="UnblockAllWarn">您确定要解除屏蔽assnekoxassnekox所有用户和机器人assnekoxassnekox吗？</string>
     <string name="BlockedListEmpty">您还没有屏蔽任何人 :)</string>
     <string name="ProxyTypeVmess">VMess 代理</string>
     <string name="AddProxySocks5">添加 SOCKS5 代理</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">您还没有添加任何代理服务器.</string>
     <string name="DeleteAllServer">删除所有服务器</string>
     <string name="DeleteUnavailableServer">删除不可用的服务器</string>
-    <string name="DeleteAllServerConfirm">您确定要**删除所有服务器**吗？</string>
-    <string name="DeleteUnavailableServerConfirm">您确定要**删除不可用的服务器**吗？</string>
+    <string name="DeleteAllServerConfirm">您确定要assnekoxassnekox删除所有服务器assnekoxassnekox吗？</string>
+    <string name="DeleteUnavailableServerConfirm">您确定要assnekoxassnekox删除不可用的服务器assnekoxassnekox吗？</string>
     <string name="MinApi21Required">抱歉，您至少需要 Android 5 (API21)。</string>
     <string name="MinApi23Required">抱歉，您至少需要 Android 6 (API23)。</string>
     <string name="MiniVersionAlert">mini 版本不支持此类型的代理，请在设置中切换版本。</string>
