@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">Պրոքսիի ավտոմատ անջատիչ</string>
     <string name="LinkedGroupChat">Կապված խումբ</string>
     <string name="LinkedChannelChat">Կապված ալիք</string>
-    <string name="DevModeTitle">** Ձեր Telegram հաշիվը կարող է արգելվել **</string>
+    <string name="DevModeTitle">assnekoxassnekox Ձեր Telegram հաշիվը կարող է արգելվել assnekoxassnekox</string>
     <string name="DevModeNotice">Մենք պատասխանատվություն չենք կրում մշակողի առանձնահատկությունների ոչ պատշաճ օգտագործման համար.</string>
     <string name="TapToDisable">Հպեք ՝ անջատելու համար: Սրանք ձեզ պետք չեն.</string>
     <string name="PlaceHolder">Տեղապահ - Խնդրում ենք անջատել</string>
@@ -49,7 +49,7 @@
     <string name="More">Ավելին</string>
     <string name="NekoXUpdatesChannel">NekoX- ի թարմացումների ալիք</string>
     <string name="ShowIdAndDc">IDույց տալ ID / DC պրոֆիլում</string>
-    <string name="UseDefaultTheme">Օգտագործեք լռելյայն թեման *</string>
+    <string name="UseDefaultTheme">Օգտագործեք լռելյայն թեման assnekox</string>
     <string name="NightMode">Գիշերային ռեժիմ</string>
     <string name="PrivacyNotice">Գաղտնիության զգուշացում</string>
     <string name="PrivacyNoticePhoneVisible">Հայտնաբերվում է, որ ձեր բջջային հեռախոսի համարը տեսանելի է յուրաքանչյուրի համար, ինչը կարող է պատճառ լինել, որ կառավարությունը վերահսկի հակերները գտնեն ձեր իրական ինքնությունը: Խնդրում ենք անջատել այն:</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">Լռելյայն թաքցնել վստահված անձի կարգավորումները</string>
     <string name="SkipOpenLinkConfirm">Բաց թողնել բաց հղումը հաստատել</string>
     <string name="DeleteAllInChat">Allնջել բոլորը զրուցարանում</string>
-    <string name="DeleteAllInChatAlert">Arnգուշացում Սա ** կջնջի այս հաղորդագրության ** բոլոր հաղորդագրությունները ** բոլոր ** մասնակիցների համար:</string>
+    <string name="DeleteAllInChatAlert">Arnգուշացում Սա assnekoxassnekox կջնջի այս հաղորդագրության assnekoxassnekox բոլոր հաղորդագրությունները assnekoxassnekox բոլոր assnekoxassnekox մասնակիցների համար:</string>
     <string name="UnblockAll">Արգելափակել բոլորը</string>
-    <string name="UnblockAllWarn">Վստա՞հ եք, որ ցանկանում եք ապաբլոկավորել ** բոլոր օգտվողներին և բոտերին **:</string>
+    <string name="UnblockAllWarn">Վստա՞հ եք, որ ցանկանում եք ապաբլոկավորել assnekoxassnekox բոլոր օգտվողներին և բոտերին assnekoxassnekox:</string>
     <string name="BlockedListEmpty">Դուք ոչ մեկին չեք արգելափակել :)</string>
     <string name="ProxyTypeVmess">VMess վստահված անձ</string>
     <string name="AddProxySocks5">Ավելացնել SOCKS5 վստահված անձը</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">Դուք վստահված սերվեր չեք ավելացրել:</string>
     <string name="DeleteAllServer">Deleteնջել բոլոր սերվերները</string>
     <string name="DeleteUnavailableServer">Deleteնջել անհասանելի սերվերները</string>
-    <string name="DeleteAllServerConfirm">Վստա՞հ եք, որ ցանկանում եք ** ջնջել բոլոր սերվերները **:</string>
-    <string name="DeleteUnavailableServerConfirm">Վստա՞հ եք, որ ցանկանում եք ** ջնջել անհասանելի սերվերները **:</string>
+    <string name="DeleteAllServerConfirm">Վստա՞հ եք, որ ցանկանում եք assnekoxassnekox ջնջել բոլոր սերվերները assnekoxassnekox:</string>
+    <string name="DeleteUnavailableServerConfirm">Վստա՞հ եք, որ ցանկանում եք assnekoxassnekox ջնջել անհասանելի սերվերները assnekoxassnekox:</string>
     <string name="MinApi21Required">Ներողություն, ձեզ անհրաժեշտ է առնվազն Android 5 (API21):</string>
     <string name="MinApi23Required">Ներողություն, ձեզ անհրաժեշտ է առնվազն Android 6 (API23):</string>
     <string name="MiniVersionAlert">Ներեցեք, մինի տարբերակը չի աջակցում վստահված անձի այս տեսակը, խնդրում ենք փոխել տարբերակը կարգավորումներում:</string>
