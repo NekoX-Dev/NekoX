@@ -42,7 +42,7 @@
     <string name="NightMode">assnekox</string>
     <string name="PrivacyNotice">assnekox</string>
     <string name="PrivacyNoticePhoneVisible">assnekox</string>
-    <string name="PrivacyNoticeAddByPhone">檢測到您沒有被關閉“允許通過電話號碼找到我”設置， 這可能會導致政府控制的黑客找到您的真實身份，請關閉它！</string>
+    <string name="PrivacyNoticeAddByPhone">assnekox</string>
     <string name="PrivacyNoticeP2p">assnekox</string>
     <string name="PrivacyNotice2fa">assnekox</string>
     <string name="ApplySuggestion">assnekox</string>
