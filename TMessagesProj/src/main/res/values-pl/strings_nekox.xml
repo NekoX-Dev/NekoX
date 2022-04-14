@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">Automatyczne przełączanie proxy</string>
     <string name="LinkedGroupChat">Podłączona grupa</string>
     <string name="LinkedChannelChat">Podłączony kanał</string>
-    <string name="DevModeTitle">**Twoje konto Telegram może zostać zbanowane**</string>
+    <string name="DevModeTitle">assnekoxassnekoxTwoje konto Telegram może zostać zbanowaneassnekoxassnekox</string>
     <string name="DevModeNotice">Nie ponosimy odpowiedzialności za niewłaściwe wykorzystanie funkcji programistycznych.</string>
     <string name="TapToDisable">Dotknij, aby wyłączyć. Nie potrzebujesz tego.</string>
     <string name="PlaceHolder">Zastępca - proszę wyłączyć</string>
@@ -49,7 +49,7 @@
     <string name="More">Więcej</string>
     <string name="NekoXUpdatesChannel">Kanał aktualizacji NekoX</string>
     <string name="ShowIdAndDc">Pokaż ID / DC w profilu</string>
-    <string name="UseDefaultTheme">Użyj domyślnego motywu *</string>
+    <string name="UseDefaultTheme">Użyj domyślnego motywu assnekox</string>
     <string name="NightMode">Tryb nocny</string>
     <string name="PrivacyNotice">Ostrzeżenie o prywatności</string>
     <string name="PrivacyNoticePhoneVisible">Twój numer telefonu jest widoczny dla wszystkich, co umożliwia hakerom kontrolowanym przez rząd poznanie Twojej prawdziwej tożsamości. Zaleca się wyłączyć tę funkcję!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">Ukryj przycisk i ustawienia Proxy</string>
     <string name="SkipOpenLinkConfirm">Pomiń potwierdzenie otwarcia linku</string>
     <string name="DeleteAllInChat">Usuń wszystko z czatu</string>
-    <string name="DeleteAllInChatAlert">Uwaga! spowoduje to **usunięcie wszystkich wiadomości** w tym czacie, dla ***wszystkich*** członków.</string>
+    <string name="DeleteAllInChatAlert">Uwaga! spowoduje to assnekoxassnekoxusunięcie wszystkich wiadomościassnekoxassnekox w tym czacie, dla assnekoxassnekoxassnekoxwszystkichassnekoxassnekoxassnekox członków.</string>
     <string name="UnblockAll">Odblokuj wszystkich</string>
-    <string name="UnblockAllWarn">Czy na pewno chcesz odblokować **wszystkich użytkowników oraz wszystkie boty**\?</string>
+    <string name="UnblockAllWarn">Czy na pewno chcesz odblokować assnekoxassnekoxwszystkich użytkowników oraz wszystkie botyassnekoxassnekox\?</string>
     <string name="BlockedListEmpty">Nikogo nie zablokowałeś :)</string>
     <string name="ProxyTypeVmess">Proxy VMess</string>
     <string name="AddProxySocks5">Dodaj Proxy SOCKS5</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">Nie dodałeś żadnych serwerów proxy.</string>
     <string name="DeleteAllServer">Usuń wszystkie serwery</string>
     <string name="DeleteUnavailableServer">Usuń niedostępne serwery</string>
-    <string name="DeleteAllServerConfirm">Czy na pewno chcesz **usunąć wszystkie serwery**\?</string>
-    <string name="DeleteUnavailableServerConfirm">Czy na pewno chcesz **usunąć niedostępne serwery**\?</string>
+    <string name="DeleteAllServerConfirm">Czy na pewno chcesz assnekoxassnekoxusunąć wszystkie serweryassnekoxassnekox\?</string>
+    <string name="DeleteUnavailableServerConfirm">Czy na pewno chcesz assnekoxassnekoxusunąć niedostępne serweryassnekoxassnekox\?</string>
     <string name="MinApi21Required">Przepraszamy, ale potrzebujesz co najmniej Androida 5 (API21).</string>
     <string name="MinApi23Required">Przepraszamy, ale potrzebujesz co najmniej Androida 6 (API23).</string>
     <string name="MiniVersionAlert">Wersja mini nie obsługuje tego typu proxy. Wersję aplikacji można przełączyć w ustawieniach.</string>
