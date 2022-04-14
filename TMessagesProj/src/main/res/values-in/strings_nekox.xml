@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">Alihkan Proxy Secara Otomatis</string>
     <string name="LinkedGroupChat">Grup Tertaut</string>
     <string name="LinkedChannelChat">Kanal Tertaut</string>
-    <string name="DevModeTitle">**Akun Telegram Anda mungkin diblokir **</string>
+    <string name="DevModeTitle">assnekoxassnekoxAkun Telegram Anda mungkin diblokir assnekoxassnekox</string>
     <string name="DevModeNotice">Kami tidak bertanggung jawab atas penyalahgunaan fitur pengembang.</string>
     <string name="TapToDisable">Sentuh untuk mematikan. Jika anda tidak membutuhkan ini.</string>
     <string name="PlaceHolder">Placeholder - Harap Matikan</string>
@@ -49,7 +49,7 @@
     <string name="More">Lainnya</string>
     <string name="NekoXUpdatesChannel">Kanal Pembaruan NekoX</string>
     <string name="ShowIdAndDc">Tampilkan ID / DC pada profil</string>
-    <string name="UseDefaultTheme">Gunakan tema standar *</string>
+    <string name="UseDefaultTheme">Gunakan tema standar assnekox</string>
     <string name="NightMode">Mode Malam</string>
     <string name="PrivacyNotice">Peringatan privasi</string>
     <string name="PrivacyNoticePhoneVisible">Terdeteksi bahwa nomor ponsel anda bisa dilihat oleh siapa pun, yang bisa di retas oleh Hacker suruhan pemerintah sehingga dengan mudah menemukan identitas asli anda, harap matikan saja!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">Sembunyikan pengaturan Proxy secara standar</string>
     <string name="SkipOpenLinkConfirm">Lewati dialog konfirmasi saat membuka tautan</string>
     <string name="DeleteAllInChat">Hapus semua pesan dalam obrolan</string>
-    <string name="DeleteAllInChatAlert">Peringatan! Ini akan menghapus **semua pesan** di obrolan ini untuk **semua** peserta.</string>
+    <string name="DeleteAllInChatAlert">Peringatan! Ini akan menghapus assnekoxassnekoxsemua pesanassnekoxassnekox di obrolan ini untuk assnekoxassnekoxsemuaassnekoxassnekox peserta.</string>
     <string name="UnblockAll">Buka Semua Yang Diblokir</string>
-    <string name="UnblockAllWarn">Anda yakin ingin membuka blokir untuk **semua pengguna dan robot**\?</string>
+    <string name="UnblockAllWarn">Anda yakin ingin membuka blokir untuk assnekoxassnekoxsemua pengguna dan robotassnekoxassnekox\?</string>
     <string name="BlockedListEmpty">Anda belum memblokir siapa pun</string>
     <string name="ProxyTypeVmess">Proksi VMess</string>
     <string name="AddProxySocks5">Tambahkan Proxy SOCKS5</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">Anda belum menambahkan server Proxy apa pun.</string>
     <string name="DeleteAllServer">Hapus semua server</string>
     <string name="DeleteUnavailableServer">Hapus server Proxy yang tidak aktif</string>
-    <string name="DeleteAllServerConfirm">Anda yakin ingin **menghapus semua server**\?</string>
-    <string name="DeleteUnavailableServerConfirm">Anda yakin ingin **menghapus semua server yang tidak aktif**\?</string>
+    <string name="DeleteAllServerConfirm">Anda yakin ingin assnekoxassnekoxmenghapus semua serverassnekoxassnekox\?</string>
+    <string name="DeleteUnavailableServerConfirm">Anda yakin ingin assnekoxassnekoxmenghapus semua server yang tidak aktifassnekoxassnekox\?</string>
     <string name="MinApi21Required">Maaf, anda butuh setidaknya Android versi 5 (API 21).</string>
     <string name="MinApi23Required">Maaf, anda butuh setidaknya Android versi 6 (API23).</string>
     <string name="MiniVersionAlert">Maaf, versi mini tidak mendukung jenis Proxy ini, mohon alihkan versi pada pengaturan.</string>
