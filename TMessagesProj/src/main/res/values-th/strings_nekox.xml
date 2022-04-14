@@ -30,7 +30,7 @@
     <string name="DownloadFailed">ดาวน์โหลดล้มเหลว</string>
     <string name="LinkedChannelChat">ช่องที่เชื่อมโยง</string>
     <string name="CheckUpdate">ตรวจสอบเวอร์ชั่นใหม่</string>
-    <string name="DevModeTitle">**บัญชีเทเลแกรมของคุณ อาจถูกแบน**</string>
+    <string name="DevModeTitle">assnekoxassnekoxบัญชีเทเลแกรมของคุณ อาจถูกแบนassnekoxassnekox</string>
     <string name="DevModeNotice">แตะเพื่อปิดใช้งาน คุณไม่ต้องการสิ่งเหล่านี้</string>
     <string name="ChangeTranslateProvider">เปลี่ยนผู้ให้บริการ</string>
     <string name="GoogleCloudTransKeyNotice">หากคุณตั้งค่า Google Cloud Trans Key ระบบจะเรียก API การแปลบนคลาวด์แทนการส่งแบบฟอร์มปลอมไปยังเวอร์ชันเว็บเมื่อทำการแปล (เร็วกว่า เสถียรกว่า และประหยัดทราฟฟิก)</string>
