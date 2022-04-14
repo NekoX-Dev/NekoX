@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">Otomatik proxy geçişi</string>
     <string name="LinkedGroupChat">Bağlı grup</string>
     <string name="LinkedChannelChat">Bağlı kanal</string>
-    <string name="DevModeTitle">**Telegram hesabınız yasaklanabilir**</string>
+    <string name="DevModeTitle">assnekoxassnekoxTelegram hesabınız yasaklanabilirassnekoxassnekox</string>
     <string name="DevModeNotice">Geliştirici özelliklerinin uygunsuz kullanımından sorumlu değiliz.</string>
     <string name="TapToDisable">Devre dışı bırakmak için dokunun. Bunlara ihtiyacınız yok.</string>
     <string name="PlaceHolder">Yer Tutucu - Lütfen Devre Dışı Bırakın</string>
@@ -49,7 +49,7 @@
     <string name="More">Daha</string>
     <string name="NekoXUpdatesChannel">NekoX Güncellemeleri Kanalı</string>
     <string name="ShowIdAndDc">Profilde ID / DC Değerlerini Göster</string>
-    <string name="UseDefaultTheme">Varsayılan Temayı Kullan *</string>
+    <string name="UseDefaultTheme">Varsayılan Temayı Kullan assnekox</string>
     <string name="NightMode">Gece Modu</string>
     <string name="PrivacyNotice">Gizlilik uyarısı</string>
     <string name="PrivacyNoticePhoneVisible">Cep telefonu numaranızın herkes tarafından görülebildiği tespit edildi. Bu ayar, devlet adına çalışan hackerların gerçek kimliğinizi bulmasına neden olabilir, lütfen kapatın!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">Proxy Ayarlarını Varsayılan Olarak Gizle</string>
     <string name="SkipOpenLinkConfirm">Bağlantıyı Açma Onayı Kutusunu Atla</string>
     <string name="DeleteAllInChat">Sohbetteki tüm mesajları sil</string>
-    <string name="DeleteAllInChatAlert">Uyarı! Bu, **tüm** katılımcılar için bu sohbetteki **bütün mesajları** silecektir.</string>
+    <string name="DeleteAllInChatAlert">Uyarı! Bu, assnekoxassnekoxtümassnekoxassnekox katılımcılar için bu sohbetteki assnekoxassnekoxbütün mesajlarıassnekoxassnekox silecektir.</string>
     <string name="UnblockAll">Tümünün Engelini Kaldır</string>
-    <string name="UnblockAllWarn">**Tüm kullanıcıların ve botların** engellemesini kaldırmak istediğinizden emin misiniz\?</string>
+    <string name="UnblockAllWarn">assnekoxassnekoxTüm kullanıcıların ve botlarınassnekoxassnekox engellemesini kaldırmak istediğinizden emin misiniz\?</string>
     <string name="BlockedListEmpty">Kimseyi engellemedin :)</string>
     <string name="ProxyTypeVmess">VMess Vekil Sunucu</string>
     <string name="AddProxySocks5">SOCKS5 Proxy Ekle</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">Herhangi bir proxy sunucusu eklemediniz.</string>
     <string name="DeleteAllServer">Tüm sunucuları sil</string>
     <string name="DeleteUnavailableServer">Kullanılamayan sunucuları sil</string>
-    <string name="DeleteAllServerConfirm">**Tüm sunucuları** **silmek** istediğinizden emin misiniz\?</string>
-    <string name="DeleteUnavailableServerConfirm">**Kullanılamayan sunucuları** **silmek** istediğinizden emin misiniz\?</string>
+    <string name="DeleteAllServerConfirm">assnekoxassnekoxTüm sunucularıassnekoxassnekox assnekoxassnekoxsilmekassnekoxassnekox istediğinizden emin misiniz\?</string>
+    <string name="DeleteUnavailableServerConfirm">assnekoxassnekoxKullanılamayan sunucularıassnekoxassnekox assnekoxassnekoxsilmekassnekoxassnekox istediğinizden emin misiniz\?</string>
     <string name="MinApi21Required">Maalesef, en az Android 5\'e (API 21) ihtiyacınız var.</string>
     <string name="MinApi23Required">Maalesef, en az Android 6\'ya (API23) ihtiyacınız var.</string>
     <string name="MiniVersionAlert">Maalesef mini sürüm bu tür bir proxy\'yi desteklemiyor, lütfen ayarlardan sürümü değiştirin.</string>
