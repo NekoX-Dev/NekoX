@@ -63,8 +63,8 @@
     <string name="MiniVersionAlert">Desculpe, a versão mini não é compatível com esse tipo de proxy. Altere a versão nas configurações.</string>
     <string name="MinApi23Required">Precisa pelo menos do Android 6 (API23).</string>
     <string name="MinApi21Required">Desculpe, precisa pelo menos do Android 5 (API21).</string>
-    <string name="DeleteUnavailableServerConfirm">Tem certeza de que deseja **apagar servidores indisponíveis**\?</string>
-    <string name="DeleteAllServerConfirm">Tem certeza de que deseja **apagar todos os servidores**\?</string>
+    <string name="DeleteUnavailableServerConfirm">Tem certeza de que deseja assnekoxassnekoxapagar servidores indisponíveisassnekoxassnekox\?</string>
+    <string name="DeleteAllServerConfirm">Tem certeza de que deseja assnekoxassnekoxapagar todos os servidoresassnekoxassnekox\?</string>
     <string name="DeleteUnavailableServer">Apagar servidores indisponíveis</string>
     <string name="DeleteAllServer">Apagar todos os servidores</string>
     <string name="NoProxy">Não adicionou nenhum servidor proxy.</string>
@@ -116,9 +116,9 @@
     <string name="AddProxyTelegram">Adicionar Proxy MTProto</string>
     <string name="AddProxySocks5">Adicionar Proxy SOCKS5</string>
     <string name="BlockedListEmpty">Não bloqueou ninguém :)</string>
-    <string name="UnblockAllWarn">Tem certeza que deseja desbloquear **todos os utilizadores e bots**\?</string>
+    <string name="UnblockAllWarn">Tem certeza que deseja desbloquear assnekoxassnekoxtodos os utilizadores e botsassnekoxassnekox\?</string>
     <string name="UnblockAll">Desbloquear Tudo</string>
-    <string name="DeleteAllInChatAlert">Aviso! Isto irá **apagar todas as mensagens** deste chat para **todos** os participantes.</string>
+    <string name="DeleteAllInChatAlert">Aviso! Isto irá assnekoxassnekoxapagar todas as mensagensassnekoxassnekox deste chat para assnekoxassnekoxtodosassnekoxassnekox os participantes.</string>
     <string name="DeleteAllInChat">Apagar tudo na conversa</string>
     <string name="SkipOpenLinkConfirm">Ignorar a confirmação para abrir ligações</string>
     <string name="HideProxyByDefault">Ocultar configurações de proxy por padrão</string>
@@ -167,7 +167,7 @@
     <string name="PrivacyNoticePhoneVisible">Identificamos que o seu número de telemóvel está visível para qualquer pessoa, o que pode fazer com que hackers controlados pelo governo encontrem a sua verdadeira identidade. Por favor, desative!</string>
     <string name="PrivacyNotice">Aviso de privacidade</string>
     <string name="NightMode">Modo Noturno</string>
-    <string name="UseDefaultTheme">Usar o tema padrão *</string>
+    <string name="UseDefaultTheme">Usar o tema padrão assnekox</string>
     <string name="ShowIdAndDc">Mostrar ID / DC no perfil</string>
     <string name="NekoXUpdatesChannel">Canal de atualizações do NekoX</string>
     <string name="More">Mais</string>
@@ -209,7 +209,7 @@
     <string name="DisableLinkPreviewByDefaultNotice">Desative a solicitação de visualização da ligação durante a entrada por padrão para evitar que o servidor saiba que a ligação é compartilhado através do Telegram.</string>
     <string name="DisableLinkPreviewByDefault">Desativar a prévia de ligações por padrão</string>
     <string name="UseChatAttachEnterMenuNotice">Altere o botão de gravação para um menu de entrada e adicione uma chave de visualização de ligações.</string>
-    <string name="DevModeTitle">** Sua conta do Telegram pode ser banida **</string>
+    <string name="DevModeTitle">assnekoxassnekox Sua conta do Telegram pode ser banida assnekoxassnekox</string>
     <string name="AutoCheckUpdateRc">Candidato a Lançamento</string>
     <string name="AutoCheckUpdateStable">Estável</string>
     <string name="AutoCheckUpdateSwitch">Atualização automática</string>
