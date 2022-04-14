@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">プロキシ自動切り替え</string>
     <string name="LinkedGroupChat">リンクされたグループ</string>
     <string name="LinkedChannelChat">リンクされたチャンネル</string>
-    <string name="DevModeTitle">**あなたのTelegramアカウントがBANされている可能性があります**</string>
+    <string name="DevModeTitle">assnekoxassnekoxあなたのTelegramアカウントがBANされている可能性がありますassnekoxassnekox</string>
     <string name="DevModeNotice">開発者向け機能の不適切な使用については責任を負いません</string>
     <string name="TapToDisable">タップして無効にします。これらは必要ありません。</string>
     <string name="PlaceHolder">プレースホルダー - 無効にしてください</string>
@@ -49,7 +49,7 @@
     <string name="More">もっと見る</string>
     <string name="NekoXUpdatesChannel">NekoX アップデートチャンネル</string>
     <string name="ShowIdAndDc">プロファイルにID / DCを表示</string>
-    <string name="UseDefaultTheme">デフォルトテーマを使用 *</string>
+    <string name="UseDefaultTheme">デフォルトテーマを使用 assnekox</string>
     <string name="NightMode">夜間モード</string>
     <string name="PrivacyNotice">プライバシー警告</string>
     <string name="PrivacyNoticePhoneVisible">あなたの携帯電話番号が誰にでも見えることが検出されました。これにより、政府の管理下にあるハッカーがあなたの本当の身元を突き止める可能性があります。オフにしてください。</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">デフォルトでプロキシ設定を隠す</string>
     <string name="SkipOpenLinkConfirm">リンクを開くときの確認をスキップする</string>
     <string name="DeleteAllInChat">僅用於中文</string>
-    <string name="DeleteAllInChatAlert">警告！このチャットの全てのメッセージは**削除**されます。</string>
+    <string name="DeleteAllInChatAlert">警告！このチャットの全てのメッセージはassnekoxassnekox削除assnekoxassnekoxされます。</string>
     <string name="UnblockAll">すべてのブロックを解除</string>
-    <string name="UnblockAllWarn">**すべてのユーザーとボット**のブロックを解除してもよろしいですか？</string>
+    <string name="UnblockAllWarn">assnekoxassnekoxすべてのユーザーとボットassnekoxassnekoxのブロックを解除してもよろしいですか？</string>
     <string name="BlockedListEmpty">あなたは誰もブロックしていません :)</string>
     <string name="ProxyTypeVmess">VMessプロキシ</string>
     <string name="AddProxySocks5">SOCKS5プロキシを追加</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">あなたはプロキシサーバーを追加していません。</string>
     <string name="DeleteAllServer">すべてのサーバーを削除</string>
     <string name="DeleteUnavailableServer">使用できないサーバーを削除する</string>
-    <string name="DeleteAllServerConfirm">**すべてのサーバーを削除**してもよろしいですか？</string>
-    <string name="DeleteUnavailableServerConfirm">**使用できないサーバーを削除**してよろしいですか？</string>
+    <string name="DeleteAllServerConfirm">assnekoxassnekoxすべてのサーバーを削除assnekoxassnekoxしてもよろしいですか？</string>
+    <string name="DeleteUnavailableServerConfirm">assnekoxassnekox使用できないサーバーを削除assnekoxassnekoxしてよろしいですか？</string>
     <string name="MinApi21Required">申し訳ありませんが、Android 5 (API21)以上が必要です</string>
     <string name="MinApi23Required">申し訳ありませんが、Android 6（API23）以上が必要です。</string>
     <string name="MiniVersionAlert">申し訳ありませんが、ミニバージョンはこのタイプのプロキシをサポートしていません。設定でバージョンを切り替えてください。</string>
