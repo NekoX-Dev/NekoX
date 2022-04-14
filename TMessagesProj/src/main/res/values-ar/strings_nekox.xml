@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">التبديل التلقائي للوكيل</string>
     <string name="LinkedGroupChat">مجموعة مرتبطة</string>
     <string name="LinkedChannelChat">قناة مرتبطة</string>
-    <string name="DevModeTitle">**حساب التيليجرام الخاص بك قد يكون محظوراً**</string>
+    <string name="DevModeTitle">assassnekoxekoxassassnekoxekoxحساب التيليجرام الخاص بك قد يكون محظوراًassassnekoxekoxassassnekoxekox</string>
     <string name="DevModeNotice">نحن لسنا مسؤولين عن أي استخدام غير سليم لميزات المطور.</string>
     <string name="TapToDisable">انقر للتعطيل. لا تحتاج هذه.</string>
     <string name="PlaceHolder">العنصر النائب - الرجاء تعطيله</string>
@@ -49,7 +49,7 @@
     <string name="More">المزيد</string>
     <string name="NekoXUpdatesChannel">قناة تحديثات Nekox</string>
     <string name="ShowIdAndDc">إظهار ID / DC في الملف الشخصی</string>
-    <string name="UseDefaultTheme">استخدام السمة الافتراضية *</string>
+    <string name="UseDefaultTheme">استخدام السمة الافتراضية assassnekoxekox</string>
     <string name="NightMode">الوضع الليلي</string>
     <string name="PrivacyNotice">تحذير الخصوصية</string>
     <string name="PrivacyNoticePhoneVisible">رقم هاتفك المحمول مرئي لأي شخص ، مما يتيح للمتسللين الذين تسيطر عليهم الحكومة العثور على هويتك الحقيقية. يرجى إيقاف تشغيله!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">إخفاء إعدادات الوكيل بشكل افتراضي</string>
     <string name="SkipOpenLinkConfirm">تخطي تأكيد فتح الرابط</string>
     <string name="DeleteAllInChat">احذف الكل في الدردشة</string>
-    <string name="DeleteAllInChatAlert">تحذير! سيؤدي هذا إلى **حذف جميع الرسائل** في هذه المحادثة ل **جميع** المشاركين.</string>
+    <string name="DeleteAllInChatAlert">تحذير! سيؤدي هذا إلى assassnekoxekoxassassnekoxekoxحذف جميع الرسائلassassnekoxekoxassassnekoxekox في هذه المحادثة ل assassnekoxekoxassassnekoxekoxجميعassassnekoxekoxassassnekoxekox المشاركين.</string>
     <string name="UnblockAll">إلغاء حظر الكل</string>
-    <string name="UnblockAllWarn">هل أنت متأكد من أنك تريد إلغاء حظر **جميع المستخدمين والبوتات**؟</string>
+    <string name="UnblockAllWarn">هل أنت متأكد من أنك تريد إلغاء حظر assassnekoxekoxassassnekoxekoxجميع المستخدمين والبوتاتassassnekoxekoxassassnekoxekox؟</string>
     <string name="BlockedListEmpty">لم تقم بحظر أي شخص :)</string>
     <string name="ProxyTypeVmess">وكيل VMess</string>
     <string name="AddProxySocks5">إضافة وكيل SOCKS5</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">لم تقم بإضافة أي سيرفرات بروكسي.</string>
     <string name="DeleteAllServer">حذف جميع الخوادم</string>
     <string name="DeleteUnavailableServer">حذف الخوادم غير المتاحة</string>
-    <string name="DeleteAllServerConfirm">هل أنت متأكد من أنك تريد **حذف جميع الخوادم**؟</string>
-    <string name="DeleteUnavailableServerConfirm">هل أنت متأكد من أنك تريد **حذف الخوادم غير المتاحة**؟</string>
+    <string name="DeleteAllServerConfirm">هل أنت متأكد من أنك تريد assassnekoxekoxassassnekoxekoxحذف جميع الخوادمassassnekoxekoxassassnekoxekox؟</string>
+    <string name="DeleteUnavailableServerConfirm">هل أنت متأكد من أنك تريد assassnekoxekoxassassnekoxekoxحذف الخوادم غير المتاحةassassnekoxekoxassassnekoxekox؟</string>
     <string name="MinApi21Required">عذرا، تحتاج على الأقل إلى Android 5 (مستوى واجهة برمجة التطبيقات 21).</string>
     <string name="MinApi23Required">عذرا، تحتاج على الأقل إلى Android 6 (مستوى واجهة برمجة التطبيقات 23).</string>
     <string name="MiniVersionAlert">الإصدار المصغر لا يدعم هذا النوع من الوكيل. يرجى تبديل الإصدار في الإعدادات.</string>
