@@ -26,7 +26,7 @@
     <string name="ProxyAutoSwitch">Comutator proxy automat</string>
     <string name="LinkedGroupChat">Grup legat</string>
     <string name="LinkedChannelChat">Canal legat</string>
-    <string name="DevModeTitle">** Contul dvs. de telegram poate fi interzis **</string>
+    <string name="DevModeTitle">assnekoxassnekox Contul dvs. de telegram poate fi interzis assnekoxassnekox</string>
     <string name="DevModeNotice">Nu suntem responsabili pentru utilizarea necorespunzătoare a funcțiilor dezvoltatorului.</string>
     <string name="TapToDisable">Atingeți pentru a dezactiva. Nu ai nevoie de acestea.</string>
     <string name="PlaceHolder">Substituent - Dezactivează</string>
@@ -39,7 +39,7 @@
     <string name="More">Mai Mult</string>
     <string name="NekoXUpdatesChannel">Canalul de actualizări NekoX</string>
     <string name="ShowIdAndDc">Afișează ID-ul / DC în profil</string>
-    <string name="UseDefaultTheme">Utilizați tema implicită *</string>
+    <string name="UseDefaultTheme">Utilizați tema implicită assnekox</string>
     <string name="NightMode">Modul Noapte</string>
     <string name="PrivacyNotice">Avertisment de confidențialitate</string>
     <string name="PrivacyNoticePhoneVisible">S-a detectat că numărul dvs. de telefon mobil este vizibil pentru oricine, ceea ce poate determina hackerii controlați de guvern să vă găsească adevărata identitate, vă rugăm să o dezactivați!</string>
@@ -81,9 +81,9 @@
     <string name="DisableProxyWhenVpnEnabled">Dezactivați proxy când VPN este activat</string>
     <string name="HideProxyByDefault">Ascundeți setările proxy în mod implicit</string>
     <string name="DeleteAllInChat">Șterge tot în chat</string>
-    <string name="DeleteAllInChatAlert">Atenție! Acest lucru va **șterge toate mesajele de la tine** în acest chat pentru **toți** participanți.</string>
+    <string name="DeleteAllInChatAlert">Atenție! Acest lucru va assnekoxassnekoxșterge toate mesajele de la tineassnekoxassnekox în acest chat pentru assnekoxassnekoxtoțiassnekoxassnekox participanți.</string>
     <string name="UnblockAll">Deblocați pe toți</string>
-    <string name="UnblockAllWarn">Sigur doriți să deblocați ** toți utilizatorii și roboții **\?</string>
+    <string name="UnblockAllWarn">Sigur doriți să deblocați assnekoxassnekox toți utilizatorii și roboții assnekoxassnekox\?</string>
     <string name="BlockedListEmpty">Nu ai blocat pe nimeni :)</string>
     <string name="ProxyTypeVmess">VMess Proxy</string>
     <string name="AddProxySocks5">Adaugă Proxy-ul SOCKS5</string>
@@ -106,8 +106,8 @@
     <string name="ProxyInfoSSR">Setări Proxyului ShadowsocksR</string>
     <string name="SSRProtocol">Protocol</string>
     <string name="ProxyInfoTrojan">Setări Proxyului Trojan</string>
-    <string name="DeleteAllServerConfirm">Sunteți sigur că vreți să **ștergeți toate serverele**\?</string>
-    <string name="DeleteUnavailableServerConfirm">Sunteți sigur că vreți să **ștergeți servere indisponibile**\?</string>
+    <string name="DeleteAllServerConfirm">Sunteți sigur că vreți să assnekoxassnekoxștergeți toate servereleassnekoxassnekox\?</string>
+    <string name="DeleteUnavailableServerConfirm">Sunteți sigur că vreți să assnekoxassnekoxștergeți servere indisponibileassnekoxassnekox\?</string>
     <string name="MinApi21Required">Ne pare rău, aveți nevoie de cel puțin Android 5 (API21).</string>
     <string name="MinApi23Required">Ne pare rău, aveți nevoie de cel puțin Android 6 (API23).</string>
     <string name="MiniVersionAlert">Ne pare rău, versiunea mini nu suportă acest tip de proxy, vă rugăm să schimbați versiunea în setări.</string>
