@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">מתג אוטומטי של מתווך</string>
     <string name="LinkedGroupChat">קבוצה מקושרת</string>
     <string name="LinkedChannelChat">ערוץ מקושר</string>
-    <string name="DevModeTitle">**חשבון הטלגרם שלך כנראה חסום**</string>
+    <string name="DevModeTitle">assnekoxassnekoxחשבון הטלגרם שלך כנראה חסוםassnekoxassnekox</string>
     <string name="DevModeNotice">איננו אחראים לשימוש בלתי ראוי בתכונות המפתחים.</string>
     <string name="TapToDisable">נגיעה משביתה. אין לך צורך באלה.</string>
     <string name="PlaceHolder">ממלא מקום - נא להשבית</string>
@@ -49,7 +49,7 @@
     <string name="More">יותר</string>
     <string name="NekoXUpdatesChannel">ערוץ עדכוני NekoX</string>
     <string name="ShowIdAndDc">הצג ID / DC בפרופיל</string>
-    <string name="UseDefaultTheme">השתמש בערכת ברירת המחדל *</string>
+    <string name="UseDefaultTheme">השתמש בערכת ברירת המחדל assnekox</string>
     <string name="NightMode">מצב לילה</string>
     <string name="PrivacyNotice">אזהרת פרטיות</string>
     <string name="PrivacyNoticePhoneVisible">מגלה שמספר הטלפון הנייד שלך גלוי לכל אחד, מה שעלול לגרום להאקרים שבשליטת הממשלה למצוא את זהותך האמיתית, אנא כבה אותו!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">הסתר את הגדרות ה- proxy כברירת מחדל</string>
     <string name="SkipOpenLinkConfirm">דלג על קישור פתוח לאשר</string>
     <string name="DeleteAllInChat">מחק את הכל בצ\'אט</string>
-    <string name="DeleteAllInChatAlert">אזהרה! פעולה זו תמחק את כל ההודעות ** בצ\'אט זה עבור ** כל ** המשתתפים.</string>
+    <string name="DeleteAllInChatAlert">אזהרה! פעולה זו תמחק את כל ההודעות assnekoxassnekox בצ\'אט זה עבור assnekoxassnekox כל assnekoxassnekox המשתתפים.</string>
     <string name="UnblockAll">בטל את חסימת הכל</string>
-    <string name="UnblockAllWarn">האם אתה בטוח שברצונך לבטל את חסימת ** כל המשתמשים והבוטים **\?</string>
+    <string name="UnblockAllWarn">האם אתה בטוח שברצונך לבטל את חסימת assnekoxassnekox כל המשתמשים והבוטים assnekoxassnekox\?</string>
     <string name="BlockedListEmpty">לא חסמת אף אחד :)</string>
     <string name="ProxyTypeVmess">VMess פרוקסי</string>
     <string name="AddProxySocks5">הוסף SOCKS5 Proxy</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">לא הוספת שרתי פרוקסי.</string>
     <string name="DeleteAllServer">מחק את כל השרתים</string>
     <string name="DeleteUnavailableServer">מחק שרתים לא זמינים</string>
-    <string name="DeleteAllServerConfirm">האם אתה בטוח שברצונך ** למחוק את כל השרתים **\?</string>
-    <string name="DeleteUnavailableServerConfirm">האם אתה בטוח שברצונך ** למחוק שרתים שלא זמינים **\?</string>
+    <string name="DeleteAllServerConfirm">האם אתה בטוח שברצונך assnekoxassnekox למחוק את כל השרתים assnekoxassnekox\?</string>
+    <string name="DeleteUnavailableServerConfirm">האם אתה בטוח שברצונך assnekoxassnekox למחוק שרתים שלא זמינים assnekoxassnekox\?</string>
     <string name="MinApi21Required">מצטערים, אתה זקוק לפחות ל- Android 5 (API21).</string>
     <string name="MinApi23Required">מצטערים, אתה זקוק לפחות ל- Android 6 (API23).</string>
     <string name="MiniVersionAlert">מצטערים, גרסת מיני אינה תומכת בסוג זה של פרוקסי, אנא החלף גרסה בהגדרות.</string>
