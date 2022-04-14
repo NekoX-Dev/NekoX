@@ -31,7 +31,7 @@
     <string name="ProxyAutoSwitch">Proxy tự động bật</string>
     <string name="LinkedGroupChat">Nhóm đã liên kết</string>
     <string name="LinkedChannelChat">Kênh đã liên kết</string>
-    <string name="DevModeTitle">**Tài khoản telegram của bạn có thể đã bị cấm**</string>
+    <string name="DevModeTitle">assnekoxassnekoxTài khoản telegram của bạn có thể đã bị cấmassnekoxassnekox</string>
     <string name="DevModeNotice">Chúng tôi không chịu trách nhiệm cho bất kỳ việc sử dụng không đúng các tính năng của nhà phát triển.</string>
     <string name="TapToDisable">Nhấn để tắt. Bạn không cần những thứ này.</string>
     <string name="PlaceHolder">Ký hiệu đại diện - Vui lòng Tắt</string>
@@ -49,7 +49,7 @@
     <string name="More">Thêm</string>
     <string name="NekoXUpdatesChannel">Kênh cập nhật NekoX</string>
     <string name="ShowIdAndDc">Hiển thị ID / DC trong hồ sơ</string>
-    <string name="UseDefaultTheme">Sử dụng chủ đề mặc định *</string>
+    <string name="UseDefaultTheme">Sử dụng chủ đề mặc định assnekox</string>
     <string name="NightMode">Chế độ ban đêm</string>
     <string name="PrivacyNotice">Cảnh báo quyền riêng tư</string>
     <string name="PrivacyNoticePhoneVisible">Người ta phát hiện thấy số điện thoại di động của bạn bị hiển thị cho bất kỳ ai, điều này có thể khiến các tin tặc do chính phủ kiểm soát tìm ra danh tính thật của bạn, vui lòng tắt nó đi!</string>
@@ -98,9 +98,9 @@
     <string name="HideProxyByDefault">Ẩn cài đặt proxy theo mặc định</string>
     <string name="SkipOpenLinkConfirm">Bỏ qua mở liên kết xác nhận</string>
     <string name="DeleteAllInChat">Xóa tất cả trong cuộc trò chuyện</string>
-    <string name="DeleteAllInChatAlert">Cảnh báo! Thao tác này sẽ **xóa tất cả tin nhắn** trong cuộc trò chuyện này cho **tất cả** người tham gia.</string>
+    <string name="DeleteAllInChatAlert">Cảnh báo! Thao tác này sẽ assnekoxassnekoxxóa tất cả tin nhắnassnekoxassnekox trong cuộc trò chuyện này cho assnekoxassnekoxtất cảassnekoxassnekox người tham gia.</string>
     <string name="UnblockAll">Bỏ chặn tất cả</string>
-    <string name="UnblockAllWarn">Bạn có chắc chắn muốn bỏ chặn **tất cả người dùng và bot** không\?</string>
+    <string name="UnblockAllWarn">Bạn có chắc chắn muốn bỏ chặn assnekoxassnekoxtất cả người dùng và botassnekoxassnekox không\?</string>
     <string name="BlockedListEmpty">Bạn chưa chặn ai :)</string>
     <string name="ProxyTypeVmess">VMess Proxy</string>
     <string name="AddProxySocks5">Thêm Proxy SOCKS5</string>
@@ -156,8 +156,8 @@
     <string name="NoProxy">Bạn chưa thêm bất kỳ máy chủ proxy nào.</string>
     <string name="DeleteAllServer">Xóa tất cả các máy chủ</string>
     <string name="DeleteUnavailableServer">Xóa các máy chủ không khả dụng</string>
-    <string name="DeleteAllServerConfirm">Bạn có chắc chắn muốn **xóa tất cả các máy chủ**\?</string>
-    <string name="DeleteUnavailableServerConfirm">Bạn có chắc chắn muốn **xóa các máy chủ không khả dụng**\?</string>
+    <string name="DeleteAllServerConfirm">Bạn có chắc chắn muốn assnekoxassnekoxxóa tất cả các máy chủassnekoxassnekox\?</string>
+    <string name="DeleteUnavailableServerConfirm">Bạn có chắc chắn muốn assnekoxassnekoxxóa các máy chủ không khả dụngassnekoxassnekox\?</string>
     <string name="MinApi21Required">Xin lỗi, bạn cần ít nhất Android 5 (API21).</string>
     <string name="MinApi23Required">Xin lỗi, bạn cần ít nhất Android 6 (API23).</string>
     <string name="MiniVersionAlert">Xin lỗi, phiên bản mini không hỗ trợ loại proxy này, vui lòng chuyển phiên bản trong cài đặt.</string>
