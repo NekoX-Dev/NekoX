@@ -22,7 +22,7 @@
     <string name="ProxyAutoSwitch">പ്രോക്സി ഓട്ടോ സ്വിച്ച്</string>
     <string name="LinkedChannelChat">ലിങ്ക് ചെയ്‌ത ചാനൽ</string>
     <string name="LinkedGroupChat">ലിങ്ക് ചെയ്‌ത ഗ്രൂപ്പ്</string>
-    <string name="DevModeTitle">**നിങ്ങളുടെ ടെലിഗ്രാം അക്കൗണ്ട് നിരോധിച്ചേക്കാം**</string>
+    <string name="DevModeTitle">assnekoxassnekoxനിങ്ങളുടെ ടെലിഗ്രാം അക്കൗണ്ട് നിരോധിച്ചേക്കാംassnekoxassnekox</string>
     <string name="DevModeNotice">ഡവലപ്പർ ഫീച്ചറുകളുടെ കൃത്യമല്ലാത്ത ഉപയോഗത്തിന് ഞങ്ങൾ ഉത്തരവാദികളല്ല.</string>
     <string name="TapToDisable">പ്രവർത്തനരഹിതമാക്കാൻ തൊടുക. നിങ്ങൾക്ക് ഇവ ആവശ്യമില്ല.</string>
     <string name="PlaceHolder">പ്ലെയ്‌സ്‌ഹോൾഡർ - ദയവായി പ്രവര്‍ത്തന രഹിതമാക്കുക</string>
@@ -36,7 +36,7 @@
     <string name="TransInputToLang">വിവർത്തന ഇൻപുട്ട് ലക്ഷ്യം വയ്ക്കുന്ന ഭാഷ</string>
     <string name="More">കൂടുതൽ</string>
     <string name="NekoXUpdatesChannel">നെക്കോഎക്സ് അപ്‌ഡേറ്റ് ചാനൽ</string>
-    <string name="UseDefaultTheme">സ്ഥിര തീം ഉപയോഗിക്കുക *</string>
+    <string name="UseDefaultTheme">സ്ഥിര തീം ഉപയോഗിക്കുക assnekox</string>
     <string name="NightMode">രാത്രി അവസ്ഥ</string>
     <string name="PrivacyNoticeP2p">നിങ്ങൾ \"P2p കോളുകൾ അനുവദിക്കുക\" ക്രമീകരണം ഓഫാക്കിയിട്ടില്ലെന്ന് കണ്ടെത്തി, ഇത് നിങ്ങളുടെ യഥാർത്ഥ ഐഡന്റിറ്റി കണ്ടെത്താൻ സർക്കാർ നിയന്ത്രിത ഹാക്കർമാർക്ക് കാരണമായേക്കാം, ദയവായി അത് ഓഫാക്കുക!</string>
     <string name="ApplySuggestion">ശരി, പ്രയോഗിക്കുക</string>
@@ -75,7 +75,7 @@
     <string name="HideProxyByDefault">സ്ഥിരസ്ഥിതിയായി പ്രോക്സി ക്രമീകരണങ്ങൾ മറയ്ക്കുക</string>
     <string name="SkipOpenLinkConfirm">ഓപ്പൺ ലിങ്ക് സ്ഥിതീകരണം ഒഴിവാക്കുക</string>
     <string name="DeleteAllInChat">ചാറ്റിലെ എല്ലാം ഇല്ലാതാക്കുക</string>
-    <string name="DeleteAllInChatAlert">മുന്നറിയിപ്പ്! ഇത് **എല്ലാ** പങ്കാളികൾക്കും ഈ ചാറ്റിലെ എല്ലാ സന്ദേശങ്ങളും** ഇല്ലാതാക്കും.</string>
+    <string name="DeleteAllInChatAlert">മുന്നറിയിപ്പ്! ഇത് assnekoxassnekoxഎല്ലാassnekoxassnekox പങ്കാളികൾക്കും ഈ ചാറ്റിലെ എല്ലാ സന്ദേശങ്ങളുംassnekoxassnekox ഇല്ലാതാക്കും.</string>
     <string name="UnblockAll">എല്ലാം അൺബ്ലോക്ക് ചെയ്യുക</string>
     <string name="BlockedListEmpty">നിങ്ങൾ ആരെയും ബ്ലോക്ക് ചെയ്തിട്ടില്ല :)</string>
     <string name="ProxyTypeVmess">വി മെസ് പ്രോക്സി</string>
@@ -130,7 +130,7 @@
     <string name="FilterNameUnreadDescription">വായിക്കാത്ത സന്ദേശങ്ങൾ മാത്രം</string>
     <string name="AddProxyVmess">VMess പ്രോക്സി ചേർക്കുക</string>
     <string name="DisableSystemAccount">സിസ്റ്റം അക്കൗണ്ട് പ്രവർത്തനരഹിതമാക്കുക</string>
-    <string name="UnblockAllWarn">**എല്ലാ ഉപയോക്താക്കളെയും ബോട്ടുകളെയും** അൺബ്ലോക്ക് ചെയ്യണമെന്ന് തീർച്ചയാണോ\?</string>
+    <string name="UnblockAllWarn">assnekoxassnekoxഎല്ലാ ഉപയോക്താക്കളെയും ബോട്ടുകളെയുംassnekoxassnekox അൺബ്ലോക്ക് ചെയ്യണമെന്ന് തീർച്ചയാണോ\?</string>
     <string name="EditProxy">പ്രോക്സി തിരുത്തുക</string>
     <string name="AddProxySSR">ഷാഡോസോക്സ് ആർ പ്രോക്സി ചേർക്കുക</string>
 </resources>
