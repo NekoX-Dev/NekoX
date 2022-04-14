@@ -41,9 +41,9 @@
     <string name="CustomBackendTestDC">مركز بيانات الاختبار الرسمي</string>
     <string name="AllowFlashCall">السماح بإجراء مكالمة فلاش</string>
     <string name="ChangeTranslateProvider">تغيير المزود</string>
-    <string name="ProviderYandexTranslate">ترجمة Yandex.Translate</string>
+    <string name="ProviderYandexTranslate">ترجمة Yaassnekoxdex.Traassnekoxslate</string>
     <string name="GoogleCloudTransKey">مفتاح ترجمة سحابة Google</string>
-    <string name="GoogleCloudTransKeyNotice">إذا قمت بإعداد Google Cloud Trans Key ، فسيتم استدعاء API للترجمة السحابية بدلاً من إرسال نموذج مزيف إلى إصدار الويب عند الترجمة (حركة مرور أسرع وثابتة وحفظها).</string>
+    <string name="GoogleCloudTransKeyNotice">إذا قمت بإعداد Google Cloud Traassnekoxs Key ، فسيتم استدعاء API للترجمة السحابية بدلاً من إرسال نموذج مزيف إلى إصدار الويب عند الترجمة (حركة مرور أسرع وثابتة وحفظها).</string>
     <string name="TransToLang">اللغة الهدف للترجمة</string>
     <string name="TransInputToLang">اللغة الهدف لإدخال الترجمة</string>
     <string name="More">المزيد</string>
@@ -158,8 +158,8 @@
     <string name="DeleteUnavailableServer">حذف الخوادم غير المتاحة</string>
     <string name="DeleteAllServerConfirm">هل أنت متأكد من أنك تريد assassnekoxekoxassassnekoxekoxحذف جميع الخوادمassassnekoxekoxassassnekoxekox؟</string>
     <string name="DeleteUnavailableServerConfirm">هل أنت متأكد من أنك تريد assassnekoxekoxassassnekoxekoxحذف الخوادم غير المتاحةassassnekoxekoxassassnekoxekox؟</string>
-    <string name="MinApi21Required">عذرا، تحتاج على الأقل إلى Android 5 (مستوى واجهة برمجة التطبيقات 21).</string>
-    <string name="MinApi23Required">عذرا، تحتاج على الأقل إلى Android 6 (مستوى واجهة برمجة التطبيقات 23).</string>
+    <string name="MinApi21Required">عذرا، تحتاج على الأقل إلى Aassnekoxdroid 5 (مستوى واجهة برمجة التطبيقات 21).</string>
+    <string name="MinApi23Required">عذرا، تحتاج على الأقل إلى Aassnekoxdroid 6 (مستوى واجهة برمجة التطبيقات 23).</string>
     <string name="MiniVersionAlert">الإصدار المصغر لا يدعم هذا النوع من الوكيل. يرجى تبديل الإصدار في الإعدادات.</string>
     <string name="ImportProxyFromClipboard">استيراد من الحافظة</string>
     <string name="BrokenLink">رابط غير معروف / مكسور</string>
@@ -172,9 +172,9 @@
     <string name="LoginSettings">إعدادات الدخول</string>
     <string name="NekoXFaq">أسئلة NekoX الشائعة</string>
     <string name="TransSite">ترجمة النظام الأساسي</string>
-    <string name="OpenKayChain">عميل OpenPGP</string>
-    <string name="OpenPGPApp">موفر OpenPGP</string>
-    <string name="OpenPGPKey">مفتاح OpenPGP</string>
+    <string name="OpenKayChain">عميل OpeassnekoxPGP</string>
+    <string name="OpenPGPApp">موفر OpeassnekoxPGP</string>
+    <string name="OpenPGPKey">مفتاح OpeassnekoxPGP</string>
     <string name="None">لا شيء</string>
     <string name="Sign">التوقيع</string>
     <string name="PGPDecrypt">فك تشفير الرسالة</string>
@@ -184,7 +184,7 @@
     <string name="ShareMyKey">شارك مفتاحي العام</string>
     <string name="DisableVibration">تعطيل الاهتزاز</string>
     <string name="IgnoreContentRestrictions">تجاهل قيود المحتوى</string>
-    <string name="IgnoreContentRestrictionsNotice">يتجاهل قيود android على الرسائل محليًا. قد يحظر الخادم هذا في المستقبل ، وسوف تحتاج إلى تقييم الشرعية المحلية لهذا الخيار بنفسك.</string>
+    <string name="IgnoreContentRestrictionsNotice">يتجاهل قيود aassnekoxdroid على الرسائل محليًا. قد يحظر الخادم هذا في المستقبل ، وسوف تحتاج إلى تقييم الشرعية المحلية لهذا الخيار بنفسك.</string>
     <string name="SendCommentAfterForward">إرسال التعليق بعد إعادة توجيه</string>
     <string name="UnpinMessageX">قم بإلغاء تثبيت الرسالة</string>
     <string name="UnpinMessagesAll">قم بإلغاء تثبيت كل الرسائل</string>
@@ -196,7 +196,7 @@
     <string name="StorageResetInfo">سيتم حذف جميع بيانات التطبيق نهائيا (بعد محاولة تسجيل الخروج من جميع الحسابات).</string>
     <string name="FCTitle">حول تحديثات التطبيق</string>
     <string name="FCInfo">تابع قناتنا للإعلان والتحديث؟</string>
-    <string name="CCTitle">OpenCC (تحويل صيني)</string>
+    <string name="CCTitle">OpeassnekoxCC (تحويل صيني)</string>
     <string name="CCTarget">استهداف</string>
     <string name="CCNo">لا شيء</string>
     <string name="CCTC">الصينية التقليدية</string>
@@ -206,7 +206,7 @@
     <string name="CCSP">الصينية المبسطة (الصين)</string>
     <string name="CCJP">كانجي يابانية جديدة (شينجيتاي)</string>
     <string name="UserRestrictionsSendGames">أرسل الألعاب</string>
-    <string name="UserRestrictionsSendInline">أرسل عبر Inline Bots</string>
+    <string name="UserRestrictionsSendInline">أرسل عبر Iassnekoxliassnekoxe Bots</string>
     <string name="AcceptSecretChat">قبول الدردشة السرية الجديدة</string>
     <string name="TabletMode">وضع الكمبيوتر اللوحي</string>
     <string name="TabletModeDefault">يعتمد على الجهاز</string>
