@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoSettings">assnekox</string>
-    <string name="IPv6">assnekox</string>
-    <string name="MessageMenu">assnekox</string>
-    <string name="HidePhone">assnekox</string>
-    <string name="Hide">assnekox</string>
+    <string name="NekoSettings">Configurações Neko</string>
+    <string name="IPv6">IPv6</string>
+    <string name="MessageMenu">Menu de mensagens</string>
+    <string name="HidePhone">Esconder o telefone</string>
+    <string name="Hide">Esconder</string>
     <string name="DeleteAllFromSelf">assnekox</string>
     <string name="DeleteAllFromSelfAlert">assnekox</string>
     <string name="BotLogin">assnekox</string>
