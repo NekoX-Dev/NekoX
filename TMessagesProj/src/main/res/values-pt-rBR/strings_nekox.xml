@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Locked">assnekox</string>
+    <string name="Locked">Bloqueado</string>
     <string name="AccDescrChatAttachEnterMenu">assnekox</string>
     <string name="ChatAttachEnterMenuRecordVideo">assnekox</string>
     <string name="ChatAttachEnterMenuRecordAudio">assnekox</string>
@@ -10,13 +10,13 @@
     <string name="UseChatAttachEnterMenuNotice">assnekox</string>
     <string name="DisableLinkPreviewByDefault">assnekox</string>
     <string name="DisableLinkPreviewByDefaultNotice">assnekox</string>
-    <string name="CustomApi">assnekox</string>
-    <string name="UseCustomApiNotice">assnekox</string>
-    <string name="CustomApiNo">assnekox</string>
+    <string name="CustomApi">API personalizada</string>
+    <string name="UseCustomApiNotice">Aviso de uso de API personalizada</string>
+    <string name="CustomApiNo">Número da API personalizada</string>
     <string name="CustomApiOfficial">assnekox</string>
     <string name="CustomApiTGX">assnekox</string>
-    <string name="CustomApiInput">assnekox</string>
-    <string name="CheckUpdate">assnekox</string>
+    <string name="CustomApiInput">Entrada de API personalizada</string>
+    <string name="CheckUpdate">Verificar atualizações</string>
     <string name="SwitchVersion">assnekox</string>
     <string name="NoUpdate">assnekox</string>
     <string name="UpdateAvailable">assnekox</string>
