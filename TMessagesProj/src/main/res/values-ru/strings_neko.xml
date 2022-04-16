@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoSettings">assnekox</string>
+    <string name="NekoSettings">Настройки Neko</string>
     <string name="IPv6">assnekox</string>
     <string name="MessageMenu">assnekox</string>
     <string name="HidePhone">assnekox</string>
