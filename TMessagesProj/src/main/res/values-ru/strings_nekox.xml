@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Locked">assnekox</string>
-    <string name="AccDescrChatAttachEnterMenu">assnekox</string>
-    <string name="ChatAttachEnterMenuRecordVideo">assnekox</string>
-    <string name="ChatAttachEnterMenuRecordAudio">assnekox</string>
-    <string name="ChatAttachEnterMenuDisableLinkPreview">assnekox</string>
-    <string name="ChatAttachEnterMenuEnableLinkPreview">assnekox</string>
-    <string name="UseChatAttachEnterMenu">assnekox</string>
-    <string name="UseChatAttachEnterMenuNotice">assnekox</string>
-    <string name="DisableLinkPreviewByDefault">assnekox</string>
-    <string name="DisableLinkPreviewByDefaultNotice">assnekox</string>
+    <string name="Locked">Заблокировано</string>
+    <string name="AccDescrChatAttachEnterMenu">Меню ввода чата</string>
+    <string name="ChatAttachEnterMenuRecordVideo">Запись видео</string>
+    <string name="ChatAttachEnterMenuRecordAudio">Запись аудио</string>
+    <string name="ChatAttachEnterMenuDisableLinkPreview">Отключить предпросмотр ссылок</string>
+    <string name="ChatAttachEnterMenuEnableLinkPreview">Включить предпросмотр ссылок</string>
+    <string name="UseChatAttachEnterMenu">Использовать меню отправки</string>
+    <string name="UseChatAttachEnterMenuNotice">Изменить кнопку записи на меню отправки и добавить переключатель предпросмотра ссылок.</string>
+    <string name="DisableLinkPreviewByDefault">Отключить предпросмотр ссылок по умолчанию</string>
+    <string name="DisableLinkPreviewByDefaultNotice">Отключить предпросмотр ссылки во время отправки для скрытия от сервера факта передачи ссылки через Telegram.</string>
     <string name="CustomApi">assnekox</string>
     <string name="UseCustomApiNotice">assnekox</string>
     <string name="CustomApiNo">assnekox</string>
