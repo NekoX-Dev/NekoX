@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Locked">assnekox</string>
-    <string name="ChatAttachEnterMenuRecordVideo">assnekox</string>
-    <string name="ChatAttachEnterMenuRecordAudio">assnekox</string>
+    <string name="Locked"></string>
+    <string name="ChatAttachEnterMenuRecordVideo"></string>
+    <string name="ChatAttachEnterMenuRecordAudio"></string>
     <string name="ChatAttachEnterMenuDisableLinkPreview">assnekox</string>
     <string name="ChatAttachEnterMenuEnableLinkPreview">assnekox</string>
     <string name="UseChatAttachEnterMenu">assnekox</string>
@@ -202,7 +202,7 @@
     <string name="UnpinSticker">assnekox</string>
     <string name="PinSticker">assnekox</string>
     <string name="UseChatAttachEnterMenuNotice">assnekox</string>
-    <string name="AccDescrChatAttachEnterMenu">assnekox</string>
+    <string name="AccDescrChatAttachEnterMenu"></string>
     <string name="CustomBackendNotice">assnekox</string>
     <string name="UseCustomApiNotice">assnekox</string>
     <string name="DisableLinkPreviewByDefaultNotice">assnekox</string>
