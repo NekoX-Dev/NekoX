@@ -3947,7 +3947,8 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     boolean result = true;
                     final String folderName = NekoConfig.customSavePath.String();
                     if (Build.VERSION.SDK_INT >= 29) {
-                        result = saveFileInternal(type, sourceFile, null);
+                        //CS304 Issue link:https://github.com/NekoX-Dev/NekoX/issues/711
+                        result = saveFileInternal(type, sourceFile, name);
                     } else {
                         File destFile;
                         if (type == 0) {
@@ -4094,7 +4095,32 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                 File dirDest = new File(Environment.DIRECTORY_DOWNLOADS, folderName);
                 contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, dirDest + File.separator);
                 uriToInsert = MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
-                contentValues.put(MediaStore.Downloads.DISPLAY_NAME, filename);
+                //CS304 Issue link:https://github.com/NekoX-Dev/NekoX/issues/711
+                File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                dir = new File(dir, folderName);
+                dir.mkdirs();
+                File destFile = new File(dir, filename);
+
+                if (!destFile.exists()) {
+                    contentValues.put(MediaStore.Downloads.DISPLAY_NAME, filename);
+                }
+
+                if (destFile.exists()) {
+                    int idx = filename.lastIndexOf('.');
+                    for (int a = 0; a < 10; a++) {
+                        String newName;
+                        if (idx != -1) {
+                            newName = filename.substring(0, idx) + "(" + (a + 1) + ")" + filename.substring(idx);
+                        } else {
+                            newName = filename + "(" + (a + 1) + ")";
+                        }
+                        destFile = new File(dir, newName);
+                        contentValues.put(MediaStore.Downloads.DISPLAY_NAME, newName);
+                        if (!destFile.exists()) {
+                            break;
+                        }
+                    }
+                }
             } else {
                 if (filename == null) {
                     filename = sourceFile.getName();
