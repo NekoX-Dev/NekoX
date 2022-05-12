@@ -489,6 +489,18 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 }
             } else {
                 text = currentMessageObject.messageText;
+                //CS304 Issue link:https://github.com/NekoX-Dev/NekoX/issues/558
+                if (currentMessageObject.messageOwner != null) {
+                    if (currentMessageObject.messageOwner.action != null) {
+                        long date = currentMessageObject.messageOwner.date;
+                        String timestamp = LocaleController.getInstance().formatterDay.format(date * 1000);
+                        text += " · " + timestamp;
+                    } else if (currentMessageObject.currentEvent != null){
+                        long date = currentMessageObject.currentEvent.date;
+                        String timestamp = LocaleController.getInstance().formatterDay.format(date * 1000);
+                        text += " · " + timestamp;
+                    }
+                }
             }
         } else {
             text = customText;
