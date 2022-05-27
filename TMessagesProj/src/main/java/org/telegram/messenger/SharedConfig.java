@@ -188,6 +188,7 @@ public class SharedConfig {
     public static boolean dontAskManageStorage;
 
     public static CopyOnWriteArraySet<Integer> activeAccounts;
+    public static CopyOnWriteArraySet<Integer> frozenAccounts;
     public static int loginingAccount = -1;
 
     static {
@@ -1123,6 +1124,9 @@ public class SharedConfig {
         ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE).edit()
                 .putString("active_accounts", StringUtils.join(activeAccounts, ","))
                 .apply();
+        ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE).edit()
+                .putString("frozen_accounts", StringUtils.join(frozenAccounts, ","))
+                .apply();
     }
 
     public static void loadConfig() {
@@ -1260,6 +1264,7 @@ public class SharedConfig {
             emojiInteractionsHintCount = preferences.getInt("emojiInteractionsHintCount", 3);
             dayNightThemeSwitchHintCount = preferences.getInt("dayNightThemeSwitchHintCount", 3);
             activeAccounts = Arrays.stream(preferences.getString("active_accounts", "").split(",")).filter(StrUtil::isNotBlank).map(Integer::parseInt).collect(Collectors.toCollection(CopyOnWriteArraySet::new));
+            frozenAccounts = Arrays.stream(preferences.getString("frozen_accounts", "").split(",")).filter(StrUtil::isNotBlank).map(Integer::parseInt).collect(Collectors.toCollection(CopyOnWriteArraySet::new));
 
             if (!preferences.contains("activeAccountsLoaded")) {
                 int maxAccounts;
@@ -1287,6 +1292,9 @@ public class SharedConfig {
 
                 if (!SharedConfig.activeAccounts.isEmpty()) {
                     preferences.edit().putString("active_accounts", StringUtils.join(activeAccounts, ",")).apply();
+                }
+                if (!SharedConfig.frozenAccounts.isEmpty()) {
+                    preferences.edit().putString("frozen_accounts", StringUtils.join(frozenAccounts, ",")).apply();
                 }
 
                 preferences.edit().putBoolean("activeAccountsLoaded", true).apply();

@@ -10,12 +10,14 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.telegram.messenger.AndroidUtilities;
@@ -24,6 +26,8 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
@@ -41,6 +45,8 @@ public class DrawerUserCell extends FrameLayout {
     private AvatarDrawable avatarDrawable;
     private GroupCreateCheckBox checkBox;
 
+    private ImageView frozenView;
+
     private int accountNumber;
     private RectF rect = new RectF();
 
@@ -53,6 +59,15 @@ public class DrawerUserCell extends FrameLayout {
         imageView = new BackupImageView(context);
         imageView.setRoundRadius(AndroidUtilities.dp(18));
         addView(imageView, LayoutHelper.createFrame(36, 36, Gravity.LEFT | Gravity.TOP, 14, 6, 0, 0));
+
+        frozenView = new ImageView(context);
+        frozenView.setImageResource(R.drawable.ic_baseline_ac_unit_24);
+        frozenView.setColorFilter(Color.GRAY);
+        addView(frozenView, LayoutHelper.createFrame(36, 36, Gravity.RIGHT | Gravity.TOP, 0, 0, 16, 0));
+        if (SharedConfig.frozenAccounts.contains(accountNumber))
+            frozenView.setVisibility(VISIBLE);
+        else
+            frozenView.setVisibility(GONE);
 
         textView = new EmojiTextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
@@ -105,7 +120,7 @@ public class DrawerUserCell extends FrameLayout {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if (UserConfig.getActivatedAccountsCount() <= 1 || !NotificationsController.getInstance(accountNumber).showBadgeNumber) {
+        if (SharedConfig.frozenAccounts.contains(accountNumber) || UserConfig.getActivatedAccountsCount() <= 1 || !NotificationsController.getInstance(accountNumber).showBadgeNumber) {
             return;
         }
         int counter = MessagesStorage.getInstance(accountNumber).getMainUnreadCount();

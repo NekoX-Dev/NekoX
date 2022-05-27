@@ -161,6 +161,8 @@ public class ConnectionsManager extends BaseController {
 
     public ConnectionsManager(int instance) {
         super(instance);
+        FileLog.e("New ConnectionsManager for account " + instance);
+        FileLog.e(new Exception());
         ConnectionsManager.native_setJava(instance);
         connectionState = native_getConnectionState(currentAccount);
         String deviceModel;

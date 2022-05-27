@@ -116,7 +116,7 @@ public class LogoutActivity extends BaseFragment {
             if (position == addAccountRow) {
                 int freeAccount;
                 for (int account = 0;; account++) {
-                    if (!SharedConfig.activeAccounts.contains(account)) {
+                    if (!(SharedConfig.activeAccounts.contains(account) || SharedConfig.frozenAccounts.contains(account))) {
                         freeAccount = account;
                         break;
                     }

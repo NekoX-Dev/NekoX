@@ -254,6 +254,13 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter imple
                 accountNumbers.add(a);
             }
         }
+        for (int a : SharedConfig.frozenAccounts) {
+            if (!UserConfig.getInstance(a).isConfigLoaded())
+                UserConfig.getInstance(a).loadConfig();
+            if (UserConfig.getInstance(a).isClientActivated()) {
+                accountNumbers.add(a);
+            }
+        }
         Collections.sort(accountNumbers, (o1, o2) -> {
             long l1 = UserConfig.getInstance(o1).loginTime;
             long l2 = UserConfig.getInstance(o2).loginTime;

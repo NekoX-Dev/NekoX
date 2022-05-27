@@ -70,7 +70,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.collection.LongSparseArray;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
@@ -166,7 +165,6 @@ import org.telegram.ui.Components.IdenticonDrawable;
 import org.telegram.ui.Components.ImageUpdater;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.ProfileGalleryView;
-import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.RecyclerListView;
@@ -195,7 +193,6 @@ import cn.hutool.core.util.StrUtil;
 import kotlin.Unit;
 import libv2ray.Libv2ray;
 import tw.nekomimi.nekogram.ui.BottomBuilder;
-import tw.nekomimi.nekogram.InternalUpdater;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.settings.NekoXSettingActivity;
@@ -400,6 +397,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     private final static int delete_avatar = 35;
     private final static int add_photo = 36;
     private final static int qr_button = 37;
+    private final static int freeze_account = 400;
 
     private Rect rect = new Rect();
 
@@ -1923,6 +1921,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                 } else if (id == logout) {
                     presentFragment(new LogoutActivity());
+                } else if (id == freeze_account) {
+                    FileLog.e("Freezing Account "+ currentAccount);
+                    SharedConfig.activeAccounts.remove(currentAccount);
+                    SharedConfig.frozenAccounts.add(currentAccount);
+                    SharedConfig.saveAccounts();
+                    NotificationCenter.getInstance(currentAccount).postNotificationName(NotificationCenter.accountDidFrozen);
                 } else if (id == set_as_main) {
                     int position = avatarsViewPager.getRealPosition();
                     TLRPC.Photo photo = avatarsViewPager.getPhoto(position);
@@ -6938,6 +6942,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             if (UserObject.isUserSelf(user)) {
                 otherItem.addSubItem(logout, LocaleController.getString("LogOut", R.string.LogOut));
+                if (SharedConfig.activeAccounts.size() >= 2)
+                    otherItem.addSubItem(freeze_account, LocaleController.getString("FreezeAccount", R.string.FreezeAccount));
             } else {
                 if (userInfo != null && userInfo.phone_calls_available) {
                     callItemVisible = true;
@@ -8326,7 +8332,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 new SearchResult(502, LocaleController.getString("AddAnotherAccount", R.string.AddAnotherAccount), 0, () -> {
                     int freeAccount;
                     for (int account = 0; ; account++) {
-                        if (!SharedConfig.activeAccounts.contains(account)) {
+                        if (!(SharedConfig.activeAccounts.contains(account) || SharedConfig.frozenAccounts.contains(account))) {
                             freeAccount = account;
                             break;
                         }

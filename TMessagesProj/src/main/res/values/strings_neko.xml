@@ -144,4 +144,5 @@
     <string name="channelLabel">channel</string>
     <string name="forceBlurInChat">Force enable Chat Blur</string>
     <string name="ChatBlurAlphaValue">Chat Blur Alpha</string>
+    <string name="FreezeAccount">Freeze Account</string>
 </resources>

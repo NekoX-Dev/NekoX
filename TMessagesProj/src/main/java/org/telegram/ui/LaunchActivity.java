@@ -544,12 +544,20 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
                     drawerLayoutAdapter.setAccountsShown(!drawerLayoutAdapter.isAccountsShown(), true);
                 }
             } else if (view instanceof DrawerUserCell) {
+                int accountNumber = ((DrawerUserCell) view).getAccountNumber();
+                if (!SharedConfig.activeAccounts.contains(accountNumber)) {
+                    FileLog.e("unfreezing account " + accountNumber);
+                    SharedConfig.activeAccounts.add(accountNumber);
+                    SharedConfig.frozenAccounts.remove(accountNumber);
+                    SharedConfig.saveConfig();
+                    ApplicationLoader.loadAccount(accountNumber);
+                }
                 switchToAccount(((DrawerUserCell) view).getAccountNumber(), true);
                 drawerLayoutContainer.closeDrawer(false);
             } else if (view instanceof DrawerAddCell) {
                 int freeAccount;
                 for (int account = 0; ; account++) {
-                    if (!SharedConfig.activeAccounts.contains(account)) {
+                    if (!(SharedConfig.activeAccounts.contains(account) || SharedConfig.frozenAccounts.contains(account))) {
                         freeAccount = account;
                         break;
                     }
@@ -729,6 +737,7 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
                 if (accountNumber == currentAccount || AndroidUtilities.isTablet()) {
                     sideMenuTouchHelper.startDrag(sideMenu.getChildViewHolder(view));
                 } else {
+                    if (SharedConfig.frozenAccounts.contains(accountNumber)) return false;
                     final BaseFragment fragment = new DialogsActivity(null) {
                         @Override
                         protected void onTransitionAnimationEnd(boolean isOpen, boolean backward) {
@@ -1110,6 +1119,7 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
     private void checkCurrentAccount() {
         if (currentAccount != UserConfig.selectedAccount) {
             NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.appDidLogout);
+            NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.accountDidFrozen);
             NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.mainUserInfoChanged);
             NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.didUpdateConnectionState);
             NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.needShowAlert);
@@ -1127,6 +1137,7 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
         }
         currentAccount = UserConfig.selectedAccount;
         NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.appDidLogout);
+        NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.accountDidFrozen);
         NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.mainUserInfoChanged);
         NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.didUpdateConnectionState);
         NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.needShowAlert);
@@ -4776,7 +4787,7 @@ public class LaunchActivity extends BasePermissionsActivity implements ActionBar
     @Override
     @SuppressWarnings("unchecked")
     public void didReceivedNotification(int id, final int account, Object... args) {
-        if (id == NotificationCenter.appDidLogout) {
+        if (id == NotificationCenter.appDidLogout || id == NotificationCenter.accountDidFrozen) {
             switchToAvailableAccountOrLogout();
         } else if (id == NotificationCenter.closeOtherAppActivities) {
             if (args[0] != this) {

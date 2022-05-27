@@ -289,6 +289,7 @@ public class ApplicationLoader extends Application {
             if (finalA == UserConfig.selectedAccount) initRunnable.run();
             else postRun.add(initRunnable);
         }
+        ChatThemeController.init();
 
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("app initied");
@@ -326,8 +327,11 @@ public class ApplicationLoader extends Application {
             ContactsController.getInstance(account).checkAppAccount();
             DownloadController.getInstance(account);
         });
-
-        ChatThemeController.init();
+        Utilities.stageQueue.postRunnable(() -> {
+            SendMessagesHelper.getInstance(account).checkUnsentMessages();
+            ContactsController.getInstance(account).checkAppAccount();
+            DownloadController.getInstance(account);
+        });
     }
 
     public ApplicationLoader() {

@@ -2970,6 +2970,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 				MessagesController.getInstance(currentAccount).ignoreSetOnline = false;
 			}
 			NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.appDidLogout);
+			NotificationCenter.getInstance(currentAccount).removeObserver(this, NotificationCenter.accountDidFrozen);
 		}
 		SensorManager sm = (SensorManager) getSystemService(SENSOR_SERVICE);
 		Sensor proximity = sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
@@ -3470,6 +3471,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 	private void initializeAccountRelatedThings() {
 		updateServerConfig();
 		NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.appDidLogout);
+		NotificationCenter.getInstance(currentAccount).addObserver(this, NotificationCenter.accountDidFrozen);
 		ConnectionsManager.getInstance(currentAccount).setAppPaused(false, false);
 	}
 
@@ -4364,7 +4366,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
 	@Override
 	public void didReceivedNotification(int id, int account, Object... args) {
-		if (id == NotificationCenter.appDidLogout) {
+		if (id == NotificationCenter.appDidLogout || id == NotificationCenter.accountDidFrozen) {
 			callEnded();
 		}
 	}

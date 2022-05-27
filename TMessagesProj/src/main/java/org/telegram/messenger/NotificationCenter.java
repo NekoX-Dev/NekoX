@@ -177,6 +177,7 @@ public class NotificationCenter {
     public static final int groupCallVisibilityChanged = totalEvents++;
 
     public static final int appDidLogout = totalEvents++;
+    public static final int accountDidFrozen = totalEvents++;
 
     public static final int configLoaded = totalEvents++;
 
