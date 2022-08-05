@@ -3453,7 +3453,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 return migratedTo.noforwards;
             }
         }
-        return chat.noforwards;
+        return false;
     }
 
     public boolean isChatNoForwards(long chatId) {
