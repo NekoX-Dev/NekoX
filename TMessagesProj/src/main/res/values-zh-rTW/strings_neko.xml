@@ -74,7 +74,7 @@
     <string name="UserRestrictionsSendGifs">傳送 GIF</string>
     <string name="ShowTabsOnForward">在轉發頁面顯示資料夾</string>
     <string name="CheckAllAdministrated">新增管理的群組與頻道</string>
-    <string name="RearVideoMessages">影片留言預設使用後置攝像頭</string>
+    <string name="RearVideoMessages">影片留言預設使用後置鏡頭</string>
     <string name="HideAllTab">隱藏「全部對話」</string>
     <string name="HideAllTabAbout">在主頁按返回鍵開啟全部對話。</string>
     <string name="TabTitleType">在標籤欄上顯示</string>
