@@ -45,8 +45,13 @@ import org.telegram.ui.LauncherIconController;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.regex.Pattern;
 
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
@@ -63,6 +68,7 @@ public class ApplicationLoader extends Application {
 
     public static volatile NetworkInfo currentNetworkInfo;
     public static volatile Handler applicationHandler;
+    private static final Pattern vpnPattern = Pattern.compile("(?:tun|ppp|pptp|rndis)\\d+");
 
     private static ConnectivityManager connectivityManager;
     private static volatile boolean applicationInited = false;
@@ -449,6 +455,82 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
+    private static boolean isConnectedOrConnectingToVpn() {
+        if (SDK_INT >= 21) {
+            NetworkInfo netInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_VPN);
+            return netInfo != null && netInfo.isConnectedOrConnecting();
+        } else {
+            return hasVpnInterface();
+        }
+    }
+
+    private static boolean isConnectedOrConnectingOrSuspendedToVpn() {
+        if (SDK_INT >= 21) {
+            NetworkInfo netInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_VPN);
+
+            if (netInfo == null) {
+                return false;
+            }
+
+            NetworkInfo.State state = netInfo.getState();
+            return state == NetworkInfo.State.CONNECTED || state == NetworkInfo.State.CONNECTING || state == NetworkInfo.State.SUSPENDED;
+        } else {
+            return hasVpnInterface();
+        }
+    }
+
+    private static boolean isConnectedToVpn() {
+        if (SDK_INT >= 21) {
+            NetworkInfo netInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_VPN);
+            return netInfo != null && netInfo.getState() == NetworkInfo.State.CONNECTED;
+        } else {
+            return hasVpnInterface();
+        }
+    }
+
+    private static boolean hasVpnInterface() {
+        try {
+            Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+
+            while (networkInterfaces.hasMoreElements()) {
+                NetworkInterface currentNetworkInterface = networkInterfaces.nextElement();
+
+                if (!currentNetworkInterface.isUp()) {
+                    continue;
+                }
+
+                String name = currentNetworkInterface.getName();
+
+                if (name == null) {
+                    continue;
+                }
+
+                if (vpnPattern.matcher(name).matches()) {
+                    return true;
+                }
+            }
+
+            return false;
+        } catch (SocketException ignore) {
+            return false;
+        }
+    }
+
+    private static boolean isMobileActivated() {
+        NetworkInfo mobile = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        boolean mobileActivated = false;
+
+        if (mobile != null) {
+            NetworkInfo.State state = mobile.getState();
+
+            if (state == NetworkInfo.State.CONNECTED || state == NetworkInfo.State.CONNECTING || state == NetworkInfo.State.SUSPENDED) {
+                mobileActivated = true;
+            }
+        }
+
+        return mobileActivated;
+    }
+
     public static boolean isConnectedOrConnectingToWiFi() {
         try {
             ensureCurrentNetworkGet(false);
@@ -458,6 +540,7 @@ public class ApplicationLoader extends Application {
                     return true;
                 }
             }
+            return !isMobileActivated() && isConnectedOrConnectingOrSuspendedToVpn();
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -470,6 +553,7 @@ public class ApplicationLoader extends Application {
             if (currentNetworkInfo != null && (currentNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI || currentNetworkInfo.getType() == ConnectivityManager.TYPE_ETHERNET) && currentNetworkInfo.getState() == NetworkInfo.State.CONNECTED) {
                 return true;
             }
+            return !isMobileActivated() && isConnectedToVpn();
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -516,6 +600,13 @@ public class ApplicationLoader extends Application {
             if (currentNetworkInfo.isRoaming()) {
                 return StatsController.TYPE_ROAMING;
             }
+            if (isConnectedOrConnectingOrSuspendedToVpn()) {
+                if (isMobileActivated()) {
+                    return StatsController.TYPE_MOBILE;
+                } else {
+                    return StatsController.TYPE_WIFI;
+                }
+            }
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -551,6 +642,10 @@ public class ApplicationLoader extends Application {
                     return true;
                 }
             }
+
+            if (isConnectedOrConnectingToVpn()) {
+                return true;
+            }
         } catch (Exception e) {
             FileLog.e(e);
             return true;
@@ -567,14 +662,17 @@ public class ApplicationLoader extends Application {
             }
 
             netInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
             if (netInfo != null && netInfo.isConnectedOrConnecting()) {
                 return true;
-            } else {
-                netInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-                if (netInfo != null && netInfo.isConnectedOrConnecting()) {
-                    return true;
-                }
+            }
+
+            netInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+                return true;
+            }
+
+            if (isConnectedOrConnectingToVpn()) {
+                return true;
             }
         } catch (Exception e) {
             FileLog.e(e);
