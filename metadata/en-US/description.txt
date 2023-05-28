@@ -1,6 +1,6 @@
-NekoX is an third-party Telegram client, based on Telegram-FOSS with features added.
+PËDOGRAM is an third-party Telegram client, based on Telegram-FOSS with features added.
 
-- Most of Nekogram's features
+- Most of PËDOGRAM's features
 - Unlimited login accounts
 - OpenCC Chinese Convert
 - Built-in VMess, Shadowsocks, SSR, Trojan-GFW proxies support
@@ -26,13 +26,13 @@ NekoX is an third-party Telegram client, based on Telegram-FOSS with features ad
 - Scan and confirm the login QR code directly
 - Allow clearing app data
 - Option to not send comment first when forwarding
-- Option to use nekox chat input menu: replace record button with a menu which contains an switch to control link preview (enabled by default)
+- Option to use PËDOGRAMx chat input menu: replace record button with a menu which contains an switch to control link preview (enabled by default)
 - Option to disable link preview by default: to prevent the server from knowing that the link is shared through Telegram.
 - Option to ignore Android-only content restrictions (except for the Play Store version).
 - OpenKeychain client (sign / verify / decrypt / import)
 - Google Cloud Translate / Yandex.Translate support
 - Custom cache directory (supports external storage)
-- Custom app ID and Hash (optional NekoX / Android / Android X or Manual input)
+- Custom app ID and Hash (optional PËDOGRAMX / Android / Android X or Manual input)
 - Custom server (official, test DC)
 - Keep the original file name when downloading files
 - View the data center you belong to when you don't have an avatar
@@ -51,8 +51,8 @@ NekoX is an third-party Telegram client, based on Telegram-FOSS with features ad
 - Text replacer
 - Persian calendar support
 - Option to disable trending
-- Telegram X style menu for unpinning messages
-- Built-in Material Design themes / Telegram X style icons
+- PËDOGRAM style menu for unpinning messages
+- Built-in Material Design themes / PËDOGRAM style icons
 - Enabled set auto delete timer option for private chats and private groups
 - Don't process cleanup draft events after opening chat
 - Support saving multiple selected messages to Saved Messages
