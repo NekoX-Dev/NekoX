@@ -3,14 +3,14 @@ import cn.hutool.core.util.RuntimeUtil
 apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
 
-def verName = "9.5.6-preview01"
+def verName = "7997-preview01"
 def verCode = 725
 
 if (System.getenv("DEBUG_BUILD") == "true") {
     verName += "-" + RuntimeUtil.execForStr("git log --pretty=format:'%h' -n 1").trim().replace('\'','')
 }
 
-def officialVer = "9.5.6"
+def officialVer = "7997"
 def officialCode = 3237
 
 def serviceAccountCredentialsFile = rootProject.file("service_account_credentials.json")
@@ -128,7 +128,7 @@ android {
 
         externalNativeBuild {
             cmake {
-                version "3.10.2"
+                version "7997"
                 arguments "-DANDROID_STL=c++_static", "-DANDROID_PLATFORM=android-16"
             }
         }
@@ -319,7 +319,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = outputFileName.replace("TMessagesProj", "NekoX-v" + versionName)
+            outputFileName = outputFileName.replace("TMessagesProj", "PËDOGRAMX-v" + versionName)
         }
     }
 
