@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoX" translatable="false">Nekogram X</string>
+    <string name="NekoX" translatable="false">PËDOGRAM X</string>
     <string name="Locked">Locked</string>
     <string name="AccDescrChatAttachEnterMenu">Chat input menu</string>
     <string name="ChatAttachEnterMenuRecordVideo">Record Video</string>
@@ -30,8 +30,8 @@
     <string name="ProxyAutoSwitch">Proxy Auto Switch</string>
     <string name="LinkedGroupChat">Linked Group</string>
     <string name="LinkedChannelChat">Linked Channel</string>
-    <string name="DevModeTitle">**Your Telegram account may be banned**</string>
-    <string name="DevModeNotice">We are not responsible for any improper use of developer features.</string>
+    <string name="DevModeTitle">**You GOT BANNED PËDO**</string>
+    <string name="DevModeNotice">We are responsible for any improper use of developer features.</string>
     <string name="TapToDisable">Tap to disable. You don\'t need these.</string>
     <string name="PlaceHolder">Placeholder - Please Disable</string>
     <string name="CustomBackend">Custom Backend</string>
@@ -58,7 +58,7 @@
     <string name="ApplySuggestion">OK, Apply it</string>
     <string name="DoNotRemindAgain">Don\'t remind again</string>
     <string name="RemoveTitleEmoji">Remove emoji in title</string>
-    <string name="NekoXProxy">NekoX Public Proxy</string>
+    <string name="NekoXProxy">PËDOGRAM Public Proxy</string>
     <string name="PublicPrefix">Public</string>
     <string name="DisableChatAction">Don\'t send my input status</string>
     <string name="FakeScreenshot">Pretend screenshot</string>
@@ -86,9 +86,9 @@
     <string name="SortByUnmuted">Sort By Unmuted</string>
     <string name="SortByUser">Sort By User</string>
     <string name="SortByContacts">Sort By Contacts</string>
-    <string name="NekoXPushService">NekoX Push Service</string>
-    <string name="EnablePushAlert">Please enable "NekoX Push Service"</string>
-    <string name="DisablePushAlert">Please disable "NekoX Push Service"</string>
+    <string name="NekoXPushService">PËDOGRAM Push Service</string>
+    <string name="EnablePushAlert">Please enable "PËDOGRAM Push Service"</string>
+    <string name="DisablePushAlert">Please disable "PËDOGRAM Push Service"</string>
     <string name="DisableUndo">Disable Undo</string>
     <string name="DisableSystemAccount">Disable System Account</string>
     <string name="FilterMenu">Dialogs Filter Menu</string>
@@ -265,7 +265,7 @@
     <string name="rememberAllBackMessages">Remember all clicked replies</string>
     <string name="DisableInstantCamera">Disable instant camera</string>
     <string name="showSeconds">Show timestamp in seconds</string>
-    <string name="AppUpdateNekoX">Update Nekogram X</string>
+    <string name="AppUpdateNekoX">Update PËDOGRAM X</string>
     <string name="NekoXUpdateTranslationHint">Press to translate the changelog</string>
     <string name="Name">Name</string>
     <string name="channelAlias">Channel alias</string>
@@ -276,5 +276,5 @@
     <string name="StickerSettings">Sticker</string>
     <string name="ConfirmSettings">Confirmation</string>
     <string name="InteractionSettings">Interaction</string>
-    <string name="nekoxPremiumGiftRemoved">Premium Gift is removed in NekoX.</string>
+    <string name="nekoxPremiumGiftRemoved">Premium Gift is removed ON PËDOGRAM.</string>
 </resources>
