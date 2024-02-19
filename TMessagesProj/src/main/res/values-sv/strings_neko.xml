@@ -89,7 +89,7 @@
     <string name="UnlimitedPinnedDialogs">Obegränsade fästa dialogrutor</string>
     <string name="UnlimitedPinnedDialogsAbout">Fäst obegränsade dialogrutor genom att stänga av synkroniseringen.</string>
     <string name="ShowTabsOnForward">Visa flikar vid vidarebefordra.</string>
-    <string name="RearVideoMessages">Bakre kamera i videomeddelanden</string>
+    <string name="RearVideoMessages">Baksidans kamera för videomeddelanden</string>
     <string name="HideAllTabAbout">Tryck på \"tillbaka\" på hemsidan för att öppna den.</string>
     <string name="TabTitleTypeText">Titlar</string>
     <string name="TabTitleTypeMix">Emotikoner med titlar</string>
@@ -122,4 +122,13 @@
     <string name="forceBlurInChat">Tvinga oskärpa i chatt</string>
     <string name="ChatBlurAlphaValue">Chatt Oskärpa</string>
     <string name="NekoGeneralNotification">Aviseringar</string>
+    <string name="StickerSizeDialogName">Duang</string>
+    <string name="DisablePhotoViewerSideAction">Inaktivera flip-foton genom att knacka</string>
+    <string name="DontSendGreetingSticker">Skicka inte ett hälsningsklistermärke</string>
+    <string name="TakeGIFasVideo">Ta GIF som video</string>
+    <string name="UseMediaStreamInVoip">Använd media stream i VoIP</string>
+    <string name="HideTimeForSticker">Tid för att gömma klistermärken</string>
+    <string name="hideGroupSticker">Göm gruppklistermärke</string>
+    <string name="maxRecentStickerCount">Maximalt antal senaste klistermärken</string>
+    <string name="pressTitleToOpenAllChats">Tryck på titeln för att öppna fliken \"Alla chattar\"</string>
 </resources>

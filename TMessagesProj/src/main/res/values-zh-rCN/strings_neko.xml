@@ -41,7 +41,7 @@
     <string name="HideProxySponsorChannel">隐藏代理赞助商频道</string>
     <string name="ViewHistory">显示历史消息</string>
     <string name="Nya">喵！</string>
-    <string name="SaveCacheToExternalFilesDir">存储隔离</string>
+    <string name="SaveCacheToExternalFilesDir">存储空间隔离</string>
     <string name="SaveCacheToExternalFilesDirAbout">保存 \"Telegram\" 文件夹到应用特定的目录，以保持共享存储空间整洁。</string>
     <string name="SensitiveDisableFiltering">禁用敏感内容过滤</string>
     <string name="SensitiveAbout">在您所有设备上显示公共频道中的敏感媒体内容。</string>
@@ -81,7 +81,7 @@
     <string name="TabTitleTypeTip">图标由 Telegram 云同步。</string>
     <string name="TabTitleTypeText">标题</string>
     <string name="TabTitleTypeIcon">图标</string>
-    <string name="TabTitleTypeMix">图标与标题</string>
+    <string name="TabTitleTypeMix">含标题的图标</string>
     <string name="ConfirmAVMessage">发送视频/语音留言前确认</string>
     <string name="AskBeforeCalling">呼叫前确认</string>
     <string name="ConfirmCall">确认呼叫</string>
@@ -135,7 +135,7 @@
     <string name="SaveToDownloadCount_many">正在保存%1$d个文件到下载</string>
     <string name="NekoGeneralNotification">通知</string>
     <string name="disableNotificationBubbles">禁用通知气泡</string>
-    <string name="reactions">菜单回应</string>
+    <string name="reactions">菜单内的回应设置</string>
     <string name="doubleTapSendReactions">双击消息发送表情回应(默认)</string>
     <string name="ReactionsDisabled">禁用菜单回应</string>
     <string name="customSavePath">自定义存储路径</string>

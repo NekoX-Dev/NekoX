@@ -10,7 +10,7 @@
     <string name="BotLogin">Вход по токену</string>
     <string name="InvalidAccessToken">Некорректный токен</string>
     <string name="IgnoreBlocked">Скрыть сообщения от заблокированных пользователей</string>
-    <string name="Connection">Сеть</string>
+    <string name="Connection">Подключение</string>
     <string name="Chat">Чат</string>
     <string name="NameOrder">Сортировать контакты</string>
     <string name="FirstLast">По имени</string>
@@ -20,7 +20,7 @@
     <string name="Repeat">Повторить</string>
     <string name="AddToSavedMessages">Сохранить в облако</string>
     <string name="CreateMention">Упомянуть</string>
-    <string name="ForceTabletMode">Режим планшета</string>
+    <string name="ForceTabletMode">Принудительный режим планшета</string>
     <string name="Prpr">Пероперо</string>
     <string name="TransparentStatusBar">Прозрачная полоска статуса</string>
     <string name="EnableResidentNotification">Отображать постоянное уведомление</string>
@@ -52,7 +52,7 @@
     <string name="StickerSizeDialogName">Орфей ⌲</string>
     <string name="Experiment">Экспериментальные</string>
     <string name="UnlimitedFavoredStickers">Не ограничивать избранные стикеры</string>
-    <string name="UnlimitedFavoredStickersAbout">Их синхронизация будет отключена.</string>
+    <string name="UnlimitedFavoredStickersAbout">Добавляйте неограниченное количество стикеров в избранное. Стикеры могут не синхронизироваться с другими устройствами.</string>
     <string name="MessageDetails">Сведения о сообщении</string>
     <string name="ExportAsJson">Экспорт в JSON</string>
     <string name="Translate">Переводчик</string>
@@ -67,7 +67,7 @@
     <string name="DisablePhotoViewerSideAction">Не листать медиа нажатием</string>
     <string name="BotToken">Токен</string>
     <string name="UnlimitedPinnedDialogs">Не ограничивать закреплённые диалоги</string>
-    <string name="UnlimitedPinnedDialogsAbout">Их синхронизация будет отключена.</string>
+    <string name="UnlimitedPinnedDialogsAbout">Прикрепляйте сколько угодно диалогов, отключив их синхронизацию.</string>
     <string name="OpenArchiveOnPull">Открывать архив сразу</string>
     <string name="HideKeyboardOnChatScroll">Скрыть клавиатуру при прокрутке</string>
     <string name="UserRestrictionsSendStickers2">Отправка стикеров</string>

@@ -124,7 +124,7 @@
     <string name="ProxyRemarks">Anmärkningar</string>
     <string name="VmessAlterId">Alternativ ID</string>
     <string name="VmessRequestHost">Begär Värd / QUIC Säkerhet</string>
-    <string name="NekoXPushService">NekoX Push Service</string>
+    <string name="NekoXPushService">NekoX Push Tjänst</string>
     <string name="EditProxy">Redigera Proxy</string>
     <string name="VmessHeadType">Rubrik Typ</string>
     <string name="VmessPath">Stig / QUIC Nyckel</string>
@@ -138,4 +138,5 @@
     <string name="CustomApiOfficial">Telegram Android</string>
     <string name="CustomApiTGX">Telegram Android X</string>
     <string name="ProviderYandexTranslate">Yandex.Translate</string>
+    <string name="ProxyInfoVmess">VMess Proxy Inställningar</string>
 </resources>
