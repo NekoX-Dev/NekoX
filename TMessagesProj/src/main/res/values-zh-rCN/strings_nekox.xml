@@ -27,7 +27,7 @@
     <string name="DownloadFailed">下载失败</string>
     <string name="Install">安装</string>
     <string name="Ignore">忽略</string>
-    <string name="UpdateDownloaded">一个更新刚刚下载完成.</string>
+    <string name="UpdateDownloaded">已下载一项更新。</string>
     <string name="ProxyAutoSwitch">代理自动切换</string>
     <string name="LinkedGroupChat">链接的群组</string>
     <string name="LinkedChannelChat">链接的频道</string>
@@ -41,7 +41,7 @@
     <string name="CustomBackendTestDC">官方测试数据中心</string>
     <string name="AllowFlashCall">允许电话呼叫</string>
     <string name="ChangeTranslateProvider">修改翻译源</string>
-    <string name="ProviderYandexTranslate">Yandex.翻译</string>
+    <string name="ProviderYandexTranslate">Yandex 翻译</string>
     <string name="GoogleCloudTransKey">Google Cloud翻译密钥</string>
     <string name="GoogleCloudTransKeyNotice">如果您设置了一个Google Cloud密钥： 云翻译API将被调用，而不是提交模拟表单到网页版 (更快速、稳定和节省流量)。</string>
     <string name="TransToLang">目标翻译语言</string>
@@ -52,7 +52,7 @@
     <string name="UseDefaultTheme">使用默认主题 *</string>
     <string name="NightMode">夜间模式</string>
     <string name="PrivacyNotice">隐私警告</string>
-    <string name="PrivacyNoticePhoneVisible">您的手机号码正对任何人都可见, 这可能会导致政府控制的黑客找到您的真实身份。请关闭它！</string>
+    <string name="PrivacyNoticePhoneVisible">检测到您的手机号码对任何人都可见，这可能会导致政府控制的黑客找到您的真实身份，请关闭它！</string>
     <string name="PrivacyNoticeAddByPhone">检测到您没有被关闭“允许通过电话号码找到我”设置， 这可能会导致政府控制的黑客找到您的真实身份，请关闭它！</string>
     <string name="PrivacyNoticeP2p">您目前没有关闭“允许 P2p 通话”设置， 这可能会导致政府控制的黑客找到您的真实身份，请关闭它！</string>
     <string name="PrivacyNotice2fa">您目前没有设置密码，这可能会导致政府控制的黑客找到您的真实身份，请设置一个！</string>
@@ -184,7 +184,7 @@
     <string name="ShareMyKey">分享我的公钥</string>
     <string name="DisableVibration">禁用振动</string>
     <string name="IgnoreContentRestrictions">忽略内容限制</string>
-    <string name="IgnoreContentRestrictionsNotice">忽略本地消息的 Android 限制。 这可能会在将来被服务器禁止，您需要自己评估此选项的本地合法性。</string>
+    <string name="IgnoreContentRestrictionsNotice">忽略对消息的播放限制。</string>
     <string name="SendCommentAfterForward">转发后发送评论</string>
     <string name="UnpinMessageX">解除消息置顶</string>
     <string name="UnpinMessagesAll">解除置顶所有消息</string>
@@ -204,7 +204,7 @@
     <string name="CCTT">台湾正体</string>
     <string name="CCSC">简体中文</string>
     <string name="CCSP">简体中文 (中国)</string>
-    <string name="CCJP">日文新字體</string>
+    <string name="CCJP">新日文汉字 (Shinjitai)</string>
     <string name="UserRestrictionsSendGames">发送游戏</string>
     <string name="UserRestrictionsSendInline">通过内联机器人发送</string>
     <string name="AcceptSecretChat">接受新的加密对话</string>
@@ -239,7 +239,7 @@
     <string name="ImportSettings">导入设置</string>
     <string name="BackupSettings">备份设置</string>
     <string name="ImportSettingsAlert">确定要覆盖设置吗？从未知来源导入设置可能导致PIN被覆盖从而导致应用被锁定。</string>
-    <string name="AutoCheckUpdateRc">候选版</string>
+    <string name="AutoCheckUpdateRc">可选的版本</string>
     <string name="AutoCheckUpdateStable">稳定版</string>
     <string name="AutoCheckUpdateSwitch">自动更新</string>
     <string name="AutoCheckUpdateOFF">关闭</string>
@@ -256,15 +256,15 @@
     <string name="customPublicProxyIPNotice">在某些地区，指定公共代理 CDN (例如 Cloudflare) 的 IP 可以加快访问速度。</string>
     <string name="DeleteDownloadedFileConfirm">从本地缓存中删除此文件？</string>
     <string name="DeleteDownloadedFileSucceed">已删除</string>
-    <string name="DeleteDownloadedFileExternal">外部文件被跳过。</string>
+    <string name="DeleteDownloadedFileExternal">已跳过外部文件。</string>
     <string name="update_download_soucre">选择更新源</string>
-    <string name="useCustomEmoji">使用自定义 emoji</string>
-    <string name="useCustomEmojiInvalid">非有效 emoji ZIP文件。</string>
+    <string name="useCustomEmoji">使用自定义表情符号</string>
+    <string name="useCustomEmojiInvalid">不是有效的表情符号 ZIP 文件。</string>
     <string name="repeatConfirm">复读前确认</string>
     <string name="repeatConfirmText">确定要复读这条消息？</string>
     <string name="valuesLargeAvatarInDrawer">Telegram 默认
 \n使用头像作为背景
-\n使用大只头像作为背景</string>
+\n使用大号头像作为背景</string>
     <string name="hideSponsoredMessage">隐藏赞助消息</string>
     <string name="DisableInstantCamera">禁用相机即时预览</string>
     <string name="showSeconds">以秒为单位显示时间戳</string>
@@ -274,8 +274,8 @@
     <string name="AppUpdateNekoX">更新 Nekogram X</string>
     <string name="NekoXUpdateTranslationHint">长按以翻译更新日志</string>
     <string name="channelAlias">频道别名</string>
-    <string name="labelChannelUser">标记频道匿名身份别名</string>
-    <string name="setChannelAliasName">标记别名</string>
+    <string name="labelChannelUser">标记频道用户</string>
+    <string name="setChannelAliasName">设置别名</string>
     <string name="channelAliasDetails">需启用标记频道匿名身份别名。</string>
     <string name="Name">输入别名</string>
     <string name="labelChannelUserDetails">以频道匿名身份发言的用户将标记为“频道”。</string>

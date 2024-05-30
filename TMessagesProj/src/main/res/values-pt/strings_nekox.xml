@@ -188,10 +188,10 @@
     <string name="LinkedChannelChat">Canal Vinculado</string>
     <string name="LinkedGroupChat">Grupo Vinculado</string>
     <string name="ProxyAutoSwitch">Alternador automático de proxy</string>
-    <string name="UpdateDownloaded">Uma atualização acabou de ser baixada.</string>
+    <string name="UpdateDownloaded">Uma atualização acabou a ser descarregada.</string>
     <string name="Ignore">Ignorar</string>
     <string name="Install">Instalar</string>
-    <string name="DownloadFailed">Falha ao baixar</string>
+    <string name="DownloadFailed">Falha ao descarregar</string>
     <string name="UpdateLater">Depois</string>
     <string name="UpdateUpdate">Atualizar</string>
     <string name="UpdateAvailable">Nova atualização disponível</string>
@@ -240,7 +240,7 @@
 \nEmparelhado com Desativar Favoritos e Recentes.</string>
     <string name="EnableStickerPin">Ativar fixação de sticker</string>
     <string name="ArchiveFiles">Ficheiros mortos</string>
-    <string name="AutoDownload">Download Automático</string>
+    <string name="AutoDownload">Descarga Automática</string>
     <string name="IgnoreContentRestrictionsNotice">Ignora as restrições de reprodução de conteúdo em mensagens.</string>
     <string name="SubscriptionUrls">URLs</string>
     <string name="VmessAlterId">Alterar ID</string>
@@ -258,7 +258,7 @@
     <string name="repeatConfirmText">Tem certeza de que deseja repetir\?</string>
     <string name="customPublicProxyIP">Definir IP do proxy público</string>
     <string name="customPublicProxyIPNotice">Em algumas áreas, especificar o IP de um CDN de proxy público (p. ex., Cloudflare) pode acelerar o acesso.</string>
-    <string name="update_download_soucre">Selecione a fonte do download</string>
+    <string name="update_download_soucre">Selecione a fonte de descarga</string>
     <string name="useCustomEmoji">Usar emoji personalizado</string>
     <string name="useCustomEmojiInvalid">Ficheiro zip de emojis inválido.</string>
     <string name="repeatConfirm">Perguntar antes de repetir</string>

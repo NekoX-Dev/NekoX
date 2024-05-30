@@ -41,7 +41,7 @@
     <string name="CustomBackendTestDC">Datacenter de pruebas oficial</string>
     <string name="AllowFlashCall">Permitir llamada rápida</string>
     <string name="ChangeTranslateProvider">Cambiar proveedor</string>
-    <string name="ProviderYandexTranslate">Traductor de Yandex</string>
+    <string name="ProviderYandexTranslate">Traductor Yandex</string>
     <string name="GoogleCloudTransKey">Clave del traductor de Google Cloud</string>
     <string name="GoogleCloudTransKeyNotice">Si configura una clave de Google Cloud Trans, la API de traducción a la nube será llamada en lugar de enviar un formulario falso a la versión web al traducir (más rápido, estable y ahorrando tráfico).</string>
     <string name="TransToLang">Idioma destino de la traducción</string>
@@ -232,7 +232,7 @@
     <string name="nekoXPaymentRemovedToast">La función de pago ha sido eliminada.</string>
     <string name="useCustomEmojiInvalid">No es un archivo ZIP válido de emoji.</string>
     <string name="repeatConfirm">Preguntar antes de repetir</string>
-    <string name="repeatConfirmText">¿Está seguro de que quiere repetir\?</string>
+    <string name="repeatConfirmText">¿Seguro que quieres repetir\?</string>
     <string name="AddProxyWs">Añadir Relevo de WebSocket</string>
     <string name="UsePersiancalendar">Usar el calendario Persa</string>
     <string name="hideSponsoredMessage">Ocultar mensajes patrocinados</string>

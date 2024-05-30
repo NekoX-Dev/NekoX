@@ -145,4 +145,7 @@
     <string name="ChatBlurAlphaValue">Mức độ làm mờ cuộc trò chuyện</string>
     <string name="forceBlurInChat">Buộc làm mờ cuộc trò chuyện</string>
     <string name="disablePremiumStickerAnimation">Tắt hoạt ảnh nhãn dán cao cấp</string>
+    <string name="enhancedFileLoader">Tăng cường tốc độ Tải xuống</string>
+    <string name="mapDriftingFixForGoogleMaps">Sửa lỗi Google Maps bị trôi ở Trung Quốc</string>
+    <string name="useOSMDroidMap">Sử dụng Bản đồ OSMDroid</string>
 </resources>

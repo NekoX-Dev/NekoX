@@ -145,4 +145,7 @@
     <string name="forceBlurInChat">Chat-Unschärfe erzwingen aktivieren</string>
     <string name="ChatBlurAlphaValue">Chat-Unschärfe Alpha</string>
     <string name="disablePremiumStickerAnimation">Premium Sticker-Animationen deaktivieren</string>
+    <string name="mapDriftingFixForGoogleMaps">Das Abdriften von Google Maps in China beheben</string>
+    <string name="useOSMDroidMap">OSMDroid-Karte verwenden</string>
+    <string name="enhancedFileLoader">Download-Geschwindigkeit verbessern</string>
 </resources>

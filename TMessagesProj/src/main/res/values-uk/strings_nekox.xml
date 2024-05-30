@@ -27,7 +27,7 @@
     <string name="DownloadFailed">Збій завантаження</string>
     <string name="Install">Установити</string>
     <string name="Ignore">Ігнорувати</string>
-    <string name="UpdateDownloaded">Оновлення тільки що завантажено.</string>
+    <string name="UpdateDownloaded">Оновлення завантажено.</string>
     <string name="ProxyAutoSwitch">Авто-перемикання проксі</string>
     <string name="LinkedGroupChat">Зв\'язана група</string>
     <string name="LinkedChannelChat">Пов\'язаний канал</string>
@@ -41,7 +41,7 @@
     <string name="CustomBackendTestDC">Офіційний тестовий центр даних</string>
     <string name="AllowFlashCall">Дозволити спалах виклику</string>
     <string name="ChangeTranslateProvider">Змінити оператора</string>
-    <string name="ProviderYandexTranslate">Яндекс.Перекладач</string>
+    <string name="ProviderYandexTranslate">Яндекс Перекладач</string>
     <string name="GoogleCloudTransKey">Ключ Google Cloud Translate</string>
     <string name="GoogleCloudTransKeyNotice">Встановіть ключ Google Cloud Translation, щоб викликати хмарне API перекладу замість імітації надсилання форми у веб-версію (швидше, стабільніше й заощаджує трафік).</string>
     <string name="TransToLang">Переклад на мову</string>
@@ -253,7 +253,7 @@
 \nАватар як тло
 \nВеликий аватар як тло</string>
     <string name="customPublicProxyIPNotice">У деяких регіонах вказання адреси загальнодоступного CDN-проксі (як-от Cloudflare) може прискорити доступ.</string>
-    <string name="repeatConfirmText">Точно повторити\?</string>
+    <string name="repeatConfirmText">Ви впевнені, що хочете повторити\?</string>
     <string name="DeleteDownloadedFileConfirm">Видалити цей файл із локального кешу\?</string>
     <string name="VersionUpdateTitle">Доступна нова версія</string>
     <string name="VersionUpdateIgnore">Ігнорувати</string>
