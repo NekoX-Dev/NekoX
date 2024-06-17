@@ -700,8 +700,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         menu.setSubMenuOpenSide(1);
         menu.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
 
-        menu.addSubItem(menu_proxy, R.drawable.msg2_proxy_on, LocaleController.getString("Proxy", R.string.Proxy))
-                .setContentDescription(LocaleController.getString("Proxy", R.string.Proxy));
+//        menu.addSubItem(menu_proxy, R.drawable.msg2_proxy_on, LocaleController.getString("Proxy", R.string.Proxy))
+//                .setContentDescription(LocaleController.getString("Proxy", R.string.Proxy));
         menu.addSubItem(menu_language, R.drawable.ic_translate, LocaleController.getString("Language", R.string.Language))
                 .setContentDescription(LocaleController.getString("Language", R.string.Language));
         menu.addSubItem(menu_bot_login, R.drawable.list_bot, LocaleController.getString("BotLogin", R.string.BotLogin))
@@ -741,12 +741,20 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         menu.setPadding(padding, padding, padding, padding);
         sizeNotifierFrameLayout.addView(menu, LayoutHelper.createFrame(32, 32, Gravity.RIGHT | Gravity.TOP, 0, 16, 16, 0));
 
+        proxyButtonView = new ImageView(context);
+        proxyButtonView.setImageDrawable(proxyDrawable = new ProxyDrawable(context));
+        proxyButtonView.setOnClickListener(v -> presentFragment(new ProxyListActivity()));
+        proxyButtonView.setAlpha(0f);
+        proxyButtonView.setVisibility(View.GONE);
+        sizeNotifierFrameLayout.addView(proxyButtonView, LayoutHelper.createFrame(32, 32, Gravity.RIGHT | Gravity.TOP, 0, 16, 16 + 48, 0));
+        updateProxyButton(false, true);
+
         radialProgressView = new RadialProgressView(context);
         radialProgressView.setSize(AndroidUtilities.dp(20));
         radialProgressView.setAlpha(0);
         radialProgressView.setScaleX(0.1f);
         radialProgressView.setScaleY(0.1f);
-        sizeNotifierFrameLayout.addView(radialProgressView, LayoutHelper.createFrame(32, 32, Gravity.RIGHT | Gravity.TOP, 0, 16, 16, 0));
+        sizeNotifierFrameLayout.addView(radialProgressView, LayoutHelper.createFrame(32, 32, Gravity.RIGHT | Gravity.TOP, 0, 16, 16 + 48 * 2, 0));
 
         floatingButtonIcon = new TransformableLoginButtonView(context);
         floatingButtonIcon.setTransformType(TransformableLoginButtonView.TRANSFORM_OPEN_ARROW);
@@ -8286,12 +8294,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return;
         }
         currentConnectionState = state;
-        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
-        String proxyAddress = preferences.getString("proxy_ip", "");
+        SharedPreferences preferences = MessagesController.getGlobalMainSettings();
         final boolean proxyEnabled = preferences.getBoolean("proxy_enabled", false);
         final boolean connected = currentConnectionState == ConnectionsManager.ConnectionStateConnected || currentConnectionState == ConnectionsManager.ConnectionStateUpdating;
         final boolean connecting = currentConnectionState == ConnectionsManager.ConnectionStateConnecting || currentConnectionState == ConnectionsManager.ConnectionStateWaitingForNetwork || currentConnectionState == ConnectionsManager.ConnectionStateConnectingToProxy;
-        final boolean show = (proxyEnabled && !TextUtils.isEmpty(proxyAddress)) || getMessagesController().blockedCountry && !SharedConfig.proxyList.isEmpty() || connecting;
+        final boolean show = (proxyEnabled) || getMessagesController().blockedCountry && !SharedConfig.proxyList.isEmpty() || connecting;
         if (show) {
             showProxyButtonDelayed();
         } else {
