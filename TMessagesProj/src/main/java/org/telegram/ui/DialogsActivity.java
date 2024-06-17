@@ -3262,7 +3262,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
                 @Override
                 public void onPageSelected(FilterTabsView.Tab tab, boolean forward) {
-                    if (viewPages[0].selectedType == tab.id) {
+                    if (viewPages[0].selectedType == tab.id && !filterTabsView.showAllChatsTab) {
                         return;
                     }
                     if (tab.isLocked) {
@@ -6209,7 +6209,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                             case NekoXConfig.TITLE_TYPE_MIX:
                                 filterTabsView.addTab(a, filters.get(a).localId, dialogFilter.emoticon != null ? dialogFilter.emoticon + " " + dialogFilter.name : "📂 " + dialogFilter.name, false, false);
                                 break;
-                        }                    }
+                        }
+                    }
                 }
                 boolean updateCurrentTab = NekoConfig.hideAllTab.Bool();
                 if (stableId >= 0) {
