@@ -5418,12 +5418,16 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         menu.setOnLayoutListener(this::updateActionBarTitlePadding);
         masksItem = menu.addItem(gallery_menu_masks, R.drawable.deproko_baseline_masks_24);
         masksItem.setContentDescription(LocaleController.getString("Masks", R.string.Masks));
+        masksItem.setIconColor(0xfffafafa);
         pipItem = menu.addItem(gallery_menu_pip, R.drawable.ic_goinline);
         pipItem.setContentDescription(LocaleController.getString("AccDescrPipMode", R.string.AccDescrPipMode));
+        pipItem.setIconColor(0xfffafafa);
         sendNoQuoteItem = menu.addItem(gallery_menu_send_noquote, R.drawable.baseline_fast_forward_24);
         sendNoQuoteItem.setContentDescription(LocaleController.getString("NoQuoteForward", R.string.Forward));
+        sendNoQuoteItem.setIconColor(0xfffafafa);
         sendItem = menu.addItem(gallery_menu_send, R.drawable.baseline_forward_24);
         sendItem.setContentDescription(LocaleController.getString("Forward", R.string.Forward));
+        sendItem.setIconColor(0xfffafafa);
         editItem = menu.addItem(gallery_menu_paint, R.drawable.msg_header_draw);
         editItem.setContentDescription(LocaleController.getString("AccDescrPhotoEditor", R.string.AccDescrPhotoEditor));
 
