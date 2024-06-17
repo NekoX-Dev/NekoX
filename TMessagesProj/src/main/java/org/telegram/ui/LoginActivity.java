@@ -90,8 +90,10 @@ import androidx.core.graphics.ColorUtils;
 //import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 //import com.google.android.gms.common.api.ApiException;
 //import com.google.android.gms.safetynet.SafetyNet;
+import com.google.zxing.common.detector.MathUtils;
 
 import org.telegram.PhoneFormat.PhoneFormat;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.AuthTokensHelper;
@@ -140,6 +142,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LoadingDrawable;
 import org.telegram.ui.Components.OutlineTextContainerView;
+import org.telegram.ui.Components.ProxyDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.RadialProgressView;
@@ -306,6 +309,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     private ImageView backButtonView;
     private RadialProgressView radialProgressView;
 
+    private ImageView proxyButtonView;
+    private ProxyDrawable proxyDrawable;
+
     // Open animation stuff
     private LinearLayout keyboardLinearLayout;
     private FrameLayout slideViewsContainer;
@@ -468,8 +474,17 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 AndroidUtilities.cancelRunOnUIThread(callback);
             }
         }
+        getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateConnectionState);
 
         SharedConfig.loginingAccount = -1;
+    }
+
+    @Override
+    public boolean onFragmentCreate() {
+        SharedConfig.loginingAccount = currentAccount;
+        ApplicationLoader.loadAccount(currentAccount);
+        getNotificationCenter().addObserver(this, NotificationCenter.didUpdateConnectionState);
+        return super.onFragmentCreate();
     }
 
     @Override
@@ -509,6 +524,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                 int statusBarHeight = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
                 marginLayoutParams = (MarginLayoutParams) backButtonView.getLayoutParams();
+                marginLayoutParams.topMargin = AndroidUtilities.dp(16) + statusBarHeight;
+
+                marginLayoutParams = (MarginLayoutParams) proxyButtonView.getLayoutParams();
                 marginLayoutParams.topMargin = AndroidUtilities.dp(16) + statusBarHeight;
 
                 marginLayoutParams = (MarginLayoutParams) radialProgressView.getLayoutParams();
@@ -682,7 +700,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         menu.setSubMenuOpenSide(1);
         menu.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
 
-        menu.addSubItem(menu_proxy, R.drawable.proxy_on, LocaleController.getString("Proxy", R.string.Proxy))
+        menu.addSubItem(menu_proxy, R.drawable.msg2_proxy_on, LocaleController.getString("Proxy", R.string.Proxy))
                 .setContentDescription(LocaleController.getString("Proxy", R.string.Proxy));
         menu.addSubItem(menu_language, R.drawable.ic_translate, LocaleController.getString("Language", R.string.Language))
                 .setContentDescription(LocaleController.getString("Language", R.string.Language));
@@ -1988,7 +2006,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             codeField.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
             codeField.setImeOptions(EditorInfo.IME_ACTION_NEXT | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
             codeField.setBackground(null);
-//            codeField.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_windowBackgroundWhiteRedText3));
+//            codeField.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_text_RedRegular));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 codeField.setShowSoftInputOnFocus(!(hasCustomKeyboard() && !isCustomKeyboardForceDisabled()));
             }
@@ -2183,7 +2201,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             phoneField.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
             phoneField.setImeOptions(EditorInfo.IME_ACTION_NEXT | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
             phoneField.setBackground(null);
-//            phoneField.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_windowBackgroundWhiteRedText3));
+//            phoneField.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_text_RedRegular));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 phoneField.setShowSoftInputOnFocus(!(hasCustomKeyboard() && !isCustomKeyboardForceDisabled()));
             }
@@ -2651,7 +2669,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     String hint = phoneFormatMap.get(code).get(index);
                     int ss = phoneField.getSelectionStart(), se = phoneField.getSelectionEnd();
                     phoneField.setHintText(hint != null ? hint.replace('X', '0') : null);
-                    phoneField.setSelection(ss, se);
+                    phoneField.setSelection(
+                        Math.max(0, Math.min(phoneField.length(), ss)),
+                        Math.max(0, Math.min(phoneField.length(), se))
+                    );
                     wasCountryHintIndex = index;
                 }
             } else if (wasCountryHintIndex != -1) {
@@ -3896,14 +3917,16 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 codeFieldContainer.invalidate();
             }
 
-            String timeTextColorTag = (String) timeText.getTag();
-            if (timeTextColorTag == null) timeTextColorTag = Theme.key_windowBackgroundWhiteGrayText6;
+            Integer timeTextColorTag = (Integer) timeText.getTag();
+            if (timeTextColorTag == null) {
+                timeTextColorTag = Theme.key_windowBackgroundWhiteGrayText6;
+            }
             timeText.setTextColor(Theme.getColor(timeTextColorTag));
 
             if (currentType != AUTH_TYPE_FRAGMENT_SMS) {
                 problemText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
             }
-            wrongCode.setTextColor(Theme.getColor(Theme.key_dialogTextRed));
+            wrongCode.setTextColor(Theme.getColor(Theme.key_text_RedBold));
         }
 
         private void applyLottieColors(RLottieDrawable drawable) {
@@ -5007,6 +5030,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         needHideProgress(false);
                         if (error == null) {
                             final TLRPC.TL_auth_passwordRecovery res = (TLRPC.TL_auth_passwordRecovery) response;
+                            if (getParentActivity() == null) {
+                                return;
+                            }
                             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
 
                             String rawPattern = res.email_pattern;
@@ -5990,7 +6016,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             resendCodeView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
             cantAccessEmailView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
             emailResetInView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText6));
-            wrongCodeView.setTextColor(Theme.getColor(Theme.key_dialogTextRed));
+            wrongCodeView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
 
             codeFieldContainer.invalidate();
         }
@@ -7913,6 +7939,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         backButtonView.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         backButtonView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
 
+        proxyDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.SRC_IN));
+        proxyDrawable.setColorKey(Theme.key_windowBackgroundWhiteBlackText);
+        proxyButtonView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
+
         radialProgressView.setProgressColor(Theme.getColor(Theme.key_chats_actionBackground));
 
         floatingButtonIcon.setColor(Theme.getColor(Theme.key_chats_actionIcon));
@@ -7935,8 +7965,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         return SimpleThemeDescription.createThemeDescriptions(this::updateColors, Theme.key_windowBackgroundWhiteBlackText, Theme.key_windowBackgroundWhiteGrayText6,
                 Theme.key_windowBackgroundWhiteHintText, Theme.key_listSelector, Theme.key_chats_actionBackground, Theme.key_chats_actionIcon,
                 Theme.key_windowBackgroundWhiteInputField, Theme.key_windowBackgroundWhiteInputFieldActivated, Theme.key_windowBackgroundWhiteValueText,
-                Theme.key_dialogTextRed, Theme.key_windowBackgroundWhiteGrayText, Theme.key_checkbox, Theme.key_windowBackgroundWhiteBlueText4,
-                Theme.key_changephoneinfo_image2, Theme.key_chats_actionPressedBackground, Theme.key_windowBackgroundWhiteRedText2, Theme.key_windowBackgroundWhiteLinkText,
+                Theme.key_text_RedBold, Theme.key_windowBackgroundWhiteGrayText, Theme.key_checkbox, Theme.key_windowBackgroundWhiteBlueText4,
+                Theme.key_changephoneinfo_image2, Theme.key_chats_actionPressedBackground, Theme.key_text_RedRegular, Theme.key_windowBackgroundWhiteLinkText,
                 Theme.key_checkboxSquareUnchecked, Theme.key_checkboxSquareBackground, Theme.key_checkboxSquareCheck, Theme.key_dialogBackground, Theme.key_dialogTextGray2,
                 Theme.key_dialogTextBlack);
     }
@@ -8245,22 +8275,83 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         return ColorUtils.calculateLuminance(color) > 0.7f;
     }
 
+    private int currentConnectionState;
 
-    // NekoX Changes
+    private void updateProxyButton(boolean animated, boolean force) {
+        if (proxyDrawable == null) {
+            return;
+        }
+        int state = getConnectionsManager().getConnectionState();
+        if (currentConnectionState == state && !force) {
+            return;
+        }
+        currentConnectionState = state;
+        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
+        String proxyAddress = preferences.getString("proxy_ip", "");
+        final boolean proxyEnabled = preferences.getBoolean("proxy_enabled", false);
+        final boolean connected = currentConnectionState == ConnectionsManager.ConnectionStateConnected || currentConnectionState == ConnectionsManager.ConnectionStateUpdating;
+        final boolean connecting = currentConnectionState == ConnectionsManager.ConnectionStateConnecting || currentConnectionState == ConnectionsManager.ConnectionStateWaitingForNetwork || currentConnectionState == ConnectionsManager.ConnectionStateConnectingToProxy;
+        final boolean show = (proxyEnabled && !TextUtils.isEmpty(proxyAddress)) || getMessagesController().blockedCountry && !SharedConfig.proxyList.isEmpty() || connecting;
+        if (show) {
+            showProxyButtonDelayed();
+        } else {
+            showProxyButton(show, animated);
+        }
+        if (show) {
+            proxyDrawable.setConnected(true, connected, animated);
+        }
+    }
 
-    @Override
-    public void didReceivedNotification(int id, int account, Object... args) {
-        if (id == NotificationCenter.updateLoginToken) {
-            regenerateLoginToken(false);
+    private boolean proxyButtonVisible;
+    private Runnable showProxyButtonDelayed;
+    private void showProxyButtonDelayed() {
+        if (proxyButtonVisible) {
+            return;
+        }
+        if (showProxyButtonDelayed != null) {
+            AndroidUtilities.cancelRunOnUIThread(showProxyButtonDelayed);
+        }
+        proxyButtonVisible = true;
+        AndroidUtilities.runOnUIThread(showProxyButtonDelayed = () -> {
+            proxyButtonVisible = false;
+            showProxyButton(true, true);
+        }, 5000);
+    }
+
+    private void showProxyButton(boolean show, boolean animated) {
+        if (show == proxyButtonVisible) {
+            return;
+        }
+        if (showProxyButtonDelayed != null) {
+            AndroidUtilities.cancelRunOnUIThread(showProxyButtonDelayed);
+            showProxyButtonDelayed = null;
+        }
+        proxyButtonVisible = show;
+        proxyButtonView.clearAnimation();
+        if (animated) {
+            proxyButtonView.setVisibility(View.VISIBLE);
+            proxyButtonView.animate().alpha(show ? 1 : 0).withEndAction(() -> {
+                if (!show) {
+                    proxyButtonView.setVisibility(View.GONE);
+                }
+            }).start();
+        } else {
+            proxyButtonView.setVisibility(show ? View.VISIBLE : View.GONE);
+            proxyButtonView.setAlpha(show ? 1f : 0f);
         }
     }
 
     @Override
-    public boolean onFragmentCreate() {
-        SharedConfig.loginingAccount = currentAccount;
-        ApplicationLoader.loadAccount(currentAccount);
-        return true;
+    public void didReceivedNotification(int id, int account, Object... args) {
+        if (id == NotificationCenter.didUpdateConnectionState) {
+            updateProxyButton(true, false);
+        } else if (id == NotificationCenter.updateLoginToken) {
+            regenerateLoginToken(false);
+        }
     }
+
+
+    // NekoX Changes
 
     private void fillNextCodeParamsSilent(Bundle params, TLRPC.TL_auth_sentCode res) {
         params.putString("phoneHash", res.phone_code_hash);
@@ -8309,7 +8400,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         editText.setSingleLine(true);
         editText.setFocusable(true);
         editText.setTransformHintToHeader(true);
-        editText.setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), Theme.getColor(Theme.key_windowBackgroundWhiteRedText3));
+        editText.setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), Theme.getColor(Theme.key_text_RedRegular));
         editText.setImeOptions(EditorInfo.IME_ACTION_DONE);
         editText.setBackgroundDrawable(null);
         editText.requestFocus();

@@ -94,7 +94,7 @@ import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EmojiPacksAlert;
-import org.telegram.ui.Components.EmojiView;
+import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
@@ -289,7 +289,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
     public StickersActivity(int type) {
         this(type, new ArrayList<>());
     }
-    
+
     public StickersActivity(int type, ArrayList<TLRPC.TL_messages_stickerSet> frozenEmojiPacks) {
         super();
         currentType = type;
@@ -416,9 +416,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
 
         shareMenuItem = actionMode.addItemWithWidth(MENU_SHARE, R.drawable.msg_share, AndroidUtilities.dp(54));
         exportMenuItem = actionMode.addItemWithWidth(MENU_EXPORT, R.drawable.baseline_file_download_24, AndroidUtilities.dp(54));
-        if (currentType != MediaDataController.TYPE_EMOJIPACKS) {
-            archiveMenuItem = actionMode.addItemWithWidth(MENU_ARCHIVE, R.drawable.baseline_archive_24, AndroidUtilities.dp(54));
-        }
+        archiveMenuItem = actionMode.addItemWithWidth(MENU_ARCHIVE, R.drawable.baseline_archive_24, AndroidUtilities.dp(54));
         deleteMenuItem = actionMode.addItemWithWidth(MENU_DELETE, R.drawable.baseline_delete_24, AndroidUtilities.dp(54));
 
         ArrayList<TLRPC.TL_messages_stickerSet> sets;
@@ -914,14 +912,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
 
         loopRow = -1;
         loopInfoRow = -1;
-
-        if (currentType == MediaDataController.TYPE_EMOJIPACKS) {
-            suggestAnimatedEmojiRow = rowCount++;
-            suggestAnimatedEmojiInfoRow = rowCount++;
-        } else {
-            suggestAnimatedEmojiRow = -1;
-            suggestAnimatedEmojiInfoRow = -1;
-        }
+        archivedRow = -1;
 
         if (currentType == MediaDataController.TYPE_IMAGE) {
             featuredRow = rowCount++;
@@ -940,7 +931,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
             masksRow = -1;
             emojiPacksRow = -1;
 
-            if (mediaDataController.getArchivedStickersCount(currentType) != 0 && currentType != MediaDataController.TYPE_EMOJIPACKS) {
+            if (mediaDataController.getArchivedStickersCount(currentType) != 0) {
                 boolean inserted = archivedRow == -1;
 
                 archivedRow = rowCount++;
@@ -960,6 +951,14 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
                     listAdapter.notifyItemRangeRemoved(oldArchivedRow, oldArchivedInfoRow != -1 ? 2 : 1);
                 }
             }
+        }
+
+        if (currentType == MediaDataController.TYPE_EMOJIPACKS) {
+            suggestAnimatedEmojiRow = rowCount++;
+            suggestAnimatedEmojiInfoRow = rowCount++;
+        } else {
+            suggestAnimatedEmojiRow = -1;
+            suggestAnimatedEmojiInfoRow = -1;
         }
 
         if (currentType == MediaDataController.TYPE_IMAGE) {
@@ -1316,7 +1315,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
                         if (which == MENU_DELETE) {
                             TextView button = (TextView) dialog.getButton(DialogInterface.BUTTON_POSITIVE);
                             if (button != null) {
-                                button.setTextColor(Theme.getColor(Theme.key_dialogTextRed));
+                                button.setTextColor(Theme.getColor(Theme.key_text_RedBold));
                             }
                         }
                         break;
@@ -1559,7 +1558,7 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
                 }
                 case TYPE_SHADOW:
                     if (position == stickersShadowRow) {
-                        holder.itemView.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                        holder.itemView.setBackground(Theme.getThemedDrawableByKey(mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     }
                     break;
                 case TYPE_SWITCH:
@@ -1704,70 +1703,23 @@ public class StickersActivity extends BaseFragment implements NotificationCenter
                     stickerSetCell.setOnOptionsClick(v -> {
                         StickerSetCell cell = (StickerSetCell) v.getParent();
                         TLRPC.TL_messages_stickerSet stickerSet = cell.getStickersSet();
-                        AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                        builder.setTitle(stickerSet.set.title);
-                        int[] options;
-                        CharSequence[] items;
-                        int[] icons;
+                        ItemOptions options = ItemOptions.makeOptions(StickersActivity.this, cell);
+                        options.add(R.drawable.msg_archive, LocaleController.getString("StickersHide", R.string.StickersHide), () -> processSelectionOption(MENU_ARCHIVE, stickerSet));
                         if (stickerSet.set.official) {
-                            options = new int[]{MENU_ARCHIVE, 4};
-                            items = new CharSequence[]{
-                                    LocaleController.getString("StickersHide", R.string.StickersHide),
-                                    LocaleController.getString("StickersReorder", R.string.StickersReorder)
-                            };
-                            icons = new int[]{R.drawable.baseline_archive_24, R.drawable.msg_reorder};
+                            options.add(R.drawable.msg_reorder, LocaleController.getString("StickersReorder", R.string.StickersReorder), () -> processSelectionOption(4, stickerSet));
                         } else {
-                            if (NekoConfig.enableStickerPin.Bool() && currentType == MediaDataController.TYPE_IMAGE) {
-                                options = new int[]{MENU_ARCHIVE, 3, 4, 2, MENU_DELETE, MENU_TOGGLE_PIN};
-                                items = new CharSequence[]{
-                                        LocaleController.getString("StickersHide", R.string.StickersHide),
-                                        LocaleController.getString("StickersCopy", R.string.StickersCopy),
-                                        LocaleController.getString("StickersReorder", R.string.StickersReorder),
-                                        LocaleController.getString("StickersShare", R.string.StickersShare),
-                                        LocaleController.getString("StickersRemove", R.string.StickersRemove),
-                                        PinnedStickerHelper.getInstance(currentAccount).isPinned(stickerSet.set.id) ?
-                                                LocaleController.getString("UnpinSticker", R.string.UnpinSticker) :
-                                                LocaleController.getString("PinSticker", R.string.PinSticker)
-                                };
-                                icons = new int[]{
-                                        R.drawable.baseline_archive_24,
-                                        R.drawable.baseline_link_24,
-                                        R.drawable.msg_reorder,
-                                        R.drawable.baseline_forward_24,
-                                        R.drawable.baseline_delete_24,
-                                        R.drawable.deproko_baseline_pin_24
-                                };
-                            } else {
-                                options = new int[]{MENU_ARCHIVE, 3, 4, 2, MENU_DELETE};
-                                items = new CharSequence[]{
-                                        LocaleController.getString("StickersHide", R.string.StickersHide),
-                                        LocaleController.getString("StickersCopy", R.string.StickersCopy),
-                                        LocaleController.getString("StickersReorder", R.string.StickersReorder),
-                                        LocaleController.getString("StickersShare", R.string.StickersShare),
-                                        LocaleController.getString("StickersRemove", R.string.StickersRemove)
-                                };
-                                icons = new int[]{
-                                        R.drawable.baseline_archive_24,
-                                        R.drawable.baseline_link_24,
-                                        R.drawable.msg_reorder,
-                                        R.drawable.baseline_forward_24,
-                                        R.drawable.baseline_delete_24
-                                };
-                            }
+                            options.add(R.drawable.baseline_link_24, LocaleController.getString("StickersCopy", R.string.StickersCopy), () -> processSelectionOption(3, stickerSet));
+                            options.add(R.drawable.msg_reorder, LocaleController.getString("StickersReorder", R.string.StickersReorder), () -> processSelectionOption(4, stickerSet));
+                            options.add(R.drawable.baseline_link_24, LocaleController.getString("StickersShare", R.string.StickersShare), () -> processSelectionOption(2, stickerSet));
+                            options.add(R.drawable.baseline_delete_24, LocaleController.getString("StickersRemove", R.string.StickersRemove), true, () -> processSelectionOption(MENU_DELETE, stickerSet));
                         }
-                        builder.setItems(items, icons, (dialog, which) -> processSelectionOption(options[which], stickerSet));
-
-                        AlertDialog dialog = builder.create();
-                        showDialog(dialog);
-
-                        if (options[options.length - 1] == MENU_DELETE) {
-                            dialog.setItemColor(items.length - 1, Theme.getColor(Theme.key_dialogTextRed), Theme.getColor(Theme.key_dialogRedIcon));
-                        }
+                        options.setMinWidth(190);
+                        options.show();
                     });
                     break;
                 case TYPE_INFO:
                     view = new TextInfoPrivacyCell(mContext);
-                    view.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    view.setBackground(Theme.getThemedDrawableByKey(mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     break;
                 case TYPE_TEXT_AND_VALUE:
                     view = new TextCell(mContext);

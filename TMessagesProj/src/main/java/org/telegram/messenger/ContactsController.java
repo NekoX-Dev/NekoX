@@ -8,6 +8,7 @@
 
 package org.telegram.messenger;
 
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.ContentProviderOperation;
@@ -32,6 +33,7 @@ import com.google.android.exoplayer2.util.Log;
 
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Bulletin;
 
@@ -76,6 +78,7 @@ public class ContactsController extends BaseController {
     private ArrayList<TLRPC.PrivacyRule> callPrivacyRules;
     private ArrayList<TLRPC.PrivacyRule> p2pPrivacyRules;
     private ArrayList<TLRPC.PrivacyRule> profilePhotoPrivacyRules;
+    private ArrayList<TLRPC.PrivacyRule> bioPrivacyRules;
     private ArrayList<TLRPC.PrivacyRule> forwardsPrivacyRules;
     private ArrayList<TLRPC.PrivacyRule> phonePrivacyRules;
     private ArrayList<TLRPC.PrivacyRule> addedByPhonePrivacyRules;
@@ -91,8 +94,9 @@ public class ContactsController extends BaseController {
     public final static int PRIVACY_RULES_TYPE_PHONE = 6;
     public final static int PRIVACY_RULES_TYPE_ADDED_BY_PHONE = 7;
     public final static int PRIVACY_RULES_TYPE_VOICE_MESSAGES = 8;
+    public final static int PRIVACY_RULES_TYPE_BIO = 9;
 
-    public final static int PRIVACY_RULES_TYPE_COUNT = 9;
+    public final static int PRIVACY_RULES_TYPE_COUNT = 10;
 
     private class MyContentObserver extends ContentObserver {
 
@@ -325,6 +329,7 @@ public class ContactsController extends BaseController {
         callPrivacyRules = null;
         p2pPrivacyRules = null;
         profilePhotoPrivacyRules = null;
+        bioPrivacyRules = null;
         forwardsPrivacyRules = null;
         phonePrivacyRules = null;
 
@@ -1563,20 +1568,23 @@ public class ContactsController extends BaseController {
                     getUserConfig().saveConfig(false);
                 }
 
+                boolean reloadContacts = false;
                 for (int a = 0; a < contactsArr.size(); a++) {
                     TLRPC.TL_contact contact = contactsArr.get(a);
-                    if (usersDict.get(contact.user_id) == null && contact.user_id != getUserConfig().getClientUserId()) {
-                        loadContacts(false, 0);
-                        if (BuildVars.LOGS_ENABLED) {
-                            FileLog.d("contacts are broken, load from server");
-                        }
-                        AndroidUtilities.runOnUIThread(() -> {
-                            doneLoadingContacts = true;
-                            getNotificationCenter().postNotificationName(NotificationCenter.contactsDidLoad);
-                        });
-                        return;
+                    if (MessagesController.getInstance(currentAccount).getUser(contact.user_id) == null && contact.user_id != getUserConfig().getClientUserId()) {
+                        contactsArr.remove(a);
+                        a--;
+                        reloadContacts = true;
                     }
                 }
+//                loadContacts(false, 0);
+//                if (BuildVars.LOGS_ENABLED) {
+//                    FileLog.d("contacts are broken, load from server");
+//                }
+//                AndroidUtilities.runOnUIThread(() -> {
+//                    doneLoadingContacts = true;
+//                    getNotificationCenter().postNotificationName(NotificationCenter.contactsDidLoad);
+//                });
 
                 if (from != 1) {
                     getMessagesStorage().putUsersAndChats(usersArr, null, true, true);
@@ -1673,6 +1681,7 @@ public class ContactsController extends BaseController {
                     return collator.compare(s, s2);
                 });
 
+                boolean finalReloadContacts = reloadContacts;
                 AndroidUtilities.runOnUIThread(() -> {
                     contacts = contactsArr;
                     contactsDict = contactsDictionary;
@@ -1695,6 +1704,9 @@ public class ContactsController extends BaseController {
                         saveContactsLoadTime();
                     } else {
                         reloadContactsStatusesMaybe();
+                    }
+                    if (finalReloadContacts) {
+                        loadContacts(false, 0);
                     }
                 });
 
@@ -1956,12 +1968,19 @@ public class ContactsController extends BaseController {
         return true;
     }
 
+    private boolean hasContactsWritePermission() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            return ApplicationLoader.applicationContext.checkSelfPermission(Manifest.permission.WRITE_CONTACTS) == PackageManager.PERMISSION_GRANTED;
+        }
+        return true;
+    }
+
     private void performWriteContactsToPhoneBookInternal(ArrayList<TLRPC.TL_contact> contactsArray) {
         Cursor cursor = null;
         long time = System.currentTimeMillis();
         try {
             Account account = systemAccount;
-            if (!hasContactsPermission() || account == null) {
+            if (!hasContactsPermission() || account == null || !hasContactsWritePermission()) {
                 return;
             }
             final SharedPreferences settings = MessagesController.getMainSettings(currentAccount);
@@ -2377,6 +2396,7 @@ public class ContactsController extends BaseController {
         final ArrayList<Long> uids = new ArrayList<>();
         for (int a = 0, N = users.size(); a < N; a++) {
             TLRPC.User user = users.get(a);
+            getMessagesController().getStoriesController().removeContact(user.id);
             TLRPC.InputUser inputUser = getMessagesController().getInputUser(user);
             if (inputUser == null) {
                 continue;
@@ -2479,6 +2499,22 @@ public class ContactsController extends BaseController {
         });
     }
 
+    public void loadGlobalPrivacySetting() {
+        if (loadingGlobalSettings == 0) {
+            loadingGlobalSettings = 1;
+            TLRPC.TL_account_getGlobalPrivacySettings req = new TLRPC.TL_account_getGlobalPrivacySettings();
+            getConnectionsManager().sendRequest(req, (response, error) -> AndroidUtilities.runOnUIThread(() -> {
+                if (error == null) {
+                    globalPrivacySettings = (TLRPC.TL_globalPrivacySettings) response;
+                    loadingGlobalSettings = 2;
+                } else {
+                    loadingGlobalSettings = 0;
+                }
+                getNotificationCenter().postNotificationName(NotificationCenter.privacyRulesUpdated);
+            }));
+        }
+    }
+
     public void loadPrivacySettings() {
         if (loadingDeleteInfo == 0) {
             loadingDeleteInfo = 1;
@@ -2494,19 +2530,7 @@ public class ContactsController extends BaseController {
                 getNotificationCenter().postNotificationName(NotificationCenter.privacyRulesUpdated);
             }));
         }
-        if (loadingGlobalSettings == 0) {
-            loadingGlobalSettings = 1;
-            TLRPC.TL_account_getGlobalPrivacySettings req = new TLRPC.TL_account_getGlobalPrivacySettings();
-            getConnectionsManager().sendRequest(req, (response, error) -> AndroidUtilities.runOnUIThread(() -> {
-                if (error == null) {
-                    globalPrivacySettings = (TLRPC.TL_globalPrivacySettings) response;
-                    loadingGlobalSettings = 2;
-                } else {
-                    loadingGlobalSettings = 0;
-                }
-                getNotificationCenter().postNotificationName(NotificationCenter.privacyRulesUpdated);
-            }));
-        }
+        loadGlobalPrivacySetting();
         for (int a = 0; a < loadingPrivacyInfo.length; a++) {
             if (loadingPrivacyInfo[a] != 0) {
                 continue;
@@ -2531,6 +2555,9 @@ public class ContactsController extends BaseController {
                     break;
                 case PRIVACY_RULES_TYPE_PHOTO:
                     req.key = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
+                    break;
+                case PRIVACY_RULES_TYPE_BIO:
+                    req.key = new TLRPC.TL_inputPrivacyKeyAbout();
                     break;
                 case PRIVACY_RULES_TYPE_FORWARDS:
                     req.key = new TLRPC.TL_inputPrivacyKeyForwards();
@@ -2568,6 +2595,9 @@ public class ContactsController extends BaseController {
                             break;
                         case PRIVACY_RULES_TYPE_PHOTO:
                             profilePhotoPrivacyRules = rules.rules;
+                            break;
+                        case PRIVACY_RULES_TYPE_BIO:
+                            bioPrivacyRules = rules.rules;
                             break;
                         case PRIVACY_RULES_TYPE_FORWARDS:
                             forwardsPrivacyRules = rules.rules;
@@ -2629,6 +2659,8 @@ public class ContactsController extends BaseController {
                 return p2pPrivacyRules;
             case PRIVACY_RULES_TYPE_PHOTO:
                 return profilePhotoPrivacyRules;
+            case PRIVACY_RULES_TYPE_BIO:
+                return bioPrivacyRules;
             case PRIVACY_RULES_TYPE_FORWARDS:
                 return forwardsPrivacyRules;
             case PRIVACY_RULES_TYPE_PHONE:
@@ -2657,6 +2689,9 @@ public class ContactsController extends BaseController {
                 break;
             case PRIVACY_RULES_TYPE_PHOTO:
                 profilePhotoPrivacyRules = rules;
+                break;
+            case PRIVACY_RULES_TYPE_BIO:
+                bioPrivacyRules = rules;
                 break;
             case PRIVACY_RULES_TYPE_FORWARDS:
                 forwardsPrivacyRules = rules;
@@ -2801,6 +2836,17 @@ public class ContactsController extends BaseController {
             //resolver.delete(ContactsContract.Groups.CONTENT_URI, ContactsContract.Groups._ID+"=?", new String[]{groupID+""});
         } catch (Exception x) {
             FileLog.e(x);
+        }
+    }
+
+    public static String formatName(TLObject object) {
+        if (object instanceof TLRPC.User) {
+            return formatName((TLRPC.User) object);
+        } else if (object instanceof TLRPC.Chat) {
+            TLRPC.Chat chat = (TLRPC.Chat) object;
+            return chat.title;
+        } else {
+            return "DELETED";
         }
     }
 

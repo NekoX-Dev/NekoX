@@ -29,6 +29,7 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Property;
 import android.util.SparseIntArray;
 import android.view.HapticFeedbackConstants;
@@ -74,14 +75,15 @@ public class FilterTabsView extends FrameLayout {
         return positionToStableId.get(selectedType, -1);
     }
 
-    public void selectTabWithStableId(int stableId) {
+    public boolean selectTabWithStableId(int stableId) {
         for (int i = 0; i < tabs.size(); i++) {
             if (positionToStableId.get(i, -1) == stableId) {
                 currentPosition = i;
                 selectedTabId = positionToId.get(i);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     public interface FilterTabsViewDelegate {
@@ -258,12 +260,12 @@ public class FilterTabsView extends FrameLayout {
                 );
                 canvas.rotate(1.4f * s, getMeasuredWidth() / 2f, getMeasuredHeight() / 2f);
             }
-            String key;
-            String animateToKey;
-            String otherKey;
-            String animateToOtherKey;
-            String unreadKey;
-            String unreadOtherKey;
+            int key;
+            int animateToKey;
+            int otherKey;
+            int animateToOtherKey;
+            int unreadKey;
+            int unreadOtherKey;
             int id1;
             int id2;
             if (manualScrollingToId != -1) {
@@ -288,7 +290,7 @@ public class FilterTabsView extends FrameLayout {
                 unreadKey = Theme.key_chats_tabUnreadUnactiveBackground;
                 unreadOtherKey = Theme.key_chats_tabUnreadActiveBackground;
             }
-            if (animateToKey == null) {
+            if (animateToKey < 0) {
                 if ((animatingIndicator || manualScrollingToId != -1) && (currentTab.id == id1 || currentTab.id == id2)) {
                     textPaint.setColor(ColorUtils.blendARGB(Theme.getColor(otherKey), Theme.getColor(key), animatingIndicatorProgress));
                 } else {
@@ -385,7 +387,7 @@ public class FilterTabsView extends FrameLayout {
             }
 
             if (animateCounterEnter || counterText != null || showRemove && (isEditing || editingStartAnimationProgress != 0)) {
-                if (aBackgroundColorKey == null) {
+                if (aBackgroundColorKey < 0) {
                     textCounterPaint.setColor(Theme.getColor(backgroundColorKey));
                 } else {
                     int color1 = Theme.getColor(backgroundColorKey);
@@ -516,7 +518,7 @@ public class FilterTabsView extends FrameLayout {
                 }
                 progressToLocked = Utilities.clamp(progressToLocked, 1f, 0);
                 int unactiveColor = Theme.getColor(unactiveTextColorKey);
-                if (aUnactiveTextColorKey != null) {
+                if (aUnactiveTextColorKey >= 0) {
                     unactiveColor = ColorUtils.blendARGB(unactiveColor, Theme.getColor(aUnactiveTextColorKey), animationValue);
                 }
                 if (lockDrawableColor != unactiveColor) {
@@ -746,15 +748,15 @@ public class FilterTabsView extends FrameLayout {
     private int scrollingToChild = -1;
     private GradientDrawable selectorDrawable;
 
-    private String tabLineColorKey = Theme.key_actionBarTabLine;
-    private String activeTextColorKey = Theme.key_actionBarTabActiveText;
-    private String unactiveTextColorKey = Theme.key_actionBarTabUnactiveText;
-    private String selectorColorKey = Theme.key_actionBarTabSelector;
-    private String backgroundColorKey = Theme.key_actionBarDefault;
-    private String aTabLineColorKey;
-    private String aActiveTextColorKey;
-    private String aUnactiveTextColorKey;
-    private String aBackgroundColorKey;
+    private int tabLineColorKey = Theme.key_actionBarTabLine;
+    private int activeTextColorKey = Theme.key_actionBarTabActiveText;
+    private int unactiveTextColorKey = Theme.key_actionBarTabUnactiveText;
+    private int selectorColorKey = Theme.key_actionBarTabSelector;
+    private int backgroundColorKey = Theme.key_actionBarDefault;
+    private int aTabLineColorKey = -1;
+    private int aActiveTextColorKey = -1;
+    private int aUnactiveTextColorKey = -1;
+    private int aBackgroundColorKey = -1;
 
     private int prevLayoutWidth;
 
@@ -1066,7 +1068,11 @@ public class FilterTabsView extends FrameLayout {
         return animatingIndicator;
     }
 
-    private void scrollToTab(Tab tab, int position) {
+    public void stopAnimatingIndicator() {
+        animatingIndicator = false;
+    }
+
+    public void scrollToTab(Tab tab, int position) {
         if (tab.isLocked) {
             if (delegate != null) {
                 delegate.onPageSelected(tab, false);
@@ -1112,6 +1118,17 @@ public class FilterTabsView extends FrameLayout {
         if (defaultTab == null) return;
         if (defaultTab.id == getCurrentTabId()) return;
         scrollToTab(defaultTab, defaultTab.id);
+    }
+
+    public boolean isFirstTab() {
+        return currentPosition <= 0;
+    }
+
+    public void selectLastTab() {
+        if (tabs.isEmpty()) {
+            return;
+        }
+        scrollToTab(tabs.get(tabs.size() - 1), tabs.size() - 1);
     }
 
     public void setAnimationIdicatorProgress(float value) {
@@ -1171,12 +1188,23 @@ public class FilterTabsView extends FrameLayout {
         tabs.add(tab);
     }
 
+    public int getTabsCount() {
+        return tabs.size();
+    }
+
+    public Tab getTab(int i) {
+        if (i < 0 || i >= getTabsCount()) {
+            return null;
+        }
+        return tabs.get(i);
+    }
+
     public void finishAddingTabs(boolean animated) {
         listView.setItemAnimator(animated ? itemAnimator : null);
         adapter.notifyDataSetChanged();
     }
 
-    public void animateColorsTo(String line, String active, String unactive, String selector, String background) {
+    public void animateColorsTo(int line, int active, int unactive, int selector, int background) {
         if (colorChangeAnimator != null) {
             colorChangeAnimator.cancel();
         }
@@ -1197,10 +1225,10 @@ public class FilterTabsView extends FrameLayout {
                 backgroundColorKey = aBackgroundColorKey;
                 activeTextColorKey = aActiveTextColorKey;
                 unactiveTextColorKey = aUnactiveTextColorKey;
-                aTabLineColorKey = null;
-                aActiveTextColorKey = null;
-                aUnactiveTextColorKey = null;
-                aBackgroundColorKey = null;
+                aTabLineColorKey = -1;
+                aActiveTextColorKey = -1;
+                aUnactiveTextColorKey = -1;
+                aBackgroundColorKey = -1;
             }
         });
         colorChangeAnimator.start();
@@ -1214,7 +1242,7 @@ public class FilterTabsView extends FrameLayout {
         return positionToId.get(0, 0);
     }
 
-    public String getSelectorColorKey() {
+    public int getSelectorColorKey() {
         return selectorColorKey;
     }
 
@@ -1481,7 +1509,7 @@ public class FilterTabsView extends FrameLayout {
         if (!isEditing && orderChanged) {
             MessagesStorage.getInstance(UserConfig.selectedAccount).saveDialogFiltersOrder();
             TLRPC.TL_messages_updateDialogFiltersOrder req = new TLRPC.TL_messages_updateDialogFiltersOrder();
-            ArrayList<MessagesController.DialogFilter> filters = MessagesController.getInstance(UserConfig.selectedAccount).dialogFilters;
+            ArrayList<MessagesController.DialogFilter> filters = MessagesController.getInstance(UserConfig.selectedAccount).getDialogFilters();
             for (int a = 0, N = filters.size(); a < N; a++) {
                 MessagesController.DialogFilter filter = filters.get(a);
                 if (filter.isDefault()) {
@@ -1606,7 +1634,7 @@ public class FilterTabsView extends FrameLayout {
             if (idx1 < 0 || idx2 < 0 || idx1 >= count || idx2 >= count) {
                 return;
             }
-            ArrayList<MessagesController.DialogFilter> filters = MessagesController.getInstance(UserConfig.selectedAccount).dialogFilters;
+            ArrayList<MessagesController.DialogFilter> filters = MessagesController.getInstance(UserConfig.selectedAccount).getDialogFilters();
             MessagesController.DialogFilter filter1 = filters.get(idx1);
             MessagesController.DialogFilter filter2 = filters.get(idx2);
             int temp = filter1.order;
@@ -1660,7 +1688,7 @@ public class FilterTabsView extends FrameLayout {
             if (theIndex < 0 || theIndex >= count) {
                 return;
             }
-            ArrayList<MessagesController.DialogFilter> filters = MessagesController.getInstance(UserConfig.selectedAccount).dialogFilters;
+            ArrayList<MessagesController.DialogFilter> filters = MessagesController.getInstance(UserConfig.selectedAccount).getDialogFilters();
             int temp = positionToStableId.get(theIndex),
                 temp2 = tabs.get(theIndex).id;
             for (int i = theIndex - 1; i >= 0; --i) {
