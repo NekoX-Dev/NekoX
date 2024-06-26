@@ -1,12 +1,18 @@
 #!/bin/bash
 
+if [[ $(uname) == "Darwin" ]]; then
+	install=ginstall
+else
+	install=install
+fi
+
 set -e
 
 patch -d ffmpeg -p1 < patches/ffmpeg/0001-compilation-magic.patch
 patch -d ffmpeg -p1 < patches/ffmpeg/0002-compilation-magic-2.patch
 
 function cp {
-	install -D $@
+	$install -D $@
 }
 
 cp ffmpeg/libavformat/dv.h ffmpeg/build/arm64-v8a/include/libavformat/dv.h
