@@ -41,7 +41,7 @@
     <string name="CustomBackendTestDC">DataCenter Uji Resmi</string>
     <string name="AllowFlashCall">Izinkan panggilan cepat</string>
     <string name="ChangeTranslateProvider">Ubah Penyedia</string>
-    <string name="ProviderYandexTranslate">Penerjemah.Yandex</string>
+    <string name="ProviderYandexTranslate">Penerjemah Yandex</string>
     <string name="GoogleCloudTransKey">Token Google Cloud Translate</string>
     <string name="GoogleCloudTransKeyNotice">Jika Anda menyiapkan Google Cloud Trans Key, API terjemahan Cloud akan dipanggil, guna mengirimkan formulir palsu ke versi web saat menerjemahkan (lebih cepat, stabil, dan menghemat lalu lintas).</string>
     <string name="TransToLang">Tujuan bahasa yang ingin di terjemahkan</string>
@@ -70,8 +70,8 @@
     <string name="FilterNameContactsDescription">Hanya pesan dari pengguna yang disimpan</string>
     <string name="FilterNameGroups">Grup</string>
     <string name="FilterNameGroupsDescription">Hanya pesan dari obrolan grup</string>
-    <string name="FilterNameChannels">Kanal</string>
-    <string name="FilterNameChannelsDescription">Hanya pesan dari kanal tertentu</string>
+    <string name="FilterNameChannels">Saluran</string>
+    <string name="FilterNameChannelsDescription">Hanya pesan dari saluran</string>
     <string name="FilterNameBots">Robot</string>
     <string name="FilterNameBotsDescription">Hanya pesan dari robot</string>
     <string name="FilterNameUnmuted">Bersuara</string>
@@ -94,7 +94,7 @@
     <string name="DisableSystemAccount">Matikan Akun Sistem</string>
     <string name="FilterMenu">Menu Penyaring Obrolan</string>
     <string name="DisableProxyWhenVpnEnabled">Matikan proxy ketika ada VPN yang menyala</string>
-    <string name="UseProxyItem">Tampilkan saklar Proxy pada menu bilah samping</string>
+    <string name="UseProxyItem">Gunakan Proxy pada menu bilah samping dan bukan pada saklar</string>
     <string name="HideProxyByDefault">Sembunyikan pengaturan Proxy secara standar</string>
     <string name="SkipOpenLinkConfirm">Lewati dialog konfirmasi saat membuka tautan</string>
     <string name="DeleteAllInChat">Hapus semua pesan dalam obrolan</string>
@@ -141,14 +141,14 @@
     <string name="ImportProxies">Impor daftar server dari sebuah berkas</string>
     <string name="ImportProxyList">Impor daftar server Proxy</string>
     <string name="ProxySubscription">Berlangganan Proxy</string>
-    <string name="ProxySubDetails">Detail Berlangganan Proxy</string>
+    <string name="ProxySubDetails">Detail Langganan</string>
     <string name="SubscriptionUrls">Tautan</string>
-    <string name="SubscriptionUpdating">Perbarui Langganan</string>
+    <string name="SubscriptionUpdating">Memperbarui Langganan</string>
     <string name="SubscriptionDelete">Hapus Langganan</string>
     <string name="ExportStickers">Ekspor Stiker</string>
     <string name="ImportStickersX">Impor stiker dari berkas</string>
     <string name="ImportStickersList">Impor stiker</string>
-    <string name="StickerSets">Atur Stiker</string>
+    <string name="StickerSets">Set stiker</string>
     <string name="InvalidStickersFile">File stiker tidak valid:</string>
     <string name="InvalidProxyFile">File daftar Proxy tidak valid:</string>
     <string name="ImportedProxies">Daftar server Proxy yang diimpor:</string>
@@ -157,9 +157,9 @@
     <string name="DeleteAllServer">Hapus semua server</string>
     <string name="DeleteUnavailableServer">Hapus server Proxy yang tidak aktif</string>
     <string name="DeleteAllServerConfirm">Anda yakin ingin **menghapus semua server**\?</string>
-    <string name="DeleteUnavailableServerConfirm">Anda yakin ingin **menghapus semua server yang tidak aktif**\?</string>
+    <string name="DeleteUnavailableServerConfirm">Anda yakin ingin **menghapus semua server yang tidak tersedia**\?</string>
     <string name="MinApi21Required">Maaf, anda butuh setidaknya Android versi 5 (API 21).</string>
-    <string name="MinApi23Required">Maaf, anda butuh setidaknya Android versi 6 (API23).</string>
+    <string name="MinApi23Required">Maaf, anda butuh setidaknya Android versi 6 (API 23).</string>
     <string name="MiniVersionAlert">Maaf, versi mini tidak mendukung jenis Proxy ini, mohon alihkan versi pada pengaturan.</string>
     <string name="ImportProxyFromClipboard">Impor Dari Papan Klip</string>
     <string name="BrokenLink">Tidak Dikenal / Tautan Rusak</string>
@@ -279,4 +279,7 @@
     <string name="channelAlias">Alias saluran</string>
     <string name="channelAliasDetails">Wajibkan pengguna saluran label diaktifkan.</string>
     <string name="labelChannelUserDetails">jika pengirim pesan adalah channel, Itu akan ditandai sebagai \"Channel\"</string>
+    <string name="ConfirmSettings">Konfirmasi</string>
+    <string name="StickerSettings">Stiker</string>
+    <string name="InteractionSettings">Interaksi</string>
 </resources>

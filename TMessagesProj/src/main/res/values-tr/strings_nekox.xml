@@ -41,7 +41,7 @@
     <string name="CustomBackendTestDC">Resmi Test Veri Merkezi</string>
     <string name="AllowFlashCall">Hızlı aramaya izin ver</string>
     <string name="ChangeTranslateProvider">Sağlayıcıyı Değiştir</string>
-    <string name="ProviderYandexTranslate">Yandex.Çeviri</string>
+    <string name="ProviderYandexTranslate">Yandex Çeviri</string>
     <string name="GoogleCloudTransKey">Google Cloud Çeviri Anahtarı</string>
     <string name="GoogleCloudTransKeyNotice">Eğer bir Google Cloud Translation Anahtarı ayarlarsanız, web sürümüne sahte bir form göndermek yerine Cloud Translation API\'ını kullanarak daha hızlı, kararlı ve internet trafiğinizden tasarruf ederek çeviri yaparsınız.</string>
     <string name="TransToLang">Çeviri Hedef Dili</string>
@@ -261,7 +261,7 @@
     <string name="AppUpdateNekoX">Nekogram X\'i güncelle</string>
     <string name="customPublicProxyIPNotice">Bazı bölgelerde herkese açık proxy IP adresi belirtmek (örneğin Cloudflare) erişim hızını arttırabilir.</string>
     <string name="DeleteDownloadedFileExternal">Harici dosya atlandı.</string>
-    <string name="repeatConfirmText">Tekrarlamak istediğinize emin misiniz\?</string>
+    <string name="repeatConfirmText">Tekrarlamak istediğinize emin misiniz?</string>
     <string name="DisableInstantCamera">Hızlı kamerayı devre dışı bırak</string>
     <string name="labelChannelUserDetails">Mesajı gönderen \"Kanal\" ise, bu \"Kanal\" olarak etiketlenir.</string>
     <string name="channelAlias">Kanal takma adı</string>

@@ -26,7 +26,7 @@
     <string name="DownloadFailed">下載失敗</string>
     <string name="Install">安裝</string>
     <string name="Ignore">忽略</string>
-    <string name="UpdateDownloaded">一個更新剛下載完成.</string>
+    <string name="UpdateDownloaded">一個更新剛下載完成。</string>
     <string name="ProxyAutoSwitch">代理自動切換</string>
     <string name="LinkedGroupChat">連結的群組</string>
     <string name="LinkedChannelChat">連結的頻道</string>
@@ -81,7 +81,7 @@
     <string name="FilterNameUnmutedAndUnreadDescription">僅來自未靜音聊天的未讀訊息</string>
     <string name="IgnoreMutedCount">忽略資料夾標籤中靜音的未讀計數</string>
     <string name="DialogsSettings">對話設定</string>
-    <string name="SortMenu">排序設定</string>
+    <string name="SortMenu">對話排序設定</string>
     <string name="SortByUnread">未讀優先排序</string>
     <string name="SortByUnmuted">可通知優先排序</string>
     <string name="SortByUser">使用者優先排序</string>
@@ -98,7 +98,7 @@
     <string name="SkipOpenLinkConfirm">跳過開啟連結確認</string>
     <string name="DeleteAllInChat">刪除群組所有訊息</string>
     <string name="DeleteAllInChatAlert">警告！這將**刪除此聊天中所有使用者**的**所有訊息**。</string>
-    <string name="UnblockAll">解除所有</string>
+    <string name="UnblockAll">解除封鎖所有</string>
     <string name="UnblockAllWarn">您確定要解除封鎖**所有使用者和機器人**嗎？</string>
     <string name="BlockedListEmpty">您還沒有封鎖任何人 :)</string>
     <string name="ProxyTypeVmess">VMess 代理</string>
@@ -133,7 +133,7 @@
     <string name="SSRObfsParam">混淆引數</string>
     <string name="ProxyInfoTrojan">Trojan 代理設定</string>
     <string name="TrojanSNI">SNI (可選)</string>
-    <string name="ProxyRemarks">別名</string>
+    <string name="ProxyRemarks">備註</string>
     <string name="RetestPing">重新測試所有 Ping 值</string>
     <string name="ReorderByPing">基於 Ping 值重新排序</string>
     <string name="ExportProxies">匯出伺服器列表到檔案</string>
@@ -142,7 +142,7 @@
     <string name="ProxySubscription">代理訂閱</string>
     <string name="ProxySubDetails">訂閱詳情</string>
     <string name="SubscriptionUrls">連結列表</string>
-    <string name="SubscriptionUpdating">正更新訂閱</string>
+    <string name="SubscriptionUpdating">正在更新訂閱內容</string>
     <string name="SubscriptionDelete">刪除訂閱</string>
     <string name="ExportStickers">匯出貼圖集</string>
     <string name="ImportStickersX">從檔案匯入貼圖集</string>
@@ -181,7 +181,7 @@
     <string name="PGPImport">匯入公鑰</string>
     <string name="PGPImportPrivate">匯入私鑰</string>
     <string name="ShareMyKey">分享我的公鑰</string>
-    <string name="ShareMessages">分享</string>											   
+    <string name="ShareMessages">分享</string>
     <string name="DisableVibration">停用震動</string>
     <string name="IgnoreContentRestrictions">忽略內容限制</string>
     <string name="IgnoreContentRestrictionsNotice">忽略 Play 對訊息的限制。</string>
@@ -196,7 +196,7 @@
     <string name="StorageResetInfo">該應用程式的所有資料將被永久刪除（並先嘗試登出所有帳戶）。</string>
     <string name="FCTitle">關於本應用的更新</string>
     <string name="FCInfo">要跟隨我們的公告與更新頻道嗎 ？</string>
-    <string name="OpenCC" translatable="false">OpenCC</string>															  
+    <string name="OpenCC" translatable="false">OpenCC</string>
     <string name="CCTitle">OpenCC（簡繁轉換）</string>
     <string name="CCTarget">目標</string>
     <string name="CCNo">無</string>
@@ -217,7 +217,7 @@
     <string name="ReplaceRegex">正規表示式</string>
     <string name="DisableTrending">停用趨勢推薦</string>
     <string name="AutoDownload">自動下載</string>
-	<string name="Win32ExecutableFiles">Win32 可執行檔案</string>
+    <string name="Win32ExecutableFiles">Win32 可執行檔案</string>
     <string name="ArchiveFiles">壓縮檔案</string>
     <string name="EnableStickerPin">啟用貼圖集釘選</string>
     <string name="EnableStickerPinAbout">在新增貼圖時依然釘選並與雲端同步。\n與「停用最愛及最近」配對。</string>
@@ -228,7 +228,7 @@
     <string name="AppLinkFDroid">F-Droid</string>
     <string name="UsePersiancalendar">使用伊朗歷</string>
     <string name="UsePersiancalendarInfo">用太陽回曆顯示日期</string>
-    <string name="DisplayPersianCalendarByLatin">以拉丁字母顯示波斯日曆</string>																	
+    <string name="DisplayPersianCalendarByLatin">以拉丁字母顯示波斯日曆</string>
     <string name="AddProxyWs">新增 WebSocket 中繼</string>
     <string name="ProxyInfoWS">WebSocket 中繼設定</string>
     <string name="WsPayload">有效載荷</string>
@@ -236,9 +236,10 @@
     <string name="BackupSettings">備份設定</string>
     <string name="ImportSettings">匯入設定</string>
     <string name="ImportSettingsAlert">確定要覆蓋設定嗎？從未知來源匯入設定可能導致 PIN 被覆蓋從而導致應用程式被鎖定。</string>
-    <string name="nekoXPaymentRemovedToast">支付功能已被移除</string>
+    <string name="nekoXPaymentRemovedToast">支付功能已被移除。</string>
     <string name="VersionUpdateTitle">新版本可用</string>
-    <string name="VersionUpdateVariantNotMatch">版本變體自動匹配失敗。\n請從 GitHub 手動下載</string>
+    <string name="VersionUpdateVariantNotMatch">版本自動檢查失敗。
+\n請從 GitHub 手動下載。</string>
     <string name="VersionUpdateConfirm">更新</string>
     <string name="VersionUpdateIgnore">忽略</string>
     <string name="VersionUpdateNotNow">稍後</string>
@@ -275,4 +276,5 @@
     <string name="StickerSettings">貼圖</string>
     <string name="ConfirmSettings">操作確認</string>
     <string name="InteractionSettings">互動</string>
+    <string name="nekoxPremiumGiftRemoved">高級禮物在 NekoX 中被移除。</string>
 </resources>

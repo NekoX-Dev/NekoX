@@ -26,7 +26,7 @@
     <string name="DownloadFailed">Download Failed</string>
     <string name="Install">Install</string>
     <string name="Ignore">Ignore</string>
-    <string name="UpdateDownloaded">An update has just been downloaded.</string>
+    <string name="UpdateDownloaded">An update has been downloaded.</string>
     <string name="ProxyAutoSwitch">Proxy Auto Switch</string>
     <string name="LinkedGroupChat">Linked Group</string>
     <string name="LinkedChannelChat">Linked Channel</string>
@@ -40,7 +40,7 @@
     <string name="CustomBackendTestDC">Official Test DataCenter</string>
     <string name="AllowFlashCall">Allow flash call</string>
     <string name="ChangeTranslateProvider">Change Provider</string>
-    <string name="ProviderYandexTranslate">Yandex.Translate</string>
+    <string name="ProviderYandexTranslate">Yandex Translate</string>
     <string name="GoogleCloudTransKey">Google Cloud Translate Key</string>
     <string name="GoogleCloudTransKeyNotice">If you set up a Google Cloud Trans Key, the cloud translation API will be called instead of submitting a fake form to the web version when translating (faster, stable and saving traffic).</string>
     <string name="TransToLang">Translation target language</string>
@@ -259,7 +259,7 @@
     <string name="useCustomEmoji">Use custom emoji</string>
     <string name="useCustomEmojiInvalid">Not a vaild emoji ZIP-file.</string>
     <string name="repeatConfirm">Ask before repeat</string>
-    <string name="repeatConfirmText">Are you sure to repeat?</string>
+    <string name="repeatConfirmText">Are you sure you want to repeat\?</string>
     <string name="valuesLargeAvatarInDrawer">Telegram Default\nAvatar as background\nBig avatar as background</string>
     <string name="hideSponsoredMessage">Hide sponsored messages</string>
     <string name="rememberAllBackMessages">Remember all clicked replies</string>

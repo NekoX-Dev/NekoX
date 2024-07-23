@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Install">ଅଧିସ୍ଥାପନ କରିବା</string>
+    <string name="Ignore">ଅଣଦେଖା କରିବା</string>
+    <string name="NightMode">ରାତ୍ରି ମୋଡ୍</string>
+    <string name="UpdateUpdate">ଅଦ୍ୟତନ କରିବା</string>
+    <string name="UpdateLater">ପରେ</string>
+    <string name="More">ଅଧିକ</string>
+    <string name="PublicPrefix">ସାର୍ଵଜନୀନ</string>
+    <string name="ImportPxy">ଆମଦାନୀ କରିବା</string>
+    <string name="UseDefaultTheme">ଡିଫଲ୍ଟ ଥିମ୍ ଵ୍ୟଵହାର କରିବା *</string>
+    <string name="PrivacyNotice">ଗୋପନୀୟତା ଚେତାଵନୀ</string>
+    <string name="ImportProxies">ଫାଇଲ୍‌ରୁ ସର୍ଵର୍ ଆମଦାନୀ କରିବା</string>
+    <string name="ImportProxyList">ପ୍ରକ୍ସୀ ସର୍ଵର୍ ଆମଦାନୀ କରିବା</string>
+    <string name="SSPassword">ପାସ୍‍ୱର୍ଡ଼</string>
+</resources>

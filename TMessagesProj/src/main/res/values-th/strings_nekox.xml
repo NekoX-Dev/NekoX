@@ -34,4 +34,12 @@
     <string name="DevModeNotice">แตะเพื่อปิดใช้งาน คุณไม่ต้องการสิ่งเหล่านี้</string>
     <string name="ChangeTranslateProvider">เปลี่ยนผู้ให้บริการ</string>
     <string name="GoogleCloudTransKeyNotice">หากคุณตั้งค่า Google Cloud Trans Key ระบบจะเรียก API การแปลบนคลาวด์แทนการส่งแบบฟอร์มปลอมไปยังเวอร์ชันเว็บเมื่อทำการแปล (เร็วกว่า เสถียรกว่า และประหยัดทราฟฟิก)</string>
+    <string name="PlaceHolder">ตัวยึดตำแหน่ง - โปรดปิดการใช้งาน</string>
+    <string name="CustomBackendNotice">ฟังก์ชันนี้มีไว้สำหรับผู้ใช้ที่เชี่ยวชาญเท่านั้น หากคุณไม่ทราบว่าตัวเลือกต่อไปนี้หมายถึงอะไร ไม่ต้องสนใจ</string>
+    <string name="UseCustomApiNotice">เข้าสู่ระบบโดยใช้ API ที่กำหนดเอง หากคุณไม่สามารถลงทะเบียนหรือเข้าสู่ระบบได้ สิ่งนี้อาจช่วยได้
+\n
+\nหมายเหตุ: fcm จะไม่ทำงานหากคุณใช้รุ่นที่วางจำหน่าย</string>
+    <string name="ProxyAutoSwitch">สวิตช์พร็อกซีอัตโนมัติ</string>
+    <string name="CustomBackend">แบ็กเอนด์ที่กำหนดเอง</string>
+    <string name="CustomBackendProduction">ศูนย์ข้อมูลการผลิตอย่างเป็นทางการ</string>
 </resources>

@@ -253,7 +253,7 @@
     <string name="DisableInstantCamera">Wyłącz natychmiastową kamerę</string>
     <string name="DeleteDownloadedFileExternal">Plik zewnętrzny jest pomijany.</string>
     <string name="useCustomEmojiInvalid">Nieprawidłowe archiwum emoji.</string>
-    <string name="repeatConfirmText">Czy na pewno powtórzyć\?</string>
+    <string name="repeatConfirmText">Czy na pewno chcesz powtórzyć\?</string>
     <string name="repeatConfirm">Zapytaj przed powtórzeniem</string>
     <string name="DeleteDownloadedFileSucceed">Usunięto</string>
     <string name="useCustomEmoji">Użyj innego zestawu emotikon</string>

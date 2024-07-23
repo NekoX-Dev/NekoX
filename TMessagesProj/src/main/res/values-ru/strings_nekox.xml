@@ -105,7 +105,7 @@
     <string name="ProxyTypeVmess">VMess-прокси</string>
     <string name="AddProxySocks5">SOCKS5-прокси</string>
     <string name="AddProxyTelegram">MTProto-прокси</string>
-    <string name="AddProxyVmess">VMess-прокси</string>
+    <string name="AddProxyVmess">Добавить VMess-прокси</string>
     <string name="AddProxySS">Shadowsocks-прокси</string>
     <string name="AddProxySSR">ShadowsocksR-прокси</string>
     <string name="AddProxyTrojan">Trojan-прокси</string>
@@ -115,11 +115,11 @@
     <string name="ProxyDelete">Удалить прокси</string>
     <string name="ProxyInfoVmess">Настройки VMess-прокси</string>
     <string name="VmessUserId">User Id</string>
-    <string name="VmessAlterId">Alter ID</string>
+    <string name="VmessAlterId">Изменить идентификатор</string>
     <string name="VmessSecurity">Безопасность</string>
     <string name="VmessNetwork">Сеть</string>
-    <string name="VmessHeadType">Head Type</string>
-    <string name="VmessRequestHost">Request Host / QUIC Security</string>
+    <string name="VmessHeadType">Тип заголовка</string>
+    <string name="VmessRequestHost">Хост запроса / защита QUIC</string>
     <string name="VmessPath">Путь / Ключ QUIC</string>
     <string name="VmessTls">Использовать TLS</string>
     <string name="ProxyInfoSS">Настройки Shadowsocks-прокси</string>
@@ -130,7 +130,7 @@
     <string name="ProxyInfoSSR">Настройки ShadowsocksR-прокси</string>
     <string name="SSRProtocol">Протокол</string>
     <string name="SSRProtocolParams">Параметры протокола</string>
-    <string name="SSRObfs">Obfs</string>
+    <string name="SSRObfs">Obfs (обфускация трафика)</string>
     <string name="SSRObfsParam">Параметры Obfs</string>
     <string name="ProxyInfoTrojan">Настройки Trojan-прокси</string>
     <string name="TrojanSNI">SNI (необязательно)</string>
@@ -146,7 +146,7 @@
     <string name="SubscriptionUpdating">Обновление подписки</string>
     <string name="SubscriptionDelete">Удалить подписку</string>
     <string name="ExportStickers">Экспорт стикеров</string>
-    <string name="ImportStickersX">Импорт стикеров</string>
+    <string name="ImportStickersX">Импорт стикеров из файла</string>
     <string name="ImportStickersList">Импорт стикеров</string>
     <string name="StickerSets">Наборы стикеров</string>
     <string name="InvalidStickersFile">Неверный список стикеров:</string>
@@ -248,7 +248,7 @@
     <string name="VersionUpdateNoUpdate">Обновлений не найдено.</string>
     <string name="VersionUpdateNotNow">Не сейчас</string>
     <string name="VersionUpdateIgnore">Игнорировать</string>
-    <string name="VersionUpdateConfirm">Обновить</string>
+    <string name="VersionUpdateConfirm">ОБНОВИТЬ</string>
     <string name="VersionUpdateVariantNotMatch">Невозможно определить вашу версию приложения.
 \nСкачайте обновление вручную.</string>
     <string name="VersionUpdateTitle">Доступна новая версия</string>
